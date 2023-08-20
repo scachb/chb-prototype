@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Application for Child Benefit complete",
+        html: ""
+      }) }}
+
+      
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        We've sent your application to Child Benefit Service.
+      </p>
+
+      <p>
+        We'll tell you in 14 calendar days if your application has been successful.
+      </p>
+      <p>
+
+        {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Return to service home",
+  href: "#"
+}) }}
+        
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

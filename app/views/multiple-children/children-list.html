@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Children added to your claim
+      </h1>
+
+      <form class="form" action="../multiple-children/your-net-income" method="post">
+
+        <p>
+          {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Child 1"
+    },
+    actions: {
+      items: [
+        {
+          href: "../multiple-children/remove-child",
+          text: "Remove",
+          visuallyHiddenText: "child 1"
+        },
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "child 1"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "First name"
+      },
+      value: {
+        html: "James"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01/03/2023"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Child 2"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Remove",
+          visuallyHiddenText: "child 2"
+        },
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "child 2"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "First name"
+      },
+      value: {
+        html: "Dean"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01/03/2023"
+      }
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Add another child",
+  classes: "govuk-button--secondary"
+}) }}
+
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

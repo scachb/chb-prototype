@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What are the details of the child you want to claim for?
+      </h1>
+
+      <form class="form" action="adopt" method="post">
+
+        <p>
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "First name or given names"
+  },
+  id: "first-name",
+  name: "first-name",
+  autocomplete: "name",
+  spellcheck: false
+}) }}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "Has this child been known by any other names?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend"
+    }
+  },
+  
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "date-of-birth",
+  namePrefix: "date-of-birth",
+  fieldset: {
+    legend: {
+      text: "Child date of birth",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+        
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "child-sex",
+  fieldset: {
+    legend: {
+      text: "What is the child's sex as recorded on the birth certificate?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend"
+    }
+  },
+  
+  items: [
+    {
+      value: "male",
+      text: "Male"
+    },
+    {
+      value: "female",
+      text: "Female"
+    },
+    {
+      value: "other",
+      text: "Unspecified"
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us your nationality – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/national-insurance" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{{ govukFieldset({
+  legend: {
+    text: "What is your nationality?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) }}
+{{ govukSelect({
+  id: "choose",
+  name: "choose",
+  label: {
+    text: "Choose your nationality"
+  },
+  hint: {
+    text: "The EU countries are: Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden. 
+    Rest of World Country means any country in the Territory other than the United States."
+  },
+  items: [
+    {
+      value: "choose",
+      text: "Choose nationality",
+      selected: true
+    },
+    {
+      value: "Afghan",
+      text: "Afghan"
+    }
+   ]
+
+}) }}
+
+
+       
+        
+      
+
+        <p><a href="#">Save and continue later</a></p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "#",
+    serviceName: "Claim Child Benefit",
+    containerClasses: "govuk-width-container",
+    navigationClasses: "govuk-header__sign-out-nav",
+    navigation: [
+    
+    {
+      href: "index",
+      text: "Sign out"
+    }
+  ]
+  }) }}
+  
+  
+{% endblock %}
+

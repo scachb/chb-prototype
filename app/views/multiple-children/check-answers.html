@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers for this child you've addded
+      </h1>
+
+      <h2 class="govuk-heading-m">Child 1</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "first name"
+            },
+            value: {
+              text: "James"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../multiple-children/index",
+                  text: "Change",
+                  visuallyHiddenText: "First name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Has this child ever been known by any other names?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Has this child ever been known by any other names"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Child date of birth"
+            },
+            value: {
+              text: "01/03/2023"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Child date of birth"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!--
+      <h2 class="govuk-heading-m">Child 2</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "first name"
+            },
+            value: {
+              text: "Dean"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../multiple-children/children-list",
+                  text: "Change",
+                  visuallyHiddenText: "First name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Has this child ever been known by any other names?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Has this child ever been known by any other names"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Child date of birth"
+            },
+            value: {
+              text: "01/03/2023"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Child date of birth"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      -->
+
+     
+
+
+      <form action="add-another" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

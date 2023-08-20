@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+
+{{
+  hmrcLanguageSelect({
+    language: 'en',
+    en: {
+      href: '?en'
+    },
+    cy: {
+      href: '?cy'
+    }
+  })
+}}
+{% endblock %}
+
+
+{% block content %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">  
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+        <h1 class="govuk-panel__title">
+          Application complete
+        </h1>
+        <div class="govuk-panel__body govuk-!-font-size-27">
+          Post your supporting documents
+        </div>
+      </div>
+     
+
+      <h2 class="govuk-heading-m">
+        What you need to do now
+      </h2>
+
+      <p>
+        The information you have provided have been used to create your Child Benefit claim form.
+      </p>
+      
+        <p>
+        You need to post:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>child’s name birth certificate</li>
+          <li>child’s name passport or travel document used to enter the UK</li>
+          <li>child’s name adoption certificate</li>
+        </ul>
+        
+      </p>
+<!--
+      <p>
+        You need to send these documents within 30 days. If you don't, your claim may be denied.
+      </p>
+-->
+     
+      <p>
+        HMRC might call you if they need more information.
+      </p>
+
+      
+
+      <p>
+        Confirm your address so that we can send the documents back to you.
+      </p>
+
+      <p class="govuk-!-font-weight-bold">3 Priory Court<br>
+        Poulton<br>
+        Cirencester<br>
+        GL7 5JB<br>
+        United Kingdom</p>
+
+      <p>
+        <a href="../postcode.html" class="govuk-!-font-size-19">Edit address</a>
+      </p>
+
+      <!-- {{ govukRadios({
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Is this your correct address?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    -->
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Confirm address & download form"
+      }) }}
+
+      <p>
+        <a href="#">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+      <form class="form" action="claimed-child-benefit" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "How are you related to the child?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  
+  items: [
+    {
+      value: "birth-child",
+      text: "Birth Child"
+    },
+    {
+      value: "adopted-child",
+      text: "Adopted child"
+    },
+    {
+      value: "step-child",
+      text: "Step child"
+    },
+    {
+      value: "none-child",
+      text: "None of these"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

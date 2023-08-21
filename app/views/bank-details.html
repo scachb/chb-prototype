@@ -26,7 +26,7 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
             {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
 
-            {{ govukErrorSummary({
+           <!-- {{ govukErrorSummary({
                 titleText: "There is a problem",
                 errorList: [
                   {
@@ -44,19 +44,18 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
 
                 ]
               }) }}
-
+            -->
             
 
             {{ govukInput({
                 label: {
                 text: "First name and last name",
-                classes: "govuk-label--s",
+                classes: "govuk-label",
                 isPageHeading: true
                 },
-                errorMessage: {
-                    text: "Enter your full name."
-                    
-                },
+               hint: {
+                text: "If this is a joint account. Only enter one of the account holders' names. "
+               },
 
                 classes: "govuk-!-width-three-quarters",
                 id: "first-last-name",
@@ -66,17 +65,14 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
             {{ govukInput({
                 label: {
                 text: "Sort Code",
-                classes: "govuk-label--s",
+                classes: "govuk-label",
                 isPageHeading: true
                 },
-                errorMessage: {
-                    text: "Enter a sort code."
-                    
-                },
+               
 
                 classes: "govuk-!-width-one-quarter",
                 hint: {
-                text: "Must be 6 digits long. For example, 00-11-22."
+                text: "Must be 6 digits. For example. 00-11-22 or 00 11 22 or 001122"
                 },
 
                 id: "sortcode",
@@ -87,13 +83,10 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
             {{ govukInput({
                 label: {
                 text: "Account number",
-                classes: "govuk-label--s",
+                classes: "govuk-label",
                 isPageHeading: true
                 },
-                errorMessage: {
-                    text: "Enter an account number."
-                    
-                },
+               
 
                 classes: "govuk-!-width-one-quarter",
                 hint: {
@@ -106,7 +99,16 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
 
 
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel
+              </button>
+              
+            </div>
+            <p><a class="govuk-link" href="#">Save and come back later</a></p>   
 
         </form>
 

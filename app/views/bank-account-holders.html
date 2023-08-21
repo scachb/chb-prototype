@@ -13,17 +13,13 @@ Who are the account holders– {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         
-        <form class="form" action="/your-net-income-answer" method="post">
+        <form class="form" action="bank-details" method="post">
 
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
             {% from "govuk/components/input/macro.njk" import govukInput %}
             {% from "govuk/components/select/macro.njk" import govukSelect %}
             {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
             {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-
-           
-
 
             {{ govukRadios({
             classes: "govuk-radios",
@@ -38,7 +34,7 @@ Who are the account holders– {{ serviceName }} – GOV.UK Prototype Kit
             items: [
             {
             value: "single-account",
-            text: "Yes, I am the only bank accounr holder"
+            text: "Yes, I am the only account holder"
            
             },
             {

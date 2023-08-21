@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+What are the details of the child you want to claim for? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -107,19 +107,60 @@
 }) }}
 
 
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "child-sex",
+  fieldset: {
+    legend: {
+      text: "Does the child's birth certificate have a system number?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend"
+    }
+  },
+  hint: {
+    text: "This is the 9 digit number from the bottom left hand corner of their birth certificate. For example, 123456789."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
 
-
-
-
-
-
-
+{{ govukInput({
+  label: {
+    text: "What is the system number on the Child's birth certificate?",
+   
+    classes: "govuk-label",
+    isPageHeading: false
+  },
+  classes: "govuk-input--width-10",
+  
+  id: "birth-name",
+  name: "birth-name"
+}) }}
 
 </p>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+
+
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Cancel
+  </button>
+  
+</div>
+<p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
 
       </form>
 

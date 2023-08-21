@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Summary of the children added to your claim – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Children added to your claim
+        Summary of the children added to your claim
       </h1>
 
       <form class="form" action="../multiple-children/your-net-income" method="post">
@@ -114,9 +114,18 @@
 
         </p>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+
+
 
       </form>
 

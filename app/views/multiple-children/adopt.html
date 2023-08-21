@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Adoption – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -47,9 +47,16 @@
 }) }}
         </p>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
 
       </form>
 

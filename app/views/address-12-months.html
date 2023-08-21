@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Tell us about who the child lives with – {{ serviceName }} – GOV.UK Prototype Kit
+Have you lived at this address for more than 12 months? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,26 +16,21 @@ Tell us about who the child lives with – {{ serviceName }} – GOV.UK Prototyp
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Tell us about who the child lives with
-      </h1>
+     
+      <form class="form" action="your-telephone-number" method="post">
 
-      <form class="form" action="check-answers" method="post">
-
-        <p>
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
+  name: "confirm-address",
   classes: "govuk-radios--inline",
-  name: "changed-name",
   fieldset: {
     legend: {
-      text: "In the last year has the child lived with anyone else that has a different address from you?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend"
+      text: "Have you lived at this address for more than 12 months?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
     }
   },
-  
   items: [
     {
       value: "yes",
@@ -47,8 +42,7 @@ Tell us about who the child lives with – {{ serviceName }} – GOV.UK Prototyp
     }
   ]
 }) }}
-        </p>
-
+        
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
             Continue
@@ -58,7 +52,10 @@ Tell us about who the child lives with – {{ serviceName }} – GOV.UK Prototyp
           </button>
           
         </div>
-        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>        
+
+
+
       </form>
 
     </div>

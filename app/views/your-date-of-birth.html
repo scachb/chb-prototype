@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
+  Your date of birth – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,38 +16,28 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Other claimant details
-      </h1>
-
-      <form class="form" action="child-address" method="post">
+      <form class="form" action="your-address" method="post">
 
         <p>
-             {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-{{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "changed-name",
+{{ govukDateInput({
+  id: "dateofbirth-issued",
+  namePrefix: "dateofbirth-issued",
   fieldset: {
     legend: {
-      text: "Have you or anyone else ever claimed Child Benefit for this child?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend"
+      text: "What is your date of birth?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
     }
   },
-  
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
+  hint: {
+    text: "For example, 27 3 2007"
+  }
 }) }}
         </p>
+
+       
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
@@ -58,7 +48,8 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
           </button>
           
         </div>
-        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>       
+
 
       </form>
 

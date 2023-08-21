@@ -12,12 +12,19 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">What is your adjusted net income each year?</h1>
+        <h1 class="govuk-heading-l">Your (and your partner's) adjusted net income each year details</h1>
         
        
-        <p class="govuk-body">Your adjusted net income is your total taxable individual income before any personal allowances. It does not include things like Gift Aid. Do not combine your household income. </p>
+        <p class="govuk-body">Your adjusted net income is your total taxable individual income before any personal allowances. It does not include things like Gift Aid. </p>
        
-        <form class="form" action="/your-net-income-answer" method="post">
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Do not combine your household income.",
+  iconFallbackText: "Warning"
+}) }}
+
+        <form class="form" action="../tax-charge/index" method="post">
 
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
             {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -34,7 +41,7 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
             legend: {
             text: "Your net income",
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend"
             }
             },
             items: [
@@ -60,14 +67,17 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
             
 
             <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Continue"
-                }) }}
+              <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel
+              </button>
               
-                
-              </div>
-              <a class="govuk-link" href="#">Save and come back later</a>
-
+            </div>
+            <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+    
+    
         </form>
 
     </div>

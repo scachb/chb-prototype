@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your child answers– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Check your answers for this child you've addded
+        Check your child answers
       </h1>
 
       <h2 class="govuk-heading-m">Child 1</h2>
@@ -145,9 +145,16 @@
 
       <form action="add-another" method="post" novalidate>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
 
       </form>
 

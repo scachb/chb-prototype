@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Receive any benefits – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+
+      <form class="form" action="benefits-received" method="post">
+
+        {{ govukRadios({
+          name: "confirm-benefits",
+          classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
+              text: "Do you receive any benefits?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+      
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+                
+                <div class="govuk-button-group">
+                  <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                  </button>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                  </button>
+                  
+                </div>
+                <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

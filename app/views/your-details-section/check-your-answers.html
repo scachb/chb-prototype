@@ -1,0 +1,220 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers for your details section – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers for your details
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "National Insurance number"
+            },
+            value: {
+              text: "Answer 1"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 1"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Is this name correct?"
+            },
+            value: {
+              text: "Answer 2"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Have you ever been known by any other last names or family names including your maiden name"
+            },
+            value: {
+              text: "Answer 3"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Is this address correct?"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Have you lived at this address for more than 12 months?"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Phone Number"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Nationality"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Do you have another nationality?"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Where have you lived?"
+            },
+            value: {
+              text: "Answer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <p>
+        Now complete the next section
+      </p>
+
+      <form action="../employment-details" method="post" novalidate>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

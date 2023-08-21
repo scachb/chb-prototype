@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you claiming child benefit right now? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+      <form class="form" action="marital-status" method="post">
+
+        {{ govukRadios({
+          name: "confirm-country",
+          classes: "govuk-radios",
+          fieldset: {
+            legend: {
+              text: "Are you claiming child benefit right now?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "This includes allowances paid to you by a government. The UK includes England, Wales, Scotland and Northern Ireland. The UK does not include Isle of Man, Channel Islands or British overseas territories."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes and I am getting payments"
+            },
+            {
+              value: "yesandno",
+              text: "Yes and I am not getting any payments"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+                
+                <div class="govuk-button-group">
+                  <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                  </button>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                  </button>
+                  
+                </div>
+                <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

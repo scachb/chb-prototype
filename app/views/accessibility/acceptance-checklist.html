@@ -1,0 +1,110 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+Accessibility acceptance checklist – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Accessibility acceptance checklist
+  </h1>
+  <h2 class="govuk-heading-m">
+    General accessibility acceptance criteria
+  </h2>
+  <p class="govuk-body-l">
+    All screens that contain content should:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Have text with a colour contrast of at least 4.5:1 (Normal-sized text up to 23px/18px
+      bold).</li>
+    <li>Not depend on colour alone to communicate information.</li>
+    <li>Icons with a contrast ratio of 3.0:1 and non-text elements and borders. Images used
+      for decorative purposes are set as background images, preferably (CSS). Images can
+      be marked as with a presentation role when they are not needed for information. See
+      "Using images."</li>
+    <li>Allow users to change their colour preferences (high contrast black and white) without
+      loss of content.</li>
+    <li>Announce any changes to all users. For example, hide and display content for screen
+      readers and sighted users when necessary.</li>
+    <li>When new content appears and is after the current point of focus, consider
+      setting an alert, status or polite role. The instruction in the new content is enough
+      for an AT user to realise they need to navigate forward. A status message when
+      something is removed is to help them rearrange their cognitive map of the
+      screen.</li>
+  </ul>
+
+  <h2 class="govuk-heading-m">
+    Accessibility acceptance criteria for headings
+  </h2>
+  <p class="govuk-body-l">
+    All headings should:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Convey the level so screen reader users can jump through the list of headings to the
+      content they're looking for.
+    </li>  
+    <li>Be nested in a way that makes sense to users. See the section on Headings and
+      Labels.
+    </li>  
+    <li>Allow users to navigate by headings.</li>
+      <li>Use the caption element to provide a title for the table.</li>
+
+  </ul>
+
+
+
+
+  <h2 class="govuk-heading-m">
+    Accessibility acceptance criteria for interactive elements (elements that users can focus on)
+  </h2>
+  <p class="govuk-body-l">
+    Make sure screens are operable with the following:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>a keyboard (use native HTML form elements)
+    </li>  
+    <li>two essentials of a good experience are the ability to discern the location of the
+      keyboard focus easily and to discover where the focus landed after an interaction
+    </li>  
+    <li>a mouse</li>
+    <li>screen reader in focus or form mode</li>
+    <li>screen reader shortcuts</li>
+    <li>voice</li>
+  </ul>
+
+  <p>
+    Some screen readers depend on the user understanding guidance behind specific
+interactions. For example, Dragon users will have to say actual keyboard commands, e.g.
+"press the delete key".
+  </p>
+
+  <p class="govuk-body-l">
+    To make sure users can operate interactive elements, those elements should:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Indicate when content is expanded or collapsed</li>  
+    <li>Be large enough to tap with one finger</li>  
+    <li>Change appearance when focused. For example, links and form elements have
+      defined focus indicators (yellow and thick black border)</li>
+    <li>Change appearance when users hover their mouse over them (see focus indicators)</li>
+    <li>Not trap focus in a loop from which users cannot exit</li>
+    <li>Not assume that title attribute tooltips are accessible for all users</li>
+    <li>Identify links that open in a new tab or window.</li>
+  </ul>
+
+<h2 class="govuk-heading-m">
+  Accessibility acceptance criteria for form elements
+</h2>
+<p class="govuk-body-l">
+  All form elements should:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Show a message if the form has mandatory fields that must be completed</li>  
+  <li>Have a perceivable text label</li>  
+  <li>Associate labels and instructions with inputs</li>
+  <li>If appropriate, use the fieldset to group related form fields</li>
+  <li>Show an error message. See Forms and Form errors</li>
+ 
+</ul>
+{% endblock %}

@@ -107,4 +107,113 @@ interactions. For example, Dragon users will have to say actual keyboard command
   <li>Show an error message. See Forms and Form errors</li>
  
 </ul>
+
+<h2 class="govuk-heading-m">
+  Accessibility acceptance criteria for layout
+</h2>
+<p class="govuk-body-l">
+  To allow users to make adjustments on their device, screens should work when:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Users enlarge the text</li>  
+  <li>Users zoom to 400%</li>  
+</ul>
+
+<h2 class="govuk-heading-m">
+  Additional information on the acceptance criteria
+</h2>
+
+<h3 class="govuk-heading-m">
+  Colour
+</h3>
+
+<p>(1.4.3 CONTRAST, 1.4.11 NON TEXT CONTRAST, 1.4.1 USE OF COLOR)</p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Check the contrast for all text. Normal-sized text (Up to 23px/18px bold) should have
+    a contrast ratio of 4.5:1</li>  
+  <li>Check the contrast for non-text elements, like icons, borders, etc. These should have
+    a contrast ratio of 3.0:1</li>  
+  <li>Check your content in Accessibility Display Modes. Activate modes such as Windows
+    High Contrast to check the overall contrast and legibility of page elements like icons,
+    borders, links, etc.</li>
+  <li>Check the contrast for all normal-sized text</li>
+  <li>Check the contrast for all large-sized text</li>
+  <li>Check the contrast for all icons</li>
+  <li>Check the contrast of borders for input elements (text input, radio buttons,
+    checkboxes, etc.)</li>
+ </ul>
+
+
+<h3 class="govuk-heading-m">
+  Layout
+</h3>
+
+<p>(1.4.10 REFLOW)</p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Ensure the content can be viewed without distortion when orientated to a horizontal view or zoomed in for easier reading. Design for responsiveness to accommodate a view or zoomed in for easier reading. Design for responsiveness to accommodate a clean viewpoint at all zoom levels. When a person zooms in to over 300% (using
+    either the mobile operating system or the browser settings), the layout should reflow into one column to allow them to view content easily and not have to scroll sideways to read.
+  </li>
+  <li>There should be no two-dimensional scrolling (vertical and horizontal). There are scenarios when two-dimensional scrolling is okay, for instance, on a table or an image
+    in which meaning is lost without the two dimensions.</li>
+  <li>Ensure that viewport zoom is not disabled</li>
+ </ul>
+
+
+
+ <h3 class="govuk-heading-m">
+  Headings
+</h3>
+
+<p>(2.4.6 HEADINGS OR LABELS)</p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Every page should have at least one heading. Modals do not have to have an H1, but it
+    is recommended they do. Screen readers should announce the text content of
+    elements, such as headings.</li>
+  <li>Use only one H1 element per page or view.</li>
+  <li>Keep headings in a complete and logical order from the top of the page. For example,
+    an h3 element should not appear on a page before the first h2 element. And don't
+    jump headings, skipping from an h1 to an h3 element without an h2 in between.</li>
+    <li>The table's caption should describe the information the table contains.</li>
+    <li>Screen readers should announce HTML elements such as buttons and headings - for
+      example, and they should announce a button as a button, an h2 as a heading level 2,
+      and so on.</li>
+ </ul>
+
+ <h3 class="govuk-heading-m">
+  Interactive elements and their instructions
+</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>For interactive components, check if the screen reader gives users instructions on
+    how to interact with them - for example, "To activate, press Enter" if this is the native
+    behaviour of the screen reader for that particular element.</li>
+  <li>Check if users get feedback about any changes to the state of the element - for
+    example if the element expands or collapses</li>
+ 
+ </ul>
+
+
+ <h3 class="govuk-heading-m">
+  Forms and Form errors
+</h3>
+
+<p>(3.3.1 ERROR IDENTIFICATION)</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Display input error messages above a form and relate them to the specific fields</li>
+  <li>Use the appropriate colour styling for summary errors</li>
+  <li>All inputs in a form are associated with a corresponding label element</li>
+  <li>Associate input error messaging with the input it corresponds to</li>
+  <li>Make sure that error, warning, and success states are not visually communicated by
+    just colour</li>
+ 
+ </ul>
+
+ 
 {% endblock %}

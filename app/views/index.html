@@ -186,14 +186,44 @@
           <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
             Related content
           </h2>
+
+          <h3 class="govuk-heading-s" data-track-count="sidebarRelatedItemSection">
+            Beta assessment artefacts
+          </h3>
     
           <nav role="navigation" class="" aria-labelledby="related-nav-related_items-6f72e62c" data-module="gem-toggle"
             data-gem-toggle-module-started="true">
     
-            <ul class="govuk-list">
-              <li class=""><a class="govuk-link govuk-link" href="accessibility/acceptance-checklist">Accessibility acceptance checklist</a></li>
-              <li class=""><a class="govuk-link govuk-link" href="#">Tube map for claimant journey</a></li>
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li class="">
+                {{govukTag({
+                  text: "DRAFT",
+                  classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
+                })}}
+                <a class="govuk-link govuk-link" href="accessibility/acceptance-checklist">
+                
+                Accessibility acceptance checklist</a></li>
+              <li class="">
+                {{govukTag({
+                  text: "OUT OF DATE",
+                  classes: "govuk-tag--turquoise govuk-list govuk-!-font-size-14"
+                })}}
+                <a class="govuk-link govuk-link" href="#">
+               
+                Tube map for claimant journey</a></li>
+              <li class="">
+                {{govukTag({
+                  text: "COMING",
+                  classes: "govuk-tag--yellow govuk-list govuk-!-font-size-14"
+                })}}
+                <a class="govuk-link govuk-link" href="#">
+              Customer insights</a></li>
+              <li class="">
+                <a class="govuk-link govuk-link" href="https://design.tax.service.gov.uk/hmrc-content-style-guide/">HMRC content style guide</a>  
+              </li>
             </ul>
+
+            
           </nav>
     
         </div>

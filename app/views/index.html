@@ -37,7 +37,19 @@
           {{govukTag({
           text: "New",
           classes: "govuk-tag--blue"
-          })}}<a href="/start">Journey</a></p>
+          })}}<a href="/start">Journey</a>
+        </p>
+
+          <p>
+            {{govukTag({
+              text: "outdated",
+              classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
+            })}}
+            <a class="govuk-link govuk-link" href="#">
+           
+            Tube map for claimant journey</a>
+        
+        </p>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -62,6 +74,11 @@
       <h3 class="govuk-heading-l">Multiple children</h3>
       
       <p><a href="../multiple-children/index">Journey</a></p>
+
+      <p>{{govukTag({
+        text: "Xd",
+        classes: "govuk-tag--pink"
+      })}}<a href="https://xd.adobe.com/view/6f71320b-f041-4ec6-a9a0-46a9f8f3f754-3a22/">Tell us about another child</a></p>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -203,14 +220,7 @@
                 <a class="govuk-link govuk-link" href="accessibility/acceptance-checklist">
                 
                 Accessibility acceptance checklist</a></li>
-              <li class="">
-                {{govukTag({
-                  text: "OUT OF DATE",
-                  classes: "govuk-tag--turquoise govuk-list govuk-!-font-size-14"
-                })}}
-                <a class="govuk-link govuk-link" href="#">
-               
-                Tube map for claimant journey</a></li>
+              
               <li class="">
                 {{govukTag({
                   text: "COMING",
@@ -219,6 +229,10 @@
                 <a class="govuk-link govuk-link" href="#">
               Customer insights</a></li>
               <li class="">
+                {{govukTag({
+                  text: "Xd",
+                  classes: "govuk-tag--pink govuk-list govuk-!-font-size-14"
+                })}}
                 <a class="govuk-link govuk-link" href="https://design.tax.service.gov.uk/hmrc-content-style-guide/">HMRC content style guide</a>  
               </li>
             </ul>

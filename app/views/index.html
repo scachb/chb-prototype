@@ -70,12 +70,20 @@
       </p>
       <p>To make it easier, we offer digital versions of claim form info and other details that are usually shown in a PDF. This includes official use info for claims about children born outside the UK when returning documents. </p>
       
-      <p>{{govukTag({
+      <p>
+        {{govukTag({
         text: "New",
         classes: "govuk-tag--blue"
         })}}
-
-      <a href="post-print/claim-child-benefit-by-post">View claim form</a></p>
+         <a href="post-print/claim-child-benefit-by-post">View claim form</a>
+      </p>
+      <p>
+        {{govukTag({
+          text: "New",
+          classes: "govuk-tag--blue"
+          })}}
+          <a href="post-print/return-slip">View return slip</a>
+      </p>
 
       <p>
         {{govukTag({
@@ -263,6 +271,15 @@
                   text: "DRAFT",
                   classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
                 })}}
+                <a class="govuk-link govuk-link" href="accessibility/accessibility-statement">
+                
+                Accessibility statement</a>
+              </li>
+              <li class="">
+                {{govukTag({
+                  text: "DRAFT",
+                  classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
+                })}}
                 <a class="govuk-link govuk-link" href="accessibility/acceptance-checklist">
                 
                 Accessibility acceptance checklist</a></li>
@@ -292,4 +309,21 @@
       
         
   </div>
-{% endblock %}
+
+<!--
+
+var answer1 = req.session.data['answer1']
+var answer2 = req.session.data['answer2']
+
+if (answer1 == "yes" && answer2 == "yes"){
+  res.redirect("page-a")
+} else if (answer1 == "no" && answer2 == "yes"){
+ res.redirect("page-b")
+} else {
+  res.redirect("page-c")
+
+-->
+
+  {% endblock %}
+
+

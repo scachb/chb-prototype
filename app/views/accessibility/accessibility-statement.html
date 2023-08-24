@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Accessibility statement for Claim Child Benefit service
+      </h1>
+
+      <p class="govuk-body-l">
+        This accessibility statement explains how accessible this service is, what to do if you have difficulty using it, and how to report accessibility problems with the service.
+      </p>
+
+      <p>
+        This service is part of the wider GOV.UK website. There is a separate accessibility statement for the main GOV.UK website.
+       </p> 
+       <p>
+        This page only contains information about the Claim Child Benefit service, available at https://www.tax.service.gov.uk/fill-online/claim-child-benefit.
+      </p>
+
+      <h2 class="govuk-heading-l">Using this service</h2>
+
+      <p>
+        Use this form to claim Child Benefit if you or your partner are responsible for a child who is under 16, or under 20 if they are in approved education or training.
+      </p>
+
+      <p class="govuk-body">
+        This service is run by HM Revenue and Customs (HMRC). We want as many people as possible to be able to use this service. 
+        This means you should be able to:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>change colours, contrast levels and fonts</li>
+      <li>zoom in up to 300% without the text spilling off the screen</li>
+      <li>get from the start of the service to the end using just a keyboard</li>
+      <li>get from the start of the service to the end using speech recognition software</li>
+      <li>listen to the service using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</li>
+    </ul>
+    <p class="govuk-body">We have also made the text in the service as simple as possible to understand.</p>
+
+    <p class="govuk-body">
+      <a class="govuk-link" href="https://mcmw.abilitynet.org.uk">AbilityNet has advice</a>
+       on making your device easier to use if you have a disability.
+  </p>
+
+  <h2 class="govuk-heading-l">How accessible this service is</h2>
+
+  <p class="govuk-body">This service is partially compliant with the <a class="govuk-link" href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1 AA standard</a>.</p>
+
+  <p class="govuk-body">Some people may find parts of this service difficult to use:</p>
+
+  <ul class="govuk-list govuk-list--bullet" id="accessibility-problems">
+    
+    <li>INSERT SNIPPETS</li>
+
+</ul>
+
+  <h2 class="govuk-heading-l">What to do if you have difficulty using this service</h2>
+
+  <p class="govuk-body">
+    You can 
+    <a class="govuk-link" href="https://www.gov.uk/get-help-hmrc-extra-support">contact HMRC for extra support</a>
+     if you need help with filling in forms or getting a different format, like large print, audio recording or Braille.
+</p>
+
+<h2 class="govuk-heading-l">Reporting accessibility problems with this service</h2>
+
+<p class="govuk-body">We are always looking to improve the accessibility of this service. If you find any problems that are not listed on this page or think we are not meeting accessibility requirements, 
+  <a class="govuk-link" href="https://www.tax.service.gov.uk/contact/accessibility?service=claim-child-benefit&amp;referrerUrl=https%3A%2F%2Fwww.tax.service.gov.uk%2Ffill-online%2Fclaim-child-benefit%2Frecently-claimed-child-benefit%3F_ga%3D2.37580512.170046323.1692877957-1346543562.1678892511">report the accessibility problem</a>.
+</p>
+
+<h2 class="govuk-heading-l">If you are not happy with our response</h2>
+
+<p class="govuk-body">
+  The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). If you are not happy with how we respond to your complaint,
+  <a class="govuk-link" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>
+  or the
+  <a class="govuk-link" href="https://www.equalityni.org/Home">Equality Commission for Northern Ireland (ECNI)</a>
+  if you live in Northern Ireland.
+</p>
+
+<h2 class="govuk-heading-l">Contacting us by phone or getting a visit from us in person</h2>
+
+<p class="govuk-body">We provide a text relay service if you are deaf, hearing impaired or have a speech impediment.</p>
+
+<p class="govuk-body">We can provide a British Sign Language (BSL) interpreter, or you can arrange a visit from an HMRC advisor to help you complete the service.</p>
+
+<p class="govuk-body">
+  Find out 
+  <a class="govuk-link" href="https://www.gov.uk/get-help-hmrc-extra-support">how to get extra support from HMRC</a>.
+</p>
+
+<h2 class="govuk-heading-l">Technical information about this service’s accessibility</h2>
+
+<p class="govuk-body">
+  HMRC is committed to making this service accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
+</p>
+
+<p class="govuk-body">
+  This service is partially compliant with the  <a class="govuk-link" href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines version 2.1 AA standard</a>, due to the non-compliances listed below.
+</p>
+
+<h2 class="govuk-heading-l">How we tested this service</h2>
+
+<p class="govuk-body">The service was last tested on 24 July 2023 and was checked for compliance with WCAG 2.1 AA.</p>
+
+<p class="govuk-body">The service was built using parts that were tested by the
+  <a class="govuk-link" href="https://www.digitalaccessibilitycentre.org/">Digital Accessibility Centre</a>. The full service was tested by HMRC and included disabled users.
+</p>
+
+<p class="govuk-body">This page was prepared on 24 August 2023.</p>
+
+<a lang="en" hreflang="en" class="govuk-link hmrc-report-technical-issue " rel="noreferrer noopener" target="_blank" href="https://www.tax.service.gov.uk/contact/report-technical-problem?newTab=true&amp;service=accessibility-statement&amp;referrerUrl=https%3A%2F%2Fwww.tax.service.gov.uk%2Faccessibility-statement%2Fclaim-child-benefit%3FreferrerUrl%3Dhttps%253A%252F%252Fwww.tax.service.gov.uk%252Ffill-online%252Fclaim-child-benefit%252Frecently-claimed-child-benefit%253F_ga%253D2.37580512.170046323.1692877957-1346543562.1678892511">Is this page not working properly? (opens in new tab)</a>
+
+</div>
+  </div>
+
+{% endblock %}

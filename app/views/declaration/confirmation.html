@@ -86,21 +86,36 @@ href: '?cy'
 
 <p>We’ll normally return any documents you have sent us within 4 weeks.
     </p>
+<h3 class="govuk-heading-m">Track your claim application</h3>
 
-  <p>Should you want to see the status of your claim use the link to return to the portal application page</p>
+<p>
+  You can check the status of your claim by using the link that will take you back to the homepage of the claim portal application.
+</p>
 
-    <!--<p>You can see the status of your claim from the <a href="#">portal claim application page</a></p>-->
-    
-    <!--<p>{{ govukBackLink({
+<!-- 
+<p>View the status of your claim using the link to return to the claim portal application homepage</p>
+<p>Should you want to see the status of your claim use the link to return to the portal application page</p>
+<p>You can see the status of your claim from the <a href="#">portal claim application page</a></p>
+
+<p>{{ govukBackLink({
       classes: "govuk-link",
       text: "Return to portal",
       href: "javascript:window.history.back()"
     }) }}
-  </p>
--->
-<p>
-<a href="#" class="govuk-link">Return to portal</a>
 </p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Return to your claim application homepage"
+}) }}
+
+-->
+
+<p>
+<a href="#" class="govuk-link">Return to your claim portal application homepage</a>
+</p>
+
   <!--
 <p><a href="#">Return to portal</a></p>
 -->

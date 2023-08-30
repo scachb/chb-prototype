@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Claim Child Benefit Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Claim Child Benefit
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
+
+      <ul class="govuk-prototype-kit-task-list govuk-prototype-kit-task-list__items govuk-!-padding-left-0">
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Your details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag govuk-tag--grey" id="your-details-status">Not started</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="relationship-status">
+                  Relationship details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag govuk-tag--grey" id="relationship-status">Not started</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="child-status">
+                  Child details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag govuk-tag--grey" id="child-status">Not started</strong>
+            </li>
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="payment-status">
+                  Payment details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag govuk-tag--grey" id="payment-status">Not started</strong>
+            </li>
+     
+
+        
+
+        
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}

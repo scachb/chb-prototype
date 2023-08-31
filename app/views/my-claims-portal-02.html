@@ -44,7 +44,7 @@ href: "#"
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column govuk-prototype-kit-common-templates-mainstream-guide-body">
+  <div class="govuk-grid-column-full govuk-prototype-kit-common-templates-mainstream-guide-body">
 
 
 
@@ -75,11 +75,8 @@ href: "#"
         {
           key: {
           html: "<a href='#'>Jon Doe</a>
-          <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023<br>
-          CB-123450</p>
-          <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
-           Continue claim
-          </button>"
+          <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
+          "
           },
           actions: {
             classes: "govuk-!-width-one-half",
@@ -97,6 +94,22 @@ href: "#"
       ]
       
       }) }}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+            html: "<a href='#'>Lonnie Doe</a>
+            <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
+            <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
+             Continue claim
+            </button>"
+            }
+            
+          }
+        ]
+        
+        }) }}
   
    
 
@@ -110,8 +123,7 @@ href: "#"
       {
         key: {
         html: "<a href='#'>Sara Doe</a>
-        <p class='govuk-!-font-weight-regular'>Date of birth 12/01/2020<br>
-        CB-123451</p>
+        <p class='govuk-!-font-weight-regular'>Date of birth 12/01/2020</p>
         <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
          View claim summary
         </button> <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>

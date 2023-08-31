@@ -133,10 +133,39 @@ href: "#"
     
     }) }}
 
-</div>
-   
+    
+<h3 class="govuk-heading-m">
+    Make a new claim
+</h3>
+<p>Use this service to make a new claim for Child Benefit.</p>
 
-  </div>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+  text: "Begin new claim",
+  href: "/start",
+  isStartButton: true
+  }) }}
+
+  <h3 class="govuk-heading-m" id="subsection-title">
+    Online
+  </h3>
+  <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a>
+  </p>
+  <p>
+    Ask HMRC’s digital assistant to find information about:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>claiming Child Benefit</li>
+    <li>the High Income Child Benefit Tax Charge</li>
+    <li>any change of circumstances for you or your child which may affect your claim</li>
+  </ul>
+    </div>
+    
+</div>
+
+
 <!--
   <div class="govuk-grid-column-one-third">
 

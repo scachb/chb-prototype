@@ -1,0 +1,33 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% block stylesheets %}
+  <link href="/public/css/location-autocomplete.min.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK country and territory autocomplete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    GOV.UK country and territory autocomplete
+  </h1>
+  <select id="location-autocomplete">
+    <option value="territory:AE-AZ">Abu Dhabi</option>
+    <option value="country:AF">Afghanistan</option>
+    
+  </select>
+
+  {% block pageScripts %}
+
+  <script type="text/javascript" src="/public/javascripts/location-autocomplete.min.js"></script>
+  <script type="text/javascript">
+    openregisterLocationPicker({
+      selectElement: document.getElementById('location-autocomplete'),
+      url: '/public/javascripts/location-autocomplete-graph.json'
+    })
+  </script>
+  {% endblock %}
+  
+{% endblock %}

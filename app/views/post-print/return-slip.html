@@ -20,35 +20,161 @@
       <h1 class="govuk-heading-xl">Claim Child Benefit for one or more children (CH2)</h1>
       <h2 class="govuk-heading-l">Declaration</h2>
 
-      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
-{{ govukSummaryList({
-  classes: 'govuk-summary-list--no-border',
-  rows: [
-    {
-      key: {
-        text: "National Insurance number"
-      },
-      value: {
-        text: ""
-      }
-    },
-    {
-      key: {
-        text: "Full name"
-      },
-      value: {
-        text: ""
-      }
-    }
-   
-  ]
-}) }}
 
 
-      </p>
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      National Insurance number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      AB12345C
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Full name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Damian Smithh
+    </dd>
+  </div>
+  
+</dl>
+<p class="govuk-body-l">How many original birth certificates, adoption certificates, passports and or travel documents are you sending to HMRC?</p>
+
+<p>You need to post:
+<ul class="govuk-list govuk-list--bullet">
+  <li>child birth certificate</li>
+  <li>child passport or travel documents used to enter the UK</li>
+</ul>
+
+</p>
+
+<p>If you do not send the documents we need with this form, a decision on your claim could be delayed. 
+</p>
+
+<p>We cannot accept photocopies of the original documents.</p>
+<p>We expect to return your documents within four weeks.</p>
+
+
+  <div class="govuk-form-group govuk-!-margin-top-8">
+    <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+      <label class="govuk-label govuk-!-display-inline-block" for="birth-certificates">
+        Birth certificate(s)
+      </label>
+    </div>
+      <div class="govuk-grid-column-one-half">
+      <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+    </div>
+   </div>
+   <div class="govuk-form-group">
+    <div class="govuk-grid-column-one-half govuk-!-padding-left-0"><label class="govuk-label govuk-!-display-inline-block" for="adoption-certificates">
+          Adoption certificates
+        </label>
+        </div>
+        <div class="govuk-grid-column-one-half">
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+          <label class="govuk-label govuk-!-display-inline-block" for="passports">
+            Passports
+          </label>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+        </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+            <label class="govuk-label govuk-!-display-inline-block" for="travel-documents">
+              Travel documents
+            </label>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+          </div>
+        </div>
+
+          <div class="govuk-form-group">
+            <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+              <label class="govuk-label govuk-!-display-inline-block" for="other-documents">
+                Other documents
+              </label>
+              </div>
+              <div class="govuk-grid-column-one-half">
+              <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+            </div>
+            </div>
+    
+            
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+
+      <h2 class="govuk-heading-l">Declaration</h2>
+
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="declaration">
+          <label class="govuk-label govuk-checkboxes__label" for="declaration">
+            I am sending the birth certificates or other documents you need with this form. I understand if I do not send the documents you need with this claim form, a decision on my claim will be delayed. I am not sending photocopies. 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="declaration">
+          <label class="govuk-label govuk-checkboxes__label" for="declaration">
+            I declare that the information I've given on this form is correct and complete. If I give information which I know is not correct or complete, you may take action against me. I'll tell you about changes to my circumstances when they happen, and understand I could be overpaid and may have to pay money back if I do not.
+          </label>
+        </div>
+        </div>
+
+        <div class="govuk-form-group govuk-!-margin-top-8">
+          <label class="govuk-label govuk-!-font-weight-bold" for="signature-name">
+            Signature
+          </label>
+          <input class="govuk-input govuk-!-width-two-third" id="signature-name" name="signatureName" type="text">
+        </div>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="dates">
+           Date
+          </label>
+            <div class="govuk-date-input" id="date-day">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+        
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+        <p class="govuk-body-l  govuk-!-font-weight-bold">For offical use only</p>
     </div>
   </div>
 

@@ -170,7 +170,7 @@
                   <label class="govuk-label govuk-date-input__label" for="date-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" inputmode="numeric">
+                  <input readonly="readonly"  tabindex="-1" onfocus="this.blur();" class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@
           <label class="govuk-label govuk-!-font-weight-bold" for="signature-name">
             Date claim received
           </label>
-          <textarea class="govuk-textarea" id="signature" name="signatureName" rows="5" aria-describedby="signatureName"></textarea>
+          <textarea class="govuk-textarea" disabled aria-disabled="" id="signature" name="signatureName" rows="5" aria-describedby="signatureName"></textarea>
           
         </div>
         

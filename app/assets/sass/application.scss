@@ -14,3 +14,10 @@
 .govuk-summary-list__key {
       width: 50%;
     }
+
+
+    input[type="text"][disabled] {
+      border-color: #0b0c0c;
+      color: #0b0c0c;
+      opacity: 0.85 !important;
+   }

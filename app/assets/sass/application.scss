@@ -6,18 +6,110 @@
 // Add extra styles here
 
 .govuk-header nav {
-    display: inline-block;
-    float: right;
+  display: inline-block;
+  float: right;
 }
 
 
 .govuk-summary-list__key {
-      width: 50%;
-    }
+  width: 50%;
+}
 
 
-    input[type="text"][disabled] {
-      border-color: #0b0c0c;
-      color: #0b0c0c;
-      opacity: 0.85 !important;
-   }
+input[type="text"][disabled] {
+  border-color: #0b0c0c;
+  color: #0b0c0c;
+  opacity: 0.85 !important;
+}
+
+
+.gem-c-organisation-logo__container {
+  text-transform: none;
+  color: #0b0c0c;
+  direction: ltr;
+}
+
+.gem-c-organisation-logo__name {
+  font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.gem-c-layout-for-public {
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-organisation-logo {
+    font-size: 28px;
+  }
+}
+
+.gem-c-organisation-logo {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.brand--hm-revenue-customs.brand__border-color,
+.brand--hm-revenue-customs .brand__border-color {
+  border-color: #009390;
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-organisation-logo__crest {
+    padding-top: 28px;
+    padding-left: 7px;
+  }
+}
+
+
+.gem-c-organisation-logo__container {
+  text-transform: none;
+  text-decoration: none;
+  display: block;
+  color: #0b0c0c;
+  height: auto;
+  width: auto;
+  direction: ltr;
+}
+
+.gem-c-organisation-logo__crest {
+  border-left: 2px solid #0b0c0c;
+  border-left-color: rgb(11, 12, 12);
+  padding-top: 23px;
+  padding-left: 6px;
+}
+
+.gem-c-organisation-logo__crest--hmrc {
+  background: url(/assets/collections/govuk_publishing_components/crests/hmrc_crest_13px-c274a1f1e353d16b9b99609f152b2c617415b39f0f865e446067dcf81b2d8e5b.png) no-repeat 5px 0;
+  background-size: auto 20px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .gem-c-organisation-logo__crest--hmrc {
+    background-image: url(/assets/collections/govuk_publishing_components/crests/hmrc_crest_13px_x2-a2dc3225aaf90ba820f7e0fc962ed5640ee79e8acc2c3d17d82c175d27dc4bfa.png);
+  }
+}
+
+@media only screen and (min-width: 40.0625em) and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-width: 40.0625em) and (min-resolution: 192dpi),
+only screen and (min-width: 40.0625em) and (min-resolution: 2dppx) {
+  .gem-c-organisation-logo__crest--hmrc {
+    background-image: url(/assets/collections/govuk_publishing_components/crests/hmrc_crest_18px_x2-6a2f884828f9f582c0ad880cd4a52d655a7cd7d74af9e309bc9f1b519a8cbe0f.png);
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-organisation-logo__crest--hmrc {
+    background: url(/assets/collections/govuk_publishing_components/crests/hmrc_crest_18px-4dff2a3f6e066da353da9f0a9903ed46360cb5b7769dacc4018aaaeaa84f3d4f.png) no-repeat 6px 0;
+    background-image: url("/assets/collections/govuk_publishing_components/crests/hmrc_crest_18px-4dff2a3f6e066da353da9f0a9903ed46360cb5b7769dacc4018aaaeaa84f3d4f.png");
+    background-size: auto;
+    background-size: auto 26px;
+  }
+}
+
+.govuk-align-right {
+  text-align: right;
+}

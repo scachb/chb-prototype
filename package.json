@@ -11,6 +11,6 @@
     "govuk-country-and-territory-autocomplete": "^1.0.2",
     "govuk-frontend": "4.7.0",
     "govuk-prototype-kit": "13.13.1",
-    "hmrc-frontend": "5.46.0"
+    "hmrc-frontend": "5.49.0"
   }
 }

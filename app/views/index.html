@@ -59,7 +59,22 @@
       
       </p>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+      
+      <h3 class="govuk-heading-l">Service unavailable</h3>
+      <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
+      <p>When the NPS service is called we need to prevent the claim being processed. </p>
+      <p>
+        {{govukTag({
+        text: "New",
+        classes: "govuk-tag--blue"
+        })}}
+         <a href="service-unavailable-page/nps-service-unavailable">Service unavailable</a>
+      </p>
+      
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
       
       <h3 class="govuk-heading-l">View the digital version of the claim form</h3>

@@ -16,7 +16,7 @@ Have you ever been known by any other last name or family name including your ma
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="your-date-of-birth" method="post">
+      <form class="form" action="other-name" method="post">
 
         <p>
      
@@ -25,10 +25,10 @@ Have you ever been known by any other last name or family name including your ma
 
           {{ govukRadios({
             classes: "govuk-radios--inline",
-            name: "changed-name",
+            name: "known-name",
             fieldset: {
               legend: {
-                text: "Have you ever been known by any other last name or family name including your maiden name?",
+                text: "Have you ever been known by any other last names or family names including your maiden name?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -36,17 +36,17 @@ Have you ever been known by any other last name or family name including your ma
            
             items: [
               {
-                value: "yes",
+                value: "Yes",
                 text: "Yes"
               },
               {
-                value: "no",
+                value: "No",
                 text: "No"
               }
             ]
           }) }}
         </p>
-
+ 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
             Continue

@@ -319,8 +319,9 @@
         
 
 {{ govukSelect({
-  id: "choose",
-  name: "choose",
+  id: "nationality-data",
+  name: "nationality-data",
+  value: data['nationality-data'],
   label: {
     text: "Choose your nationality"
   },
@@ -336,6 +337,10 @@
     {
       value: "Afghan",
       text: "Afghan"
+    },
+    {
+      value: "British",
+      text: "British"
     }
    ]
 
@@ -343,7 +348,8 @@
  }}
  
  {{ govukRadios({
-  name: "confirm-address",
+  name: "nationality-another",
+  value: data['nationality-another'],
   classes: "govuk-radios--inline",
   fieldset: {
     legend: {
@@ -352,11 +358,11 @@
   },
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes"
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
   ]

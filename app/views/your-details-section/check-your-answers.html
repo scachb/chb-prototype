@@ -18,7 +18,8 @@
       <h1 class="govuk-heading-xl">
         Check your answers for your details
       </h1>
-
+<p>{{ data['nino-data'] }}</p>
+<h2 class="govuk-heading-m">Personal details</h2>
       {{ govukSummaryList({
         rows: [
           {
@@ -26,12 +27,12 @@
               text: "National Insurance number"
             },
             value: {
-              text: "Answer 1"
+              text: data['nino-data']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/national-insurance?nino-data=WE896405D",
                   text: "Change",
                   visuallyHiddenText: "Question 1"
                 }
@@ -44,12 +45,12 @@
               text: "Is this name correct?"
             },
             value: {
-              text: "Answer 2"
+              text: data['changed-name']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/your-name-details?changed-name=Yes",
                   text: "Change",
                   visuallyHiddenText: "Question 2"
                 }
@@ -61,14 +62,31 @@
               text: "Have you ever been known by any other last names or family names including your maiden name"
             },
             value: {
-              text: "Answer 3"
+              text: data['known-name']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/known-by-any-other-name?known-name",
                   text: "Change",
-                  visuallyHiddenText: "Question 3"
+                  visuallyHiddenText: "known by any other last names"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Tell us the other name"
+            },
+            value: {
+              text: data['other-last-names']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/other-name?other-last-names",
+                  text: "Change",
+                  visuallyHiddenText: "other last names"
                 }
               ]
             }
@@ -78,14 +96,14 @@
               text: "Date of birth"
             },
             value: {
-              text: "Answer"
+              text: data['dateOfBirth'] | join('/') 
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/your-date-of-birth?dateOfBirth",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "date of birth"
                 }
               ]
             }
@@ -96,14 +114,14 @@
               text: "Is this address correct?"
             },
             value: {
-              text: "Answer"
+              text: data['confirm-address']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/your-address?confirm-address=Yes",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "address"
                 }
               ]
             }
@@ -113,14 +131,14 @@
               text: "Have you lived at this address for more than 12 months?"
             },
             value: {
-              text: "Answer"
+              text: data['address-over-year']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/address-12-months?address-over-year=Yes",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "if you have lived at this address for more than 12 months"
                 }
               ]
             }
@@ -130,12 +148,12 @@
               text: "Phone Number"
             },
             value: {
-              text: "Answer"
+              text: data['tel-number']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/your-telephone-nummber?tel-number=07700 900 982",
                   text: "Change",
                   visuallyHiddenText: "Question"
                 }
@@ -147,14 +165,14 @@
               text: "Nationality"
             },
             value: {
-              text: "Answer"
+              text: data['nationality-data']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/nationality?nationality-data=Yes",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "another nationality"
                 }
               ]
             }
@@ -164,14 +182,14 @@
               text: "Do you have another nationality?"
             },
             value: {
-              text: "Answer"
+              text: data['nationality-another'] 
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/nationality?nationality-another=No",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "another nationality"
                 }
               ]
             }
@@ -181,14 +199,14 @@
               text: "Where have you lived?"
             },
             value: {
-              text: "Answer"
+              text: data['lived-address-data'] 
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/where-have-you-lived?lived-address-data=Yes",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "where have you lived"
                 }
               ]
             }

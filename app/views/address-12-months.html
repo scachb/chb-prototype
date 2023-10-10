@@ -22,8 +22,9 @@ Have you lived at this address for more than 12 months? â€“ {{ serviceName }} â€
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "confirm-address",
+  name: "address-over-year",
   classes: "govuk-radios--inline",
+  value: data['address-over-year'],
   fieldset: {
     legend: {
       text: "Have you lived at this address for more than 12 months?",
@@ -33,11 +34,11 @@ Have you lived at this address for more than 12 months? â€“ {{ serviceName }} â€
   },
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes"
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
   ]

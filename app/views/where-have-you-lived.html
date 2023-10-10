@@ -20,8 +20,8 @@ Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
       <form class="form" action="your-details-section/check-your-answers" method="post">
 
       {{ govukRadios({
-        name: "lived-address",
-        
+        name: "lived-address-data",
+        value: data['lived-address-data'],
         fieldset: {
           legend: {
             text: "Where have you lived?",
@@ -34,16 +34,16 @@ Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
         },
         items: [
           {
-            value: "yes",
+            value: "Always lived in the UK",
             text: "Always lived in the UK"
           },
           {
-            value: "no",
+            value: "No - Lived in the UK and abroad",
             text: "Lived in the UK and abroad"
           }
           ,
           {
-            value: "no",
+            value: "No - never lived in the UK",
             text: "Never lived in the UK"
           }
         ]

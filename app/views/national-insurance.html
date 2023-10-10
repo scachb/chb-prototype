@@ -19,7 +19,12 @@
 
       <form class="form" action="/your-name-details" method="post">
 
-        <p class="govuk-body govuk-!-font-weight-bold">AB123456</p>
+        <!--<p class="govuk-body govuk-!-font-weight-bold" >WE896405D</p>-->
+
+        {{ govukInput({
+          name: 'nino-data',
+          value: data['nino-data']
+      }) }}
 
 
          <div class="govuk-button-group">

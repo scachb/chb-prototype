@@ -18,7 +18,11 @@
       <h1 class="govuk-heading-xl">
         Check your answers for your details
       </h1>
-<p>{{ data['nino-data'] }}</p>
+
+      <!-- 
+        Pass data: <p>{{ data['nino-data'] }}</p>
+      Log data collected: {{ data | log }} -->
+
 <h2 class="govuk-heading-m">Personal details</h2>
       {{ govukSummaryList({
         rows: [

@@ -18,3 +18,14 @@ router.post('change-child-answer', function(request, response) {
     }
    
 })
+
+
+router.post('/other-name', function(request, response) {
+
+    var knownName = request.session.data['known-name']
+    if (knownName == "Yes"){
+        response.redirect("/other-name")
+    } else {
+        response.redirect("/your-date-of-birth")
+    }
+})

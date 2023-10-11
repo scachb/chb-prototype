@@ -5921,11 +5921,7 @@
                                                     margin: 0 15px;
                                                 }
 
-                                                @supports (-ms-accelerator:true) {
-                                                    .hmrc-internal-header {
-                                                        padding-bottom: 0 !important;
-                                                    }
-                                                }
+                                                
 
                                                 .hmrc-internal-header .govuk-grid-column-one-third {
                                                     margin-left: -15px !important;
@@ -5944,7 +5940,14 @@
 
 
                                                 }
-
+                                            }
+                                            @supports (-ms-accelerator:true) {
+                                                @media print {
+                                                    .hmrc-internal-header {
+                                                        padding-bottom: 0 !important;
+                                                    }
+                                                }
+                                                    
                                             }
                                         </style>
                                     </div>

@@ -5930,7 +5930,7 @@
                                                     padding-top: 0 !important;
                                                     margin: 0 15px;
                                                 }
-                                                
+
                                                 .hmrc-internal-header .govuk-grid-column-one-third {
                                                     margin-left: -15px !important;
                                                 }
@@ -5947,10 +5947,11 @@
                                                     border: 0 solid #0b0c0c;
                                                 }
 
-                                                /* Hide the warning icon */
+                                                /* Hide the warning icon 
                                                 .govuk-warning-text__icon {
                                                     display: none;
                                                 }
+                                                */
 
                                                 /* Reset the font-size */
                                                 .govuk-list,
@@ -5959,19 +5960,26 @@
                                                 .govuk-hint {
                                                     font-size: 16px !important;
                                                 }
-                                                
+
                                                 /* Reset the color */
                                                 .govuk-hint {
                                                     color: #0b0c0c;
                                                 }
                                             }
+
+                                            @-moz-document url-prefix() {
+                                                .hmrc-internal-header {
+                                                    padding-top: 60pt !important;
+                                                }
+                                            }
+
                                             @supports (-ms-ime-align:auto) {
                                                 @media print {
                                                     .hmrc-internal-header {
                                                         padding-bottom: 0 !important;
                                                     }
                                                 }
-                                                    
+
                                             }
                                         </style>
                                     </div>

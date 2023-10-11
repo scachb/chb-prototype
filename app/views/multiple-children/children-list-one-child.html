@@ -16,9 +16,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+
       <h1 class="govuk-heading-l">
         Children added
       </h1>
+
+      <!--<p class="govuk-body">
+        There must be at least one child on the claim. Please amend the child's details instead.
+      </p>-->
 
       <form class="form" action="../multiple-children/your-net-income" method="post">
 
@@ -36,7 +42,7 @@
       items: [
         {
           href: "../multiple-children/remove-child",
-          text: "Remove",
+          text: "",
           visuallyHiddenText: "child 1"
         },
         {
@@ -67,53 +73,14 @@
   ]
 }) }}
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Child 2"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Remove",
-          visuallyHiddenText: "child 2"
-        },
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "child 2"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "First name"
-      },
-      value: {
-        html: "Dean"
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01/03/2023"
-      }
-    }
-  ]
-}) }}
-
-<!-- {{ govukButton({
+ {{ govukButton({
   text: "Add another child",
   classes: "govuk-button--secondary"
 }) }}
--->
 
+<!--
 <p><a class="govuk-link" href="#">Add another child</a></p>  
+-->
 
         </p>
 

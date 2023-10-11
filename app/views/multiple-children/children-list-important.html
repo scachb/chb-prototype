@@ -16,6 +16,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    There must be at least one child on the claim. <a class="govuk-notification-banner__link" href="#">Please amend this child's details</a> instead.
+   
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
       <h1 class="govuk-heading-l">
         Children added
       </h1>
@@ -67,53 +80,14 @@
   ]
 }) }}
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Child 2"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Remove",
-          visuallyHiddenText: "child 2"
-        },
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "child 2"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "First name"
-      },
-      value: {
-        html: "Dean"
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01/03/2023"
-      }
-    }
-  ]
-}) }}
-
-<!-- {{ govukButton({
+ {{ govukButton({
   text: "Add another child",
   classes: "govuk-button--secondary"
 }) }}
--->
 
+<!--
 <p><a class="govuk-link" href="#">Add another child</a></p>  
+-->
 
         </p>
 

@@ -5965,18 +5965,15 @@
                                                 .govuk-hint {
                                                     color: #0b0c0c;
                                                 }
+
+                                                @supports (-moz-appearance:none) {
+                                                .hmrc-internal-header {
+                                                        padding-bottom: 60pt !important;
+                                                    }
+                                                } 
                                             }
 
-                                            @-moz-document url-prefix() {
-                                                .hmrc-internal-header {
-                                                    padding-bottom: 60pt !important;
-                                                }
-                                            }
-                                            @supports (-moz-appearance:none) {
-                                                .hmrc-internal-header {
-                                                    padding-bottom: 60pt !important;
-                                                }
-                                            } 
+                                            
 
                                             @supports (-ms-ime-align:auto) {
                                                 @media print {

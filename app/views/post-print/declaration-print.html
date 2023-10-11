@@ -5871,6 +5871,7 @@
 
                                             @media print {
 
+                                                /* Reset the margins */
                                                 .govuk-grid-row {
                                                     margin-left: 0 !important;
                                                     margin-right: 0 !important;
@@ -5891,7 +5892,8 @@
                                                     margin-left: 15px !important;
                                                 }
 
-                                                .hmrc-internal-header__service-name .govuk-heading-l {
+                                                .hmrc-internal-header__service-name .govuk-heading-l,
+                                                h2.govuk-heading-l:first-of-type {
                                                     margin-left: 0 !important;
                                                 }
 
@@ -5928,9 +5930,7 @@
                                                     padding-top: 0 !important;
                                                     margin: 0 15px;
                                                 }
-
                                                 
-
                                                 .hmrc-internal-header .govuk-grid-column-one-third {
                                                     margin-left: -15px !important;
                                                 }
@@ -5945,8 +5945,24 @@
                                                 header.hmrc-internal-header .govuk-grid-column-two-thirds {
                                                     padding-right: 0 !important;
                                                     border: 0 solid #0b0c0c;
+                                                }
 
+                                                /* Hide the warning icon */
+                                                .govuk-warning-text__icon {
+                                                    display: none;
+                                                }
 
+                                                /* Reset the font-size */
+                                                .govuk-list,
+                                                .govuk-warning-text__text,
+                                                .govuk-label,
+                                                .govuk-hint {
+                                                    font-size: 16px !important;
+                                                }
+                                                
+                                                /* Reset the color */
+                                                .govuk-hint {
+                                                    color: #0b0c0c;
                                                 }
                                             }
                                             @supports (-ms-ime-align:auto) {

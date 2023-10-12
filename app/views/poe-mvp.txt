@@ -1,0 +1,285 @@
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+          
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="complete" method="get" class="form">
+
+
+<span class="govuk-caption-xl ">Liz Jones</span>
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+          View your proof of entitlement to Child Benefit
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            <div class="print-this govuk-!-margin-bottom-6 govuk-!-display-none-print">
+              <img class="print-this__icon" alt="">
+              <a class="print-this__link" href="javascript:window.print()">Print this page</a>
+            </div>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <!--
+          <div class="view-this">
+            <img class="view-this__icon" align="top">
+            <a class="view-this__link" href="/public/images/Test84TS.pdf">View your entitlement letter from HMRC</a> 
+          </div> 
+          -->
+        </div>
+      </div>
+
+
+
+
+
+<p>This is confirmation from HMRC of the Child Benefit entitlement for Liz Jones on 25 July 2022.</p>
+
+
+
+<p class="govuk-body">Child Benefit is paid at:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>£21.80 for the eldest or only child</li>
+  <li>£14.45 for each additional child</li>
+</ul>
+
+
+   
+ <h2 class="govuk-heading-m">Claimant’s entitlement details</h2>
+
+<p class="govuk-!-display-none-print">If your address or any names are incorrect, you can <a href="">tell us about changes to your circumstances</a> or about <a href="">your child’s or children’s circumstances</a> and we’ll update them for you.</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Liz Jones
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Flat 3 <br>
+              75 Norten Grove <br>
+              Manchester <br>
+              M20 2JL
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £50.70 per week
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              On or before 22 February 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 September 2038
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+        </dl>
+
+
+        <h2 class="govuk-heading-m">Child Benefit award details for Ben William Jones</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4 February 2006
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt><dd class="govuk-summary-list__value">
+              On or before 22 February 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 August 2023
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+
+
+ <h2 class="govuk-heading-m">Child Benefit award details for Billy Jones</h2>
+       
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12 May 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt><dd class="govuk-summary-list__value">
+              14 June 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End date
+            </dt>
+            <dd class="govuk-summary-list__value">
+             31 August 2037
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+ <h2 class="govuk-heading-m">Child Benefit award details for Jenny Jones</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12 May 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt><dd class="govuk-summary-list__value">
+              14 June 2021
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 August 2037
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Child Benefit award details for Jane Jones-Smith</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              16 May 2022 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date
+            </dt><dd class="govuk-summary-list__value">
+              16 May 2022 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              End date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 September 2038
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+        </dl>
+
+       
+
+
+
+
+      </form>
+    </div>
+
+
+    </div>
+
+
+        </main>

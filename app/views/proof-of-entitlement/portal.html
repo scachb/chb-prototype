@@ -1,0 +1,262 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  My portal
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Personal tax account home",
+href: "#"
+},
+{
+text: "Your portal",
+href: "#"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+<!--
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    We saved your progress. We'll store your information for 28 days.
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Your claim applications
+      </h1>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+      <p>
+        This page shows two groups, claims that are in progress and claims that have already been submitted
+      </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+      
+    <h2 class="govuk-heading-m">
+      Child Benefit claims in progress
+    </h2>
+      
+    {{ govukSummaryList({
+      classes: "govuk-summary-list--no-border govuk-!-margin-bottom-0",
+      rows: [
+        {
+          key: {
+          text: "Jon Doe"
+          },
+          value: {
+            text: "",
+            visuallyHiddenText: "Child claim in progress"
+          },
+          actions: {
+            items: [
+              
+              {
+                href: "#",
+                text: "Continue claim",
+                visuallyHiddenText: "for child"
+              }
+            ]
+          }          
+        }
+      ]
+      
+      }) }}
+
+      {{ govukSummaryList({
+        classes: "govuk-summary-list--no-border govuk-!-margin-bottom-0 govuk-!-display-inline-block",
+        rows: [
+          {
+            key: {
+            text: "Date of birth"
+            },
+            value: {
+              text: "10/10/2023"
+            }
+            
+          }
+        ]
+        
+        }) }}
+
+        {{ govukSummaryList({
+          classes: "govuk-summary-list--no-border govuk-!-padding-bottom-0 govuk-!-display-inline-block",
+          rows: [
+            {
+              key: {
+              text: "Created date"
+              },
+              value: {
+                text: "11/10/2023"
+              }
+              
+            }
+          ]
+          
+          }) }}
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-top-0" aria-hidden="true">
+      
+        <h2 class="govuk-heading-m">
+          Child Benefit claims submitted
+        </h2>
+          
+        {{ govukSummaryList({
+          classes: "govuk-summary-list--no-border govuk-!-margin-bottom-0",
+          rows: [
+            {
+              key: {
+              text: "Sara Doe"
+              },
+              value: {
+                text: "",
+                visuallyHiddenText: "Child claim submitted"
+              },
+              actions: {
+                items: [
+                  
+                  {
+                    href: "#",
+                    text: "View claim",
+                    visuallyHiddenText: "for child"
+                  }
+                ]
+              }          
+            }
+          ]
+          
+          }) }}
+    
+          {{ govukSummaryList({
+            classes: "govuk-summary-list--no-border govuk-!-margin-bottom-0 govuk-!-display-inline-block",
+            rows: [
+              {
+                key: {
+                text: "Date of birth"
+                },
+                value: {
+                  text: "01/05/2021"
+                }
+                
+              }
+            ]
+            
+            }) }}
+    
+            {{ govukSummaryList({
+              classes: "govuk-summary-list--no-border govuk-!-padding-bottom-0 govuk-!-display-inline-block",
+              rows: [
+                {
+                  key: {
+                  text: "Created date"
+                  },
+                  value: {
+                    text: "02/05/2021"
+                  }
+                  
+                }
+              ]
+              
+              }) }}
+
+              <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-top-0" aria-hidden="true">
+        
+              <h3 class="govuk-heading-m">
+                Make a new claim
+            </h3>
+            <p>Use this service to make a new claim for Child Benefit.</p>
+            
+            
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+            
+              {{ govukButton({
+              text: "Begin new claim",
+              href: "/start",
+              isStartButton: true
+              }) }}
+            
+              <h3 class="govuk-heading-m" id="subsection-title">
+                Online
+              </h3>
+              <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a>
+              </p>
+              <p>
+                Ask HMRC’s digital assistant to find information about:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>claiming Child Benefit</li>
+                <li>the High Income Child Benefit Tax Charge</li>
+                <li>any change of circumstances for you or your child which may affect your claim</li>
+              </ul>
+
+              <a lang="en" hreflang="en" class="govuk-link hmrc-report-technical-issue " target="_blank" href="#">Is this page not working properly? (opens in new tab)</a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-18">
+            <li>
+              <a href="#">
+                View proof of entitlement <span class="govuk-visually-hidden">for child name</span>
+                <!-- PRINT <p>
+                  <a href="#">
+                    View a printable version of the whole guide
+                  </a>
+                </p>-->
+              </a>
+            </li>
+            
+           
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+  
+
+{% endblock %}
+

@@ -1,0 +1,140 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Proof of entitlement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">Child Benefit</span>
+        <h1 class="govuk-heading-l">
+          Proof of entitlement
+        </h1>
+
+        <p>This is confirmation from HMRC of the Child Benefit entitlement for Sarah Doe on 16 Oct 2023. </p>
+
+        <p>Child Benefit is paid at:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>£24.00 for the eldest or only child</li>
+            <li>£15.90 for each additional child</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Claimants entitlement details</h2>
+        <p>If your address or any names are incorrect, you can tell us about changes to your circumstances or child's or child's circumstances, and we will update them for you. </p>
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Doe"
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      }
+    },
+    {
+      key: {
+        text: "Amount"
+      },
+      value: {
+        html: '£24.00 per week'
+      }
+    },
+    {
+        key: {
+          text: "Start date"
+        },
+        value: {
+          html: '18 June 2023'
+        }
+      },
+      {
+          key: {
+            text: "End date"
+          },
+          value: {
+            html: '18 June 2036'
+          }
+        }
+        
+  ]
+}) }}
+
+
+<h2 class="govuk-heading-m">Child Benefit award details for Jon Doe</h2>
+       
+{{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Date of birth"
+        },
+        value: {
+          text: "18 June 2023"
+        }
+      },      
+      {
+          key: {
+            text: "Start date"
+          },
+          value: {
+            html: '19 June 2023'
+          }
+        },
+        {
+            key: {
+              text: "End date"
+            },
+            value: {
+              html: '19 June 2036'
+            }
+          }
+          
+    ]
+  }) }}
+
+
+  <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" onclick="window.print();return false;">
+        Print the proof of entitlement
+    </button>
+   
+    
+  </div>
+<!-- Print link <p>
+    <a href="#">
+      View a printable version of the proof of entitlement
+    </a>
+  </p>
+  -->
+  
+
+  <p><a href="portal">
+    Return to the portal
+  </a>
+  </p>
+    </div>
+  </div>
+
+{% endblock %}

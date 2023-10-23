@@ -152,7 +152,7 @@
         </a>
       </p>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
       <h3 class="govuk-heading-l">Multiple children</h3>
 
@@ -201,19 +201,18 @@
           Summary cards for multiple children
           </a></p>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
       <h3 class="govuk-heading-l">Born abroad or adoption declaration and Confirmation page</h3>
       <p><a href="declaration/born-abroad/">Declaration</a></p>
       <p><a href="declaration/confirmation.html">Confirmation</a></p>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
       <h3 class="govuk-heading-l">Service unavailable</h3>
       <p><a href="/service-unavailable-page/index.html">Child Benefit service unavailable page</a></p>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
       <h3 class="govuk-heading-l">Sign out</h3>
       <p>{{govukTag({
@@ -221,17 +220,43 @@
         classes: "govuk-tag--blue"
         })}} <a href="modal-dialog.html">Sign out modal dialog</a></p>
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
       <h3 class="govuk-heading-l">My claims portal</h3>
 
       <p class="govuk-body">This page will show the claims in progress and submitted claims. We need to consider the 14
         day SLA for submitted claims.</p>
+
+
+      <!-- <p>{{govukTag({
+          text: "New",
+          classes: "govuk-tag--blue"
+          })}} <a href="my-claims-portal-28-days-warning">Claims portal - 28 days content</a></p>
+        --> 
+
+        <p>{{govukTag({
+          text: "New",
+          classes: "govuk-tag--blue"
+          })}} <a href="multiple-claims-portal">Multiple claims in progress</a></p>
+    
+
+
+      <p>{{govukTag({
+        text: "New",
+        classes: "govuk-tag--blue"
+        })}} <a href="my-claims-portal-28-days-inset">Claims portal - 28 days inset</a></p>
+
+
+      <p>{{govukTag({
+          text: "New",
+          classes: "govuk-tag--blue"
+          })}} <a href="my-claims-portal-28-days-warning">Claims portal - 28 days important warning</a></p>
+  
   
       <p>{{govukTag({
         text: "New",
         classes: "govuk-tag--blue"
-        })}} <a href="my-claims-portal-02.html">Claims portal</a></p>
+        })}} <a href="my-claims-portal-28-days-important">Claims portal - 28 days important notification-banner</a></p>
 
         <p>{{govukTag({
           text: "ARCHIVED",
@@ -247,7 +272,7 @@
   
       
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
   
       <h3 class="govuk-heading-l">Waiting to hear</h3>
@@ -257,7 +282,7 @@
         classes: "govuk-tag--blue"
         })}} <a href="waiting-to-hear.html">Waiting to hear if you are eligible </a></p>
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
   
       <h3 class="govuk-heading-l">Tell us your nationality options</h3>
@@ -267,8 +292,8 @@
       <p><a href="nationality.html">Tell us your nationality example with a select</a></p>
   
       <p><a href="nationality-autocomplete.html">Tell us your nationality example with accessibile autocomplete</a></p>
-  
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
       <h3 class="govuk-heading-l">High income earner options</h3>
   
@@ -283,7 +308,7 @@
       <p><a href="your-net-income.html">Your net income</a></p>
       <p><a href="partner-net-income.html">Partner's net income</a></p>
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
       <h4 class="govuk-heading-m">High income design history iterations</h3>
   
@@ -295,7 +320,7 @@
       <p><a href="hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are you a high
           income earner?)</a></p>
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true"> 
   
       <h3 class="govuk-heading-l">Find an address</h3>
   
@@ -310,7 +335,7 @@
         </a>        
       </p>
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
   
       <h3 class="govuk-heading-l">Bank, building society or universal credit options</h3>
@@ -328,7 +353,7 @@
   
       <p><a href="paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed, separated or divorced</a></p>
   
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   
       <h3 class="govuk-heading-l">Service timeout</h3>
   

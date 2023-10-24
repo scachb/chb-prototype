@@ -113,3 +113,38 @@ only screen and (min-width: 40.0625em) and (min-resolution: 2dppx) {
 .govuk-align-right {
   text-align: right;
 }
+
+.app-back-to-top {
+  margin-top: govuk-spacing(4);
+  margin-bottom: govuk-spacing(6);
+}
+
+@include govuk-media-query($from: tablet) {
+  .app-back-to-top {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+    margin-bottom: govuk-spacing(8);
+  }
+
+  .js-enabled .app-back-to-top--fixed {
+    position: fixed;
+    top: calc(100% - #{govuk-spacing(8)});
+    bottom: auto;
+    left: 50px;
+  }
+
+  .js-enabled .app-back-to-top--hidden .app-back-to-top__link {
+    @include govuk-visually-hidden-focusable;
+  }
+}
+
+.app-back-to-top__icon {
+  display: inline-block;
+  width: .8em;
+  height: 1em;
+  margin-top: -(govuk-spacing(1));
+  margin-right: govuk-spacing(2);
+  vertical-align: middle;
+}

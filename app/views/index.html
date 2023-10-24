@@ -1,4 +1,8 @@
 {% extends "layouts/main.html" %}
+
+
+
+
 {% set mainClasses = "govuk-!-padding-top-1" %}
 
 
@@ -6,448 +10,529 @@
 
 {% block content %}
 
+
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+tag: {
+text: "Prototype"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
 
-  <h1 class="govuk-heading-xl govuk-!-margin-top-6">
-    {{ serviceName }} prototypes
-  </h1>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-top-6">
+      {{ serviceName }} prototypes
+    </h1>
   </div>
-  
-    <!-- {% include "govuk-prototype-kit/includes/homepage-top.njk" %} -->
 
-    <div class="govuk-grid-column-two-thirds">
+  <!-- {% include "govuk-prototype-kit/includes/homepage-top.njk" %} -->
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Sprint 11
-          </span>
-        </summary>
-        <div class="govuk-details__text">
+  <div class="govuk-grid-column-two-thirds">
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Sprint 12
+        </span>
+      </summary>
+      <div class="govuk-details__text">
         <p class="govuk-!-font-weight-bold">Sprint goal</p>
-        <p>Enhance the claimant pages by removing the conditional questions</p>  
+        <p>Enhance the claimant pages by removing the conditional questions</p>
         <p class="govuk-!-font-weight-bold">What changed</p>
         <ul>
-          <li>US-10099 NPS Service not available</li>
-          <li>EPIC-2509 PoE</li>
+          <li><span class="govuk-visually-hidden">EPIC</span>Right To Reside/CIS Checker/Home Office</li>
+          <li><span class="govuk-visually-hidden">US-10885</span>Claimant reveal updates</li>
+          <li><span class="govuk-visually-hidden">US-11186</span>Child reveal updates</li>
+          <li><span class="govuk-visually-hidden">US-11185</span>Partner reveal updates</li>
+          <li><span class="govuk-visually-hidden">US-10233</span>Employment question split</li>
+          <li><span class="govuk-visually-hidden">US-10790</span>Generic 'add up to 3' approach</li>
+          <li><span class="govuk-visually-hidden">US-10829</span>Enhance Nationality Listsh</li>
+          <li><span class="govuk-visually-hidden">US-10861</span>Enhance Country Lists</li>
+          <li><span class="govuk-visually-hidden">US-10943</span>Enhance Partner Questions</li>
+          <li><span class="govuk-visually-hidden">US-11007</span>Credit Union enhancement</li>
+          <li><span class="govuk-visually-hidden">US-10779</span>Personalise Name to question</li>
+          <li><span class="govuk-visually-hidden">US-10611</span>Skip to last question - CYA</li>
+          <li><span class="govuk-visually-hidden">US-10437</span>Remove final CYA</li>
+          <li><span class="govuk-visually-hidden">US-10820</span>Claimant Task List/Progress View</li>
+          <li><a href="#28-days" name="28-days" target="_self"><span
+                class="govuk-visually-hidden">US-11217</span>Archive/remove cases after 28 days</a></li>
         </ul>
         <p class="govuk-!-font-weight-bold">Why it changed</p>
         <ul>
           <li>New buisness features</li>
         </ul>
-        </div>
-      </details>
+      </div>
+    </details>
 
-    
-      <h3 class="govuk-heading-l">End to end</h3>
-      
-    
-        <p>Updated with declaration for adoption and born outside the UK</p>
-        <p>
-          {{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}}<a href="/start">Journey</a>
-        </p>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Sprint 11
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-!-font-weight-bold">Sprint goal</p>
+        <p>Proof of entitlement and payment history</p>
+        <p class="govuk-!-font-weight-bold">What changed</p>
+        <ul>
+          <li><span class="govuk-visually-hidden">EPIC-2509</span>Proof of entitlement</li>
+          <li><span class="govuk-visually-hidden">US-10099</span>NPS Service not available</li>
+          <li><span class="govuk-visually-hidden">US-11245</span>Stripping Letters with special characters</li>
+          <li><span class="govuk-visually-hidden">US-11308</span>Update of Submission Date to Claim Replay</li>
+        </ul>
+        <p class="govuk-!-font-weight-bold">Why it changed</p>
+        <ul>
+          <li>New buisness features</li>
+        </ul>
+      </div>
+    </details>
 
-          <p>
-            {{govukTag({
-              text: "outdated",
-              classes: "govuk-tag--grey govuk-list"
-            })}}
-       
-       <br>     <a class="govuk-link govuk-link" href="public/pdf/SCA-Child-Benefit-Journey.pdf"">
-           
-            Tube map for claimant journey</a>
-        
-        </p>
-        <p>
-         
-          <a class="govuk-link govuk-link" href="public/svg/SCA-Journey-02.svg">
-         
-          Tube map SVG</a>
-      
+    <h3 class="govuk-heading-l">End to end</h3>
+
+
+    <p>Updated with declaration for adoption and born outside the UK</p>
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}<a href="/start">Journey</a>
+    </p>
+
+    <p>
+      {{govukTag({
+      text: "outdated",
+      classes: "govuk-tag--grey govuk-list"
+      })}}
+
+      <br>
+      <a class="govuk-link govuk-link" href="public/pdf/SCA-Child-Benefit-Journey.pdf">
+        Tube map for claimant journey
+      </a>
+    </p>
+    <p>
+      <a class="govuk-link govuk-link" href="public/svg/SCA-Journey-02.svg">
+
+        Tube map SVG</a>
+
+    </p>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Proof of entitlement and payment history</h3>
+    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
+    <p>To allow claimants to view their proof of entitlement and view payment history</p>
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="proof-of-entitlement/portal">Portal with link to view proof of entitlement</a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+
+    <h3 class="govuk-heading-l">Service unavailable</h3>
+    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
+    <p>When the NPS service is called we need to prevent the claim being processed. </p>
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="service-unavailable-page/nps-service-unavailable">Service unavailable</a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">View the digital version of the claim form</h3>
+    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
+    <p>
+      We know some people might have trouble reading a PDF because the text doesn't adjust to fit the screen when the
+      PDF file is enlarged.
+      This means that users may have to scroll horizontally, making it more difficult to read.
+    </p>
+    <p>
+      To make it easier, we offer digital versions of claim form info and other details that are usually shown in a
+      PDF. This includes official use info for claims about children born outside the UK when returning documents.
+    </p>
+
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="post-print/claim-child-benefit-by-post">View claim form</a>
+    </p>
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="post-print/return-slip">View return slip</a>
+    </p>
+
+    <p>
+      {{govukTag({
+      text: "Test",
+      classes: "govuk-tag--purple"
+      })}}
+      <a href="post-print/declaration-print">View declaration (print preview test)</a>
+    </p>
+
+    <p>
+      {{govukTag({
+      text: "Xd",
+      classes: "govuk-tag--pink"
+      })}}
+      <a class="govuk-link govuk-link" href="https://xd.adobe.com/view/afd64ffe-d173-4802-921d-702e06c8c44b-fa85/">
+        Submitted claim view
+      </a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Multiple children</h3>
+
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="../multiple-children/children-list-one-child">
+        Summary card - There must be at least one child on the claim (body copy)</a>
+
+    </p>
+
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="../multiple-children/children-list-important">Summary card - important notification banner example</a>
+
+    </p>
+
+    <p>
+      {{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}}
+      <a href="../multiple-children/add-to-a-list">HMRC design pattern Add to a list example</a>
+
+    </p>
+
+    <p><a href="../multiple-children/index">Journey</a></p>
+
+    <p><a href="public/pdf/SCA-multiple-children.pdf">Tube map</a></p>
+
+    <p>{{govukTag({
+      text: "Xd",
+      classes: "govuk-tag--pink"
+      })}}<a href="https://xd.adobe.com/view/6f71320b-f041-4ec6-a9a0-46a9f8f3f754-3a22/">Tell us about another child</a>
+    </p>
+    <p>
+      {{govukTag({
+      text: "Xd",
+      classes: "govuk-tag--pink"
+      })}}
+      <a href="https://xd.adobe.com/view/0f501f61-52a1-4599-ae59-791eadd5376a-5a03/">
+        Summary cards for multiple children
+      </a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Born abroad or adoption declaration and Confirmation page</h3>
+    <p><a href="declaration/born-abroad/">Declaration</a></p>
+    <p><a href="declaration/confirmation.html">Confirmation</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Service unavailable</h3>
+    <p><a href="/service-unavailable-page/index.html">Child Benefit service unavailable page</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Sign out</h3>
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="modal-dialog.html">Sign out modal dialog</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">My claims portal</h3>
+    <a id="28-days"><span class="govuk-visually-hidden">28-days</span></a>
+
+    <p class="govuk-body">This page will show the claims in progress and submitted claims. We need to consider the 14
+      day SLA for submitted claims.
+    </p>
+
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="multiple-claims-portal">Multiple claims in progress</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="my-claims-portal-28-days-inset">Claims portal - 28 days inset</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="my-claims-portal-28-days-warning">Claims portal - 28 days important warning</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="my-claims-portal-28-days-important">Claims portal - 28 days important notification-banner</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "ARCHIVED",
+      classes: "govuk-tag--grey"
+      })}} <a href="my-claims-portal.html">Claims portal</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "Xd",
+      classes: "govuk-tag--pink"
+      })}} <a href="https://xd.adobe.com/view/0de52437-a50e-40e8-9927-006d5e839eed-58b6/">Claims portal after
+        accessibility audit observations</a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Waiting to hear</h3>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="waiting-to-hear.html">Waiting to hear if you are eligible </a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">Tell us your nationality options</h3>
+
+    <p><a href="nationalities.html">Tell us your nationality example with conditonal radio's </a></p>
+
+    <p><a href="nationality.html">Tell us your nationality example with a select</a></p>
+
+    <p><a href="nationality-autocomplete.html">Tell us your nationality example with accessibile autocomplete</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h3 class="govuk-heading-l">High income earner options</h3>
+
+    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+    {{ govukInsetText({
+    text: "Net income for you and your partner based on your net income. Each answer on your income navigates you to a
+    page with information on the charge and if you want to claim Child Benefit."
+    }) }}
+
+
+    <p><a href="your-net-income.html">Your net income</a></p>
+    <p><a href="partner-net-income.html">Partner's net income</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+    <h4 class="govuk-heading-m">High income design history iterations</h3>
+
+
+      <p><a href="hic.html">Tell us if you're a high income earner - showing body copy, and both questions</a></p>
+
+      <p><a href="hic-one.html">Tell us if you're a high income earner - one-thing-per-page</a></p>
+
+      <p><a href="hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are you a high
+          income earner?)</a>
       </p>
+
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
-      
-      <h3 class="govuk-heading-l">Proof of entitlement and payment history</h3>
-      <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
-      <p>To allow claimants to view their proof of entitlement and view payment history</p>
-      <p>
-        {{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}}
-         <a href="proof-of-entitlement/portal">Portal with link to view proof of entitlement</a>
-      </p>
+      <h3 class="govuk-heading-l">Find an address</h3>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-
-      
-      <h3 class="govuk-heading-l">Service unavailable</h3>
-      <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
-      <p>When the NPS service is called we need to prevent the claim being processed. </p>
-      <p>
-        {{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}}
-         <a href="service-unavailable-page/nps-service-unavailable">Service unavailable</a>
-      </p>
-      
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-
-      
-      <h3 class="govuk-heading-l">View the digital version of the claim form</h3>
-      <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
-      <p>
-        We know some people might have trouble reading a PDF because the text doesn't adjust to fit the screen when the PDF file is enlarged. 
-        This means that users may have to scroll horizontally, making it more difficult to read. 
-      </p>
-      <p>To make it easier, we offer digital versions of claim form info and other details that are usually shown in a PDF. This includes official use info for claims about children born outside the UK when returning documents. </p>
-      
-      <p>
-        {{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}}
-         <a href="post-print/claim-child-benefit-by-post">View claim form</a>
-      </p>
-      <p>
-        {{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}}
-          <a href="post-print/return-slip">View return slip</a>
-      </p>
-
-      <p>
-        {{govukTag({
-          text: "Test",
-          classes: "govuk-tag--purple"
-          })}}
-          <a href="post-print/declaration-print">View declaration (print preview test)</a>
-      </p>
-
+      <p><a href="postcode.html">Enter your postcode</a></p>
       <p>
         {{govukTag({
         text: "Xd",
         classes: "govuk-tag--pink"
         })}}
-        <a class="govuk-link govuk-link" href="https://xd.adobe.com/view/afd64ffe-d173-4802-921d-702e06c8c44b-fa85/">
-          Submitted claim view
+        <a class="govuk-link govuk-link" href="https://xd.adobe.com/view/e471adf7-3c03-4483-830d-c32b532fc9bb-b122/">
+          Address flow
         </a>
       </p>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
-      <h3 class="govuk-heading-l">Multiple children</h3>
-
-      <p>
-        {{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}}
-          <a href="../multiple-children/children-list-one-child">Summary card - There must be at least one child on the claim (body copy)</a>
-
-      </p>
-
-      <p>
-        {{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}}
-          <a href="../multiple-children/children-list-important">Summary card - important notification banner example</a>
-
-      </p>
-
-      <p>
-        {{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}}
-          <a href="../multiple-children/add-to-a-list">HMRC design pattern Add to a list example</a>
-
-      </p>
-
-      
-      <p><a href="../multiple-children/index">Journey</a></p>
-
-      <p><a href="public/pdf/SCA-multiple-children.pdf">Tube map</a></p>
-
-      <p>{{govukTag({
-        text: "Xd",
-        classes: "govuk-tag--pink"
-      })}}<a href="https://xd.adobe.com/view/6f71320b-f041-4ec6-a9a0-46a9f8f3f754-3a22/">Tell us about another child</a></p>
-      <p>
-        {{govukTag({
-          text: "Xd",
-          classes: "govuk-tag--pink"
-        })}}
-        <a href="https://xd.adobe.com/view/0f501f61-52a1-4599-ae59-791eadd5376a-5a03/">
-          Summary cards for multiple children
-          </a></p>
-
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-
-      <h3 class="govuk-heading-l">Born abroad or adoption declaration and Confirmation page</h3>
-      <p><a href="declaration/born-abroad/">Declaration</a></p>
-      <p><a href="declaration/confirmation.html">Confirmation</a></p>
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-
-      <h3 class="govuk-heading-l">Service unavailable</h3>
-      <p><a href="/service-unavailable-page/index.html">Child Benefit service unavailable page</a></p>
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-
-      <h3 class="govuk-heading-l">Sign out</h3>
-      <p>{{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}} <a href="modal-dialog.html">Sign out modal dialog</a></p>
-  
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
-      <h3 class="govuk-heading-l">My claims portal</h3>
-
-      <p class="govuk-body">This page will show the claims in progress and submitted claims. We need to consider the 14
-        day SLA for submitted claims.</p>
-
-
-      <!-- <p>{{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}} <a href="my-claims-portal-28-days-warning">Claims portal - 28 days content</a></p>
-        --> 
-
-        <p>{{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}} <a href="multiple-claims-portal">Multiple claims in progress</a></p>
-    
-
-
-      <p>{{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}} <a href="my-claims-portal-28-days-inset">Claims portal - 28 days inset</a></p>
-
-
-      <p>{{govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-          })}} <a href="my-claims-portal-28-days-warning">Claims portal - 28 days important warning</a></p>
-  
-  
-      <p>{{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}} <a href="my-claims-portal-28-days-important">Claims portal - 28 days important notification-banner</a></p>
-
-        <p>{{govukTag({
-          text: "ARCHIVED",
-          classes: "govuk-tag--grey"
-          })}} <a href="my-claims-portal.html">Claims portal</a></p>
-
-        <p>{{govukTag({
-          text: "Xd",
-          classes: "govuk-tag--pink"
-          })}} <a href="https://xd.adobe.com/view/0de52437-a50e-40e8-9927-006d5e839eed-58b6/">Claims portal after accessibility audit observations</a></p>
-
-        
-  
-      
-  
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
-  
-      <h3 class="govuk-heading-l">Waiting to hear</h3>
-  
-      <p>{{govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-        })}} <a href="waiting-to-hear.html">Waiting to hear if you are eligible </a></p>
-  
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
-  
-      <h3 class="govuk-heading-l">Tell us your nationality options</h3>
-  
-      <p><a href="nationalities.html">Tell us your nationality example with conditonal radio's </a></p>
-  
-      <p><a href="nationality.html">Tell us your nationality example with a select</a></p>
-  
-      <p><a href="nationality-autocomplete.html">Tell us your nationality example with accessibile autocomplete</a></p>
-      
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
-      <h3 class="govuk-heading-l">High income earner options</h3>
-  
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-  
-      {{ govukInsetText({
-      text: "Net income for you and your partner based on your net income. Each answer on your income navigates you to a
-      page with information on the charge and if you want to claim Child Benefit."
-      }) }}
-  
-  
-      <p><a href="your-net-income.html">Your net income</a></p>
-      <p><a href="partner-net-income.html">Partner's net income</a></p>
-  
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
-      <h4 class="govuk-heading-m">High income design history iterations</h3>
-  
-  
-      <p><a href="hic.html">Tell us if you're a high income earner - showing body copy, and both questions</a></p>
-  
-      <p><a href="hic-one.html">Tell us if you're a high income earner - one-thing-per-page</a></p>
-  
-      <p><a href="hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are you a high
-          income earner?)</a></p>
-  
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true"> 
-  
-      <h3 class="govuk-heading-l">Find an address</h3>
-  
-      <p><a href="postcode.html">Enter your postcode</a></p>
-      <p>
-        {{govukTag({
-          text: "Xd",
-          classes: "govuk-tag--pink"
-        })}}
-        <a class="govuk-link govuk-link" href="https://xd.adobe.com/view/e471adf7-3c03-4483-830d-c32b532fc9bb-b122/">
-          Address flow
-        </a>        
-      </p>
-  
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
-  
       <h3 class="govuk-heading-l">Bank, building society or universal credit options</h3>
-  
+
       <p><a href="bank-payment-details.html">What are your payment details?</a></p>
-  
+
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="no-bank-details.html">No - UK bank account or building society</a></li>
         <li><a href="bank-account-holders.html">Who are the account holders</a></li>
         <li><a href="bank-details.html">Bank details</a></li>
         <li><a href="building-society-details.html">Building society details</a></li>
       </ul>
-  
+
       <p><a href="error-bank-details.html">Error summary for the payment details</a></p>
-  
-      <p><a href="paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed, separated or divorced</a></p>
-  
+
+      <p><a href="paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed, separated or
+          divorced</a></p>
+
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-  
+
       <h3 class="govuk-heading-l">Service timeout</h3>
-  
+
       <p><a href="service-timeout.html">When the user is signed in</a></p>
-      
+
       <!-- {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %} -->
-    
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true"
+        data-ga4-link-tracker-module-started="true">
+        <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+        <h3 class="govuk-heading-s" data-track-count="sidebarRelatedItemSection">
+          Beta assessment artefacts
+        </h3>
+
+        <nav role="navigation" class="" aria-labelledby="related-nav-related_items-6f72e62c" data-module="gem-toggle"
+          data-gem-toggle-module-started="true">
+
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li class="">
+              {{govukTag({
+              text: "EXAMPLE",
+              classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
+              })}}
+              <a class="govuk-link govuk-link" href="govuk-country-and-territory-autocomplete/example">
+
+                GOV.UK country and territory autocomplete</a>
+            </li>
+            <li class="">
+              {{govukTag({
+              text: "DRAFT",
+              classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
+              })}}
+              <a class="govuk-link govuk-link" href="accessibility/accessibility-statement">
+
+                Accessibility statement</a>
+            </li>
+            <li class="">
+              {{govukTag({
+              text: "DRAFT",
+              classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
+              })}}
+              <a class="govuk-link govuk-link" href="accessibility/acceptance-checklist">
+
+                Accessibility acceptance checklist</a>
+            </li>
+
+            <li class="">
+              {{govukTag({
+              text: "COMING",
+              classes: "govuk-tag--yellow govuk-list govuk-!-font-size-14"
+              })}}
+              <a class="govuk-link govuk-link" href="#">
+                Customer insights</a>
+            </li>
+            <li class="">
+              {{govukTag({
+              text: "CONTENT",
+              classes: "govuk-tag--green govuk-list govuk-!-font-size-14"
+              })}}
+              <a class="govuk-link govuk-link" href="https://design.tax.service.gov.uk/hmrc-content-style-guide/">HMRC
+                content style guide</a>
+            </li>
+          </ul>
+
+
+        </nav>
+
+      </div>
+
     </div>
 
-    <div class="govuk-grid-column-one-third">
-    
-      <div class="gem-c-contextual-sidebar">
-    
-        <div class="" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true"
-          data-ga4-link-tracker-module-started="true">
-          <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
-            Related content
-          </h2>
-
-          <h3 class="govuk-heading-s" data-track-count="sidebarRelatedItemSection">
-            Beta assessment artefacts
-          </h3>
-    
-          <nav role="navigation" class="" aria-labelledby="related-nav-related_items-6f72e62c" data-module="gem-toggle"
-            data-gem-toggle-module-started="true">
-    
-            <ul class="govuk-list govuk-!-font-size-16">
-              <li class="">
-                {{govukTag({
-                  text: "EXAMPLE",
-                  classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
-                })}}
-                <a class="govuk-link govuk-link" href="govuk-country-and-territory-autocomplete/example">
-                
-                  GOV.UK country and territory autocomplete</a>
-              </li>
-              <li class="">
-                {{govukTag({
-                  text: "DRAFT",
-                  classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
-                })}}
-                <a class="govuk-link govuk-link" href="accessibility/accessibility-statement">
-                
-                Accessibility statement</a>
-              </li>
-              <li class="">
-                {{govukTag({
-                  text: "DRAFT",
-                  classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
-                })}}
-                <a class="govuk-link govuk-link" href="accessibility/acceptance-checklist">
-                
-                Accessibility acceptance checklist</a></li>
-              
-              <li class="">
-                {{govukTag({
-                  text: "COMING",
-                  classes: "govuk-tag--yellow govuk-list govuk-!-font-size-14"
-                })}}
-                <a class="govuk-link govuk-link" href="#">
-              Customer insights</a></li>
-              <li class="">
-                {{govukTag({
-                  text: "CONTENT",
-                  classes: "govuk-tag--green govuk-list govuk-!-font-size-14"
-                })}}
-                <a class="govuk-link govuk-link" href="https://design.tax.service.gov.uk/hmrc-content-style-guide/">HMRC content style guide</a>  
-              </li>
-            </ul>
-
-            
-          </nav>
-    
-        </div>
-      
-      </div>
-      
-        
   </div>
+
+
+
+</div>
+
+<div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    {#-
+    The SVG needs `focusable="false"` so that Internet Explorer does not
+    treat it as an interactive element - without this it will be 'focusable'
+    when using the keyboard to navigate.
+    #}
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+      width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
 
 <!--
 
-var answer1 = req.session.data['answer1']
-var answer2 = req.session.data['answer2']
 
-if (answer1 == "yes" && answer2 == "yes"){
-  res.redirect("page-a")
-} else if (answer1 == "no" && answer2 == "yes"){
- res.redirect("page-b")
-} else {
-  res.redirect("page-c")
+<div class="app-back-to-top app-back-to-top--fixed" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+
+<div class="app-back-to-top app-back-to-top--hidden app-back-to-top--fixed" data-module="app-back-to-top">
+  <div class="app-back-to-top__container">
+    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#title" data-event-action="Clicked" data-event-category="Back to Top" data-event-label="Contents" data-on="click">        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+      </svg>Contents
+    </a>
+  </div>
+</div>
 
 -->
 
-  {% endblock %}
+
+
+<!--
+
+    var answer1 = req.session.data['answer1']
+    var answer2 = req.session.data['answer2']
+
+    if (answer1 == "yes" && answer2 == "yes"){
+      res.redirect("page-a")
+    } else if (answer1 == "no" && answer2 == "yes"){
+    res.redirect("page-b")
+    } else {
+      res.redirect("page-c")
+
+-->
+
+
+
+{% endblock %}
 
 

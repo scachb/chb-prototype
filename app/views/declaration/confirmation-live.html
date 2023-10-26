@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Application for Child Benefit Received – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "Beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+
+{{
+hmrcLanguageSelect({
+language: 'en',
+en: {
+href: '?en'
+},
+cy: {
+href: '?cy'
+}
+})
+}}
+{% endblock %}
+
+
+{% block content %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        <!--Application complete-->
+        Application for Child Benefit Received
+      </h1>
+      
+    </div>
+
+    <h2 class="govuk-heading-m">
+        What happens next
+    </h2>
+
+    <p>
+        We've sent your application to Child Benefit Service. 
+    </p>
+
+    <p>
+      HMRC will send you a letter to tell you:
+        <ul class="govuk-list govuk-list--bullet">
+            <li>if you will get Child Benefit</li>
+            <li><a href="#">how much you will be paid (opens in new tab)</a></li>
+            <li><a href="#">when you will get your first payment (opens in new tab)</a></li>
+        </ul>
+    </p>
+
+    <p>
+        You may get your first payment before you get your letter. 
+    </p>
+
+    <h2 class="govuk-heading-m">
+        What you need to do
+    </h2>
+
+    <p>
+        Your partner must set up and fill in a <a href="#">Self-Assessment tax return (opens in new tab)</a> to pay the tax charge. 
+    </p>  
+
+    <p>
+        Use the <a href="#">Child Benefit tax calculator (opens in new tab)</a> to find out how much tax your partner may have to pay. 
+    </p>  
+
+    <p>
+        HMRC may call you if they need more information.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If your circumstances change
+    </h2>
+    
+    <p>
+        You must report any <a href="#">changes to your family life or child's life (opens in new tab)</a> to the Child Benefit Office, as changes in circumstances may affect your <a href="#">Child Benefit tax charge (opens in new tab).</a> 
+    </p>
+    
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+        {{ govukWarningText({
+        text: "If you are overpaid Child Benefit you might have to pay it back.",
+        iconFallbackText: "Warning"
+        }) }}
+
+    <p>
+      <a href="#">
+        What did you think of this service?
+      </a> (takes 30 seconds)
+    </p>
+
+    <p>
+        <a href="#">
+            Is this page not working properly? (opens in new tab)
+        </a>    
+    </p>
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

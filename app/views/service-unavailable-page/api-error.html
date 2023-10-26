@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Sorry, there is a problem with the service is – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+    <p class="govuk-body">
+      You can try again or come back later.
+    </p>
+    <p><a href="#">
+        Return to the homepage
+      </a>
+    </p>
+
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{{ govukFooter({
+meta: {
+items: [
+{
+href:"https://www.gov.uk/government/publications/data-protection-act-dpa-information-hm-revenue-and-customs-hold-about-you",
+text: "Privacy policy (opens in a new tab)",
+attributes: {
+target: "_blank"
+}
+},
+{
+href: "",
+text: "Accessibility Statement (opens in new tab)",
+attributes: {
+target: "_blank"
+}
+},
+{
+href: "",
+text: "Cookies (opens in new tab)",
+attributes: {
+target: "_blank"
+}
+},
+{
+href:"",
+text: "Terms and conditions (opens in new tab)",
+attributes: {
+target: "_blank"
+}
+},
+{
+href: "",
+text: "Child Benefit forms and guidance (opens in new tab)",
+attributes: {
+target: "_blank"
+}
+},
+{
+href: "",
+text: "Contact (opens in new tab)",
+attributes: {
+target: "_blank"
+}
+},
+{
+href: "",
+text: "Help using GOV.UK (opens in new tab",
+attributes: {
+target: "_blank"
+}
+},
+{
+href: "",
+text: "Rhestr o Wasanaethau Cymraeg (opens in new tab)",
+attributes: {
+target: "_blank"
+}
+
+}
+],
+visuallyHiddenTitle: "Footer links"
+}
+}) }}
+{% endblock %}

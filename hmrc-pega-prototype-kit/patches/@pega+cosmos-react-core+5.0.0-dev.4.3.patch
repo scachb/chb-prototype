@@ -1,0 +1,17 @@
+diff --git a/node_modules/@pega/cosmos-react-core/lib/components/Icon/Icon.js b/node_modules/@pega/cosmos-react-core/lib/components/Icon/Icon.js
+index f8d9827..57731eb 100644
+--- a/node_modules/@pega/cosmos-react-core/lib/components/Icon/Icon.js
++++ b/node_modules/@pega/cosmos-react-core/lib/components/Icon/Icon.js
+@@ -137,10 +137,10 @@ const Icon = forwardRef(function Icon({ set: setProp, name, size, ...restProps }
+                 let module;
+                 switch (set) {
+                     case 'streamline':
+-                        module = await import(`./streamline-icons/${encodedName}.icon`);
++                        module = await import(`./streamline-icons/${encodedName}.icon.js`);
+                         break;
+                     case 'budicon':
+-                        module = await import(`./icons/${encodedName}.icon`);
++                        module = await import(`./icons/${encodedName}.icon.js`);
+                         break;
+                     default:
+                         throw new Error('Unknown icon');

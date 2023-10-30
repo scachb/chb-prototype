@@ -1,0 +1,18 @@
+{
+  "serviceName": "ADVISER UI",
+  "theme": {
+    "base": {
+      "palette": {
+        "interactive": "#036666"
+      }
+    },
+    "components": {
+      "app-shell": {
+        "header": {
+          "background-color": "#036666"
+        }
+      }
+    }
+  }
+}
+  

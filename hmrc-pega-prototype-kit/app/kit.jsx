@@ -5,7 +5,28 @@ import config from './config.json';
 import ReactDOM from "react-dom";
 import { Link as ReactLink, Route, RouterProvider } from "react-router-dom";
 import { createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import { Configuration, AppShell, Avatar, Icon, Link, Grid, Flex, WideNarrowPage, SummaryList, SummaryItem, MenuButton, Tabs, FieldValueList, Status } from "@pega/cosmos-react-core";
+import { 
+  Configuration, 
+  AppShell, 
+  Avatar, 
+  Icon, 
+  Link, 
+  Grid, 
+  Flex, 
+  SummaryItem, 
+  MenuButton, 
+  Tabs, 
+  FieldValueList, 
+  Status, 
+  Card,
+  CardHeader,
+  Text,
+  CardContent,
+  Button,
+  SummaryList,
+  MetaList,
+  TabPanel,
+} from "@pega/cosmos-react-core";
 
 export const HMRCRoute = Route
 
@@ -55,15 +76,15 @@ export function HMRCShell({ children }) {
         main={children}
         cases={
           [
-            { primary: "Dispute Transaction", visual: <Icon name="case-solid" /> }, 
-            { primary: "Refund", visual: <Icon name="money-send-solid" /> },
-            { primary: "Explore Data", visual: <Icon name="search-analytics" /> }
+            { primary: "Home", visual: <Icon name="home-solid" /> }, 
+            { primary: "My Work", visual: <Icon name="flag-solid" /> },
+            { primary: "Explore Data", visual: <Icon name="search-analytics" /> },
+            { primary: "Dashboards", visual: <Icon name="grid" /> },
           ]
         }
         caseTypes={
           [
             { name: "Dispute Transaction" },
-            { name: "Refund" }
           ]
         }
       />
@@ -73,81 +94,138 @@ export function HMRCShell({ children }) {
 
 export function CHBDemoPage() {
   return (
-    <Grid
-      container={{ cols: "1fr" }}
-      md={{ container: { cols: "0.3fr 1fr" }}}
-      style={{ height: "calc(100vh - var(--appshell-offset,0))" }}
-    >
-      <Flex
-        container={{ direction: "column" }}
-        style={{ backgroundColor: "white" }}
-      >
-        <SummaryItem 
-          as="header"
-          style={{ background: "#036666", padding: "1rem", color: "white" }}
-          primary={<h1 style={{ fontSize: "1rem" }}>Jake Ord</h1>}
-          secondary={<p>D-31</p>}
-          visual={<Icon name='case-solid' background='white' />}
-          actions={
-            <Flex>
-              <MenuButton
-                text='Edit'
-                variant='simple'
-                icon='pencil-solid'
-                iconOnly
-                menu={{
-                  items: ['Option Number 1', 'Option Number 2', 'Option Number 3'].map(name => ({
-                    id: name,
-                    primary: name
-                  }))
-                }}
+    <>
+      <Tabs
+        currentTabId="child-benefit-claim"
+        tabs={[
+          { id: "prototype-1", name: "Prototype 1" },
+          { id: "child-benefit-claim", name: "Child benefit claim" }
+        ]}
+      />
+      <TabPanel tabId="home" currentTabId="child-benefit-claim">
+        <Text variant="h1">Hello</Text>
+      </TabPanel>
+      <TabPanel tabId="child-benefit-claim" currentTabId="child-benefit-claim">
+        <Grid
+          container={{ cols: "1fr" }}
+          md={{ container: { cols: "0.3fr 1fr" }}}
+          style={{ height: "calc(100vh - var(--appshell-offset,0))" }}
+        >
+          <Flex
+            container={{ direction: "row" }}
+            md={{ container: { direction: "column" } }}
+            style={{ backgroundColor: "white" }}
+          >
+            <SummaryItem 
+              as="header"
+              style={{ background: "#036666", padding: "1rem", color: "white" }}
+              primary={<Text variant="h1">Jake Ord</Text>}
+              secondary={<Text>D-31</Text>}
+              visual={<Icon name='case-solid' background='white' />}
+              actions={
+                <Flex>
+                  <MenuButton
+                    text='Edit'
+                    variant='simple'
+                    icon='pencil-solid'
+                    iconOnly
+                    menu={{
+                      items: ['Option Number 1', 'Option Number 2', 'Option Number 3'].map(name => ({
+                        id: name,
+                        primary: name
+                      }))
+                    }}
+                  />
+                  <MenuButton
+                    text='Options'
+                    variant='simple'
+                    icon='more'
+                    iconOnly
+                    menu={{
+                      items: ['Follow', 'Edit details', 'Change stage'].map(name => ({
+                        id: name,
+                        primary: name
+                      }))
+                    }}
+                  />
+                </Flex>
+              }
+            />
+
+            <Flex container={{ direction: "column", gap: 2, pad: 2 }}>
+              <FieldValueList 
+                fields={[
+                  { variant: "stacked", name: "Urgency", value: "10" },
+                  { variant: "stacked", name: "Work status", value: <Status variant="info">NEW</Status>}
+                ]}
               />
-               <MenuButton
-                text='Options'
-                variant='simple'
-                icon='more'
-                iconOnly
-                menu={{
-                  items: ['Follow', 'Edit details', 'Change stage'].map(name => ({
-                    id: name,
-                    primary: name
-                  }))
-                }}
+              <FieldValueList
+                fields={[
+                  { name: "Created", value: <><HMRCLink href="#">Author</HMRCLink> 6 minutes ago</> },
+                  { name: "Updated", value: <><HMRCLink href="#">Author</HMRCLink> 4 minutes ago</> },
+                ]}
               />
             </Flex>
-          }
-        />
 
-        <Flex container={{ direction: "column", gap: 2, pad: 2 }}>
-          <FieldValueList 
-            fields={[
-              { variant: "stacked", name: "Urgency", value: "10" },
-              { variant: "stacked", name: "Work status", value: <Status variant="info">NEW</Status>}
-            ]}
-          />
-          <FieldValueList
-            fields={[
-              { name: "Created", value: <><HMRCLink href="#">Author</HMRCLink> 6 minutes ago</> },
-              { name: "Updated", value: <><HMRCLink href="#">Author</HMRCLink> 4 minutes ago</> },
-            ]}
-          />
-        </Flex>
-
-        <Tabs 
-          type="vertical"
-          currentTabId="child-details"
-          tabs={[
-            { id: "child-details", name: "Child details" },
-            { id: "relationship-details", name: "Relationship details" },
-            { id: "case-details", name: "Case details" }
-          ]}
-        />
-      </Flex>
-      <WideNarrowPage
-        title="awd"
-        a={<SummaryList items={[{ id: 'awd', primary: 'awdaw' }]}  />}
-        b={"awd"}
-      />
-    </Grid>
+            <Tabs 
+              type="vertical"
+              currentTabId="claimant-details"
+              tabs={[
+                { id: "claimant-details", name: "Claimant details" },
+                { id: "relationship-details", name: "Relationship details" },
+                { id: "child-details", name: "Child details" },
+                { id: "income-details", name: "Income details" },
+                { id: "full-details", name: "Full details" },
+                { id: "pulse", name: "Pulse" },
+              ]}
+            />
+          </Flex>
+          <Grid
+            container={{ cols: "1fr", gap: 2, pad: 2 }}
+            md={{ container: { cols: "1fr auto" }}}
+          >
+            <Flex container={{ direction: "column", gap: 2 }}>
+              <Card>
+                <CardContent>This is where the wizard steps goes</CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <SummaryList 
+                    name="Tasks"
+                    count="1"
+                    items={[
+                      { 
+                        primary: "ChB Verification", 
+                        secondary: <MetaList wrapItems items={[ "Task in C-170001", "Urgency 10" ]}/>, 
+                        visual: <Avatar name="S" backgroundColor="#036666" />,
+                        actions: [{ id: "go", text: "Go", href: "#" }]
+                      }
+                    ]}
+                  />
+                </CardContent>
+              </Card>
+              <Card> 
+                  <CardHeader>
+                    <Text variant="h2">Claimant details</Text>
+                  </CardHeader>
+                  <CardContent>
+                    <FieldValueList
+                      fields={[
+                        { name: "National Insurance number", value: <Text>CH551447D</Text> },
+                        { name: "Is this name correct?", value: <Text>Yes</Text> },
+                      ]}
+                    />
+                  </CardContent>
+              </Card>
+            </Flex>
+            <Flex container={{ direction: "column", gap: 2 }}>
+              <Button variant="simple" icon>
+                <Icon name="peekpanel-arrow-left" />
+              </Button>
+            </Flex>
+          </Grid>
+        </Grid>
+      </TabPanel>
+    </>
   )
 }

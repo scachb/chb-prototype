@@ -1,5 +1,14 @@
 {% extends "layouts/main.html" %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
 {% set mainClasses = "govuk-!-padding-top-1" %}
 
 {% set pageName="Home" %}

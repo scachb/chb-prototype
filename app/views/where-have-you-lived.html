@@ -1,7 +1,12 @@
-{% extends "layouts/journey.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -56,6 +61,6 @@ Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   </div>
 
-  {% include "partials/service-links.html" %}
+  {{ layoutPageNotWorkingLink() }}
 
 {% endblock %}

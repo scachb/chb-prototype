@@ -10,24 +10,8 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-
-  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
-
-  {{ hmrcLanguageSelect({
-    language: 'en',
-    en: {
-      href: '?en'
-    },
-    cy: {
-      href: '?cy'
-    }
-  }) }}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
 {% endblock %}
 
 {% block content %}
@@ -133,5 +117,5 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
   <li>if we need to contact you for any further information, we will call the phone number held on our records</li>
 </ul>-->
 
-  {{ pageNotWorking() }}
+  {{ layoutPageNotWorkingLink() }}
 {% endblock %}

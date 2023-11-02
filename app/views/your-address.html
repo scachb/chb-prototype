@@ -1,7 +1,12 @@
-{% extends "layouts/journey.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Confirm your address details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -55,6 +60,6 @@ Confirm your address details – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   </div>
 
-  {% include "partials/service-links.html" %}
+  {{ layoutPageNotWorkingLink() }}
 
 {% endblock %}

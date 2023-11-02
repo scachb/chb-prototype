@@ -1,7 +1,12 @@
-{% extends "layouts/journey.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Your date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -59,6 +64,6 @@
     </div>
   </div>
 
-  {% include "partials/service-links.html" %}
+  {{ layoutPageNotWorkingLink() }}
 
 {% endblock %}

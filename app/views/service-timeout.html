@@ -5,33 +5,27 @@ My portal
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for this page -->
-{{ govukHeader() }}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
 {% endblock %}
 
-{% block beforeContent %}
-
-
-{% endblock %}
+{% block beforeContent %}{% endblock %}
 
 {% block content %}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-{%- from "govuk/components/tag/macro.njk" import govukTag -%}
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-{%- from  "hmrc/components/timeout-dialog/macro.njk" import hmrcTimeoutDialog -%}
+  {%- from "hmrc/components/timeout-dialog/macro.njk" import hmrcTimeoutDialog -%}
 
-{{ hmrcTimeoutDialog ({
-  timeout: 70,
-  countdown: 68,
-  keepAliveUrl: "?continue=true",
-  signOutUrl: "?lang=English",
-  language: "en"
-}) }}
-
-
-
+  {{ hmrcTimeoutDialog ({
+    timeout: 70,
+    countdown: 68,
+    keepAliveUrl: "?continue=true",
+    signOutUrl: "?lang=English",
+    language: "en"
+  }) }}
 
 {% endblock %}

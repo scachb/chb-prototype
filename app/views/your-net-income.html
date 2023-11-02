@@ -1,76 +1,67 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/journey.html" %}
 
 {% block pageTitle %}
 Your net income – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
 {% block content %}
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">What is your or your partner's adjusted net income each year?</h1>
+      <h1 class="govuk-heading-l">What is your or your partner's adjusted net income each year?</h1>
         
-       
-        <p class="govuk-body">Your adjusted net income is your total taxable individual income before any personal allowances. It does not include things like Gift Aid. Do not combine your household income. </p>
-       
-        <form class="form" action="/your-net-income-answer" method="post">
+      <p class="govuk-body">Your adjusted net income is your total taxable individual income before any personal allowances. It does not include things like Gift Aid. Do not combine your household income. </p>
+ 
+      <form class="form" action="/your-net-income-answer" method="post">
 
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-            {% from "govuk/components/input/macro.njk" import govukInput %}
-            {% from "govuk/components/select/macro.njk" import govukSelect %}
-            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-            {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-
-            {{ govukRadios({
-            classes: "govuk-radios",
-            name: "your-net-income",
-            value: data['your-net-income'],
-            fieldset: {
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "your-net-income",
+          value: data['your-net-income'],
+          fieldset: {
             legend: {
-            text: "Your net income",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--l"
+              text: "Your net income",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
             }
-            },
-            items: [
+          },
+          items: [
             {
-            value: "Below",
-            text: "Below £50,100",
-            conditional: {
-            html: HICE
-            }
-            },
-            {
-            value: "Between5060",
-            text: "£50,100 - £60,000"
+              value: "Below",
+              text: "Below £50,100",
+              conditional: {
+                html: HICE
+              }
             },
             {
-            value: "Above60",
-            text: "Above £60,000"
+              value: "Between5060",
+              text: "£50,100 - £60,000"
+            },
+            {
+              value: "Above60",
+              text: "Above £60,000"
             }
-            ]
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
             }) }}
+        </div>
 
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>
 
-            
-
-            <div class="govuk-button-group">
-                {{ govukButton({
-                  text: "Continue"
-                }) }}
-              
-                
-              </div>
-              <a class="govuk-link" href="#">Save and come back later</a>
-
-        </form>
-
+      </form>
     </div>
-</div>
+  </div>
+
+  {% include "partials/service-links.html" %}
 
 {% endblock %}

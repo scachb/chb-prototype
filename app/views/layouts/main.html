@@ -4,48 +4,117 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
 {% block header %}
 {# Set serviceName in config.js. #}
-{{ govukHeader({
-homepageUrl: "/",
-serviceUrl: "#",
-serviceName: "Claim Child Benefit",
-containerClasses: "govuk-width-container ",
-navigationClasses: "govuk-header__sign-out-nav",
-navigation: [
-
-{
-href: "index",
-text: "Sign out"
-}
-]
-}) }}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "#",
+    serviceName: "Claim Child Benefit",
+    containerClasses: "govuk-width-container ",
+    navigationClasses: "govuk-header__sign-out-nav",
+    navigation: [
+      {
+        href: "index",
+        text: "Sign out"
+      }
+    ]
+  }) }}
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
+  <div class="govuk-grid-row"> 
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div> 
+    <div class="govuk-grid-column-one-third"> 
+      {{ hmrcLanguageSelect({
+        language: 'en',
+        en: {
+          href: '?en'
+        },
+        cy: {
+          href: '?cy'
+        }
+      }) }}
+    </div> 
+  </div>
+{% endblock %}
 
 {% block bodyStart %}
-<a id="top"></a>
+  <a id="top"></a>
 {% endblock %}
 
+{% block content %}
+  <p>
+    <a href="#">
+      Is this page not working properly? (opens in new tab)
+    </a>    
+  </p>
+{% endblock %}
+
+{% macro pageNotWorking() %}
+  <p>
+    <a href="#">
+      Is this page not working properly? (opens in new tab)
+    </a>    
+  </p>
+{% endmacro %}
+
 {% block footer %}
- {{ govukFooter({
-   classes: "app-footer",
-   meta: {
-     items: [
-       
-       {
-         href: "/manage-prototype",
-         text: "Manage your prototype"
-       },
-       {
-         href: "/manage-prototype/clear-data",
-         text: "Clear data"
-       }
-     ],
-     visuallyHiddenTitle: "Footer links"
-   }
- }) }}
+  {{ govukFooter({
+    classes: "app-footer",
+    meta: {
+      items: [
+        {
+          href: "#",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Accessibility statement"
+        },
+        {
+          href: "#",
+          text: "Privacy policy"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "#",
+          text: "Help using GOV.UK"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        { href: "#",
+          text: "Rhestr o Wasanaethau Cymraeg"
+        },
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Support links"
+    }
+  }) }}
 {% endblock %}
 
 

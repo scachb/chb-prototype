@@ -1,39 +1,33 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/journey.html" %}
 
 {% block pageTitle %}
 Waiting to hear– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
 {% block content %}
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Have you recently made a Child Benefit claim and are waiting to hear if you are
-            eligible?</h1>
+      <h1 class="govuk-heading-l">
+        Have you recently made a Child Benefit claim and are waiting to hear if you are eligible?
+      </h1>
 
+      <form class="form" action="/national-insurance" method="post">
 
-        <form class="form" action="/national-insurance" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-            {% from "govuk/components/input/macro.njk" import govukInput %}
-            {% from "govuk/components/select/macro.njk" import govukSelect %}
-            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-            {% from "govuk/components/details/macro.njk" import govukDetails %}
-            {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+        {% set contactHtml %}
 
-
-
-            {% set contactHtml %}
-    
-            {{ govukInsetText({
-                text: "If 14 days have passed since you made a Child Benefit Claim, contact HMRC using the web chat or enter your email below. An Advisor will be able to help."
-                }) }}
-    
-            {{ govukInput({
+          {{ govukInsetText({
+            text: "If 14 days have passed since you made a Child Benefit Claim, contact HMRC using the web chat or enter your email below. An Advisor will be able to help."
+          }) }}
+  
+          {{ govukInput({
             id: "contact-by-email",
             name: "contact-by-email",
             type: "email",
@@ -41,45 +35,46 @@ Waiting to hear– {{ serviceName }} – GOV.UK Prototype Kit
             spellcheck: false,
             classes: "govuk-!-width-three-quarters",
             label: {
-            text: "Email address"
+              text: "Email address"
             }
-            }) }}
-            {% endset -%}
+          }) }}
+
+        {% endset -%}
 
 
-            {{ govukRadios({
-            classes: "govuk-radios",
-            name: "eligible-claim",
-            fieldset: {
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "eligible-claim",
+          fieldset: {
             legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--l"
+              text: "",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
             }
-            },
-            items: [
+          },
+          items: [
             {
-            value: "Yes",
-            text: "Yes",
-            conditional: {
-            html: contactHtml
-            }
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: contactHtml
+              }
             },
             {
-            value: "No",
-            text: "No"
+              value: "No",
+              text: "No"
             }
-            ]
-            }) }}
+          ]
+        }) }}
 
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a></p>
 
-            <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a></p>
-
-        </form>
-
+      </form>
     </div>
-</div>
+  </div>
+
+  {% include "partials/service-links.html" %}
 
 {% endblock %}

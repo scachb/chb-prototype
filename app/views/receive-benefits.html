@@ -1,14 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/journey.html" %}
 
 {% block pageTitle %}
 Receive any benefits – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
@@ -59,5 +52,7 @@ Receive any benefits – {{ serviceName }} – GOV.UK Prototype Kit
 
     </div>
   </div>
+
+  {% include "partials/service-links.html" %}
 
 {% endblock %}

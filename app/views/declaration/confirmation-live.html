@@ -4,29 +4,6 @@
 Application for Child Benefit Received – {{ serviceName }} – GOV.UK
 {% endblock %}
 
-{% block beforeContent %}
-{{ govukPhaseBanner({
-tag: {
-text: "Beta"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
-
-{{
-hmrcLanguageSelect({
-language: 'en',
-en: {
-href: '?en'
-},
-cy: {
-href: '?cy'
-}
-})
-}}
-{% endblock %}
-
-
 {% block content %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -85,34 +62,19 @@ href: '?cy'
     </h2>
     
     <p>
-        You must report any <a href="#">changes to your family life or child's life (opens in new tab)</a> to the Child Benefit Office, as changes in circumstances may affect your <a href="#">Child Benefit tax charge (opens in new tab).</a> 
+      You must report any <a href="#">changes to your family life or child's life (opens in new tab)</a> to the Child Benefit Office, as changes in circumstances may affect your <a href="#">Child Benefit tax charge (opens in new tab).</a> 
     </p>
     
     {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-        {{ govukWarningText({
-        text: "If you are overpaid Child Benefit you might have to pay it back.",
-        iconFallbackText: "Warning"
-        }) }}
+    {{ govukWarningText({
+      text: "If you are overpaid Child Benefit you might have to pay it back.",
+      iconFallbackText: "Warning"
+    }) }}
 
-    <p>
-      <a href="#">
-        What did you think of this service?
-      </a> (takes 30 seconds)
-    </p>
-
-    <p>
-        <a href="#">
-            Is this page not working properly? (opens in new tab)
-        </a>    
-    </p>
-
-
-
+    {% include "partials/service-links" %}
 
   </div>
 </div>
-
-
 
 {% endblock %}

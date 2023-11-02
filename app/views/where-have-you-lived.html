@@ -1,14 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/journey.html" %}
 
 {% block pageTitle %}
 Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
@@ -16,54 +9,53 @@ Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     
       <form class="form" action="your-details-section/check-your-answers" method="post">
 
-      {{ govukRadios({
-        name: "lived-address-data",
-        value: data['lived-address-data'],
-        fieldset: {
-          legend: {
-            text: "Where have you lived?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          }
-        },
-        hint: {
-          text:  "The UK includes England, Wales, Scotland and Northern Ireland. The UK does not include Isle of Man, Channel Islands or British overseas territories. You have lived abroad if you were outside of the UK for 8 weeks in a row. Do not include times where you stayed in other countries for holiday or for work."
-        },
-        items: [
-          {
-            value: "Always lived in the UK",
-            text: "Always lived in the UK"
+        {{ govukRadios({
+          name: "lived-address-data",
+          value: data['lived-address-data'],
+          fieldset: {
+            legend: {
+              text: "Where have you lived?",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            }
           },
-          {
-            value: "No - Lived in the UK and abroad",
-            text: "Lived in the UK and abroad"
-          }
-          ,
-          {
-            value: "No - never lived in the UK",
-            text: "Never lived in the UK"
-          }
-        ]
-      }) }}
+          hint: {
+            text:  "The UK includes England, Wales, Scotland and Northern Ireland. The UK does not include Isle of Man, Channel Islands or British overseas territories. You have lived abroad if you were outside of the UK for 8 weeks in a row. Do not include times where you stayed in other countries for holiday or for work."
+          },
+          items: [
+            {
+              value: "Always lived in the UK",
+              text: "Always lived in the UK"
+            },
+            {
+              value: "No - Lived in the UK and abroad",
+              text: "Lived in the UK and abroad"
+            }
+            ,
+            {
+              value: "No - never lived in the UK",
+              text: "Never lived in the UK"
+            }
+          ]
+        }) }}
               
-              <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
-                  Continue
-                </button>
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Cancel
-                </button>
-                
-              </div>
-              <p><a class="govuk-link" href="#">Save and come back later</a></p>        
-      
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+        
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>
       
       </form>
-
     </div>
   </div>
+
+  {% include "partials/service-links.html" %}
 
 {% endblock %}

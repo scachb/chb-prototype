@@ -1,14 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/journey.html" %}
 
 {% block pageTitle %}
 What is your telephone number? – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
@@ -36,6 +29,7 @@ What is your telephone number? – {{ serviceName }} – GOV.UK Prototype Kit
           name: "tel-number",
           value: data['tel-number']
         }) }}
+        
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
             Continue
@@ -43,14 +37,14 @@ What is your telephone number? – {{ serviceName }} – GOV.UK Prototype Kit
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
           </button>
-          
         </div>
+
         <p><a class="govuk-link" href="#">Save and come back later</a></p>        
 
-
       </form>
-
     </div>
   </div>
+
+  {% include "partials/service-links.html" %}
 
 {% endblock %}

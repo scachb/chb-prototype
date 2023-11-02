@@ -5,129 +5,125 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukHeader() }}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-tag: {
-text: "Beta"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
-{{
-hmrcLanguageSelect({
-language: 'en',
-en: {
-href: '?en'
-},
-cy: {
-href: '?cy'
-}
-})
-}}
+  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+
+  {{ hmrcLanguageSelect({
+    language: 'en',
+    en: {
+      href: '?en'
+    },
+    cy: {
+      href: '?cy'
+    }
+  }) }}
 {% endblock %}
 
-
-
-
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-     <!-- {% if serviceName %} {{ serviceName }} {% endif %} -->
-      Claim Child Benefit
-    </h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body">Use this form to claim Child Benefit if you or your partner are responsible for a child who is
-      under 16, or under 20 if they are in approved education or training (opens in new tab).</p>
+      <h1 class="govuk-heading-xl">
+      <!-- {% if serviceName %} {{ serviceName }} {% endif %} -->
+        Claim Child Benefit
+      </h1>
 
-    <h2 class="govuk-heading-m">Who can apply</h2>
+      <p class="govuk-body">Use this form to claim Child Benefit if you or your partner are responsible for a child who is
+        under 16, or under 20 if they are in approved education or training (opens in new tab).</p>
 
-    <p class="govuk-body">Only one person can claim Child Benefit.</p>
+      <h2 class="govuk-heading-m">Who can apply</h2>
 
-    <p class="govuk-body">
-      If you are in a couple and one of you does not work or earns less than £242 a week, it is recommended for that
-      person to claim to help protect their state pension. They should fill out this form.
-    </p>
-    <p class="govuk-body">You do not need to be the parent of the child to claim Child Benefit.</p>
+      <p class="govuk-body">Only one person can claim Child Benefit.</p>
 
-    <h2 class="govuk-heading-m">When to claim</h2>
+      <p class="govuk-body">
+        If you are in a couple and one of you does not work or earns less than £242 a week, it is recommended for that
+        person to claim to help protect their state pension. They should fill out this form.
+      </p>
+      <p class="govuk-body">You do not need to be the parent of the child to claim Child Benefit.</p>
 
-    <p class="govuk-body">Claim as soon as your baby is born and registered or once a child comes to live with you,
-      including adoption.</p>
+      <h2 class="govuk-heading-m">When to claim</h2>
 
-    <p class="govuk-body">To claim, the child must either be under 16 or under 20 and in full-time, non-advanced
-      education or approved training.</p>
+      <p class="govuk-body">Claim as soon as your baby is born and registered or once a child comes to live with you,
+        including adoption.</p>
 
-    <h2 class="govuk-heading-m">Before you start</h2>
+      <p class="govuk-body">To claim, the child must either be under 16 or under 20 and in full-time, non-advanced
+        education or approved training.</p>
 
-    <p class="govuk-body">To complete this form, you’ll need the following documents for any children you are applying
-      for, depending on your circumstance:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>birth certificate</li>
-      <li>passport or travel documents used to enter the UK</li>
-      <li>adoption certificate</li>
-    </ul>
+      <h2 class="govuk-heading-m">Before you start</h2>
 
-    <p class="govuk-body">You will also need:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>your bank or building society details</li>
-      <li>your National Insurance number</li>
-      <li>your partner’s National Insurance number, if you have a partner</li>
-    </ul>
-    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-    {{ govukWarningText({
-    text: "Do not delay making your claim as Child Benefit can only be backdated up to 3 months.",
-    iconFallbackText: "Warning"
-    }) }}
+      <p class="govuk-body">To complete this form, you’ll need the following documents for any children you are applying
+        for, depending on your circumstance:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>birth certificate</li>
+        <li>passport or travel documents used to enter the UK</li>
+        <li>adoption certificate</li>
+      </ul>
 
+      <p class="govuk-body">You will also need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your bank or building society details</li>
+        <li>your National Insurance number</li>
+        <li>your partner’s National Insurance number, if you have a partner</li>
+      </ul>
 
-    <a href="/national-insurance" role="button" draggable="false"
-      class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
-      Start now
-      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
-        viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-      </svg>
-    </a>
-    <p class="govuk-body">If you have any questions about Child Benefit, <a href="#">contact the Child Benefit
-        helpline.</a></p>
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        text: "Do not delay making your claim as Child Benefit can only be backdated up to 3 months.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <a href="/national-insurance" role="button" draggable="false"
+        class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+          viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+      <p class="govuk-body">If you have any questions about Child Benefit, <a href="#">contact the Child Benefit
+          helpline.</a></p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="index">
+                Your claim applications
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
   </div>
-
-  <div class="govuk-grid-column-one-third">
-
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">
-        Related content
-      </h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a href="index">
-              Your claim applications
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Related link
-            </a>
-          </li>
-          <li>
-            <a href="#" class="govuk-!-font-weight-bold">
-              More <span class="govuk-visually-hidden">in Subsection</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-
-  </div>
-</div>
 
 <!--<ul class="govuk-body">
   <li>we can update their account to award the child</li>

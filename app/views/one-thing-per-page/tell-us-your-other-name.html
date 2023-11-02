@@ -1,7 +1,12 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Have you ever been known by any other last name or family name including your maiden name? – {{ serviceName }} – GOV.UK Prototype Kit
+Tell us your other name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -12,24 +17,19 @@ Have you ever been known by any other last name or family name including your ma
       <form class="form" action="your-date-of-birth" method="post">
 
         <p>
+          {% from "govuk/components/input/macro.njk" import govukInput %}
 
-            {% from "govuk/components/input/macro.njk" import govukInput %}
-
-{{ govukInput({
-  label: {
-    text: "Tell us the other name",
-    classes: "govuk-label--l",
-    isPageHeading: true
-  },
-  id: "other-last-names",
-  name: "other-last-names"
-}) }}
-     
-<!-- Tell us the other name / What is your other name?-->
+          {{ govukInput({
+            label: {
+              text: "Tell us your other name",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            id: "other-last-names",
+            name: "other-last-names"
+          }) }}
+          <!-- Tell us the other name / What is your other name?-->
         </p>
-
-        
-
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
@@ -38,13 +38,14 @@ Have you ever been known by any other last name or family name including your ma
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
           </button>
-          
         </div>
+
         <p><a class="govuk-link" href="#">Save and come back later</a></p>       
 
       </form>
-
     </div>
   </div>
+
+  {{ layoutPageNotWorkingLink() }}
 
 {% endblock %}

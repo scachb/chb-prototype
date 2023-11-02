@@ -20,11 +20,11 @@ router.post('change-child-answer', function(request, response) {
 })
 
 
-router.post('/other-name', function(request, response) {
+router.post('/one-thing-per-page/tell-us-your-other-name', function(request, response) {
 
     var knownName = request.session.data['known-name']
     if (knownName == "Yes"){
-        response.redirect("/other-name")
+        response.redirect("/one-thing-per-page/tell-us-your-other-name")
     } else {
         response.redirect("/your-date-of-birth")
     }

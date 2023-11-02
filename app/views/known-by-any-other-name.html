@@ -5,10 +5,8 @@ Have you ever been known by any other last name or family name including your ma
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -16,36 +14,32 @@ Have you ever been known by any other last name or family name including your ma
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="other-name" method="post">
+      <form class="form" action="/one-thing-per-page/tell-us-your-other-name" method="post">
 
-        <p>
-     
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-          {{ govukRadios({
-            classes: "govuk-radios--inline",
-            name: "known-name",
-            fieldset: {
-              legend: {
-                text: "Have you ever been known by any other last names or family names including your maiden name?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "known-name",
+          fieldset: {
+            legend: {
+              text: "Have you ever been known by any other last names or family names including your maiden name?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
             },
-           
-            items: [
-              {
-                value: "Yes",
-                text: "Yes"
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}
-        </p>
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
  
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
@@ -62,5 +56,7 @@ Have you ever been known by any other last name or family name including your ma
 
     </div>
   </div>
+
+  {{ layoutPageNotWorkingLink() }}
 
 {% endblock %}

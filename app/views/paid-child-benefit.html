@@ -5,52 +5,52 @@ How often do you want to get paid child benefit? – {{ serviceName }} – GOV.U
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-       
-        <form class="form" action="/your-net-income-answer" method="post">
+        
+      <form class="form" action="/your-net-income-answer" method="post">
 
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-            {% from "govuk/components/input/macro.njk" import govukInput %}
-            {% from "govuk/components/select/macro.njk" import govukSelect %}
-            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-            {% from "govuk/components/details/macro.njk" import govukDetails %}
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+          {% from "govuk/components/select/macro.njk" import govukSelect %}
+          {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-
-            {{ govukRadios({
+          {{ govukRadios({
             classes: "govuk-radios",
             name: "paid-weekly",
             fieldset: {
-            legend: {
-            text: "How often do you want to get paid child benefit",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-            }
+              legend: {
+                text: "How often do you want to get paid child benefit",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
             },
             items: [
-            {
-            value: "weekly",
-            text: "Weekly"
-            
-            },
-            {
-            value: "4-weekly",
-            text: "4 weekly"
-            }
+              {
+                value: "weekly",
+                text: "Weekly"
+              },
+              {
+                value: "4-weekly",
+                text: "4 weekly"
+              }
             ]
-            }) }}
+          }) }}
 
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
-        </form>
-
+      </form>
     </div>
-</div>
+  </div>
+
+  {{ layoutPageNotWorkingLink() }}
 
 {% endblock %}

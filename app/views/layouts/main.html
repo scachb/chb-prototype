@@ -63,46 +63,54 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   </p>
 {% endblock %}
 
+{% macro pageNotWorking() %}
+  <p>
+    <a href="#">
+      Is this page not working properly? (opens in new tab)
+    </a>    
+  </p>
+{% endmacro %}
+
 {% block footer %}
   {{ govukFooter({
     classes: "app-footer",
     meta: {
       items: [
-      {
-        href: "#",
-        text: "Cookies"
-      },
-      {
-        href: "#",
-        text: "Accessibility statement"
-      },
-      {
-        href: "#",
-        text: "Privacy policy"
-      },
-      {
-        href: "#",
-        text: "Terms and conditions"
-      },
-      {
-        href: "#",
-        text: "Help using GOV.UK"
-      },
-      {
-        href: "#",
-        text: "Contact"
-      },
-      { href: "#",
-        text: "Rhestr o Wasanaethau Cymraeg"
-      },
-      {
-        href: "/manage-prototype",
-        text: "Manage your prototype"
-      },
-      {
-        href: "/manage-prototype/clear-data",
-        text: "Clear data"
-      }
+        {
+          href: "#",
+          text: "Cookies"
+        },
+        {
+          href: "#",
+          text: "Accessibility statement"
+        },
+        {
+          href: "#",
+          text: "Privacy policy"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions"
+        },
+        {
+          href: "#",
+          text: "Help using GOV.UK"
+        },
+        {
+          href: "#",
+          text: "Contact"
+        },
+        { href: "#",
+          text: "Rhestr o Wasanaethau Cymraeg"
+        },
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
       ],
       visuallyHiddenTitle: "Support links"
     }

@@ -1,12 +1,14 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-My portal – {{ serviceName }} – GOV.UK Prototype Kit
+My claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
 
 {% block beforeContent %}
+
+{{ layoutLanguageSelect() }}
 
 {{ govukBreadcrumbs({
 items: [
@@ -234,6 +236,7 @@ href: "#"
   </div>
 -->
 
+    {{ layoutServiceLinks() }}
   </main>
 </div>
 

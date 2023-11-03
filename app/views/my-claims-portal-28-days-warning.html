@@ -8,6 +8,8 @@ Your claims application – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block beforeContent %}
 
+{{ layoutLanguageSelect() }}
+
 {{ govukBreadcrumbs({
 items: [
 {
@@ -217,6 +219,8 @@ href: "#"
 
   </div>
 -->
+
+  {{ layoutServiceLinks() }}
 
   </main>
 </div>

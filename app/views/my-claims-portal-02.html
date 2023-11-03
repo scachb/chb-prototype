@@ -8,6 +8,8 @@ My portal
 
 {% block beforeContent %}
 
+{{ layoutLanguageSelect() }}
+
 {{ govukBreadcrumbs({
 items: [
 {
@@ -245,7 +247,7 @@ href: "#"
 
   </div>
 -->
-
+    {{ layoutServiceLinks() }}
   </main>
 </div>
 

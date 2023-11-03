@@ -6,6 +6,8 @@ Your claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block beforeContent %}
 
+{{ layoutLanguageSelect() }}
+
 {{ govukBreadcrumbs({
   items: [
     {
@@ -112,8 +114,7 @@ Your claims applications – {{ serviceName }} – GOV.UK Prototype Kit
     
     }) }}
 
-    
-   
+    {{ layoutServiceLinks() }}
 
   </div>
 
@@ -168,11 +169,8 @@ Your claims applications – {{ serviceName }} – GOV.UK Prototype Kit
         }) }}
       </nav>
     </aside>
-
   </div>
-
   </main>
-  {{ layoutServiceLinks() }}
   </div>
 
   </div>

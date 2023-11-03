@@ -1,5 +1,4 @@
 module.exports = {
-
   // Insert values here
   'nino-data': 'WE896405D',
   'changed-name': 'Yes',
@@ -7,6 +6,5 @@ module.exports = {
   'confirm-address':'Yes',
   'address-over-year':'Yes',
   'tel-number':'07700900982',
-  'nationality-data':'British',
-  'nationality-another':'No'
+  'nationality-another': 'no'
 }

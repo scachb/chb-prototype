@@ -1,24 +1,22 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-My portal
+Your claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-
 
 {% block beforeContent %}
 
 {{ govukBreadcrumbs({
-items: [
-{
-text: "Personal tax account home",
-href: "#"
-},
-{
-text: "Your portal",
-href: "#"
-}
-]
+  items: [
+    {
+      text: "Personal tax account home",
+      href: "#"
+    },
+    {
+      text: "Your portal",
+      href: "#"
+    }
+  ]
 }) }}
 
 {% endblock %}
@@ -38,15 +36,11 @@ href: "#"
       Your claim applications
     </h1>
 
-
   </div>
-
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
-
-
 
     <p>Below you will find your cases that need completing and information on claims or applications that have been submitted. Use the web chat to speak with a Child Benefits Officer. </p>
 
@@ -178,13 +172,10 @@ href: "#"
   </div>
 
   </main>
-</div>
+  {{ layoutServiceLinks() }}
+  </div>
 
-
-
-
-
-</div>
+  </div>
 </div>
 
 {% endblock %}

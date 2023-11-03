@@ -5,44 +5,40 @@ Have you lived at this address for more than 12 months? â€“ {{ serviceName }} â€
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-     
       <form class="form" action="your-telephone-number" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{{ govukRadios({
-  name: "address-over-year",
-  classes: "govuk-radios--inline",
-  value: data['address-over-year'],
-  fieldset: {
-    legend: {
-      text: "Have you lived at this address for more than 12 months?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
+        {{ govukRadios({
+          name: "address-over-year",
+          classes: "govuk-radios--inline",
+          value: data['address-over-year'],
+          fieldset: {
+            legend: {
+              text: "Have you lived at this address for more than 12 months?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
@@ -51,15 +47,14 @@ Have you lived at this address for more than 12 months? â€“ {{ serviceName }} â€
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
           </button>
-          
         </div>
-        <p><a class="govuk-link" href="#">Save and come back later</a></p>        
 
-
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>      
 
       </form>
-
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

@@ -5,6 +5,5 @@ module.exports = {
   'dateOfBirth':'21 03 1975',
   'confirm-address':'Yes',
   'address-over-year':'Yes',
-  'tel-number':'07700900982',
-  'nationality-another': 'no'
+  'tel-number':'07700900982'
 }

@@ -14,7 +14,7 @@ Tell us your other name – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="your-date-of-birth" method="post">
+      <form class="form" action="/your-date-of-birth" method="post">
 
         <p>
           {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -46,6 +46,6 @@ Tell us your other name – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
   </div>
 
-  {{ layoutPageNotWorkingLink() }}
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

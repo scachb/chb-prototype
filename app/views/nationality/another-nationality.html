@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You have added 2 nationalities – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You have added 2 nationalities</h1>
+
+      <form class="form" action="/where-have-you-lived" method="post">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                text: data['nationality']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "nationality"
+                  },
+                  {
+                    href: "#",
+                    text: "Remove",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                text: data['other-nationality']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "nationality"
+                  },
+                  {
+                    href: "#",
+                    text: "Remove",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+        
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+        {{ layoutServiceLinks() }}  
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -23,7 +21,8 @@
         Pass data: <p>{{ data['nino-data'] }}</p>
       Log data collected: {{ data | log }} -->
 
-<h2 class="govuk-heading-m">Personal details</h2>
+    <h2 class="govuk-heading-m">Personal details</h2>
+
       {{ govukSummaryList({
         rows: [
           {
@@ -80,7 +79,7 @@
           },
           {
             key: {
-              text: "Tell us the other name"
+              text: "Tell us your other name"
             },
             value: {
               text: data['other-last-names']
@@ -100,7 +99,7 @@
               text: "Date of birth"
             },
             value: {
-              text: data['dateOfBirth'] | join('/') 
+              text: data['dateOfBirth'] | replace(" ", "/")
             },
             actions: {
               items: [
@@ -169,12 +168,12 @@
               text: "Nationality"
             },
             value: {
-              text: data['nationality-data']
+              text: data['nationality']
             },
             actions: {
               items: [
                 {
-                  href: "/nationality?nationality-data=Yes",
+                  href: "/nationality?nationality=Yes",
                   text: "Change",
                   visuallyHiddenText: "another nationality"
                 }
@@ -194,6 +193,23 @@
                   href: "/nationality?nationality-another=No",
                   text: "Change",
                   visuallyHiddenText: "another nationality"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Tell us your other nationality?"
+            },
+            value: {
+              text: data['other-nationality'] 
+            },
+            actions: {
+              items: [
+                {
+                  href: "/nationality/add-another-nationality?other-nationality",
+                  text: "Change",
+                  visuallyHiddenText: "other nationality"
                 }
               ]
             }
@@ -239,4 +255,7 @@
 
     </div>
   </div>
+
+  {{ layoutServiceLinks()}}
+
 {% endblock %}

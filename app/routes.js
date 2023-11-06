@@ -17,6 +17,7 @@ router.post('change-child-answer', function(request, response) {
   }
 })
 
+// Conditional routing for address over the other name
 router.post('/one-thing-per-page/tell-us-your-other-name', function(request, response) {
   var knownName = request.session.data['known-name']
 
@@ -27,6 +28,7 @@ router.post('/one-thing-per-page/tell-us-your-other-name', function(request, res
   }
 })
 
+// Conditional routing for other nationality
 router.post("/where-have-you-lived", function (request, response) {
   if (request.session.data['nationality-another'] == "Yes") {
     // This is a workaround, nationality pages go back and forth to the same place and get stuck in a loop
@@ -36,5 +38,14 @@ router.post("/where-have-you-lived", function (request, response) {
     response.redirect("/nationality/add-other-nationality")
   } else {
     response.redirect("/where-have-you-lived")
+  }
+})
+
+// Conditional routing for address over 12 years page
+router.post("/your-telephone-number", function (request, response) {
+  if (request.session.data['address-over-year'] == "No") {
+    response.redirect("/one-thing-per-page/tell-us-your-last-address")
+  } else {
+    response.redirect("/your-telephone-number")
   }
 })

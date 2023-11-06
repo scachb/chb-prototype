@@ -5,10 +5,8 @@ How often do you want to get paid child benefit? – {{ serviceName }} – GOV.U
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -58,5 +56,7 @@ How often do you want to get paid child benefit? – {{ serviceName }} – GOV.U
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

@@ -5,10 +5,9 @@ Check your child answers– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -160,4 +159,6 @@ Check your child answers– {{ serviceName }} – GOV.UK Prototype Kit
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 {% endblock %}

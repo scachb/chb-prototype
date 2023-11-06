@@ -5,10 +5,8 @@ What are your employment details?– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -100,5 +98,7 @@ hint: {
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

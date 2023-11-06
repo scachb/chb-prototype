@@ -5,10 +5,9 @@ Tell us about who the child lives with – {{ serviceName }} – GOV.UK Prototyp
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -63,5 +62,7 @@ Tell us about who the child lives with – {{ serviceName }} – GOV.UK Prototyp
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

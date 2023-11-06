@@ -5,10 +5,8 @@ Are you claiming child benefit right now? – {{ serviceName }} – GOV.UK Proto
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -64,5 +62,7 @@ Are you claiming child benefit right now? – {{ serviceName }} – GOV.UK Proto
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

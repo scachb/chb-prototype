@@ -5,7 +5,8 @@ Find your address – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -77,5 +78,7 @@ Find your address – {{ serviceName }} – GOV.UK Prototype Kit
 
   </div>
 </div>
+
+{{ layoutServiceLinks() }}
 
 {% endblock %}

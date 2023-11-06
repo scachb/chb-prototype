@@ -5,10 +5,8 @@ What is your marital or civil partnership status? – {{ serviceName }} – GOV.
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -74,5 +72,7 @@ What is your marital or civil partnership status? – {{ serviceName }} – GOV.
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

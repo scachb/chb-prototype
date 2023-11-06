@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -91,10 +89,9 @@
           text: "Continue"
         }) }}
 
-       
-
       </form>
-
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 {% endblock %}

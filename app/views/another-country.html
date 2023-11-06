@@ -5,10 +5,8 @@ Another country details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -70,22 +68,21 @@ Another country details – {{ serviceName }} – GOV.UK Prototype Kit
           ]
         }) }}
                 
-                <div class="govuk-button-group">
-                  <button class="govuk-button" data-module="govuk-button">
-                    Continue
-                  </button>
-                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                    Cancel
-                  </button>
-                  
-                </div>
-                <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
         
-
-
       </form>
-
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

@@ -5,10 +5,8 @@ How the tax charge works for you or your partner – {{ serviceName }} – GOV.U
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -54,5 +52,7 @@ How the tax charge works for you or your partner – {{ serviceName }} – GOV.U
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

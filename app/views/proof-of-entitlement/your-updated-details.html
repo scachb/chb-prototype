@@ -5,10 +5,8 @@ Contact details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -89,5 +87,7 @@ Contact details – {{ serviceName }} – GOV.UK Prototype Kit
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

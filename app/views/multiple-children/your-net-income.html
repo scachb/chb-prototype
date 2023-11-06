@@ -5,7 +5,9 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -82,5 +84,7 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
 
     </div>
 </div>
+
+{{ layoutServiceLinks() }}
 
 {% endblock %}

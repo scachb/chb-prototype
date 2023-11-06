@@ -5,10 +5,8 @@ Which of these benefits do you receive – {{ serviceName }} – GOV.UK Prototyp
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -77,5 +75,7 @@ Which of these benefits do you receive – {{ serviceName }} – GOV.UK Prototyp
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 
 {% endblock %}

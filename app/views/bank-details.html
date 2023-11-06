@@ -5,7 +5,8 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -114,5 +115,7 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
 
     </div>
 </div>
+
+{{ layoutServiceLinks() }}
 
 {% endblock %}

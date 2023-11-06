@@ -5,10 +5,8 @@ Check your answers for your employment – {{ serviceName }} – GOV.UK Prototyp
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
@@ -100,4 +98,6 @@ Check your answers for your employment – {{ serviceName }} – GOV.UK Prototyp
 
     </div>
   </div>
+
+  {{ layoutServiceLinks() }}
 {% endblock %}

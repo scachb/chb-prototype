@@ -4,6 +4,10 @@
   Confirmation page – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ layoutLanguageSelect() }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">

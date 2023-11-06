@@ -5,25 +5,8 @@ Confirmation – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-tag: {
-text: "Beta"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
-
-{{
-hmrcLanguageSelect({
-language: 'en',
-en: {
-href: '?en'
-},
-cy: {
-href: '?cy'
-}
-})
-}}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
 {% endblock %}
 
 

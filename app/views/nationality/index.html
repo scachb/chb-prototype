@@ -17,32 +17,19 @@
       <h1 class="govuk-heading-xl">You have added 1 nationality</h1>
 
       <form class="form" action="/nationality/add-other-nationality" method="post">
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Nationality"
-              },
-              value: {
-                text: data['nationality']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "nationality"
-                  },
-                  {
-                    href: "#",
-                    text: "Remove",
-                    visuallyHiddenText: "nationality"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
+        <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              British
+            </dt>
+            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change British</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove British from the list</span></a></li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 

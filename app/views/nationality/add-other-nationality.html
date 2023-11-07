@@ -21,33 +21,9 @@
 
       <form class="form" action="/nationality/another-nationality" method="post">
 
-        {%- from "govuk/components/select/macro.njk" import govukSelect -%}
+        {% from "autocomplete.html" import locationAutocomplete %}
 
-        {{ govukSelect({
-          id: "other-nationality",
-          name: "other-nationality",
-          label: {
-            text: "Choose your nationality"
-          },
-          hint: {
-            text: "This is shown on your passport or travel document."
-          },
-          items: [
-            {
-              value: "choose",
-              text: "Choose nationality",
-              selected: true
-            },
-            {
-              value: "Afghan",
-              text: "Afghan"
-            },
-            {
-              value: "British",
-              text: "British"
-            }
-          ]
-        }) }}
+        {{ locationAutocomplete("nationality-data") }}
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

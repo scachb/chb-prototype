@@ -32,27 +32,35 @@ Declaration when child born outside the UK – {{ serviceName }}
           </div>
         </div>
       </div>
-
+<!-- ONLY NEEDED FOR BORN ABROAD 
       <h1 class="govuk-heading-l">
         Declaration
       </h1>
 
      <p>
-      <!--If you have chosen to adopt a child or if the child was born in another country, you confirm:-->
+      If you have chosen to adopt a child or if the child was born in another country, you confirm:
 
       Adopting a child or having a child born outside the UK will require you to:
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
         <li>send the birth certificates or other documents you need with this form.</li> 
         <li>send original documents and not photocopies.</li>
-        <!--<li>my claim will be delayed unless I submit the necessary documents, including the birth certificates.</li>-->
+        <li>my claim will be delayed unless I submit the necessary documents, including the birth certificates.</li>
 
       </ul>
     </p>
+  -->
     
     
       <form class="form" action="../confirmation" method="post">
-
+        <div class="govuk-form-group govuk-!-margin-bottom-1 govuk-form-group--error">
+      
+        <fieldset class="govuk-fieldset" aria-describedby="countries-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Declaration
+            </h1>
+          </legend>
         
        <!-- {{ govukCheckboxes({
           "name": "declaration-born-outside-uk",
@@ -67,7 +75,6 @@ Declaration when child born outside the UK – {{ serviceName }}
       <p id="countries-error" class="govuk-error-message">
         <span class="govuk-visually-hidden">Error:</span> Select the checkbox to confirm the information provided is correct and complete
       </p>
-       <div class="govuk-form-group govuk-!-margin-bottom-1 govuk-form-group--error">
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="t-and-c" name="t-and-c" type="checkbox" value="yes">
@@ -89,7 +96,7 @@ Declaration when child born outside the UK – {{ serviceName }}
         {{ govukButton({
           text: "Accept and send"
         }) }}
-
+</fieldset>
       </form>
 
     </div>

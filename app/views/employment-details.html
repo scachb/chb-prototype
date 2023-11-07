@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What are your employment details?– {{ serviceName }} – GOV.UK Prototype Kit
+Employment details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,73 +16,96 @@ What are your employment details?– {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Your employment details
+        Employment details
       </h1>
 
       <form class="form" action="receive-benefits" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
-  name: "employment",
-  fieldset: {
-    legend: {
-      text: "What is your employment status?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend"
-    }
-  },
-  hint: {
-    text: "Select all that apply."
-  },
-  items: [
-    {
-      value: "Employed",
-      text: "Employed"
-    },
-    {
-      value: "Looking for work",
-      text: "Looking for work"
-    },
-    {
-      value: "Self-employed",
-      text: "Self-employed"
-    },
-    {
-      divider: "or"
-    },
-    {
-      value: "None of these apply",
-      text: "None of these apply",
-      behaviour: "exclusive"
-    }
+        {{ govukCheckboxes({
+          name: "employment",
+          fieldset: {
+            legend: {
+              text: "What is your employment status?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Employed",
+              text: "Employed"
+            },
+            {
+              value: "Looking for work",
+              text: "Looking for work"
+            },
+            {
+              value: "Self-employed",
+              text: "Self-employed"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "None of these apply",
+              text: "None of these apply",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
 
-    
-  ]
-}) }}
-{{ govukRadios({
-  name: "confirm-forces",
-  classes: "govuk-radios--inline",
-  fieldset: {
-    legend: {
-      text: "Are you a member of HM forces or a civil servant working aboard?
-      "
-    }
-  },
-hint: {
-          text:  "A member of HM Forces is a member of the Royal Navy, British Army or Royal Air Force who is serving as a member of the regular forces. A Civil Servant is someone who works in a central government department, agency or non-departmental government body."
-        },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+        {# move to brand new page only triggers if Yes #}
+
+        {{ govukRadios({
+          name: "confirm-receive-benefits",
+          classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--m",
+              text: "Do you receive any benefits?"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {# move to brand new page #}
+
+        {{ govukRadios({
+          name: "confirm-forces",
+          classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--m",
+              text: "Are you a member of HM forces or a civil servant working aboard?"
+            }
+          },
+          hint: {
+            text: "A member of HM Forces is a member of the Royal Navy, British Army or Royal Air Force who is serving as a member of the regular forces. A Civil Servant is someone who works in a central government department, agency or non-departmental government body."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

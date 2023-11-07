@@ -58,7 +58,7 @@ Employment details – {{ serviceName }} – GOV.UK Prototype Kit
           ]
         }) }}
 
-        {# move to brand new page only triggers if Yes #}
+        {# move question to brand new page triggers a conditional if Yes #}
 
         {{ govukRadios({
           name: "confirm-receive-benefits",
@@ -80,8 +80,6 @@ Employment details – {{ serviceName }} – GOV.UK Prototype Kit
             }
           ]
         }) }}
-
-        {# move to brand new page #}
 
         {{ govukRadios({
           name: "confirm-forces",

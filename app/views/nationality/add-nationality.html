@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Nationality details – {{ serviceName }} – GOV.UK Prototype Kit
+  Choose your nationality – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,15 +15,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Nationality details
-      </h1>
+      <form class="form" action="/nationality/one-nationality" method="post">
 
-      <form class="form" action="/nationality" method="post">
+        {% from "layouts/macros.html" import locationAutocomplete %}
 
-        {%- from "autocomplete.html" import locationAutocomplete %}
-
-        {{ locationAutocomplete("nationality-data") }}
+        {{ locationAutocomplete({
+          id: "nationality-data",
+          label: {
+            text: "Choose your nationality",
+            isPageHeading: true
+          },
+          hint: {
+            text: "This is shown on your passport or travel document."
+          }
+        }) }}
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

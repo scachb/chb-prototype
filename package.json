@@ -10,8 +10,8 @@
     "@govuk-prototype-kit/task-list": "1.1.2",
     "govuk-country-and-territory-autocomplete": "^1.0.2",
     "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.13.5",
-    "hmrc-frontend": "5.50.0",
+    "govuk-prototype-kit": "13.14.1",
+    "hmrc-frontend": "5.56.0",
     "notifications-node-client": "7.0.3"
   }
 }

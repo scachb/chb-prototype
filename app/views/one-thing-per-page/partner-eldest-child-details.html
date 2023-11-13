@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
+Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Eldest child details</h1>
+      <h1 class="govuk-heading-l">Partner's eldest child details</h1>
 
       <form class="form" action="/marital-status" method="post">
 
@@ -25,7 +25,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
 
         {% call govukFieldset({
           legend: {
-            text: "What is the name of the eldest child you are claiming Child Benefit for?",
+            text: "What is the name of your partner's eldest child they are claiming Child Benefit for?",
             classes: "govuk-fieldset__legend--m"
           }
         }) %}

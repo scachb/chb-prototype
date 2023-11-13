@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Employment details – {{ serviceName }} – GOV.UK Prototype Kit
+What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,11 +15,7 @@ Employment details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Employment details
-      </h1>
-
-      <form class="form" action="receive-benefits" method="post">
+      <form class="form" action="/one-thing-per-page/other-benefits" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
@@ -28,7 +24,8 @@ Employment details – {{ serviceName }} – GOV.UK Prototype Kit
           fieldset: {
             legend: {
               text: "What is your employment status?",
-              classes: "govuk-fieldset__legend--m"
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
@@ -54,29 +51,6 @@ Employment details – {{ serviceName }} – GOV.UK Prototype Kit
               value: "None of these apply",
               text: "None of these apply",
               behaviour: "exclusive"
-            }
-          ]
-        }) }}
-
-        {# move question to brand new page triggers a conditional if Yes #}
-
-        {{ govukRadios({
-          name: "confirm-receive-benefits",
-          classes: "govuk-radios--inline",
-          fieldset: {
-            legend: {
-              classes: "govuk-fieldset__legend--m",
-              text: "Do you receive any benefits?"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
             }
           ]
         }) }}

@@ -17,7 +17,7 @@ Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prot
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-   <!-- ERROR SUMMARY
+   
       <div class="govuk-error-summary" data-module="govuk-error-summary">
         <div role="alert">
           <h2 class="govuk-error-summary__title">
@@ -36,7 +36,7 @@ Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prot
           </div>
         </div>
       </div>
-    -->
+
 
     <!-- ONLY NEEDED FOR BORN ABROAD 
       <h1 class="govuk-heading-l">
@@ -72,7 +72,9 @@ Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prot
 <p>
           {{ govukCheckboxes({
             "name": "declaration",
-            
+            errorMessage: {
+              text: "Select you declare that the information I've given on this form is correct and complete."
+            },
             "items": [
               {
                 "value": "yes",
@@ -84,7 +86,9 @@ Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prot
         <p>
         {{ govukCheckboxes({
             "name": "declaration-born-outside-uk",
-           
+            errorMessage: {
+              text: "Select you are sending the birth certificates or other documents that you need with this form."
+            },
             "items": [
                 {
                 "value": "yes",

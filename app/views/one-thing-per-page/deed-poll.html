@@ -1,0 +1,176 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Has the child? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What are the details of the child you want to claim for?
+      </h1>
+
+      <form class="form" action="/one-thing-per-page/childs-other-nameadopt" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "First name or given names"
+          },
+          id: "first-name",
+          name: "first-name",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Middle name"
+          },
+          id: "middle-name",
+          name: "middle-name",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name or family name"
+          },
+          id: "last-name",
+          name: "last-name",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Has this child been known by any other names?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}
+
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "date-of-birth",
+          namePrefix: "date-of-birth",
+          fieldset: {
+            legend: {
+              text: "Child date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}   
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "child-sex",
+          fieldset: {
+            legend: {
+              text: "What is the child's sex as recorded on the birth certificate?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend"
+            }
+          },
+          items: [
+            {
+              value: "male",
+              text: "Male"
+            },
+            {
+              value: "female",
+              text: "Female"
+            },
+            {
+              value: "other",
+              text: "Unspecified"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "child-sex",
+          fieldset: {
+            legend: {
+              text: "Does the child's birth certificate have a system number?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend"
+            }
+          },
+          hint: {
+            text: "This is the 9 digit number from the bottom left hand corner of their birth certificate. For example, 123456789."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the system number on the Child's birth certificate?",
+            classes: "govuk-label",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-10",
+          id: "birth-name",
+          name: "birth-name"
+        }) }}

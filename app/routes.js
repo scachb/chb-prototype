@@ -29,7 +29,7 @@ router.post('/one-thing-per-page/tell-us-the-other-name', function(request, resp
 })
 
 // Conditional routing for other nationality
-router.post("/nationality/add-other-nationality", function (request, response) {
+router.post("/nationality/add-other-nationality", function(request, response) {
   if (request.session.data['nationality-another'] == "Yes") {
     response.redirect("/nationality/add-other-nationality")
   } else {
@@ -38,7 +38,7 @@ router.post("/nationality/add-other-nationality", function (request, response) {
 })
 
 // Conditional routing for address over 12 years page
-router.post("/one-thing-per-page/tell-us-your-last-address", function (request, response) {
+router.post("/one-thing-per-page/tell-us-your-last-address", function(request, response) {
   if (request.session.data['address-over-year'] == "No") {
     response.redirect("/one-thing-per-page/tell-us-your-last-address")
   } else {
@@ -47,7 +47,7 @@ router.post("/one-thing-per-page/tell-us-your-last-address", function (request, 
 })
 
 // Conditional routing for eldest child details
-router.post("/one-thing-per-page/eldest-child-details", function (request, response) {
+router.post("/one-thing-per-page/eldest-child-details", function(request, response) {
   const claiming = request.session.data['claiming-child-benefit-right-now'];
 
   if (claiming == "Yes" || claiming == "Yesandno") {
@@ -58,7 +58,7 @@ router.post("/one-thing-per-page/eldest-child-details", function (request, respo
 })
 
 // Conditional routing for partner eldest child details
-router.post("/one-thing-per-page/partner-eldest-child-details", function (request, response) {
+router.post("/one-thing-per-page/partner-eldest-child-details", function(request, response) {
   const claiming = request.session.data['partner-claiming-child-benefit'];
 
   if (
@@ -72,10 +72,35 @@ router.post("/one-thing-per-page/partner-eldest-child-details", function (reques
   }
 })
 
-router.post("/one-thing-per-page/other-country", function (request, response) {
+// Conditional routing for other country
+router.post("/one-thing-per-page/other-country", function(request, response) {
   if (request.session.data['confirm-country'] == "yes") {
     response.redirect("/one-thing-per-page/other-country")
   } else {
     response.redirect("/claiming-child-benefit")
+  }
+})
+
+// Conditional routing for child's other name
+router.post("/one-thing-per-page/further-child-details", function(request, response) {
+  if (request.session.data['changed-name'] == "yes") {
+    response.redirect("/one-thing-per-page/deed-poll") 
+  } else {
+    response.redirect("/one-thing-per-page/further-child-details")
+  }
+})
+
+// Conditional routing for child birth registered unique to each country in UK
+router.post("/one-thing-per-page/system-number", function(request, response) {
+  const registered = request.session.data['birth-registered'];
+
+  if (registered == "england" || registered == "wales" ) {
+    response.redirect("/one-thing-per-page/system-number") 
+  } else if (registered == "scotland") {
+    response.redirect("/one-thing-per-page/district-number")
+  } else if (registered == "northern-ireland") {
+    response.redirect("/one-thing-per-page/registration-number")
+  } else {
+    response.redirect("/adopt")
   }
 })

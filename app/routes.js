@@ -56,3 +56,18 @@ router.post("/one-thing-per-page/eldest-child-details", function (request, respo
     response.redirect("/marital-status")
   }
 })
+
+// Conditional routing for partner eldest child details
+router.post("/one-thing-per-page/partner-eldest-child-details", function (request, response) {
+  const claiming = request.session.data['partner-claiming-child-benefit'];
+
+  if (
+    claiming == "claiming-child-benefit-and-getting-payments" || 
+    claiming == "claiming-child-benefit-and-not-getting-payments" ||
+    claiming == "waiting-to-hear-if-they-are-eligible-for-child-benefit"
+  ) {
+    response.redirect("/one-thing-per-page/partner-eldest-child-details")
+  } else {
+    response.redirect("/partner/national-insurance")
+  }
+})

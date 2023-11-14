@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your partner's nationalities – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Your partner's nationalities</h1>
+
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+      {{ govukInsetText({
+        text: "You can add up to 2 nationalities."
+      }) }}
+
+      <form class="form" action="#" method="post">
+        <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Nationality
+            </dt>
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+              British
+            </dt>
+            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="/nationality/add-nationality">
+                    Change<span class="govuk-visually-hidden"> British</span>
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="/nationality/nationality-important">
+                    Remove<span class="govuk-visually-hidden"> British from the list</span>
+                  </a>
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+
+        <p><a class="govuk-link" href="/nationality/add-other-nationality">Add another nationality</a></p>
+        
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+        {{ layoutServiceLinks() }}  
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

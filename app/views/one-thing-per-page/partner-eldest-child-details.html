@@ -38,27 +38,27 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
             label: {
               text: "First name"
             },
-            id: "eldest-child-first-name",
-            name: "eldest-child-first-name",
-            autocomplete: "eldest-child-first-name"
+            id: "partner-eldest-child-first-name",
+            name: "partner-eldest-child-first-name",
+            autocomplete: "partner-eldest-child-first-name"
           }) }}
 
           {{ govukInput({
             label: {
               text: "Middle name"
             },
-            id: "eldest-child-middle-name",
-            name: "eldest-child-middle-name",
-            autocomplete: "eldest-child-middle-name"
+            id: "partner-eldest-child-middle-name",
+            name: "partner-eldest-child-middle-name",
+            autocomplete: "partner-eldest-child-middle-name"
           }) }}
 
           {{ govukInput({
             label: {
               text: "Last name"
             },
-            id: "eldest-child-last-name",
-            name: "eldest-child-last-name",
-            autocomplete: "eldest-child-last-name"
+            id: "partner-eldest-child-last-name",
+            name: "partner-eldest-child-last-name",
+            autocomplete: "partner-eldest-child-last-name"
           }) }}
 
         {% endcall %}
@@ -66,8 +66,8 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "eldest-child-date-of-birth",
-          namePrefix: "eldest-child-date-of-birth",
+          id: "partner-eldest-child-date-of-birth",
+          namePrefix: "partner-eldest-child-date-of-birth",
           fieldset: {
             legend: {
               text: "What is the date of birth of the eldest child you are claiming for?",

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Tell us the other name – {{ serviceName }} – GOV.UK Prototype Kit
+Tell us the other country – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,19 +15,19 @@ Tell us the other name – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/your-date-of-birth" method="post">
+      <form class="form" action="/claiming-child-benefit" method="post">
 
         <p>
           {% from "govuk/components/input/macro.njk" import govukInput %}
 
           {{ govukInput({
             label: {
-              text: "Tell us the other name",
+              text: "Tell us the other country",
               classes: "govuk-label--l",
               isPageHeading: true
             },
-            id: "other-last-names",
-            name: "other-last-names"
+            id: "other-country",
+            name: "other-country"
           }) }}
         </p>
         

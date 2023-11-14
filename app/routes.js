@@ -53,7 +53,7 @@ router.post("/one-thing-per-page/eldest-child-details", function (request, respo
   if (claiming == "Yes" || claiming == "Yesandno") {
     response.redirect("/one-thing-per-page/eldest-child-details")
   } else {
-    response.redirect("/marital-status")
+    response.redirect("/one-thing-per-page/other-benefits")
   }
 })
 
@@ -69,5 +69,13 @@ router.post("/one-thing-per-page/partner-eldest-child-details", function (reques
     response.redirect("/one-thing-per-page/partner-eldest-child-details")
   } else {
     response.redirect("/partner/national-insurance")
+  }
+})
+
+router.post("/one-thing-per-page/other-country", function (request, response) {
+  if (request.session.data['confirm-country'] == "yes") {
+    response.redirect("/one-thing-per-page/other-country")
+  } else {
+    response.redirect("/claiming-child-benefit")
   }
 })

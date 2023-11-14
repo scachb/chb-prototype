@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
+What other benefits do you receive? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,16 +14,15 @@ What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <form class="form" action="/one-thing-per-page/are-you-a-member" method="post">
+      <form class="form" action="/marital-status" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          name: "employment",
+          name: "other-benefits",
           fieldset: {
             legend: {
-              text: "What is your employment status?",
+              text: "What other benefits do you receive?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -34,27 +33,36 @@ What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
           items: [
             {
               value: "Employed",
-              text: "Employed"
+              text: "Income-based Jobseeker's Allowance (JSA)"
             },
             {
               value: "Looking for work",
-              text: "Looking for work"
+              text: "Income-related Employment and Support Allowance (ESA)"
             },
             {
               value: "Self-employed",
-              text: "Self-employed"
+              text: "Income Support"
+            },
+          
+            {
+              value: "None of these apply",
+              text: "Pension Credit"
+            },
+            {
+              value: "None of these apply",
+              text: "Universal Credit"
             },
             {
               divider: "or"
             },
             {
-              value: "None of these apply",
-              text: "None of these apply",
+              value: "None of the above",
+              text: "None of the above",
               behaviour: "exclusive"
             }
           ]
         }) }}
-        
+
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
             Continue
@@ -67,7 +75,6 @@ What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
         <p><a class="govuk-link" href="#">Save and come back later</a></p>   
 
       </form>
-
     </div>
   </div>
 

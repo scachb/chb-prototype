@@ -19,16 +19,16 @@ Another country details – {{ serviceName }} – GOV.UK Prototype Kit
         Another country details
       </h1>
 
-      <form class="form" action="claiming-child-benefit" method="post">
+      <form class="form" action="/one-thing-per-page/other-country" method="post">
 
         {{ govukRadios({
-          name: "confirm-country",
+          name: "worked-in-another-country",
           classes: "govuk-radios--inline",
           fieldset: {
             legend: {
               text: "Are you now, or have you at any time in the last 3 months worked in another country?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend"
+              classes: "govuk-fieldset__legend--m"
             }
           },
       
@@ -51,7 +51,7 @@ Another country details – {{ serviceName }} – GOV.UK Prototype Kit
             legend: {
               text: "Are you now, or have you at any time in the last 3 months received benefits from another country?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {

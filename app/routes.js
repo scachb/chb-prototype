@@ -101,6 +101,33 @@ router.post("/one-thing-per-page/system-number", function(request, response) {
   } else if (registered == "northern-ireland") {
     response.redirect("/one-thing-per-page/registration-number")
   } else {
-    response.redirect("/one-thing-per-page/other-benefits")
+    response.redirect("/adopt")
+  }
+})
+
+// Conditional routing for system number input
+router.post("/one-thing-per-page/system-number-input", function(request, response) {
+  if (request.session.data['birth-certificate-have-system-number'] == "yes") {
+    response.redirect("/one-thing-per-page/system-number-input") 
+  } else {
+    response.redirect("/adopt")
+  }
+})
+
+// Conditional routing for district number input
+router.post("/one-thing-per-page/district-number-input", function(request, response) {
+  if (request.session.data['birth-certificate-have-district-number'] == "yes") {
+    response.redirect("/one-thing-per-page/district-number-input") 
+  } else {
+    response.redirect("/adopt")
+  }
+})
+
+// Conditional routing for registration number input
+router.post("/one-thing-per-page/registration-number-input", function(request, response) {
+  if (request.session.data['birth-certificate-have-registration-number-input'] == "yes") {
+    response.redirect("/one-thing-per-page/registration-number-input") 
+  } else {
+    response.redirect("/adopt")
   }
 })

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Does the child's birth certificate have a registration number? – {{ serviceName }} – GOV.UK Prototype Kit
+Do you know who claimed Child Benefit for this child? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,22 +14,19 @@ Does the child's birth certificate have a registration number? – {{ serviceNam
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/one-thing-per-page/registration-number-input" method="post">
+      <form class="form" action="/one-thing-per-page/name-of-person-who-claimed" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "birth-certificate-have-registration-number",
+          name: "know-who-claimed-for-this-child",
           fieldset: {
             legend: {
-              text: "Does the child's birth certificate have a registration number?",
+              text: "Do you know who claimed Child Benefit for this child?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-          },
-          hint: {
-            text: "This is at the top right hand corner of their birth certificate. For example B12345678."
           },
           items: [
             {
@@ -42,19 +39,18 @@ Does the child's birth certificate have a registration number? – {{ serviceNam
             }
           ]
         }) }}
-                
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Continue"
-          }) }}
 
-          {{ govukButton({
-            text: "Cancel",
-            classes: "govuk-button--secondary"
-          }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
         </div>
-        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
-      
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>       
+
       </form>
     </div>
   </div>

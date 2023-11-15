@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What is the system number on the child's birth certificate – {{ serviceName }} – GOV.UK Prototype Kit
+Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,20 +14,33 @@ What is the system number on the child's birth certificate – {{ serviceName }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/multiple-children/adopt" method="post">
+
+      <h1 class="govuk-heading-l">Find address of the other claimant</h1>
+
+      <form class="form" action="/one-thing-per-page/confirm-previous-claimant-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
+          classes: "govuk-input--width-5",
           label: {
-            text: "What is the system number on the child's birth certificate",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Postcode"
           },
-          id: "system-number",
-          name: "system-number"
+          id: "previous-claimant-postcode",
+          name: "previous-claimant-postcode"
         }) }}
-        
+
+        {{ govukInput({
+          label: {
+            text: "Property name or number (optional)"
+          },
+          hint: {
+            text: "For example, The Mill or Flat 1a"
+          },
+          id: "previous-claimant-property",
+          name: "previous-claimant-property"
+        }) }}
+
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
             Continue

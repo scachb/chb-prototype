@@ -82,7 +82,7 @@ router.post("/one-thing-per-page/other-country", function(request, response) {
 })
 
 // Conditional routing for child's other name
-router.post("/one-thing-per-page/further-child-details", function(request, response) {
+router.post("/one-thing-per-page/deed-poll", function(request, response) {
   if (request.session.data['changed-name'] == "yes") {
     response.redirect("/one-thing-per-page/deed-poll") 
   } else {
@@ -101,7 +101,7 @@ router.post("/one-thing-per-page/system-number", function(request, response) {
   } else if (registered == "northern-ireland") {
     response.redirect("/one-thing-per-page/registration-number")
   } else {
-    response.redirect("/adopt")
+    response.redirect("/multiple-children/adopt")
   }
 })
 
@@ -110,7 +110,7 @@ router.post("/one-thing-per-page/system-number-input", function(request, respons
   if (request.session.data['birth-certificate-have-system-number'] == "yes") {
     response.redirect("/one-thing-per-page/system-number-input") 
   } else {
-    response.redirect("/adopt")
+    response.redirect("/multiple-children/adopt")
   }
 })
 
@@ -119,15 +119,42 @@ router.post("/one-thing-per-page/district-number-input", function(request, respo
   if (request.session.data['birth-certificate-have-district-number'] == "yes") {
     response.redirect("/one-thing-per-page/district-number-input") 
   } else {
-    response.redirect("/adopt")
+    response.redirect("/multiple-children/adopt")
   }
 })
 
 // Conditional routing for registration number input
 router.post("/one-thing-per-page/registration-number-input", function(request, response) {
-  if (request.session.data['birth-certificate-have-registration-number-input'] == "yes") {
+  if (request.session.data['birth-certificate-have-registration-number'] == "yes") {
     response.redirect("/one-thing-per-page/registration-number-input") 
   } else {
-    response.redirect("/adopt")
+    response.redirect("/multiple-children/adopt")
+  }
+})
+
+// Conditional routing for previous claimant
+router.post("/one-thing-per-page/do-you-know-who-claimed", function(request, response) {
+  if (request.session.data['have-you-claimed-for-this-child'] == "yes") {
+    response.redirect("/one-thing-per-page/do-you-know-who-claimed") 
+  } else {
+    response.redirect("/multiple-children/child-address")
+  }
+})
+
+// Conditional routing for previous claimant - do you know who claimed
+router.post("/one-thing-per-page/name-of-person-who-claimed", function(request, response) {
+  if (request.session.data['know-who-claimed-for-this-child'] == "yes") {
+    response.redirect("/one-thing-per-page/name-of-person-who-claimed") 
+  } else {
+    response.redirect("/multiple-children/child-address")
+  }
+})
+
+// Conditional routing for finding address of claimant
+router.post("/one-thing-per-page/find-address-of-previous-claimant", function(request, response) {
+  if (request.session.data['do-you-know-the-address-of-the-previous-claimant'] == "yes") {
+    response.redirect("/one-thing-per-page/find-address-of-previous-claimant") 
+  } else {
+    response.redirect("/multiple-children/child-address")
   }
 })

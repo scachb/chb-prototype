@@ -131,3 +131,30 @@ router.post("/one-thing-per-page/registration-number-input", function(request, r
     response.redirect("/multiple-children/adopt")
   }
 })
+
+// Conditional routing for previous claimant
+router.post("/one-thing-per-page/do-you-know-who-claimed", function(request, response) {
+  if (request.session.data['have-you-claimed-for-this-child'] == "yes") {
+    response.redirect("/one-thing-per-page/do-you-know-who-claimed") 
+  } else {
+    response.redirect("/multiple-children/child-address")
+  }
+})
+
+// Conditional routing for previous claimant - do you know who claimed
+router.post("/one-thing-per-page/name-of-person-who-claimed", function(request, response) {
+  if (request.session.data['know-who-claimed-for-this-child'] == "yes") {
+    response.redirect("/one-thing-per-page/name-of-person-who-claimed") 
+  } else {
+    response.redirect("/multiple-children/child-address")
+  }
+})
+
+// Conditional routing for finding address of claimant
+router.post("/one-thing-per-page/find-address-of-previous-claimant", function(request, response) {
+  if (request.session.data['do-you-know-the-address-of-the-previous-claimant'] == "yes") {
+    response.redirect("/one-thing-per-page/find-address-of-previous-claimant") 
+  } else {
+    response.redirect("/multiple-children/child-address")
+  }
+})

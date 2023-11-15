@@ -92,7 +92,7 @@ router.post("/one-thing-per-page/further-child-details", function(request, respo
 
 // Conditional routing for child birth registered unique to each country in UK
 router.post("/one-thing-per-page/system-number", function(request, response) {
-  const registered = request.session.data['birth-registered'];
+  const registered = request.session.data['child-birth-registered'];
 
   if (registered == "england" || registered == "wales" ) {
     response.redirect("/one-thing-per-page/system-number") 
@@ -101,6 +101,6 @@ router.post("/one-thing-per-page/system-number", function(request, response) {
   } else if (registered == "northern-ireland") {
     response.redirect("/one-thing-per-page/registration-number")
   } else {
-    response.redirect("/adopt")
+    response.redirect("/one-thing-per-page/other-benefits")
   }
 })

@@ -16,10 +16,11 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Your nationalities</h1>
 
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-      {{ govukInsetText({
-        text: "You can add up to 2 nationalities."
+      {{ govukWarningText({
+        text: "You can only add up to 2 nationalities.",
+        iconFallbackText: "Warning"
       }) }}
 
       <form class="form" action="/nationality/add-other-nationality" method="post">

@@ -11,7 +11,7 @@ My claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 {{ layoutPhaseBanner() }}
 {{ layoutLanguageSelect() }}
 
-{{ govukBreadcrumbs({
+<!-- {{ govukBreadcrumbs({
 items: [
 {
 text: "Personal tax account home",
@@ -22,7 +22,7 @@ text: "Your portal",
 href: "#"
 }
 ]
-}) }}
+}) }} -->
 
 {% endblock %}
 
@@ -34,7 +34,7 @@ href: "#"
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-<!-- REMOVED FROM TOP OF THE PAGE US-11235
+<!-- REMOVED FROM TOP OF THE PAGE US-11235 -->
 {% set html %}
   <p class="govuk-notification-banner__heading">
     We saved your progress. We'll store your information for 28 days.
@@ -44,7 +44,7 @@ href: "#"
 {{ govukNotificationBanner({
   html: html
 }) }}
--->
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -80,19 +80,23 @@ href: "#"
       Child Benefit claims in progress
     </h2>
 
-    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-{% set html %}
+<!-- REMOVED FROM TOP OF THE PAGE US-11235 
+  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+  {% set html %}
   <p class="govuk-notification-banner__heading">
     We have saved your progress and will store your information for 28 days. Please ensure you submit this claim within 14 days.
-    <!-- <a class="govuk-notification-banner__link" href="#">Continue claim application</a>.-->
-  </p>
-{% endset %}
-
+    <!-- <a class="govuk-notification-banner__link" href="#">Continue claim application</a>.
+    </p>
+  {% endset %}
+  -->
+  
+  
+<!--
 {{ govukNotificationBanner({
   html: html
 }) }}
-
+-->
     <h3 class="govuk-heading-s">
         Children addded
       </h3>

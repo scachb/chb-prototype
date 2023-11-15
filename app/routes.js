@@ -92,7 +92,7 @@ router.post("/one-thing-per-page/further-child-details", function(request, respo
 
 // Conditional routing for child birth registered unique to each country in UK
 router.post("/one-thing-per-page/system-number", function(request, response) {
-  const registered = request.session.data['birth-registered'];
+  const registered = request.session.data['child-birth-registered'];
 
   if (registered == "england" || registered == "wales" ) {
     response.redirect("/one-thing-per-page/system-number") 
@@ -100,6 +100,33 @@ router.post("/one-thing-per-page/system-number", function(request, response) {
     response.redirect("/one-thing-per-page/district-number")
   } else if (registered == "northern-ireland") {
     response.redirect("/one-thing-per-page/registration-number")
+  } else {
+    response.redirect("/adopt")
+  }
+})
+
+// Conditional routing for system number input
+router.post("/one-thing-per-page/system-number-input", function(request, response) {
+  if (request.session.data['birth-certificate-have-system-number'] == "yes") {
+    response.redirect("/one-thing-per-page/system-number-input") 
+  } else {
+    response.redirect("/adopt")
+  }
+})
+
+// Conditional routing for district number input
+router.post("/one-thing-per-page/district-number-input", function(request, response) {
+  if (request.session.data['birth-certificate-have-district-number'] == "yes") {
+    response.redirect("/one-thing-per-page/district-number-input") 
+  } else {
+    response.redirect("/adopt")
+  }
+})
+
+// Conditional routing for registration number input
+router.post("/one-thing-per-page/registration-number-input", function(request, response) {
+  if (request.session.data['birth-certificate-have-registration-number-input'] == "yes") {
+    response.redirect("/one-thing-per-page/registration-number-input") 
   } else {
     response.redirect("/adopt")
   }

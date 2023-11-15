@@ -16,15 +16,11 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Your nationalities</h1>
 
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-      {% set html %}
-        You cannot add another nationality as you have entered a maximum of 2.<br /><br />
-        You can add another nationality by removing an existing one or amending the details of another.
-      {% endset %}
-
-      {{ govukInsetText({
-        html: html
+      {{ govukWarningText({
+        text: "You cannot add another nationality as you have entered a maximum of 2. You can add another nationality by removing an existing one or amending the details of another.",
+        iconFallbackText: "Warning"
       }) }}
 
       <form class="form" action="/where-have-you-lived" method="post">

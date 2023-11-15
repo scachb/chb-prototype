@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What is the system number on the Child's birth certificate – {{ serviceName }} – GOV.UK Prototype Kit
+Child's other name – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,18 +14,19 @@ What is the system number on the Child's birth certificate – {{ serviceName }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/adopt" method="post">
+
+      <form class="form" action="/one-thing-per-page/further-child-details" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What is the system number on the Child's birth certificate",
+            text: "Child's other name",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          id: "system-number",
-          name: "system-number"
+          id: "other-last-names",
+          name: "other-last-names"
         }) }}
         
         <div class="govuk-button-group">

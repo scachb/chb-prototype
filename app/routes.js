@@ -185,3 +185,30 @@ router.post("/multiple-children/find-address-of-person", function(request, respo
     response.redirect("/multiple-children/check-answers")
   }
 })
+
+// Conditional routing for if the child has lived at a different address
+router.post("/multiple-children/lived-with-another", function(request, response) {
+  if (request.session.data['child-different-address'] == "yes") {
+    response.redirect("/multiple-children/lived-with-another") 
+  } else {
+    response.redirect("/multiple-children/check-answers")
+  }
+})
+
+// Conditional routing for if the child has lived at a different address
+router.post("/multiple-children/person-child-lived-with", function(request, response) {
+  if (request.session.data['child-lived-with'] == "yes") {
+    response.redirect("/multiple-children/person-child-lived-with") 
+  } else {
+    response.redirect("/multiple-children/check-answers")
+  }
+})
+
+// Conditional routing for the person who the child lived with address
+router.post("/multiple-children/find-address-of-person-lived-with", function(request, response) {
+  if (request.session.data['know-address-of-person-child-lived-with'] == "yes") {
+    response.redirect("/multiple-children/find-address-of-person-lived-with") 
+  } else {
+    response.redirect("/multiple-children/person-lived-with-telephone-number")
+  }
+})

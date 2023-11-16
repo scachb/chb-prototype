@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Person child lives with details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Person child lives with details</h1>
+
+      <form class="form" action="/multiple-children/find-address-of-person" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What is the name of the person the child lives with?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              text: "First name or given names"
+            },
+            id: "person-child-lives-with-first-name",
+            name: "person-child-lives-with-first-name",
+            autocomplete: "person-child-lives-with-first-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Middle name"
+            },
+            id: "person-child-lives-with-middle-name",
+            name: "person-child-lives-with-middle-name",
+            autocomplete: "person-child-lives-with-middle-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Last name(s) or family name(s)"
+            },
+            id: "person-child-lives-with-last-name",
+            name: "person-child-lives-with-last-name",
+            autocomplete: "person-child-lives-with-last-name"
+          }) }}
+
+        {% endcall %}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "know-address-of-person-child-lives-with",
+          fieldset: {
+            legend: {
+              text: "Do you know the address of the other claimant?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+      </form>
+
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

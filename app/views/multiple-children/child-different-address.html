@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Do you know who the child lives with? – {{ serviceName }} – GOV.UK Prototype Kit
+In the last year, has the child lived with anyone else that has a different address to you? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,16 +14,16 @@ Do you know who the child lives with? – {{ serviceName }} – GOV.UK Prototype
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/multiple-children/person-child-lives-with" method="post">
+      <form class="form" action="/multiple-children/check-answers" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "know-who-the-child-lives-with",
+          name: "child-different-address",
           fieldset: {
             legend: {
-              text: "Do you know who the child lives with?",
+              text: "In the last year, has the child lived with anyone else that has a different address to you?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -47,11 +47,10 @@ Do you know who the child lives with? – {{ serviceName }} – GOV.UK Prototype
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Cancel
           </button>
-          
         </div>
         <p><a class="govuk-link" href="#">Save and come back later</a></p>  
-      </form>
 
+      </form>
     </div>
   </div>
 

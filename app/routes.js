@@ -158,3 +158,30 @@ router.post("/one-thing-per-page/find-address-of-previous-claimant", function(re
     response.redirect("/multiple-children/child-address")
   }
 })
+
+// Conditional routing for child lives with you
+router.post("/multiple-children/child-different-address", function(request, response) {
+  if (request.session.data['child-live-with-you'] == "yes") {
+    response.redirect("/multiple-children/child-different-address") 
+  } else {
+    response.redirect("/multiple-children/child-lives-with")
+  }
+})
+
+// Conditional routing for knowing the person child lives with
+router.post("/multiple-children/person-child-lives-with", function(request, response) {
+  if (request.session.data['know-who-the-child-lives-with'] == "yes") {
+    response.redirect("/multiple-children/person-child-lives-with") 
+  } else {
+    response.redirect("/multiple-children/check-answers")
+  }
+})
+
+// Conditional routing for finding address of the person child lives with
+router.post("/multiple-children/find-address-of-person", function(request, response) {
+  if (request.session.data['know-address-of-person-child-lives-with'] == "yes") {
+    response.redirect("/multiple-children/find-address-of-person") 
+  } else {
+    response.redirect("/multiple-children/check-answers")
+  }
+})

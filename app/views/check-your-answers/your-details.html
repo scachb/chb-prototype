@@ -166,51 +166,17 @@
           },
           {
             key: {
-              text: "Nationality"
+              text: "Nationalities"
             },
             value: {
-              text: data['nationality']
+              text: "British, Brazil"
             },
             actions: {
               items: [
                 {
-                  href: "/nationality?nationality=Yes",
+                  href: "/nationality/two-nationalities?nationality",
                   text: "Change",
-                  visuallyHiddenText: "another nationality"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Do you have another nationality?"
-            },
-            value: {
-              text: data['nationality-another'] 
-            },
-            actions: {
-              items: [
-                {
-                  href: "/nationality?nationality-another=No",
-                  text: "Change",
-                  visuallyHiddenText: "another nationality"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Tell us your other nationality?"
-            },
-            value: {
-              text: data['other-nationality'] 
-            },
-            actions: {
-              items: [
-                {
-                  href: "/nationality/add-another-nationality?other-nationality",
-                  text: "Change",
-                  visuallyHiddenText: "other nationality"
+                  visuallyHiddenText: "nationalities"
                 }
               ]
             }
@@ -236,7 +202,7 @@
       }) }}
 
       <p>
-        Now complete the next section
+        Now complete your relationship details section
       </p>
 
       <form action="/task-list/your-details-complete" method="post" novalidate>

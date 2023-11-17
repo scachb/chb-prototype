@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Check your answers for your employment – {{ serviceName }} – GOV.UK Prototype Kit
+Check your answers for your relationship details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@ Check your answers for your employment – {{ serviceName }} – GOV.UK Prototyp
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Check your answers for your employment
+        Check your answers for your relationship details
       </h1>
 
       {{ govukSummaryList({
@@ -82,7 +82,7 @@ Check your answers for your employment – {{ serviceName }} – GOV.UK Prototyp
         Now complete the child you are claiming for section
       </p>
 
-      <form action="/task-list/your-employment-complete" method="post" novalidate>
+      <form action="/task-list/your-relationship-complete" method="post" novalidate>
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

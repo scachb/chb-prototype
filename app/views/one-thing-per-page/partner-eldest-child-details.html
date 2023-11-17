@@ -17,11 +17,10 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-l">Partner's eldest child details</h1>
 
-      <form class="form" action="/marital-status" method="post">
+      <form class="form" action="/relationship/partner-national-insurance" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
         {% call govukFieldset({
           legend: {
@@ -30,8 +29,11 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
           }
         }) %}
 
-          {{ govukInsetText({
-            text: "This child must either be under 16 or under 20 and in full-time, non-advanced education or approved training."
+          {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+          {{ govukWarningText({
+            text: "This child must either be under 16 or under 20 and in full-time, non-advanced education or approved training.",
+            iconFallbackText: "Warning"
           }) }}
 
           {{ govukInput({

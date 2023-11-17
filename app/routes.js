@@ -64,7 +64,7 @@ router.post("/one-thing-per-page/partner-eldest-child-details", function(request
   ) {
     response.redirect("/one-thing-per-page/partner-eldest-child-details")
   } else {
-    response.redirect("/partner/national-insurance")
+    response.redirect("/relationship/partner-national-insurance")
   }
 })
 

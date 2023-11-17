@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What are the details of the child you want to claim for? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {{ govukNotificationBanner({
+        text: "You should return in 24 hours to retry your claim. If you wait any longer, it will delay the payment of your claim."
+      }) }}
+
+      <h1 class="govuk-heading-l">
+        What are the details of the child you want to claim for?
+      </h1>
+
+      <form class="form" action="/one-thing-per-page/deed-poll" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "First name or given names"
+          },
+          id: "first-name",
+          name: "first-name",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Middle name"
+          },
+          id: "middle-name",
+          name: "middle-name",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name or family name"
+          },
+          id: "last-name",
+          name: "last-name",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Has this child been known by any other names?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

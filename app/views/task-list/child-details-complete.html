@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Claim Child Benefit task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Claim Child Benefit
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 4 sections.</p>
+
+      <ul class="govuk-prototype-kit-task-list govuk-prototype-kit-task-list__items govuk-!-padding-left-0">
+        <li class="govuk-prototype-kit-task-list__item">
+          <span class="govuk-prototype-kit-task-list__task-name">
+            <a href="/national-insurance" aria-describedby="eligibility-status">
+              Your details
+            </a>
+          </span>
+          <span class="hmrc-status-tag" id="your-details-status">Complete</span>
+        </li>
+        <li class="govuk-prototype-kit-task-list__item">
+          <span class="govuk-prototype-kit-task-list__task-name">
+            <a href="/employment-details" aria-describedby="relationship-status">
+              Relationship details
+            </a>
+          </span>
+          <span class="hmrc-status-tag" id="relationship-status">Complete</span>
+        </li>
+        <li class="govuk-prototype-kit-task-list__item">
+          <span class="govuk-prototype-kit-task-list__task-name">
+            <a href="/multiple-children" aria-describedby="child-status">
+              Child details
+            </a>
+          </span>
+          <span class="hmrc-status-tag" id="child-status">Complete</span>
+        </li>
+        <li class="govuk-prototype-kit-task-list__item">
+          <span class="govuk-prototype-kit-task-list__task-name">
+            <a href="/your-net-income" aria-describedby="payment-status">
+              Payment details
+            </a>
+          </span>
+          <span class="hmrc-status-tag" id="payment-status">Not started</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

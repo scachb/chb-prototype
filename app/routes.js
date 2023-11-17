@@ -8,9 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 router.post('change-child-answer', function(request, response) {
-  var changeChild = request.session.data['change-child-details']
-  
-  if (changeChild == "index"){
+  if (request.session.data['change-child-details'] == "index"){
     response.redirect("children-list")
   } else {
     response.redirect("children-list")
@@ -19,9 +17,7 @@ router.post('change-child-answer', function(request, response) {
 
 // Conditional routing for address over the other name
 router.post('/one-thing-per-page/tell-us-the-other-name', function(request, response) {
-  var knownName = request.session.data['known-name']
-
-  if (knownName == "Yes"){
+  if (request.session.data['known-name'] == "Yes"){
     response.redirect("/one-thing-per-page/tell-us-the-other-name")
   } else {
     response.redirect("/your-date-of-birth")

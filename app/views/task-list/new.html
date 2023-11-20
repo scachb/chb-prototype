@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Claim Child Benefit – {{ serviceName }} – GOV.UK Prototype Kit
+Child Benefit claim – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -9,49 +9,59 @@ Claim Child Benefit – {{ serviceName }} – GOV.UK Prototype Kit
   {{ layoutLanguageSelect() }}
 {% endblock %}
 
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Claim Child Benefit
+        Child Benefit claim
       </h1>
 
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Claim incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 4 sections.</p>
 
       <ul class="govuk-prototype-kit-task-list govuk-prototype-kit-task-list__items govuk-!-padding-left-0">
         <li class="govuk-prototype-kit-task-list__item">
           <span class="govuk-prototype-kit-task-list__task-name">
-            <a href="/national-insurance" aria-describedby="eligibility-status">
+            <a href="/national-insurance" aria-describedby="your-details-status">
               Your details
             </a>
           </span>
-          <span class="hmrc-status-tag" id="your-details-status">Not started</span>
+          <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="your-details-status">
+            Not started
+          </strong>
         </li>
         <li class="govuk-prototype-kit-task-list__item">
           <span class="govuk-prototype-kit-task-list__task-name">
-            <a href="/employment-details" aria-describedby="relationship-status">
+            <a href="/marital-status" aria-describedby="relationship-details-status">
               Relationship details
             </a>
           </span>
-          <span class="hmrc-status-tag" id="relationship-status">Not started</span>
+          <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="relationship-details-status">
+            Not started
+          </strong>
         </li>
         <li class="govuk-prototype-kit-task-list__item">
           <span class="govuk-prototype-kit-task-list__task-name">
-            <a href="/multiple-children" aria-describedby="child-status">
+            <a href="/multiple-children" aria-describedby="child-details-status">
               Child details
             </a>
           </span>
-          <span class="hmrc-status-tag" id="child-status">Not started</span>
+          <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="child-details-status">
+            Not started
+          </strong>
         </li>
         <li class="govuk-prototype-kit-task-list__item">
           <span class="govuk-prototype-kit-task-list__task-name">
-            <a href="/your-net-income" aria-describedby="payment-status">
+            <a href="/your-net-income" aria-describedby="payment-details-status">
               Payment details
             </a>
           </span>
-          <span class="hmrc-status-tag" id="payment-status">Not started</span>
+          <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="payment-details-status">
+            Not started
+          </strong>
         </li>
       </ul>
     </div>

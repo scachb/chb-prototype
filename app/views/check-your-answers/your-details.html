@@ -22,7 +22,7 @@
         Pass data: <p>{{ data['nino-data'] }}</p>
       Log data collected: {{ data | log }} -->
 
-    <h2 class="govuk-heading-m">Personal details</h2>
+      <h2 class="govuk-heading-m">Personal details</h2>
 
       {{ govukSummaryList({
         rows: [
@@ -38,7 +38,7 @@
                 {
                   href: "/national-insurance?nino-data=WE896405D",
                   text: "Change",
-                  visuallyHiddenText: "Question 1"
+                  visuallyHiddenText: "national insurance number"
                 }
               ]
             }
@@ -56,7 +56,7 @@
                 {
                   href: "/your-name-details?changed-name=Yes",
                   text: "Change",
-                  visuallyHiddenText: "Question 2"
+                  visuallyHiddenText: "your name"
                 }
               ]
             }
@@ -159,7 +159,7 @@
                 {
                   href: "/your-telephone-nummber?tel-number=07700 900 982",
                   text: "Change",
-                  visuallyHiddenText: "Question"
+                  visuallyHiddenText: "telephone number"
                 }
               ]
             }
@@ -201,9 +201,140 @@
         ]
       }) }}
 
-      <p>
-        Now complete your relationship details section
-      </p>
+      <h2 class="govuk-heading-m">Employment details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Employment status"
+            },
+            value: {
+              text: data['employment']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/employment-details?employment",
+                  text: "Change",
+                  visuallyHiddenText: "employment status"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are you a member of HM forces or a civil servant working aboard?"
+            },
+            value: {
+              text: data['confirm-forces']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/one-thing-per-page/are-you-a-member?confirm-forces",
+                  text: "Change",
+                  visuallyHiddenText: "are you a member of HM forces or a civil servant working aboard?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are you now, or have you at any time in the last 3 months worked in another country?"
+            },
+            value: {
+              text: data['worked-in-another-country']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/another-country?worked-in-another-country",
+                  text: "Change",
+                  visuallyHiddenText: "are you now, or have you at any time in the last 3 months worked in another country?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are you now, or have you at any time in the last 3 months received benefits from another country?"
+            },
+            value: {
+              text: data['confirm-country']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/another-country?confirm-country",
+                  text: "Change",
+                  visuallyHiddenText: "are you now, or have you at any time in the last 3 months received benefits from another country?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Tell us the other country"
+            },
+            value: {
+              text: data['other-country']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/one-thing-per-page/other-country?other-country",
+                  text: "Change",
+                  visuallyHiddenText: "other country"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Child Benefit details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Are you claiming child benefit right now?"
+            },
+            value: {
+              text: data['claiming-child-benefit-right-now']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/claiming-child-benefit?claiming-child-benefit-right-now",
+                  text: "Change",
+                  visuallyHiddenText: "are you claiming child benefit right now?"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are you claiming child benefit right now?"
+            },
+            value: {
+              text: data['claiming-child-benefit-right-now']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/claiming-child-benefit?claiming-child-benefit-right-now",
+                  text: "Change",
+                  visuallyHiddenText: "are you claiming child benefit right now?"
+                }
+              ]
+            }
+          },
+        ]
+      }) }}
+
+      <p class="govuk-body">Now complete the next section</p>
 
       <form action="/task-list/your-details-complete" method="post" novalidate>
 

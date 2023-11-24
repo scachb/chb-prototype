@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-weight-bold" for="dates">
+    Date
+    </label>
+      <div class="govuk-date-input" id="date-day">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="date-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="text" inputmode="numeric">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="date-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="text" inputmode="numeric">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="date-year">
+              Year
+            </label>
+            <input readonly="readonly"  tabindex="-1" onfocus="this.blur();" class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" inputmode="numeric">
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="govuk-width-container">
+
+
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">For offical use only</caption>
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Corres</th>
+                  <th class="govuk-table__header" scope="col">Traced</th>
+                  <th class="govuk-table__header" scope="col">CLI</th>
+              </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="row">&nbsp;</th>
+                  <td class="govuk-table__cell">&nbsp;</td>
+                  <td class="govuk-table__cell">&nbsp;</td>
+              </tr>
+          </tbody>
+      </table>
+      <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Documents returned</caption>
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Birth certificate</th>
+                  <th class="govuk-table__header" scope="col">Normal</th>
+                  <th class="govuk-table__header" scope="col">&nbsp;</th>
+                  <th class="govuk-table__header" scope="col">&nbsp;</th>
+              </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="row">Passport</th>
+                  <td class="govuk-table__cell govuk-!-font-weight-bold">Recorded</td>
+                  <td class="govuk-table__cell">&nbsp;</td>
+                  <td class="govuk-table__cell">&nbsp;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="row">Other</th>
+                  <td class="govuk-table__cell govuk-!-font-weight-bold">Registered</td>
+                  <td class="govuk-table__cell">&nbsp;</td>
+                  <td class="govuk-table__cell">&nbsp;</td>
+              </tr>
+          </tbody>
+      </table>
+
+  </div>
+  <div class="govuk-grid-column-one-third">
+      <div class="govuk-grid-row govuk-!-padding-left-5">
+
+          <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
+                  for="signature-name">Date
+                  claim received </label><textarea aria-describedby="signatureName" aria-disabled=""
+                  class="govuk-textarea" disabled="disabled" id="signature" name="signatureName" rows="13">
+                          </textarea>
+          </div>
+
+      </div>
+  </div>
+  </div>
+
+  </div>
+
+{% endblock %}

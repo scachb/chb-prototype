@@ -19,7 +19,7 @@ What are the details of the child you want to claim for? â€“ {{ serviceName }} â
         What are the details of the child you want to claim for?
       </h1>
 
-      <form class="form" action="/one-thing-per-page/deed-poll" method="post">
+      <form class="form" action="/child-benefit/end-to-end/one-thing-per-page/deed-poll" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -28,7 +28,7 @@ What are the details of the child you want to claim for? â€“ {{ serviceName }} â
             text: "First name or given names"
           },
           id: "first-name",
-          name: "first-name",
+          name: "child-benefit[end-to-end][first-name]",
           autocomplete: "name",
           spellcheck: false
         }) }}
@@ -38,7 +38,7 @@ What are the details of the child you want to claim for? â€“ {{ serviceName }} â
             text: "Middle name"
           },
           id: "middle-name",
-          name: "middle-name",
+          name: "child-benefit[end-to-end][middle-name]",
           autocomplete: "name",
           spellcheck: false
         }) }}
@@ -48,7 +48,7 @@ What are the details of the child you want to claim for? â€“ {{ serviceName }} â
             text: "Last name or family name"
           },
           id: "last-name",
-          name: "last-name",
+          name: "child-benefit[end-to-end][last-name]",
           autocomplete: "name",
           spellcheck: false
         }) }}
@@ -57,7 +57,7 @@ What are the details of the child you want to claim for? â€“ {{ serviceName }} â
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "changed-name",
+          name: "child-benefit[end-to-end][changed-name]",
           fieldset: {
             legend: {
               text: "Has this child been known by any other names?",

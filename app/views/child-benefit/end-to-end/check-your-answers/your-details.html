@@ -31,12 +31,12 @@
               text: "National Insurance number"
             },
             value: {
-              text: data['nino-data']
+              text: data['child-benefit']['end-to-end']['nino-data']
             },
             actions: {
               items: [
                 {
-                  href: "/national-insurance?nino-data=WE896405D",
+                  href: "/child-benefit/end-to-end/national-insurance?nino-data=WE896405D",
                   text: "Change",
                   visuallyHiddenText: "national insurance number"
                 }
@@ -49,12 +49,12 @@
               text: "Is this name correct?"
             },
             value: {
-              text: data['changed-name']
+              text: data['child-benefit']['end-to-end']['changed-name']
             },
             actions: {
               items: [
                 {
-                  href: "/your-name-details?changed-name=Yes",
+                  href: "/child-benefit/end-to-end/your-name-details?changed-name=Yes",
                   text: "Change",
                   visuallyHiddenText: "your name"
                 }
@@ -66,12 +66,12 @@
               text: "Have you ever been known by any other last names or family names including your maiden name"
             },
             value: {
-              text: data['known-name']
+              text: data['child-benefit']['end-to-end']['known-name']
             },
             actions: {
               items: [
                 {
-                  href: "/known-by-any-other-name?known-name",
+                  href: "/child-benefit/end-to-end/known-by-any-other-name?known-name",
                   text: "Change",
                   visuallyHiddenText: "known by any other last names"
                 }
@@ -83,12 +83,12 @@
               text: "Tell us your other name"
             },
             value: {
-              text: data['other-last-names']
+              text: data['child-benefit']['end-to-end']['other-last-names']
             },
             actions: {
               items: [
                 {
-                  href: "/other-name?other-last-names",
+                  href: "/child-benefit/end-to-end/other-name?other-last-names",
                   text: "Change",
                   visuallyHiddenText: "other last names"
                 }
@@ -100,12 +100,12 @@
               text: "Date of birth"
             },
             value: {
-              text: data['dateOfBirth'] | replace(" ", "/")
+              text: data['child-benefit']['end-to-end']['dateOfBirth'] | replace(" ", "/")
             },
             actions: {
               items: [
                 {
-                  href: "/your-date-of-birth?dateOfBirth",
+                  href: "/child-benefit/end-to-end/your-date-of-birth?dateOfBirth",
                   text: "Change",
                   visuallyHiddenText: "date of birth"
                 }
@@ -118,12 +118,12 @@
               text: "Is this address correct?"
             },
             value: {
-              text: data['confirm-address']
+              text: data['child-benefit']['end-to-end']['confirm-address']
             },
             actions: {
               items: [
                 {
-                  href: "/your-address?confirm-address=Yes",
+                  href: "/child-benefit/end-to-end/your-address?confirm-address=Yes",
                   text: "Change",
                   visuallyHiddenText: "address"
                 }
@@ -135,12 +135,12 @@
               text: "Have you lived at this address for more than 12 months?"
             },
             value: {
-              text: data['address-over-year']
+              text: data['child-benefit']['end-to-end']['address-over-year']
             },
             actions: {
               items: [
                 {
-                  href: "/address-12-months?address-over-year=Yes",
+                  href: "/child-benefit/end-to-end/address-12-months?address-over-year=Yes",
                   text: "Change",
                   visuallyHiddenText: "if you have lived at this address for more than 12 months"
                 }
@@ -152,12 +152,12 @@
               text: "Phone Number"
             },
             value: {
-              text: data['tel-number']
+              text: data['child-benefit']['end-to-end']['tel-number']
             },
             actions: {
               items: [
                 {
-                  href: "/your-telephone-nummber?tel-number=07700 900 982",
+                  href: "/child-benefit/end-to-end/your-telephone-nummber?tel-number=07700 900 982",
                   text: "Change",
                   visuallyHiddenText: "telephone number"
                 }
@@ -174,7 +174,7 @@
             actions: {
               items: [
                 {
-                  href: "/nationality/two-nationalities?nationality",
+                  href: "/child-benefit/end-to-end/nationality/two-nationalities?nationality",
                   text: "Change",
                   visuallyHiddenText: "nationalities"
                 }
@@ -186,12 +186,12 @@
               text: "Where have you lived?"
             },
             value: {
-              text: data['lived-address-data'] 
+              text: data['child-benefit']['end-to-end']['lived-address-data'] 
             },
             actions: {
               items: [
                 {
-                  href: "/where-have-you-lived?lived-address-data=Yes",
+                  href: "/child-benefit/end-to-end/where-have-you-lived?lived-address-data=Yes",
                   text: "Change",
                   visuallyHiddenText: "where have you lived"
                 }
@@ -210,12 +210,12 @@
               text: "Employment status"
             },
             value: {
-              text: data['employment']
+              text: data['child-benefit']['end-to-end']['employment']
             },
             actions: {
               items: [
                 {
-                  href: "/employment-details?employment",
+                  href: "/child-benefit/end-to-end/employment-details?employment",
                   text: "Change",
                   visuallyHiddenText: "employment status"
                 }
@@ -227,12 +227,12 @@
               text: "Are you a member of HM forces or a civil servant working aboard?"
             },
             value: {
-              text: data['confirm-forces']
+              text: data['child-benefit']['end-to-end']['confirm-forces']
             },
             actions: {
               items: [
                 {
-                  href: "/one-thing-per-page/are-you-a-member?confirm-forces",
+                  href: "/child-benefit/end-to-end/one-thing-per-page/are-you-a-member?confirm-forces",
                   text: "Change",
                   visuallyHiddenText: "are you a member of HM forces or a civil servant working aboard?"
                 }
@@ -244,12 +244,12 @@
               text: "Are you now, or have you at any time in the last 3 months worked in another country?"
             },
             value: {
-              text: data['worked-in-another-country']
+              text: data['child-benefit']['end-to-end']['worked-in-another-country']
             },
             actions: {
               items: [
                 {
-                  href: "/another-country?worked-in-another-country",
+                  href: "/child-benefit/end-to-end/another-country?worked-in-another-country",
                   text: "Change",
                   visuallyHiddenText: "are you now, or have you at any time in the last 3 months worked in another country?"
                 }
@@ -261,12 +261,12 @@
               text: "Are you now, or have you at any time in the last 3 months received benefits from another country?"
             },
             value: {
-              text: data['confirm-country']
+              text: data['child-benefit']['end-to-end']['confirm-country']
             },
             actions: {
               items: [
                 {
-                  href: "/another-country?confirm-country",
+                  href: "/child-benefit/end-to-end/another-country?confirm-country",
                   text: "Change",
                   visuallyHiddenText: "are you now, or have you at any time in the last 3 months received benefits from another country?"
                 }
@@ -278,12 +278,12 @@
               text: "Tell us the other country"
             },
             value: {
-              text: data['other-country']
+              text: data['child-benefit']['end-to-end']['other-country']
             },
             actions: {
               items: [
                 {
-                  href: "/one-thing-per-page/other-country?other-country",
+                  href: "/child-benefit/end-to-end/one-thing-per-page/other-country?other-country",
                   text: "Change",
                   visuallyHiddenText: "other country"
                 }
@@ -302,12 +302,12 @@
               text: "Are you claiming child benefit right now?"
             },
             value: {
-              text: data['claiming-child-benefit-right-now']
+              text: data['child-benefit']['end-to-end']['claiming-child-benefit-right-now']
             },
             actions: {
               items: [
                 {
-                  href: "/claiming-child-benefit?claiming-child-benefit-right-now",
+                  href: "/child-benefit/end-to-end/claiming-child-benefit?claiming-child-benefit-right-now",
                   text: "Change",
                   visuallyHiddenText: "are you claiming child benefit right now?"
                 }
@@ -319,12 +319,12 @@
               text: "Are you claiming child benefit right now?"
             },
             value: {
-              text: data['claiming-child-benefit-right-now']
+              text: data['child-benefit']['end-to-end']['claiming-child-benefit-right-now']
             },
             actions: {
               items: [
                 {
-                  href: "/claiming-child-benefit?claiming-child-benefit-right-now",
+                  href: "/child-benefit/end-to-end/claiming-child-benefit?claiming-child-benefit-right-now",
                   text: "Change",
                   visuallyHiddenText: "are you claiming child benefit right now?"
                 }
@@ -336,7 +336,7 @@
 
       <p class="govuk-body">Now complete the next section</p>
 
-      <form action="/task-list/your-details-complete" method="post" novalidate>
+      <form action="/child-benefit/end-to-end/task-list/your-details-complete" method="post" novalidate>
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

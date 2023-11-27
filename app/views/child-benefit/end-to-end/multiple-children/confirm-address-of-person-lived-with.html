@@ -14,7 +14,11 @@ Confirm the address details – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/multiple-children/person-lived-with-telephone-number" method="post">
+      <form 
+        class="form" 
+        action="/child-benefit/end-to-end/multiple-children/person-lived-with-telephone-number" 
+        method="post"
+      >
 
         {% call govukFieldset({
           legend: {
@@ -29,7 +33,7 @@ Confirm the address details – {{ serviceName }} – GOV.UK Prototype Kit
               text: 'Address line 1'
             },
             id: "address-line-1",
-            name: "address-line-1",
+            name: "child-benefit[end-to-end][address-line-1]",
             autocomplete: "address-line1"
           }) }}
         
@@ -38,7 +42,7 @@ Confirm the address details – {{ serviceName }} – GOV.UK Prototype Kit
               text: 'Address line 2 (optional)'
             },
             id: "address-line-2",
-            name: "address-line-2",
+            name: "child-benefit[end-to-end][address-line-2]",
             autocomplete: "address-line2"
           }) }}
         
@@ -48,7 +52,7 @@ Confirm the address details – {{ serviceName }} – GOV.UK Prototype Kit
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
-            name: "address-town",
+            name: "child-benefit[end-to-end][address-town]",
             autocomplete: "address-level2"
           }) }}
         
@@ -58,7 +62,7 @@ Confirm the address details – {{ serviceName }} – GOV.UK Prototype Kit
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-county",
-            name: "address-county"
+            name: "child-benefit[end-to-end][address-county]"
           }) }}
         
           {{ govukInput({
@@ -67,7 +71,7 @@ Confirm the address details – {{ serviceName }} – GOV.UK Prototype Kit
             },
             classes: "govuk-input--width-10",
             id: "address-postcode",
-            name: "address-postcode",
+            name: "child-benefit[end-to-end][address-postcode]",
             autocomplete: "postal-code"
           }) }}
         

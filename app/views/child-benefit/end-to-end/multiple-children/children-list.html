@@ -19,7 +19,11 @@
         Children added
       </h1>
 
-      <form class="form" action="../multiple-children/your-net-income" method="post">
+      <form 
+        class="form" 
+        action="/child-benefit/end-to-end/multiple-children/multiple-children/your-net-income" 
+        method="post"
+      >
 
         {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
@@ -31,7 +35,7 @@
             actions: {
               items: [
                 {
-                  href: "../multiple-children/remove-child",
+                  href: "/child-benefit/end-to-end/multiple-children/remove-child",
                   text: "Remove",
                   visuallyHiddenText: "child 1"
                 },

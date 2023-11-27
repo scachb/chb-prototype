@@ -15,78 +15,82 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-{% set html %}
-  <p class="govuk-notification-banner__heading">
-    There must be at least one child on the claim. <a class="govuk-notification-banner__link" href="#">Please amend this child's details</a> instead.
-   
-  </p>
-{% endset %}
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          There must be at least one child on the claim. <a class="govuk-notification-banner__link" href="#">Please amend this child's details</a> instead.
+        
+        </p>
+      {% endset %}
 
-{{ govukNotificationBanner({
-  html: html
-}) }}
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
 
       <h1 class="govuk-heading-l">
         Children added
       </h1>
 
-      <form class="form" action="../multiple-children/your-net-income" method="post">
+      <form 
+        class="form" 
+        action="/child-benefit/end-to-end/multiple-children/your-net-income" 
+        method="post"
+      >
 
         <p>
           {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Child 1"
-    },
-    actions: {
-      items: [
-        {
-          href: "../multiple-children/remove-child",
-          text: "Remove",
-          visuallyHiddenText: "child 1"
-        },
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "child 1"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "First name"
-      },
-      value: {
-        html: "James"
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01/03/2023"
-      }
-    }
-  ]
-}) }}
+          {{ govukSummaryList({
+            card: {
+              title: {
+                text: "Child 1"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/child-benefit/end-to-end/multiple-children/remove-child",
+                    text: "Remove",
+                    visuallyHiddenText: "child 1"
+                  },
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "child 1"
+                  }
+                ]
+              }
+            },
+            rows: [
+              {
+                key: {
+                  text: "First name"
+                },
+                value: {
+                  html: "James"
+                }
+              },
+              {
+                key: {
+                  text: "Date of birth"
+                },
+                value: {
+                  html: "01/03/2023"
+                }
+              }
+            ]
+          }) }}
 
- {{ govukButton({
-  text: "Add another child",
-  classes: "govuk-button--secondary"
-}) }}
+          {{ govukButton({
+            text: "Add another child",
+            classes: "govuk-button--secondary"
+          }) }}
 
-<!--
-<p><a class="govuk-link" href="#">Add another child</a></p>  
--->
+          <!--
+          <p><a class="govuk-link" href="#">Add another child</a></p>  
+          -->
 
         </p>
 
@@ -100,8 +104,6 @@
           
         </div>
         <p><a class="govuk-link" href="#">Save and come back later</a></p>  
-
-
 
       </form>
 

@@ -23,27 +23,28 @@
 
         {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-{{ govukSummaryList({
-  classes: ' govuk-!-padding-1',
-  rows: [
-    {
-      key: {
-        text: "First name"
-      },
-      value: {
-        text: "James"
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        text: "1 January 2023"
-      }
-  }
-  ]
-}) }}
+        {{ govukSummaryList({
+          classes: ' govuk-!-padding-1',
+          rows: [
+            {
+              key: {
+                text: "First name"
+              },
+              value: {
+                text: "James"
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "1 January 2023"
+              }
+          }
+          ]
+        }) }}
+        
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
         {{ govukButton({

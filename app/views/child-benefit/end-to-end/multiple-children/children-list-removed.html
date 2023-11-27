@@ -19,59 +19,59 @@
         Children added to your claim
       </h1>
 
-      <form class="form" action="../multiple-children/your-net-income" method="post">
+      <form 
+        class="form" 
+        action="/child-benefit/end-to-end/multiple-children/your-net-income" 
+        method="post"
+      >
 
         <p>
           {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
+          {{ govukSummaryList({
+            card: {
+              title: {
+                text: "Child 1"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Remove",
+                    visuallyHiddenText: "child 2"
+                  },
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "child 2"
+                  }
+                ]
+              }
+            },
+            rows: [
+              {
+                key: {
+                  text: "First name"
+                },
+                value: {
+                  html: "Dean"
+                }
+              },
+              {
+                key: {
+                  text: "Date of birth"
+                },
+                value: {
+                  html: "01/03/2023"
+                }
+              }
+            ]
+          }) }}
 
-
-
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Child 1"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Remove",
-          visuallyHiddenText: "child 2"
-        },
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "child 2"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "First name"
-      },
-      value: {
-        html: "Dean"
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01/03/2023"
-      }
-    }
-  ]
-}) }}
-
-{{ govukButton({
-  text: "Add another child",
-  classes: "govuk-button--secondary"
-}) }}
+          {{ govukButton({
+            text: "Add another child",
+            classes: "govuk-button--secondary"
+          }) }}
 
         </p>
 

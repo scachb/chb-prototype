@@ -14,7 +14,11 @@ What is the telephone number of the person the child lived with? – {{ serviceN
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/multiple-children/check-answers" method="post">
+      <form 
+        class="form" 
+        action="/child-benefit/end-to-end/multiple-children/check-answers" 
+        method="post"
+      >
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -29,7 +33,7 @@ What is the telephone number of the person the child lived with? – {{ serviceN
             text: "For numbers outside of the UK, include the country code. For example, 01632 960 001, 07700 900 982 or +44 808 157 0192."
           },
           id: "person-lived-with-tel-number",
-          name: "person-lived-with-tel-number"
+          name: "child-benefit[end-to-end][person-lived-with-tel-number]"
         }) }}
         
         <div class="govuk-button-group">

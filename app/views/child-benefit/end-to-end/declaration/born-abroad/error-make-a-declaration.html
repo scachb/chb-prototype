@@ -71,7 +71,7 @@ Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prot
         
 <p>
           {{ govukCheckboxes({
-            "name": "declaration",
+            "name": "child-benefit[end-to-end][declaration]",
             errorMessage: {
               text: "Select you declare that the information I've given on this form is correct and complete."
             },
@@ -85,7 +85,7 @@ Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prot
         </p>
         <p>
         {{ govukCheckboxes({
-            "name": "declaration-born-outside-uk",
+            "name": "child-benefit[end-to-end][declaration-born-outside-uk]",
             errorMessage: {
               text: "Select you are sending the birth certificates or other documents that you need with this form."
             },

@@ -15,7 +15,7 @@ BRMS error: What are the details of the child you want to claim for? – {{ serv
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/" method="post">
+      <form class="form" action="/child-benefit/end-to-end" method="post">
 
         {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
@@ -46,17 +46,17 @@ BRMS error: What are the details of the child you want to claim for? – {{ serv
 
         {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-{{ govukWarningText({
-  text: "Your payment may be delayed if you submit a claim for a child within 48 hours of registering that child's birth.",
-  iconFallbackText: "Warning"
-}) }}
+        {{ govukWarningText({
+          text: "Your payment may be delayed if you submit a claim for a child within 48 hours of registering that child's birth.",
+          iconFallbackText: "Warning"
+        }) }}
 
           {{ govukInput({
             label: {
               text: "First name or given names"
             },
             id: "eldest-child-first-name",
-            name: "eldest-child-first-name",
+            name: "data[child-benefit][end-to-end][eldest-child-first-name]",
             autocomplete: "eldest-child-first-name"
           }) }}
 
@@ -65,7 +65,7 @@ BRMS error: What are the details of the child you want to claim for? – {{ serv
               text: "Middle name"
             },
             id: "eldest-child-middle-name",
-            name: "eldest-child-middle-name",
+            name: "data[child-benefit][end-to-end][eldest-child-middle-name]",
             autocomplete: "eldest-child-middle-name"
           }) }}
 
@@ -74,7 +74,7 @@ BRMS error: What are the details of the child you want to claim for? – {{ serv
               text: "Last name or family name"
             },
             id: "eldest-child-last-name",
-            name: "eldest-child-last-name",
+            name: "data[child-benefit][end-to-end][eldest-child-last-name]",
             autocomplete: "eldest-child-last-name"
           }) }}
 

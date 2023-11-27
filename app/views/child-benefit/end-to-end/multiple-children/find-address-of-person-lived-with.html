@@ -17,7 +17,11 @@ Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Ki
 
       <h1 class="govuk-heading-l">Find address of the other claimant</h1>
 
-      <form class="form" action="/multiple-children/confirm-address-of-person-lived-with" method="post">
+      <form 
+        class="form" 
+        action="/child-benefit/end-to-end/multiple-children/confirm-address-of-person-lived-with" 
+        method="post"
+      >
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -27,7 +31,7 @@ Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Ki
             text: "Postcode"
           },
           id: "person-child-lived-with-postcode",
-          name: "person-child-lived-with-postcode"
+          name: "child-benefit[end-to-end][person-child-lived-with-postcode]"
         }) }}
 
         {{ govukInput({
@@ -38,7 +42,7 @@ Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Ki
             text: "For example, The Mill or Flat 1a"
           },
           id: "person-child-lived-with-property",
-          name: "person-child-lived-with-property"
+          name: "child-benefit[end-to-end][person-child-lived-with-property]"
         }) }}
 
         <div class="govuk-button-group">

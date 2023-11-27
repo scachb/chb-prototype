@@ -1,0 +1,51 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+  National Insurance number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your National Insurance number
+      </h1>
+   
+
+      <form class="form" action="/your-name-details?referrer=url" method="post">
+
+        <!--<p class="govuk-body govuk-!-font-weight-bold" >WE896405D</p>-->
+
+        {{ govukInput({
+          name: 'nino-data',
+          value: data['nino-data']
+      }) }}
+
+
+         <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>        
+
+      </form>
+
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

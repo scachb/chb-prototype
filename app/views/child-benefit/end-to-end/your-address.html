@@ -1,0 +1,66 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Confirm your address details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Confirm your address details
+      </h1>
+
+      <form class="form" action="address-12-months" method="post">
+
+        <p class="govuk-body govuk-!-font-weight-bold">10 Downing St London SW1A 2AB</p>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "confirm-address",
+          classes: "govuk-radios--inline",
+          value: data['confirm-address'],
+          fieldset: {
+            legend: {
+              text: "Is this address correct?"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+        
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>        
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

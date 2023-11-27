@@ -1,0 +1,70 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+  Your date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="your-address" method="post">
+
+        <p>
+          {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "date-of-birth",
+            namePrefix: "[dateOfBirth]",
+            fieldset: {
+              legend: {
+                text: "What is your date of birth?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2"
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2"
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4"
+              }
+            ]
+          }) }}
+        </p>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>       
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+BRMS error: What are the details of the child you want to claim for? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/" method="post">
+
+        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+        {% set html %}
+          <p class="govuk-notification-banner__heading">
+            We are unable to verify your child's details. Check that the details entered match their birth certificate.
+        </p>
+            <p class="govuk-notification-banner__heading""> 
+            Please wait 48 hours after registering a child's birth.
+            <!--<a class="govuk-notification-banner__link" href="#">View application</a>.-->
+          </p>
+        {% endset %}
+        
+        {{ govukNotificationBanner({
+          html: html
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What are the details of the child you want to claim for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        }) %}
+
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Your payment may be delayed if you submit a claim for a child within 48 hours of registering that child's birth.",
+  iconFallbackText: "Warning"
+}) }}
+
+          {{ govukInput({
+            label: {
+              text: "First name or given names"
+            },
+            id: "eldest-child-first-name",
+            name: "eldest-child-first-name",
+            autocomplete: "eldest-child-first-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Middle name"
+            },
+            id: "eldest-child-middle-name",
+            name: "eldest-child-middle-name",
+            autocomplete: "eldest-child-middle-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Last name or family name"
+            },
+            id: "eldest-child-last-name",
+            name: "eldest-child-last-name",
+            autocomplete: "eldest-child-last-name"
+          }) }}
+
+        {% endcall %}
+
+        
+                
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          {{ govukButton({
+            text: "Cancel",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+      
+      </form>  
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

@@ -1,0 +1,229 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+{% endblock %}
+
+
+{% block content %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        <!--Application complete-->
+        Application for Child Benefit Received
+      </h1>
+      <div class="govuk-panel__body govuk-!-font-size-27">
+        Post your supporting documents
+      </div>
+    </div>
+
+
+    <h2 class="govuk-heading-m">
+      What you need to do now
+    </h2>
+
+    <p>
+      The information you have provided have been used to create your Child Benefit claim form.
+    </p>
+
+    <p>
+      You need to post:
+    <ul class="govuk-list govuk-list--bullet">
+      <li><code>child’s name</code> birth certificate</li>
+      <li><code>child’s name</code> passport or travel document used to enter the UK</li>
+      <li><code>child’s name</code> adoption certificate</li>
+    </ul>
+
+    </p>
+<!--
+  <p>
+      You need to send these documents within 30 days. If you don't, your claim may be denied.
+    </p>
+-->
+    
+
+    <p>
+      HMRC might call you if they need more information.
+    </p>
+
+    <p>
+      After you have <a href="#">printed this form and signed and dated the Declaration (opens in new tab)</a>, return the form with any documents we need to:
+    </p>  
+    
+
+    <p class="govuk-!-font-weight-bold">Child Benefit Office (GB)<br>
+      Washington<br>
+      NEWCASTLE UPON TYNE<br>
+      NE88 1ZD
+      </p>
+
+<p>We’ll normally return any documents you have sent us within 4 weeks.
+    </p>
+<h3 class="govuk-heading-m">View your claim</h3>
+
+<p>
+  <!--You can check the status of your claim by using the link that will take you back to the homepage of the claim portal application.-->
+  You can view the details of your claim by using the link that will take you back to the homepage of the claim portal application
+</p>
+
+<!-- 
+<p>View the status of your claim using the link to return to the claim portal application homepage</p>
+<p>Should you want to see the status of your claim use the link to return to the portal application page</p>
+<p>You can see the status of your claim from the <a href="#">portal claim application page</a></p>
+
+<p>{{ govukBackLink({
+      classes: "govuk-link",
+      text: "Return to portal",
+      href: "javascript:window.history.back()"
+    }) }}
+</p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Return to your claim homepage"
+}) }}
+
+-->
+
+<p>
+<a href="#" class="govuk-link">Return to your claim homepage</a>
+</p>
+
+  <!--
+<p><a href="#">Return to portal</a></p>
+-->
+    <p>
+      <a href="#">
+        What did you think of this service?
+      </a> (takes 30 seconds)
+    </p>
+
+    <!--
+    <p>
+      Confirm your address so that we can send the documents back to you.
+    </p>
+
+    <p>
+      Review your address so that we can send the documents back to you. <a class="govuk-link" href="#">Contact the Child Benefit Office</a> if you have any questions.
+    </p>
+
+    <p class="govuk-!-font-weight-bold">3 Priory Court<br>
+      Poulton<br>
+      Cirencester<br>
+      GL7 5JB<br>
+      United Kingdom
+    </p>
+    -->
+
+<!--
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {% set addressHtml %}
+    {{ govukInput({
+      label: {
+      text: 'Address line 1'
+      },
+      id: "address-line-1",
+      name: "address-line-1",
+      autocomplete: "address-line1"
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: 'Address line 2 (optional)'
+      },
+      id: "address-line-2",
+      name: "address-line-2",
+      autocomplete: "address-line2"
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: "Town or city"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "address-town",
+      name: "address-town",
+      autocomplete: "address-level2"
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: "County (optional)"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "address-county",
+      name: "address-county"
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: "Postcode"
+      },
+      classes: "govuk-input--width-10",
+      id: "address-postcode",
+      name: "address-postcode",
+      autocomplete: "postal-code"
+      }) }}
+    {% endset -%}
+
+
+
+
+
+    {{ govukRadios({
+    name: "contact",
+    fieldset: {
+    legend: {
+    text: "Is this your correct address?",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend"
+    }
+    },
+
+    items: [
+    {
+    value: "yes",
+    text: "Yes",
+
+    conditional: {
+    html: emailHtml
+    }
+    },
+    {
+    value: "no",
+    text: "No",
+    conditional: {
+    html: addressHtml
+
+    }
+    }
+    ]
+    }) }}
+
+
+  {{ govukButton({
+    text: "Download form"
+    }) }}
+-->
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

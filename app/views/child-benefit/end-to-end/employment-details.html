@@ -1,0 +1,76 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/one-thing-per-page/are-you-a-member" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          name: "employment",
+          fieldset: {
+            legend: {
+              text: "What is your employment status?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Employed",
+              text: "Employed"
+            },
+            {
+              value: "Looking for work",
+              text: "Looking for work"
+            },
+            {
+              value: "Self-employed",
+              text: "Self-employed"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "None of these apply",
+              text: "None of these apply",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+        
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+      </form>
+
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

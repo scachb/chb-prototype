@@ -1,0 +1,117 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Child details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Child details</h1>
+
+      <form class="form" action="/one-thing-per-page/system-number" method="post">
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukDateInput({
+          id: "child-date-of-birth",
+          namePrefix: "date-of-birth",
+          fieldset: {
+            legend: {
+              text: "Child date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}   
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "child-sex",
+          fieldset: {
+            legend: {
+              text: "What is the child's sex as recorded on the birth certificate?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "male",
+              text: "Male"
+            },
+            {
+              value: "female",
+              text: "Female"
+            },
+            {
+              value: "other",
+              text: "Unspecified"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          name: "child-birth-registered",
+          fieldset: {
+            legend: {
+              text: "Where was the child's birth registered?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "England"
+            },
+            {
+              value: "scotland",
+              text: "Scotland"
+            },
+            {
+              value: "wales",
+              text: "Wales"
+            },
+            {
+              value: "northern-ireland",
+              text: "Northern Ireland"
+            },
+            {
+              value: "other-country",
+              text: "Other Country"
+            }
+          ]
+        }) }}
+                
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          {{ govukButton({
+            text: "Cancel",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+      
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

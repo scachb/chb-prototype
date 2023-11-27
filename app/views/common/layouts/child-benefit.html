@@ -1,0 +1,126 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "#",
+    serviceName: "Claim Child Benefit",
+    containerClasses: "govuk-width-container ",
+    navigationClasses: "govuk-header__sign-out-nav",
+    navigation: [
+      {
+        href: "index",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block bodyStart %}
+  <a id="top"></a>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    classes: "app-footer",
+    meta: {
+      items: [
+        {
+          href: "#",
+          text: "Cookies (opens in new tab)"
+        },
+        {
+          href: "#",
+          text: "Accessibility statement (opens in new tab)"
+        },
+        {
+          href: "#",
+          text: "Privacy policy (opens in new tab)"
+        },
+        {
+          href: "#",
+          text: "Terms and conditions (opens in new tab)"
+        },
+        {
+          href: "#",
+          text: "Help using GOV.UK (opens in new tab)"
+        },
+        {
+          href: "#",
+          text: "Contact (opens in new tab)"
+        },
+        { href: "#",
+          text: "Rhestr o Wasanaethau Cymraeg (opens in new tab)"
+        },
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Support links"
+    }
+  }) }}
+{% endblock %}
+
+{% macro layoutBackLink() %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endmacro %}
+
+{% macro layoutLanguageSelect() %}
+  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+
+  {{ hmrcLanguageSelect({
+    language: 'en',
+    en: {
+      href: '?en'
+    },
+    cy: {
+      href: '?cy'
+    }
+  }) }}
+{% endmacro %}
+
+{% macro layoutPhaseBanner(options) %} 
+  {% if options.text %}
+    {% set tagText = options.text %}
+  {% else %}
+    {% set tagText = "beta" %}
+  {% endif %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: tagText
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endmacro %}
+
+{% macro layoutServiceLinks() %}
+  <p>
+    <a href="#">
+      Is this page not working properly? (opens in new tab)
+    </a>    
+  </p>
+{% endmacro %}
+
+{% macro layoutSatisfiedWithServiceLink() %}
+  <a href="#">
+      What did you think of this service?
+    </a> (takes 30 seconds)
+  </p>
+{% endmacro %}
+    
+    

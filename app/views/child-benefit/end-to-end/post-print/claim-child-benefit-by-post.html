@@ -1,0 +1,570 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Claim Child Benefit by post – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!--NOTES
+govuk-!-display-none-print 
+govuk-!-width-one-half 
+-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Applicant details</span>
+<h1 class="govuk-heading-xl">Claim Child Benefit for one or more children (CH2)</h1>
+
+      <p>
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  classes: 'govuk-summary-list--no-border',
+  rows: [
+    {
+      key: {
+        text: "National Insurance number"
+      },
+      value: {
+        text: "Not known"
+      }
+    },
+    {
+      key: {
+        text: "Title"
+      },
+      value: {
+        text: "MR"
+      }
+    },
+    {
+      key: {
+        text: "Last name"
+      },
+      value: {
+        html: "LORD"
+      }
+    },
+    {
+      key: {
+        text: "First name"
+      },
+      value: {
+        html: 'JON'
+      }
+    },
+    {
+      key: {
+        text: "Current address"
+      },
+      value: {
+        html: '<p class="govuk-body">1 THE ROAD</p><p class="govuk-body">LEEDS</p><p class="govuk-body">WA15 9DZ</p>'
+      }
+    },
+    {
+      key: {
+        text: "Nationality"
+      },
+      value: {
+        html: 'British'
+      }
+    },
+    {
+      key: {
+        text: "Always lived in the UK"
+      },
+      value: {
+        html: 'Yes'
+      }
+    },
+    {
+      key: {
+        text: "HMF or civil servant abroad"
+      },
+      value: {
+        html: 'No'
+      }
+    },
+    {
+      key: {
+        text: "Marital or civil partnership status"
+      },
+      value: {
+        html: 'Single'
+      }
+    },
+    {
+      key: {
+        text: "Lived at address for more than a year"
+      },
+      value: {
+        html: 'Yes'
+      }
+    },
+    {
+      key: {
+        text: "Telephone number"
+      },
+      value: {
+        html: '07769123212'
+      }
+    },
+    {
+      key: {
+        text: "Currently claiming Child Benefit"
+      },
+      value: {
+        html: 'Yes and getting payments'
+      }
+    },
+    {
+      key: {
+        text: "Name of oldest child"
+      },
+      value: {
+        html: 'Bob Lord'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth of oldest child"
+      },
+      value: {
+        html: '1 August 2023'
+      }
+    }
+  ]
+}) }}
+
+
+      </p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <span class="govuk-caption-l">Child details</span>
+<h2 class="govuk-heading-l">Child 1</h2>
+      <p>
+       
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border',
+          rows: [
+            {
+              
+              key: {
+                text: "Last name"
+              },
+              value: {
+                html: "James"
+              }
+            },
+            {
+              key: {
+                text: "First name"
+              },
+              value: {
+                html: 'Alex'
+              }
+            },
+           
+            {
+              key: {
+                text: "Sex as recorded on child’s birth certificate"
+              },
+              value: {
+                html: 'Male'
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                html: '1 August 2023'
+              }
+            },
+            {
+              key: {
+                text: "Birth certificate number"
+              },
+              value: {
+                html: 'Not provided'
+              }
+            },
+            {
+              key: {
+                text: "Applicant’s relation to child"
+              },
+              value: {
+                html: 'Birth child'
+              }
+            },
+            {
+              key: {
+                text: "Applicant adopting child via Local Authorityr"
+              },
+              value: {
+                html: 'No'
+              }
+            },
+            {
+              key: {
+                text: "Child Benefit claimed previously for child"
+              },
+              value: {
+                html: 'No'
+              }
+            },
+            {
+              key: {
+                text: "Child is living with applicant"
+              },
+              value: {
+                html: 'Yes'
+              }
+            },
+            {
+              key: {
+                text: "Child lived with anyone else"
+              },
+              value: {
+                html: 'No'
+              }
+            },
+            {
+              key: {
+                text: "Known by any other names"
+              },
+              value: {
+                html: 'No'
+              }
+            }
+          ]
+        }) }}
+
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      
+<h2 class="govuk-heading-l">Payment details</h2>
+      <p>
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border',
+          rows: [
+            {
+          key: {
+            text: "Wants to be paid Child Benefit"
+          },
+          value: {
+            html: 'Yes'
+          }
+        }
+      ]
+    }) }}
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <span class="govuk-caption-l">How many original birth certificates, adoption certificates, passports and / or travel documents are you sending to HMRC?</span>
+<h2 class="govuk-heading-l">Declaration</h2>
+      
+<p class="govuk-body">You need to post:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Alex’s birth certificate</li>
+  <li>Alex’s passport or travel documents used to enter the UK</li>
+  
+</ul>
+<p class="govuk-body">If you do not send the documents we need with this form, a decision on your claim could be delayed.</p>
+<p class="govuk-body">We cannot accept photocopies of the original documents.</p>
+<p class="govuk-body">We expect to return your documents within 4 weeks.</p>
+        </p>
+        <p>
+          {{ govukCheckboxes({
+            "name": "birth-certificates",
+            "items": [
+              {
+                "value": "yes",
+                "text": "Birth certificates",
+                checked: true
+              }
+            ]
+          }) }}
+          {{ govukCheckboxes({
+            "name": "adoptio-certificates",
+            "items": [
+              {
+                "value": "yes",
+                "text": "Adoption certificates"
+              }
+            ]
+          }) }}
+          {{ govukCheckboxes({
+            "name": "passports",
+            "items": [
+              {
+                "value": "yes",
+                "text": "Passports"
+              }
+            ]
+          }) }}
+          {{ govukCheckboxes({
+            "name": "travel-documents",
+            "items": [
+              {
+                "value": "yes",
+                "text": "Travel documents"
+              }
+            ]
+          }) }}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "other-documents",
+  id: "other-documents",
+  label: {
+    text: "Other documents"
+  }
+}) }}
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+       
+<h2 class="govuk-heading-l">Declaration</h2>
+
+<p>
+  {{ govukCheckboxes({
+    "name": "birth-certificates",
+    "items": [
+      {
+        "value": "yes",
+        "text": "I am sending the birth certificate(s) or other documents that you need with this form. I understand if I do not send the documents that you need with this claim form, a decision on my claim will be delayed. I am not sending photocopies.",
+        checked: true
+      }
+    ]
+  }) }}
+  {{ govukCheckboxes({
+    "name": "adoption-certificates",
+    "items": [
+      {
+        "value": "yes",
+        "text": "I declare that the information I’ve given on this form is correct and complete. If I give information which I know is not correct or complete, you may take action against me. I’ll tell you about changes to my circumstances when they happen and understand I could be overpaid and may have to pay money back if I do not.",
+        checked: true
+      }
+    ]
+
+  }) }}
+
+  {{ govukTextarea({
+    name: "signature",
+    id: "signature",
+    label: {
+      text: "Signature"
+    }
+  }) }}
+
+</p>
+
+
+
+
+  {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+  {{ govukDateInput({
+    id: "date",
+    namePrefix: "date",
+    fieldset: {
+      legend: {
+        text: "Date",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend"
+      }
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        autocomplete: "claim-day"
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        autocomplete: "claim-month"
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        autocomplete: "claim-year"
+      }
+    ]
+  }) }}
+
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+       
+  <h2 class="govuk-heading-l">What to do now</h2>
+  
+  <p>After you have printed this form and signed and dated the Declaration, return the form with any documents we need to:
+    </p>
+
+    <p class="govuk-!-font-weight-regular">Child Benefit Office (GB)<br>
+      Washington<br>
+      NEWCASTLE UPON TYNE<br>
+      NE88 1ZD
+      </p>
+
+      <p>
+        An extra sheet with your name and address will be printed with your claim form, if you are sending us any documents. Make sure that this is sent to us with your claim. We use it to send any documents back to you.
+      </p>
+
+      <p>
+        You’ll need a stamp on the outside of your envelope to post your form and documents to us, don’t send the stamp to us separately. Make sure you pay the correct postage.
+      </p>
+  
+      <h2 class="govuk-heading-l">What happens next</h2>
+
+      <p>We’ll review your claim and write to tell you if you can get Child Benefit and how much you’ll get. We’ll normally return any documents you have sent us within 4 weeks.</p>
+<p>If you need further assistance with your claim, contact the Child Benefit helpline.</p>
+<p>Telephone: 0300 200 3100</p>
+<p>Outside UK: +44 161 210 3086</p>
+<p>You can also use Relay UK if you cannot hear or speak on the phone: dial 18001 then 0300 200 3100.</p>
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<span class="govuk-caption-l">Address label</span>
+  <h2 class="govuk-heading-l">Send this back with your completed form</h2>
+  
+  <p class="govuk-!-font-weight-regular">MR JON LORD<br>
+    1 THE ROAD<br>
+    LEEDS<br>
+    WA15 9DZ
+    </p>
+
+    <p>Send this address label back to us with your completed claim form so that we can return your documents to you.</p>
+    <p>You’ll need a stamp on the outside of your envelope to post your form and documents to us, don’t send the stamp to us separately. Make sure you pay the correct postage.</p>
+
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+      text: "If you do not send this address label with your claim form, it may take us longer to send your documents back to you and to make a decision on your claim.",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <p>HMRC use only - we’ll use this when we send your documents back to you.</p>
+
+ 
+    <p>Thank you for sending us your claim form, I have enclosed your:</p>
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        caption: "Your documents",
+        captionClasses: "govuk-table__caption--l",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Document sent",
+            classes: 'govuk-!-width-one-half'
+          },
+          {
+            text: "Name",
+            classes: 'govuk-!-width-one-half'
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<div class='govuk-checkboxes' data-module='govuk-checkboxes'>
+                <div class='govuk-checkboxes__item'>
+                  <input class='govuk-checkboxes__input' id='' name='' type='checkbox' value=''>
+                  <label class='govuk-label govuk-checkboxes__label' for=''>
+                    <span class='govuk-visually-hidden'>Birth certificate(s)</span>
+                  </label>
+                </div>
+                </div>"            
+            },
+            {
+              text: "Birth certificate(s)"
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes' data-module='govuk-checkboxes'>
+                <div class='govuk-checkboxes__item'>
+                  <input class='govuk-checkboxes__input' id='' name='' type='checkbox' value=''>
+                  <label class='govuk-label govuk-checkboxes__label' for=''>
+                    <span class='govuk-visually-hidden'>Passport(s)</span>
+                  </label>
+                </div>
+                </div>"            
+            },
+            {
+              text: "Passport(s)"
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes' data-module='govuk-checkboxes'>
+                <div class='govuk-checkboxes__item'>
+                  <input class='govuk-checkboxes__input' id='' name='' type='checkbox' value=''>
+                  <label class='govuk-label govuk-checkboxes__label' for=''>
+                    <span class='govuk-visually-hidden'>Travel document(s)</span>
+                  </label>
+                </div>
+                </div>"
+            },
+            {
+              text: "Travel document(s)"
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes' data-module='govuk-checkboxes'>
+                <div class='govuk-checkboxes__item'>
+                  <input class='govuk-checkboxes__input' id='' name='' type='checkbox' value=''>
+                  <label class='govuk-label govuk-checkboxes__label' for=''>
+                    <span class='govuk-visually-hidden'>Adoption certificate(s)</span>
+                  </label>
+                </div>
+                </div>"
+            },
+            {
+              text: "Adoption certificate(s)"
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes' data-module='govuk-checkboxes'>
+                <div class='govuk-checkboxes__item'>
+                  <input class='govuk-checkboxes__input' id='' name='' type='checkbox' value=''>
+                  <label class='govuk-label govuk-checkboxes__label' for=''>
+                    <span class='govuk-visually-hidden'>Other document(s)</span>
+                  </label>
+                </div>
+                </div>"
+            },
+            {
+              text: "Other document(s)"
+            }
+          ]
+        ]
+      }) }}
+      
+      <p>You do not need to do anything - we’ll write to you again as soon as we’ve made a decision about your claim.</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

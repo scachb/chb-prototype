@@ -1,0 +1,48 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "#",
+    serviceName: "Service name",
+    containerClasses: "govuk-width-container ",
+    navigationClasses: "govuk-header__sign-out-nav",
+    navigation: [
+      {
+        href: "index",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block bodyStart %}
+  <a id="top"></a>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    classes: "app-footer",
+    meta: {
+      items: [
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Support links"
+    }
+  }) }}
+{% endblock %}
+    
+    

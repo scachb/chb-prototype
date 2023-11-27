@@ -1,0 +1,82 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Do you have a UK bank, credit union or building society account that child benefit can be paid to? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+    <form class="form" action="bank-account-holders" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+      
+        
+      {% set noBankAccount %}
+      {{ govukWarningText({
+          text: "We do not accept international accounts. You must use a UK bank or building society account.  ",
+          iconFallbackText: "Warning"
+          }) }}
+
+      {% endset -%}  
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        name: "payment",
+        value: data['payment'],
+        fieldset: {
+          legend: {
+            text: "Do you have a UK bank, credit union or building society account that child benefit can be paid to?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "bank",
+            text: "Bank account - sort code and account number"
+          },
+          {
+            value: "credit-union",
+            text: "Credit union account - sort code and account number"
+          },
+          {
+            value: "building-society",
+            text: "Building society - roll number"
+          },
+          {
+            value: "no-uk-bank",
+            text: "No UK bank account or building society",
+            conditional: {
+              html: noBankAccount
+            }
+          }
+        ]
+      }) }}
+
+        
+      
+
+      
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{{ layoutServiceLinks() }}
+
+{% endblock %}

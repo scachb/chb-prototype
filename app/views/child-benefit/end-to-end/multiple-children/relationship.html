@@ -1,0 +1,72 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+How are you related to the child? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/multiple-children/previous-claimant" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "How are you related to the child?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "birth-child",
+              text: "Birth Child"
+            },
+            {
+              value: "adopted-child",
+              text: "Adopted child"
+            },
+            {
+              value: "step-child",
+              text: "Step child"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None of these",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+      </form>
+
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

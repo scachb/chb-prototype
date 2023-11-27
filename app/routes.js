@@ -4,7 +4,7 @@
 //
 
 const govukPrototypeKit = require('govuk-prototype-kit')
-const childBenefit = require('./views/child-benefit/routes');
+const childBenefit = require('./views/child-benefit/end-to-end/routes');
 
 const router = govukPrototypeKit.requests.setupRouter()
 

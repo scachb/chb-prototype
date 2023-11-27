@@ -1,0 +1,83 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+What other benefits do you receive? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/check-your-answers/your-details" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          name: "other-benefits",
+          fieldset: {
+            legend: {
+              text: "What other benefits do you receive?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Employed",
+              text: "Income-based Jobseeker's Allowance (JSA)"
+            },
+            {
+              value: "Looking for work",
+              text: "Income-related Employment and Support Allowance (ESA)"
+            },
+            {
+              value: "Self-employed",
+              text: "Income Support"
+            },
+          
+            {
+              value: "None of these apply",
+              text: "Pension Credit"
+            },
+            {
+              value: "None of these apply",
+              text: "Universal Credit"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "None of the above",
+              text: "None of the above",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

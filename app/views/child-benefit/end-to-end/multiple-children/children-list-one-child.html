@@ -1,0 +1,106 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+  Summary of the children added to your claim – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-l">
+        Children added
+      </h1>
+
+      <!--<p class="govuk-body">
+        There must be at least one child on the claim. Please amend the child's details instead.
+      </p>-->
+
+      <form class="form" action="../multiple-children/your-net-income" method="post">
+
+        <p>
+          {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Child 1"
+    },
+    actions: {
+      items: [
+        {
+          href: "../multiple-children/remove-child",
+          text: "",
+          visuallyHiddenText: "child 1"
+        },
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "child 1"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "First name"
+      },
+      value: {
+        html: "James"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01/03/2023"
+      }
+    }
+  ]
+}) }}
+
+ {{ govukButton({
+  text: "Add another child",
+  classes: "govuk-button--secondary"
+}) }}
+
+<!--
+<p><a class="govuk-link" href="#">Add another child</a></p>  
+-->
+
+        </p>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+          
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>  
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

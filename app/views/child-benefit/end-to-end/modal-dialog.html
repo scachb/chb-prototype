@@ -1,0 +1,19 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+{%- from  "hmrc/components/timeout-dialog/macro.njk" import hmrcTimeoutDialog -%}
+{{ hmrcTimeoutDialog ({
+  timeout: 10,
+  countdown: 68,
+  keepAliveUrl: "?continue=true",
+  keepAliveButtonText: "Sign out",  
+  signOutButtonText: "Cancel sign out",
+  signOutUrl: "?lang=English",
+  language: "en"
+}) }}
+
+{% endblock %}

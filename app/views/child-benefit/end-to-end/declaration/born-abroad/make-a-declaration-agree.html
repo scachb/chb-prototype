@@ -1,0 +1,106 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Declaration when child born outside the UK – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <!-- ERROR
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Select the checkbox to confirm the information provided is correct and complete</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+    -->
+
+ 
+    <h1 class="govuk-heading-l">
+        Declaration
+    </h1>
+    
+    <p>
+        By sending this claim application, you declare that the information is correct and complete. You also agree to send
+        birth certificates or other documents.</p>
+    
+    <p>Do not send photocopies</p>
+    
+    <p>If I give information which I know is not correct or complete, you may:
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+        <li>take action against me</li>
+        <li>have to pay money back</li>
+        <li>delay a decision on my claim</li>
+    
+    </ul>
+    </p>
+
+    
+       <!--
+      <p id="countries-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select the checkbox to confirm the information provided is correct and complete
+      </p>
+    -->
+    <!-- HTML checkbox
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="t-and-c" name="t-and-c" type="checkbox" value="yes">
+              <label class="govuk-label govuk-checkboxes__label" for="t-and-c">
+                <p class="govuk-body">I declare that the information I've given on this form is correct and complete. If I give information which I know is not correct or complete, you may take action against me. I'll tell you about changes to my circumstances when they happen and understand I could be overpaid and may have to pay money back if I do not. </p>
+                <p class="govuk-body">I am sending you the birth certificate or other documents with this form. I understand if i do not send the documents that you need with this claims form, a decision on my claim will be delayed. I am not sending photocopies.</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+    -->
+
+    <!-- {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+            {{ govukWarningText({
+            text: "You need to send these documents within 30 days. If you don't, your claim may not be accepted.",
+            iconFallbackText: "Warning"
+            }) }}
+        -->  
+        
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+                I agree and send my claim application
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Cancel
+            </button>
+          </div>
+  
+          <p><a class="govuk-link" href="#">Save and come back later</a></p>      
+    
+
+   
+
+   
+    </div>
+    </div>
+    {{ layoutServiceLinks() }}
+  
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+  Confirm and review the nationality you want to remove – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm and review the nationality you want to remove</h1>
+
+      <form class="form" action="/nationality/one-nationality" method="post">
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                text: "British"
+              }
+            }
+          ]
+        }) }}
+        
+        <div class="govuk-button-group">
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Remove nationality",
+            classes: "govuk-button--warning"
+          }) }}
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+
+        {{ layoutServiceLinks() }}  
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

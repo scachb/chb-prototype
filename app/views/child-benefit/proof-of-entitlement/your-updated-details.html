@@ -20,7 +20,9 @@ Contact details – {{ serviceName }} – GOV.UK Prototype Kit
           Update your telephone and email contact details
         </h1>
 
-      <form class="form" action="nationality" method="post">
+        {{ data['child-benefit']['proof-of-entitlement']['tel-number'] }}
+
+      <form class="form" action="/child-benefit/proof-of-entitlement/your-updated-details" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -32,7 +34,7 @@ Contact details – {{ serviceName }} – GOV.UK Prototype Kit
             
             classes: "govuk-input--width-20",
             id: "tel-number",
-            name: "telNumber",
+            name: "child-benefit[proof-of-entitlement][tel-number]",
             value: "07707707070"
           }) }}
   

@@ -1,0 +1,14 @@
+{% macro layoutPhaseBanner(options) %} 
+  {% if options.text %}
+    {% set tagText = options.text %}
+  {% else %}
+    {% set tagText = "beta" %}
+  {% endif %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: tagText
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endmacro %}

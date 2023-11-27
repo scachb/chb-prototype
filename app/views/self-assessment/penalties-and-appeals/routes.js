@@ -5,10 +5,9 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 
-const unauthRouter = govukPrototypeKit.requests.setupRouter();
+const penaltiesAndAppealsRouter = govukPrototypeKit.requests.setupRouter();
 
 // Add your routes here
 
-
 // Export the journey router to be used by the service
-module.exports = unauthRouter;
+module.exports = penaltiesAndAppealsRouter;

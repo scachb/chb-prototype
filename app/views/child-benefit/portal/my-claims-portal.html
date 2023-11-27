@@ -1,10 +1,8 @@
 {% extends "common/layouts/child-benefit.html" %}
 
 {% block pageTitle %}
-My portal
+Your claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-
 
 {% block beforeContent %}
 
@@ -12,16 +10,16 @@ My portal
 {{ layoutLanguageSelect() }}
 
 {{ govukBreadcrumbs({
-items: [
-{
-text: "Personal tax account home",
-href: "#"
-},
-{
-text: "Your portal",
-href: "#"
-}
-]
+  items: [
+    {
+      text: "Personal tax account home",
+      href: "#"
+    },
+    {
+      text: "Your portal",
+      href: "#"
+    }
+  ]
 }) }}
 
 {% endblock %}
@@ -32,17 +30,7 @@ href: "#"
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-{% set html %}
-  <p class="govuk-notification-banner__heading">
-    We saved your progress. We'll store your information for 28 days.
-  </p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html
-}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -51,36 +39,19 @@ href: "#"
       Your claim applications
     </h1>
 
-
   </div>
-
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-prototype-kit-common-templates-mainstream-guide-body">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
 
-
-
-    <p>
-        This page shows two groups of claims:
-    </p>
-
-     <ul class="govuk-list govuk-list--bullet">
-        <li>claims that are in progress</li>
-        <li>claims that have already been submitted</li>
-     </ul>
+    <p>Below you will find your cases that need completing and information on claims or applications that have been submitted. Use the web chat to speak with a Child Benefits Officer. </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-    
-<div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">
-      Child Benefit claims in progress
+      Claims in progress
     </h2>
-
-    <h3 class="govuk-heading-s">
-        Children addded
-      </h3>
 
 
     {{ govukSummaryList({
@@ -88,18 +59,20 @@ href: "#"
         {
           key: {
           html: "<a href='#'>Jon Doe</a>
-          <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
-          "
+          <p class='govuk-!-font-weight-regular'>01/01/2023<br>
+          CB-123450</p>
+          <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
+           Continue claim
+          </button>"
           },
           actions: {
-            classes: "govuk-!-width-one-half",
           items: [
             {
               href: "#",
-              html: " <strong class='govuk-tag govuk-tag--blue'>
-                In progress
+              html: " <strong class='govuk-tag govuk-tag--grey'>
+                Incomplete
               </strong>",
-              visuallyHiddenText: "In progress"
+              visuallyHiddenText: "Incomplete"
             }
           ]
           }
@@ -107,28 +80,12 @@ href: "#"
       ]
       
       }) }}
-
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-            html: "<a href='#'>Lonnie Doe</a>
-            <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
-            <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
-             Continue claim
-            </button>"
-            }
-            
-          }
-        ]
-        
-        }) }}
   
    
 
     
     <h2 class="govuk-heading-m">
-        Child Benefit submitted claims
+      Submitted claims
     </h2>
 
     {{ govukSummaryList({
@@ -136,22 +93,20 @@ href: "#"
       {
         key: {
         html: "<a href='#'>Sara Doe</a>
-        <p class='govuk-!-font-weight-regular'>Date of birth 12/01/2020</p>
-        
-        <button class='govuk-button govuk-button--secondary' data-module='govuk-button' href='post-print/claim-child-benefit-by-post.html'>
+        <p class='govuk-!-font-weight-regular'>12/01/2020<br>
+        CB-123451</p>
+        <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
          View claim summary
         </button> <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
           View claim form
-         </button>
-         <a href='post-print/return-slip.html'>View return slip</a>
-         "
+         </button>"
         },
         actions: {
         items: [
           {
             href: "#",
-            html: "<strong class='govuk-tag govuk-tag--purple'>Claim received</strong>",
-            visuallyHiddenText: "Claim received"
+            html: "<strong class='govuk-tag govuk-tag--purple'>Received</strong>",
+            visuallyHiddenText: "Received"
           }
         ]
         }
@@ -160,40 +115,10 @@ href: "#"
     
     }) }}
 
-    
-<h3 class="govuk-heading-m">
-    Make a new claim
-</h3>
-<p>Use this service to make a new claim for Child Benefit.</p>
+    {{ layoutServiceLinks() }}
 
+  </div>
 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-
-  {{ govukButton({
-  text: "Begin new claim",
-  href: "/start",
-  isStartButton: true
-  }) }}
-
-  <h3 class="govuk-heading-m" id="subsection-title">
-    Online
-  </h3>
-  <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a>
-  </p>
-  <p>
-    Ask HMRC’s digital assistant to find information about:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>claiming Child Benefit</li>
-    <li>the High Income Child Benefit Tax Charge</li>
-    <li>any change of circumstances for you or your child which may affect your claim</li>
-  </ul>
-    </div>
-    
-</div>
-
-
-<!--
   <div class="govuk-grid-column-one-third">
 
     <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
@@ -240,23 +165,16 @@ href: "#"
 
         {{ govukButton({
         text: "Begin new claim",
-        href: "/start",
+        href: "/child-benefit/end-to-end/start",
         isStartButton: true
         }) }}
       </nav>
     </aside>
+  </div>
+  </main>
+  </div>
 
   </div>
--->
-    {{ layoutServiceLinks() }}
-  </main>
-</div>
-
-
-
-
-
-</div>
 </div>
 
 {% endblock %}

@@ -1,0 +1,51 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Self Assessment - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "#",
+    serviceName: "Self Assessment",
+    containerClasses: "govuk-width-container ",
+    navigationClasses: "govuk-header__sign-out-nav",
+    navigation: [
+      {
+        href: "index",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-top-6">
+        Self Assessment
+      </h1>
+
+      <p class="govuk-body-l">All journeys for the Self Assessment service.</p>
+
+      <h3 class="govuk-heading-m">Journeys</h3>
+    </div>
+
+    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+        <a class="govuk-link" href="/self-assessment/penalties-and-appeals">Penalties and Appeals</a>
+      </h3>
+      <p class="govuk-body">A service for claimants to submit appeals to penalities through Self Assessment.</p>
+    </section>
+  </div>
+
+{% endblock %}

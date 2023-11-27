@@ -1,0 +1,46 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block beforeContent %}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Proof of entitlement</h1>
+    <p class="govuk-body">Proof of entitlement to Child Benefit, viewed through the claimant portal.</p>
+
+    <h3 class="govuk-heading-l">Proof of entitlement and payment history</h3>
+    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
+    <p>To allow claimants to view their proof of entitlement and view payment history</p>
+    <p>
+      {{ govukTag({
+        text: "New",
+        classes: "govuk-tag--blue"
+      }) }}
+      <a href="/child-benefit/proof-of-entitlement/portal">Portal with link to view proof of entitlement</a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true"
+        data-ga4-link-tracker-module-started="true">
+        <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+        <p class="govuk-body">This is a feature not a journey.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

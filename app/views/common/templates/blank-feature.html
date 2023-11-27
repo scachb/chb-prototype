@@ -1,0 +1,60 @@
+{% extends "common/templates/blank-layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Name of feature</h1>
+    <p class="govuk-body">Description of feature.</p>
+
+    <h3 class="govuk-heading-l">Name of design</h3>
+    <p>Description of the design.</p>
+    
+    <p>
+      {{ govukTag({
+        text: "Final",
+        classes: "govuk-tag--green"
+      }) }}
+      <a href="#">Description of revision</a>
+    </p>
+
+    <p>
+      {{ govukTag({
+        text: "New",
+        classes: "govuk-tag--blue"
+      }) }}
+      <a href="#">Description of revision</a>
+    </p>
+
+    <p>
+      {{ govukTag({
+        text: "Old",
+        classes: "govuk-tag--grey"
+      }) }}
+      <a href="#">Description of revision</a>
+    </p>
+
+    <time class="govuk-body" datetime="">24 November 2023</time>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true"
+        data-ga4-link-tracker-module-started="true">
+        <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+        <p class="govuk-body">This is a feature not a journey.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

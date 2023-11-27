@@ -1,0 +1,51 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  PAYE: Pay As You Earn - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "#",
+    serviceName: "PAYE: Pay As You Earn",
+    containerClasses: "govuk-width-container ",
+    navigationClasses: "govuk-header__sign-out-nav",
+    navigation: [
+      {
+        href: "index",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-top-6">
+        PAYE: Pay As You Earn
+      </h1>
+
+      <p class="govuk-body-l">All journeys for the PAYE: Pay As You Earn service.</p>
+
+      <h3 class="govuk-heading-m">Journeys</h3>
+    </div>
+
+    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+        <a class="govuk-link" href="#">Name of journey</a>
+      </h3>
+      <p class="govuk-body">Description of journey.</p>
+    </section>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block beforeContent %}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Claimant portal</h1>
+    <p class="govuk-body">The portal claimants see when submitting claims.</p>
+
+    <h3 class="govuk-heading-l">My claims portal</h3>
+    <a id="28-days"><span class="govuk-visually-hidden">28-days</span></a>
+
+    <p class="govuk-body">This page will show the claims in progress and submitted claims. We need to consider the 14
+      day SLA for submitted claims.
+    </p>
+
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="/child-benefit/portal/multiple-claims-portal">Multiple claims in progress</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="/child-benefit/portal/my-claims-portal-28-days-inset">Claims portal - 28 days inset</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="/child-benefit/portal/my-claims-portal-28-days-warning">Claims portal - 28 days important warning</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "New",
+      classes: "govuk-tag--blue"
+      })}} <a href="/child-benefit/portal/my-claims-portal-28-days-important">Claims portal - 28 days important notification-banner</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "old",
+      classes: "govuk-tag--grey"
+      })}} <a href="/child-benefit/portal/my-claims-portal.html">Claims portal</a>
+    </p>
+
+    <p>{{govukTag({
+      text: "Xd",
+      classes: "govuk-tag--pink"
+      })}} <a href="https://xd.adobe.com/view/0de52437-a50e-40e8-9927-006d5e839eed-58b6/">Claims portal after
+        accessibility audit observations</a>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true"
+        data-ga4-link-tracker-module-started="true">
+        <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+        <p class="govuk-body">This is a feature not a journey.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

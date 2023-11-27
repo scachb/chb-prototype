@@ -1,7 +1,7 @@
 {% extends "common/layouts/child-benefit.html" %}
 
 {% block pageTitle %}
-My claims applications – {{ serviceName }} – GOV.UK Prototype Kit
+My portal
 {% endblock %}
 
 
@@ -11,7 +11,7 @@ My claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 {{ layoutPhaseBanner() }}
 {{ layoutLanguageSelect() }}
 
-<!-- {{ govukBreadcrumbs({
+{{ govukBreadcrumbs({
 items: [
 {
 text: "Personal tax account home",
@@ -22,7 +22,7 @@ text: "Your portal",
 href: "#"
 }
 ]
-}) }} -->
+}) }}
 
 {% endblock %}
 
@@ -34,18 +34,15 @@ href: "#"
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-<!-- REMOVED FROM TOP OF THE PAGE US-11235 -->
 {% set html %}
   <p class="govuk-notification-banner__heading">
-    <!-- We saved your progress. We'll store your information for 28 days.-->
-    We have saved your progress on the 15 Nov 2023 and will store your information for 28 days.
+    We saved your progress. We'll store your information for 28 days.
   </p>
 {% endset %}
 
 {{ govukNotificationBanner({
   html: html
 }) }}
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -81,23 +78,6 @@ href: "#"
       Child Benefit claims in progress
     </h2>
 
-
-<!-- REMOVED FROM TOP OF THE PAGE US-11235 
-  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-  {% set html %}
-  <p class="govuk-notification-banner__heading">
-    We have saved your progress and will store your information for 28 days. Please ensure you submit this claim within 14 days.
-    <!-- <a class="govuk-notification-banner__link" href="#">Continue claim application</a>.
-    </p>
-  {% endset %}
-  -->
-  
-  
-<!--
-{{ govukNotificationBanner({
-  html: html
-}) }}
--->
     <h3 class="govuk-heading-s">
         Children addded
       </h3>
@@ -107,7 +87,7 @@ href: "#"
       rows: [
         {
           key: {
-          html: "<h4 class='govuk-heading-s govuk-!-margin-bottom-0'>Jon Doe</h4>
+          html: "<a href='#'>Jon Doe</a>
           <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
           "
           },
@@ -132,7 +112,7 @@ href: "#"
         rows: [
           {
             key: {
-            html: "<h4 class='govuk-heading-s govuk-!-margin-bottom-0'>Lonnie Doe</h4>
+            html: "<a href='#'>Lonnie Doe</a>
             <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
             <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
              Continue claim
@@ -147,11 +127,38 @@ href: "#"
    
 
     
-        <h2 class="govuk-heading-m">
-          Child Benefit submitted claims
-      </h2>
-  
-      <p>No submitted claims</p>
+    <h2 class="govuk-heading-m">
+        Child Benefit submitted claims
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+        html: "<a href='#'>Sara Doe</a>
+        <p class='govuk-!-font-weight-regular'>Date of birth 12/01/2020</p>
+        
+        <button class='govuk-button govuk-button--secondary' data-module='govuk-button' href='post-print/claim-child-benefit-by-post.html'>
+         View claim summary
+        </button> <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
+          View claim form
+         </button>
+         <a href='post-print/return-slip.html'>View return slip</a>
+         "
+        },
+        actions: {
+        items: [
+          {
+            href: "#",
+            html: "<strong class='govuk-tag govuk-tag--purple'>Claim received</strong>",
+            visuallyHiddenText: "Claim received"
+          }
+        ]
+        }
+      }
+    ]
+    
+    }) }}
 
     
 <h3 class="govuk-heading-m">
@@ -164,7 +171,7 @@ href: "#"
 
   {{ govukButton({
   text: "Begin new claim",
-  href: "/start",
+  href: "/child-benefit/end-to-end/start",
   isStartButton: true
   }) }}
 
@@ -241,7 +248,6 @@ href: "#"
 
   </div>
 -->
-
     {{ layoutServiceLinks() }}
   </main>
 </div>

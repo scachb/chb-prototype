@@ -1,20 +1,39 @@
-{% extends "common/layouts/self-assessment.html" %}
-
-{% block beforeContent %}
-  {{ layoutBackLink() }}
-{% endblock %}
+{% extends "common/templates/blank-layout.html" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Self Assessment: Penalties and Appeals</h1>
-    <p class="govuk-body">A service for claimants to submit appeals to penalities through Self Assessment.</p>
+    <h1 class="govuk-heading-xl">Name of journey</h1>
+    <p class="govuk-body">Description of journey.</p>
 
-    <h3 class="govuk-heading-l">Name of design goes here</h3>
+    <h3 class="govuk-heading-l">Name of design</h3>
+    <p>Description of the design.</p>
 
-    <p>Description of the design goes here</p>
+    <p>
+      {{ govukTag({
+        text: "Final",
+        classes: "govuk-tag--green"
+      }) }}
+      <a href="#">Description of revision</a>
+    </p>
+
+    <p>
+      {{ govukTag({
+        text: "New",
+        classes: "govuk-tag--blue"
+      }) }}
+      <a href="#">Description of revision</a>
+    </p>
+
+    <p>
+      {{ govukTag({
+        text: "Old",
+        classes: "govuk-tag--grey"
+      }) }}
+      <a href="#">Description of revision</a>
+    </p>
 
     <time class="govuk-body" datetime="">24 November 2023</time>
 

@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Child Benefit unauthenticated</h1>
+    <p class="govuk-body">A service for claimants without a Government login to submit a claim for Child Benefit.</p>
+
+    <h3 class="govuk-heading-l">Name of design goes here</h3>
+
+    <p>Description of the design goes here</p>
+
+    <time class="govuk-body" datetime="">24 November 2023</time>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="" data-module="gem-track-click ga4-link-tracker" data-gem-track-click-module-started="true"
+        data-ga4-link-tracker-module-started="true">
+        <h2 class="govuk-heading-m" data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+        <h3 class="govuk-heading-s">Sprints</h3>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Sprint 1
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p  class="govuk-body">Bulleted list of sprint goals goes here</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

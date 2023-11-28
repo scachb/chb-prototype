@@ -14,13 +14,13 @@ Do you know who claimed Child Benefit for this child? – {{ serviceName }} – 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/one-thing-per-page/name-of-person-who-claimed" method="post">
+      <form class="form" action="name-of-person-who-claimed" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "know-who-claimed-for-this-child",
+          name: "child-benefit[end-to-end][know-who-claimed-for-this-child]",
           fieldset: {
             legend: {
               text: "Do you know who claimed Child Benefit for this child?",

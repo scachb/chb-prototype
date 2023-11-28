@@ -15,7 +15,7 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/find-your-address" method="post">
+      <form class="form" action="../find-your-address" method="post">
 
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -39,7 +39,7 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
               text: 'Address line 1'
             },
             id: "address-line-1",
-            name: "address-line-1",
+            name: "child-benefit[end-to-end][address-line-1]",
             autocomplete: "address-line1"
           }) }}
 
@@ -48,7 +48,7 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
               text: 'Address line 2 (optional)'
             },
             id: "address-line-2",
-            name: "address-line-2",
+            name: "child-benefit[end-to-end][address-line-2]",
             autocomplete: "address-line2"
           }) }}
 
@@ -58,7 +58,7 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
-            name: "address-town",
+            name: "child-benefit[end-to-end][address-town]",
             autocomplete: "address-level2"
           }) }}
 
@@ -68,7 +68,7 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-county",
-            name: "address-county"
+            name: "child-benefit[end-to-end][address-county]"
           }) }}
 
           {{ govukInput({
@@ -77,7 +77,7 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
             },
             classes: "govuk-input--width-10",
             id: "address-postcode",
-            name: "address-postcode",
+            name: "child-benefit[end-to-end][address-postcode]",
             autocomplete: "postal-code"
           }) }}
 
@@ -90,7 +90,11 @@ Tell us your last address – {{ serviceName }} – GOV.UK Prototype Kit
           classes: "govuk-button--secondary"
         }) }}
 
-        <p><a class="govuk-link" href="your-details/index.html">Save and come back later</a></p>
+        <p>
+          <a class="govuk-link" href="../your-details/index.html">
+            Save and come back later
+          </a>
+        </p>
 
       </form>
     </div>

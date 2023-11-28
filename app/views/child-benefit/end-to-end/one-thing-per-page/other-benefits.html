@@ -14,12 +14,12 @@ What other benefits do you receive? – {{ serviceName }} – GOV.UK Prototype K
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/check-your-answers/your-details" method="post">
+      <form class="form" action="../check-your-answers/your-details" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          name: "other-benefits",
+          name: "child-benefit[end-to-end][other-benefits]",
           fieldset: {
             legend: {
               text: "What other benefits do you receive?",

@@ -17,7 +17,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-l">Eldest child details</h1>
 
-      <form class="form" action="/one-thing-per-page/other-benefits" method="post">
+      <form class="form" action="other-benefits" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -40,7 +40,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "First name"
             },
             id: "eldest-child-first-name",
-            name: "eldest-child-first-name",
+            name: "child-benefit[end-to-end][eldest-child-first-name]",
             autocomplete: "eldest-child-first-name"
           }) }}
 
@@ -49,7 +49,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Middle name"
             },
             id: "eldest-child-middle-name",
-            name: "eldest-child-middle-name",
+            name: "child-benefit[end-to-end][eldest-child-middle-name]",
             autocomplete: "eldest-child-middle-name"
           }) }}
 
@@ -58,7 +58,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Last name"
             },
             id: "eldest-child-last-name",
-            name: "eldest-child-last-name",
+            name: "child-benefit[end-to-end][eldest-child-last-name]",
             autocomplete: "eldest-child-last-name"
           }) }}
 
@@ -69,6 +69,7 @@ Eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
         {{ govukDateInput({
           id: "eldest-child-date-of-birth",
           namePrefix: "eldest-child-date-of-birth",
+          name: "child-benefit[end-to-end][eldest-child-date-of-birth]",
           fieldset: {
             legend: {
               text: "What is the date of birth of the eldest child you are claiming for?",

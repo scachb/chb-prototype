@@ -15,13 +15,13 @@ Have you ever been known by any other last name or family name including your ma
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/one-thing-per-page/tell-us-the-other-name" method="post">
+      <form class="form" action="one-thing-per-page/tell-us-the-other-name" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "known-name",
+          name: "child-benefit[end-to-end][known-name]",
           fieldset: {
             legend: {
               text: "Have you ever been known by any other last names or family names including your maiden name?",

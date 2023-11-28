@@ -30,7 +30,7 @@ What are the details of the child you want to claim for â€“ {{ serviceName }} â€
 
       <h1 class="govuk-heading-xl">Child details</h1>
 
-      <form class="form" action="/" method="post">
+      <form class="form" action="index" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -47,7 +47,7 @@ What are the details of the child you want to claim for â€“ {{ serviceName }} â€
               text: "First name or given names"
             },
             id: "eldest-child-first-name",
-            name: "eldest-child-first-name",
+            name: "child-benefit[end-to-end][eldest-child-first-name]",
             autocomplete: "eldest-child-first-name"
           }) }}
 
@@ -56,7 +56,7 @@ What are the details of the child you want to claim for â€“ {{ serviceName }} â€
               text: "Middle name"
             },
             id: "eldest-child-middle-name",
-            name: "eldest-child-middle-name",
+            name: "child-benefit[end-to-end][eldest-child-middle-name]",
             autocomplete: "eldest-child-middle-name"
           }) }}
 
@@ -65,13 +65,11 @@ What are the details of the child you want to claim for â€“ {{ serviceName }} â€
               text: "Last name or family name"
             },
             id: "eldest-child-last-name",
-            name: "eldest-child-last-name",
+            name: "child-benefit[end-to-end][eldest-child-last-name]",
             autocomplete: "eldest-child-last-name"
           }) }}
 
         {% endcall %}
-
-        
                 
         <div class="govuk-button-group">
           {{ govukButton({

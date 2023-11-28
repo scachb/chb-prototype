@@ -17,11 +17,11 @@
 
       <form 
         class="form" 
-        action="/child-benefit/end-to-end/nationality/partner-nationality-check-answers" 
+        action="partner-nationality-check-answers" 
         method="post"
       >
 
-        {% from "layouts/macros.html" import locationAutocomplete %}
+        {% from "common/macros/location-autocomplete.html" import locationAutocomplete %}
 
         {{ locationAutocomplete({
           id: "nationality-data",

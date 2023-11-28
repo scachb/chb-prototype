@@ -14,7 +14,7 @@ What is the child's district number, year and entry number? – {{ serviceName }
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/multiple-children/adopt" method="post">
+      <form class="form" action="../multiple-children/adopt" method="post">
 
         <h1 class="govuk-heading-l">What is the child's district number, year and entry number?</h1>
 
@@ -26,7 +26,7 @@ What is the child's district number, year and entry number? – {{ serviceName }
             text: "District number"
           },
           id: "district-number",
-          name: "district-number"
+          name: "child-benefit[end-to-end][district-number]"
         }) }}
 
         {{ govukInput({
@@ -35,7 +35,7 @@ What is the child's district number, year and entry number? – {{ serviceName }
             text: "Year"
           },
           id: "birth-certificate-year",
-          name: "birth-certificate-year"
+          name: "child-benefit[end-to-end][birth-certificate-year]"
         }) }}
 
         {{ govukInput({
@@ -44,7 +44,7 @@ What is the child's district number, year and entry number? – {{ serviceName }
             text: "Entry number"
           },
           id: "entry-number",
-          name: "entry-number"
+          name: "child-benefit[end-to-end][entry-number]"
         }) }}
         
         <div class="govuk-button-group">

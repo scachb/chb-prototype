@@ -17,7 +17,7 @@ Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Ki
 
       <h1 class="govuk-heading-l">Find address of the other claimant</h1>
 
-      <form class="form" action="/one-thing-per-page/confirm-previous-claimant-address" method="post">
+      <form class="form" action="confirm-previous-claimant-address" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -27,7 +27,7 @@ Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Ki
             text: "Postcode"
           },
           id: "previous-claimant-postcode",
-          name: "previous-claimant-postcode"
+          name: "child-benefit[end-to-end][previous-claimant-postcode]"
         }) }}
 
         {{ govukInput({
@@ -38,7 +38,7 @@ Find address of the other claimant – {{ serviceName }} – GOV.UK Prototype Ki
             text: "For example, The Mill or Flat 1a"
           },
           id: "previous-claimant-property",
-          name: "previous-claimant-property"
+          name: "child-benefit[end-to-end][previous-claimant-property]"
         }) }}
 
         <div class="govuk-button-group">

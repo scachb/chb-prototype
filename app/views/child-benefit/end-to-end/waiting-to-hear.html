@@ -18,7 +18,7 @@ Waiting to hear– {{ serviceName }} – GOV.UK Prototype Kit
         Have you recently made a Child Benefit claim and are waiting to hear if you are eligible?
       </h1>
 
-      <form class="form" action="/national-insurance" method="post">
+      <form class="form" action="national-insurance" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -35,7 +35,7 @@ Waiting to hear– {{ serviceName }} – GOV.UK Prototype Kit
   
           {{ govukInput({
             id: "contact-by-email",
-            name: "contact-by-email",
+            name: "child-benefit[end-to-end][contact-by-email]",
             type: "email",
             autocomplete: "email",
             spellcheck: false,
@@ -50,7 +50,7 @@ Waiting to hear– {{ serviceName }} – GOV.UK Prototype Kit
 
         {{ govukRadios({
           classes: "govuk-radios",
-          name: "eligible-claim",
+          name: "child-benefit[end-to-end][eligible-claim]",
           fieldset: {
             legend: {
               text: "",

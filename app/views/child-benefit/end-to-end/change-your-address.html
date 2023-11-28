@@ -16,12 +16,13 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">What is your address?</h1>
         
-       
         <p class="govuk-body">
-            Postcode you entered  <strong>{{ data['postcode'] }}</strong> <a class="govuk-link" href="/postcode.html">Change</a>
+            Postcode you entered  
+            <strong>{{ data['child-benefit']['end-to-end']['postcode'] }}</strong> 
+            <a class="govuk-link" href="postcode">Change</a>
         </p>
 
-        <form class="form" action="/find-your-address" method="post">
+        <form class="form" action="find-your-address" method="post">
 
             {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -36,8 +37,6 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             {{ govukInsetText({
               text: "Sorry, we could not find any addresses that match your postcode. Enter your address manually."
             }) }}
-
-            
             
             {% call govukFieldset({
               legend: {
@@ -52,7 +51,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                   text: 'Address line 1'
                 },
                 id: "address-line-1",
-                name: "address-line-1",
+                name: "child-benefit[end-to-end][address-line-1]",
                 autocomplete: "address-line1"
               }) }}
             
@@ -61,7 +60,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                   text: 'Address line 2 (optional)'
                 },
                 id: "address-line-2",
-                name: "address-line-2",
+                name: "child-benefit[end-to-end][address-line-2]",
                 autocomplete: "address-line2"
               }) }}
             
@@ -71,7 +70,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                 },
                 classes: "govuk-!-width-two-thirds",
                 id: "address-town",
-                name: "address-town",
+                name: "child-benefit[end-to-end][address-town]",
                 autocomplete: "address-level2"
               }) }}
             
@@ -81,7 +80,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                 },
                 classes: "govuk-!-width-two-thirds",
                 id: "address-county",
-                name: "address-county"
+                name: "child-benefit[end-to-end][address-county]"
               }) }}
             
               {{ govukInput({
@@ -90,7 +89,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                 },
                 classes: "govuk-input--width-10",
                 id: "address-postcode",
-                name: "address-postcode",
+                name: "child-benefit[end-to-end][address-postcode]",
                 autocomplete: "postal-code"
               }) }}
             

@@ -15,12 +15,12 @@ What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/one-thing-per-page/are-you-a-member" method="post">
+      <form class="form" action="one-thing-per-page/are-you-a-member" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          name: "employment",
+          name: "child-benefit[end-to-end][employment]",
           fieldset: {
             legend: {
               text: "What is your employment status?",

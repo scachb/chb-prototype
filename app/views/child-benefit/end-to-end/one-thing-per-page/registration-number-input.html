@@ -14,7 +14,7 @@ What is the registration number on the child's birth certificate – {{ serviceN
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/multiple-children/adopt" method="post">
+      <form class="form" action="../multiple-children/adopt" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -25,7 +25,7 @@ What is the registration number on the child's birth certificate – {{ serviceN
             isPageHeading: true
           },
           id: "registration-number",
-          name: "registration-number"
+          name: "child-benefit[end-to-end][registration-number]"
         }) }}
         
         <div class="govuk-button-group">

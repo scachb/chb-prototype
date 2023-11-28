@@ -26,9 +26,9 @@ Confirm your address details – {{ serviceName }} – GOV.UK Prototype Kit
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          name: "confirm-address",
+          name: "child-benefit[end-to-end][confirm-address]",
           classes: "govuk-radios--inline",
-          value: data['confirm-address'],
+          value: data['child-benefit']['end-to-end']['confirm-address'],
           fieldset: {
             legend: {
               text: "Is this address correct?"

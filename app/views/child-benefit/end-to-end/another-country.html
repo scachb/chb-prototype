@@ -19,10 +19,10 @@ Another country details – {{ serviceName }} – GOV.UK Prototype Kit
         Another country details
       </h1>
 
-      <form class="form" action="/one-thing-per-page/other-country" method="post">
+      <form class="form" action="one-thing-per-page/other-country" method="post">
 
         {{ govukRadios({
-          name: "worked-in-another-country",
+          name: "child-benefit[end-to-end][worked-in-another-country]",
           classes: "govuk-radios--inline",
           fieldset: {
             legend: {
@@ -45,7 +45,7 @@ Another country details – {{ serviceName }} – GOV.UK Prototype Kit
         }) }}
 
         {{ govukRadios({
-          name: "confirm-country",
+          name: "child-benefit[end-to-end][confirm-country]",
           classes: "govuk-radios--inline",
           fieldset: {
             legend: {

@@ -15,14 +15,13 @@ How often do you want to get paid child benefit? – {{ serviceName }} – GOV.U
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
       <form class="form" action="bank-payment-details" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "changed-name",
+          name: "child-benefit[end-to-end][changed-name]",
           fieldset: {
             legend: {
               text: "How often do you want to get paid child benefit?",

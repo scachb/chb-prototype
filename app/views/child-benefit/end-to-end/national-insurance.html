@@ -20,13 +20,13 @@
       </h1>
    
 
-      <form class="form" action="/your-name-details?referrer=url" method="post">
+      <form class="form" action="your-name-details?referrer=url" method="post">
 
         <!--<p class="govuk-body govuk-!-font-weight-bold" >WE896405D</p>-->
 
         {{ govukInput({
-          name: 'nino-data',
-          value: data['nino-data']
+          name: 'child-benefit[end-to-end][nino-data]',
+          value: data['child-benefit']['end-to-end']['nino-data']
       }) }}
 
 

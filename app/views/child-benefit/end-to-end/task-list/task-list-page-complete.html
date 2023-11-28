@@ -80,5 +80,9 @@ Claim Child Benefit Task list – {{ serviceName }} – GOV.UK Prototype Kit
   -->
   {{ layoutServiceLinks() }}
 
+  {% from 'common/macros/ask-hmrc-online.html' import layoutAskHmrcOnline  %}
+  
+  {{ layoutAskHmrcOnline() }}
+
 
 {% endblock %}

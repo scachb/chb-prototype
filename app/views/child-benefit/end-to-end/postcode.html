@@ -16,7 +16,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">What is your address?</h1>
 
-      <form class="form" action="/find-your-address" method="post">
+      <form class="form" action="find-your-address" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -36,7 +36,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             text: "For example, AA3 1AB."
           },
           id: "postcode",
-          name: "postcode"
+          name: "child-benefit[end-to-end][postcode]"
         }) }}
 
         {{ govukButton({
@@ -44,7 +44,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
           classes: "govuk-button--secondary"
         }) }}
         
-        <p><a class="govuk-link" href="/address.html">Enter your address manually</a></p>
+        <p><a class="govuk-link" href="address">Enter your address manually</a></p>
         <div class="govuk-!-padding-bottom-9"></div>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

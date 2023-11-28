@@ -14,13 +14,13 @@ Does the child's birth certificate have a registration number? – {{ serviceNam
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/one-thing-per-page/registration-number-input" method="post">
+      <form class="form" action="registration-number-input" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "birth-certificate-have-registration-number",
+          name: "child-benefit[end-to-end][birth-certificate-have-registration-number]",
           fieldset: {
             legend: {
               text: "Does the child's birth certificate have a registration number?",

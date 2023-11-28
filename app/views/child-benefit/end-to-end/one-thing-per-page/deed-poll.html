@@ -14,13 +14,13 @@ Has the child's name been changed by a deed poll? – {{ serviceName }} – GOV.
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/one-thing-per-page/childs-other-name" method="post">
+      <form class="form" action="childs-other-name" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "deed-poll",
+          name: "child-benefit[end-to-end][deed-poll]",
           fieldset: {
             legend: {
               text: "Has the child's name been changed by a deed poll?",

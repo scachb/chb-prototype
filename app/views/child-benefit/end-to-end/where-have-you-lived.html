@@ -15,11 +15,11 @@ Where have you lived – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/employment-details" method="post">
+      <form class="form" action="employment-details" method="post">
 
         {{ govukRadios({
-          name: "lived-address-data",
-          value: data['lived-address-data'],
+          name: "child-benefit[end-to-end][lived-address-data]",
+          value: data['child-benefit']['end-to-end']['lived-address-data'],
           fieldset: {
             legend: {
               text: "Where have you lived?",

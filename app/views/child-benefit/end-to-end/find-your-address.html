@@ -18,11 +18,12 @@ Find your address – {{ serviceName }} – GOV.UK Prototype Kit
 
 
     <p class="govuk-body">
-      Postcode you entered <strong>{{ data['postcode'] }}</strong> <a class="govuk-link govuk-!-static-padding-left-1"
-        href="/postcode.html">Change</a>
+      Postcode you entered 
+      <strong>{{ data['child-benefit']['end-to-end']['postcode'] }}</strong> 
+      <a class="govuk-link govuk-!-static-padding-left-1" href="postcode">Change</a>
     </p>
 
-    <form class="form" action="/your-telephone-number" method="post">
+    <form class="form" action="your-telephone-number" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -33,7 +34,7 @@ Find your address – {{ serviceName }} – GOV.UK Prototype Kit
 
       {{ govukSelect({
       id: "address",
-      name: "address",
+      name: "child-benefit[end-to-end][address]",
       label: {
       text: "Choose the address"
       },
@@ -70,7 +71,7 @@ Find your address – {{ serviceName }} – GOV.UK Prototype Kit
         }
       ]
       }) }}
-      <p><a class="govuk-link" href="/change-your-address.html">I can't find the address in the list</a></p>
+      <p><a class="govuk-link" href="change-your-address">I can't find the address in the list</a></p>
 
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>

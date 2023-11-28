@@ -17,7 +17,7 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-l">Partner's eldest child details</h1>
 
-      <form class="form" action="/relationship/partner-national-insurance" method="post">
+      <form class="form" action="../relationship/partner-national-insurance" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -41,7 +41,7 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "First name"
             },
             id: "partner-eldest-child-first-name",
-            name: "partner-eldest-child-first-name",
+            name: "child-benefit[end-to-end][partner-eldest-child-first-name]",
             autocomplete: "partner-eldest-child-first-name"
           }) }}
 
@@ -50,7 +50,7 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Middle name"
             },
             id: "partner-eldest-child-middle-name",
-            name: "partner-eldest-child-middle-name",
+            name: "child-benefit[end-to-end][partner-eldest-child-middle-name]",
             autocomplete: "partner-eldest-child-middle-name"
           }) }}
 
@@ -59,7 +59,7 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Last name"
             },
             id: "partner-eldest-child-last-name",
-            name: "partner-eldest-child-last-name",
+            name: "child-benefit[end-to-end][partner-eldest-child-last-name]",
             autocomplete: "partner-eldest-child-last-name"
           }) }}
 
@@ -69,6 +69,7 @@ Partner's eldest child details – {{ serviceName }} – GOV.UK Prototype Kit
 
         {{ govukDateInput({
           id: "partner-eldest-child-date-of-birth",
+          name: "child-benefit[end-to-end][partner-eldest-child-date-of-birth]"
           namePrefix: "partner-eldest-child-date-of-birth",
           fieldset: {
             legend: {

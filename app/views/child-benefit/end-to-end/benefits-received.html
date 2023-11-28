@@ -14,12 +14,12 @@ Which of these benefits do you receive – {{ serviceName }} – GOV.UK Prototyp
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/another-country" method="post">
+      <form class="form" action="another-country" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          name: "employment",
+          name: "child-benefit[end-to-end][employment]",
           fieldset: {
             legend: {
               text: "Which of these benefits do you receive?",

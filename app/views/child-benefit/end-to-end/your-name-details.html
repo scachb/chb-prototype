@@ -19,7 +19,7 @@
         Confirm your name details
       </h1>
 
-      <form class="form" action="/known-by-any-other-name" method="post">
+      <form class="form" action="known-by-any-other-name" method="post">
 
         <p class="govuk-body govuk-!-font-weight-bold">Mr April Rain Storm</p>
 
@@ -27,8 +27,8 @@
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "changed-name",
-          value: data['changed-name'],
+          name: "child-benefit[end-to-end][changed-name]",
+          value: data['child-benefit']['end-to-end']['changed-name'],
           fieldset: {
             legend: {
               text: "Is this name correct?",

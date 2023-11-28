@@ -17,7 +17,7 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-l">Other claimant details</h1>
 
-      <form class="form" action="/one-thing-per-page/find-address-of-previous-claimant" method="post">
+      <form class="form" action="find-address-of-previous-claimant" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -34,7 +34,7 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "First name or given names"
             },
             id: "previous-claimant-first-name",
-            name: "previous-claimant-first-name",
+            name: "child-benefit[end-to-end][previous-claimant-first-name]",
             autocomplete: "previous-claimant-first-name"
           }) }}
 
@@ -43,7 +43,7 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Middle name"
             },
             id: "previous-claimant-middle-name",
-            name: "previous-claimant-middle-name",
+            name: "child-benefit[end-to-end][previous-claimant-middle-name]",
             autocomplete: "previous-claimant-middle-name"
           }) }}
 
@@ -52,7 +52,7 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
               text: "Last name(s) or family name(s)"
             },
             id: "previous-claimant-last-name",
-            name: "previous-claimant-last-name",
+            name: "child-benefit[end-to-end][previous-claimant-last-name]",
             autocomplete: "previous-claimant-last-name"
           }) }}
 
@@ -62,7 +62,7 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "do-you-know-the-address-of-the-previous-claimant",
+          name: "child-benefit[end-to-end][do-you-know-the-address-of-the-previous-claimant]",
           fieldset: {
             legend: {
               text: "Do you know the address of the other claimant?",

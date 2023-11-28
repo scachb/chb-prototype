@@ -18,7 +18,7 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
         
       <p class="govuk-body">Your adjusted net income is your total taxable individual income before any personal allowances. It does not include things like Gift Aid. Do not combine your household income. </p>
  
-      <form class="form" action="/your-net-income-answer" method="post">
+      <form class="form" action="your-net-income-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -28,8 +28,8 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
 
         {{ govukRadios({
           classes: "govuk-radios",
-          name: "your-net-income",
-          value: data['your-net-income'],
+          name: "child-benefit[end-to-end][your-net-income]",
+          value: data['child-benefit']['end-to-end']['your-net-income'],
           fieldset: {
             legend: {
               text: "Your net income",
@@ -57,9 +57,9 @@ Your net income – {{ serviceName }} – GOV.UK Prototype Kit
         }) }}
 
         <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Continue"
-            }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
         </div>
 
         <p><a class="govuk-link" href="#">Save and come back later</a></p>

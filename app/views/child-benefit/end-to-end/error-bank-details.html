@@ -15,38 +15,35 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
-{{ govukErrorSummary({
-  titleText: "There is a problem",
-  errorList: [
-    {
-      text: "Enter your first name and last name",
-      href: "#"
-    },
-    {
-      text: "Enter a sort code",
-      href: "#"
-    },
-    {
-        text: "Enter a valid account number",
-        href: "#"
-      }
-  ]
-}) }}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Enter your first name and last name",
+            href: "#"
+          },
+          {
+            text: "Enter a sort code",
+            href: "#"
+          },
+          {
+              text: "Enter a valid account number",
+              href: "#"
+            }
+        ]
+      }) }}
 
         <h1 class="govuk-heading-l">What are the bank details that Child Benefit can be paid to?</h1>
 
-
-        <form class="form" action="/your-net-income-answer" method="post">
+        <form class="form" action="your-net-income-answer" method="post">
 
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
             {% from "govuk/components/input/macro.njk" import govukInput %}
             {% from "govuk/components/select/macro.njk" import govukSelect %}
             {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
             {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-
 
             {{ govukInput({
                 label: {
@@ -60,7 +57,7 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
 
                 classes: "govuk-!-width-three-quarters",
                 id: "first-last-name",
-                name: "First name and last name"
+                name: "child-benefit[end-to-end][first-last-name]"
             }) }}
 
             {{ govukInput({
@@ -70,18 +67,15 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
                 isPageHeading: true
                 },
                 errorMessage: {
-                    text: "Enter a sort code"
-                  },
-
+                  text: "Enter a sort code"
+                },
                 classes: "govuk-!-width-one-quarter",
                 hint: {
                 text: "Must be 6 digits long. For example, 00-11-22."
                 },
-
-                id: "sortcode",
-                name: "Sort Code"
+                id: "sort-code",
+                name: "child-benefit[end-to-end][sort-code]"
             }) }}
-
 
             {{ govukInput({
                 label: {
@@ -90,19 +84,15 @@ What are the bank details that Child Benefit can be paid to? – {{ serviceName 
                 isPageHeading: true
                 },
                 errorMessage: {
-                    text: "Enter a valid account number"
-                  },
-
+                  text: "Enter a valid account number"
+                },
                 classes: "govuk-!-width-one-quarter",
                 hint: {
                 text: "Must be between 6 and 8 digits."
                 },
-
                 id: "account-number",
-                name: "Account number"
+                name: "child-benefit[end-to-end][account-number]"
             }) }}
-
-
 
             <button class="govuk-button" data-module="govuk-button">Continue</button>
 

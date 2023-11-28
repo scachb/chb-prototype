@@ -15,12 +15,12 @@ Is your partner claiming Child Benefit right now? – {{ serviceName }} – GOV.
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/one-thing-per-page/partner-eldest-child-details" method="post">
+      <form class="form" action="partner-eldest-child-details" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          name: "partner-claiming-child-benefit",
+          name: "child-benefit[end-to-end][partner-claiming-child-benefit]",
           fieldset: {
             legend: {
               text: "Is your partner claiming Child Benefit right now?",

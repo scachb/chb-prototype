@@ -14,12 +14,12 @@ Have you lived at this address for more than 12 months? â€“ {{ serviceName }} â€
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/one-thing-per-page/tell-us-your-last-address" method="post">
+      <form class="form" action="one-thing-per-page/tell-us-your-last-address" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          name: "address-over-year",
+          name: "child-benefit[end-to-end][address-over-year]",
           classes: "govuk-radios--inline",
           value: data['address-over-year'],
           fieldset: {

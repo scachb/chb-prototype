@@ -26,16 +26,16 @@ Do you have a UK bank, credit union or building society account that child benef
         
       {% set noBankAccount %}
       {{ govukWarningText({
-          text: "We do not accept international accounts. You must use a UK bank or building society account.  ",
-          iconFallbackText: "Warning"
-          }) }}
+        text: "We do not accept international accounts. You must use a UK bank or building society account.  ",
+        iconFallbackText: "Warning"
+      }) }}
 
       {% endset -%}  
 
       {{ govukRadios({
         classes: "govuk-radios",
-        name: "payment",
-        value: data['payment'],
+        name: "child-benefit[end-to-end][payment]",
+        value: data['child-benefit']['end-to-end']['payment'],
         fieldset: {
           legend: {
             text: "Do you have a UK bank, credit union or building society account that child benefit can be paid to?",
@@ -66,10 +66,6 @@ Do you have a UK bank, credit union or building society account that child benef
         ]
       }) }}
 
-        
-      
-
-      
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>

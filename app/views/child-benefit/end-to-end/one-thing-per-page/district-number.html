@@ -14,13 +14,13 @@ Does the child's birth certificate have a district number, year and entry number
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/one-thing-per-page/district-number-input" method="post">
+      <form class="form" action="district-number-input" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          name: "birth-certificate-have-district-number",
+          name: "child-benefit[end-to-end][birth-certificate-have-district-number]",
           fieldset: {
             legend: {
               text: "Does the child's birth certificate have a district number, year and entry number?",

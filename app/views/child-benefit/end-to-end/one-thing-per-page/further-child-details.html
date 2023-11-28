@@ -17,7 +17,7 @@ Child details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h1 class="govuk-heading-l">Child details</h1>
 
-      <form class="form" action="/one-thing-per-page/system-number" method="post">
+      <form class="form" action="system-number" method="post">
 
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -25,6 +25,7 @@ Child details – {{ serviceName }} – GOV.UK Prototype Kit
         {{ govukDateInput({
           id: "child-date-of-birth",
           namePrefix: "date-of-birth",
+          name: "child-benefit[end-to-end][child-date-of-birth]"
           fieldset: {
             legend: {
               text: "Child date of birth",
@@ -39,7 +40,7 @@ Child details – {{ serviceName }} – GOV.UK Prototype Kit
 
         {{ govukRadios({
           classes: "govuk-radios",
-          name: "child-sex",
+          name: "child-benefit[end-to-end][child-sex]",
           fieldset: {
             legend: {
               text: "What is the child's sex as recorded on the birth certificate?",
@@ -64,7 +65,7 @@ Child details – {{ serviceName }} – GOV.UK Prototype Kit
         }) }}
 
         {{ govukRadios({
-          name: "child-birth-registered",
+          name: "child-benefit[end-to-end][child-birth-registered]",
           fieldset: {
             legend: {
               text: "Where was the child's birth registered?",

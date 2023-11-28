@@ -1,7 +1,7 @@
 {% extends "common/layouts/child-benefit.html" %}
 {% set serviceName = "Claim Child Benefit" %}
 {% block pageTitle %}
-Check your phone – {{ serviceName }} – GOV.UK Prototype Kit
+Continue claiming – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,34 +14,15 @@ Check your phone – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="question-page" method="post">
+      <form class="form" action="continue" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
-<h1 class="govuk-heading-l">Check your phone</h1>
+<h1 class="govuk-heading-l">Continue claiming</h1>
 
-<p class="govuk-body">We’ve sent you a text message with a security code.</p>
+<p class="govuk-body">Continue claiming.</p>
 
-<p class="govuk-body">It may take a few minutes to arrive.</p>
-
-{{ govukInput({
-  label: {
-    text: "Security code",
-    classes: "govuk-label--m"
-  },
-  
-  id: "security-code",
-  name: "securityCode",
-  type: "text",
-  autocomplete: "one-time-code",
-  classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
-  inputmode: "numeric"
-}) }}
-
-
-
-<p class="govuk-body"><a href="resend-first-time" class="govuk-link">Not received a text message?</a></p>
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

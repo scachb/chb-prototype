@@ -1,5 +1,10 @@
 {% extends "common/layouts/child-benefit.html" %}
 
+
+{% block pageTitle %}
+SMS  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
 {% block beforeContent %}
   {{ layoutBackLink() }}
 {% endblock %}
@@ -22,6 +27,14 @@
       }) }}
       <a href="confirm-a-phone-number.html">SMS confirm a phone number</a>
     </p>
+    <p>
+      {{ govukTag({
+        text: "New",
+        classes: "govuk-tag--blue"
+      }) }}
+      <a href="your-telephone-number-question.html">Telephone question page</a>
+    </p>
+
     <p>
       {{ govukTag({
         text: "New",

@@ -1,5 +1,5 @@
 {% extends "common/layouts/child-benefit.html" %}
-{% set serviceName = "Claim Child Benefit" %}
+
 {% block pageTitle %}
 Check your phone – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -27,7 +27,7 @@ Check your phone – {{ serviceName }} – GOV.UK Prototype Kit
 
 {{ govukInput({
   label: {
-    text: "Security code",
+    text: "Security code (text message code)",
     classes: "govuk-label--m"
   },
   

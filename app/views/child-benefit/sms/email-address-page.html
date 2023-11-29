@@ -1,0 +1,41 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+What is your telephone number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post" action="email-address-page">
+
+        {{ govukInput({
+          label: {
+            text: "Email Address"
+          },
+          id: "email-address",
+          name: "child-benefit[sms][emailAddress]",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        })}}
+
+      </form>
+    </div>
+  </div>
+
+
+  {{ layoutServiceLinks() }}
+
+  {% endblock %}

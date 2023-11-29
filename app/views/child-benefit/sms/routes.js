@@ -10,7 +10,7 @@ const smsRouter = govukPrototypeKit.requests.setupRouter();
 // Conditional routing for receiving a text message
   smsRouter.post('/confirm-text-answer', function(request, response) {
 
-    var receiveSMS = request.session.data['receive-text']
+    var receiveSMS = request.session.data['child-benefit']['sms']['receive-text']
     if (receiveSMS == "Yes"){
         response.redirect("./confirm-a-phone-number")
     } else {

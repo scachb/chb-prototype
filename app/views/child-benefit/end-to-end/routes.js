@@ -11,9 +11,9 @@ const endToEndRouter = govukPrototypeKit.requests.setupRouter()
 
 endToEndRouter.post('/change-child-answer', function(request, response) {
   if (request.session.data['child-benefit']['end-to-end']['change-child-details'] == "index"){
-    response.redirect("/child-benefit/end-to-end/children-list")
+    response.redirect("./children-list")
   } else {
-    response.redirect("/child-benefit/end-to-end/children-list")
+    response.redirect("./children-list")
   }
 })
 
@@ -22,9 +22,9 @@ endToEndRouter.post(
   '/one-thing-per-page/tell-us-the-other-name', 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['known-name'] == "Yes"){
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/tell-us-the-other-name")
+      response.redirect("./tell-us-the-other-name")
     } else {
-      response.redirect("/child-benefit/end-to-end/your-date-of-birth")
+      response.redirect("../your-date-of-birth")
     }
   }
 )
@@ -34,9 +34,9 @@ endToEndRouter.post(
   "/nationality/add-other-nationality", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['nationality-another'] == "Yes") {
-      response.redirect("/child-benefit/end-to-end/nationality/add-other-nationality")
+      response.redirect("./add-other-nationality")
     } else {
-      response.redirect("/child-benefit/end-to-end/where-have-you-lived")
+      response.redirect("../where-have-you-lived")
     }
   }
 )
@@ -46,9 +46,9 @@ endToEndRouter.post(
   "/one-thing-per-page/tell-us-your-last-address", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['address-over-year'] == "No") {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/tell-us-your-last-address")
+      response.redirect("./tell-us-your-last-address")
     } else {
-      response.redirect("/child-benefit/end-to-end/your-telephone-number")
+      response.redirect("../your-telephone-number")
     }
   }
 )
@@ -60,9 +60,9 @@ endToEndRouter.post(
     const claiming = request.session.data['child-benefit']['end-to-end']['claiming-child-benefit-right-now'];
 
     if (claiming == "Yes" || claiming == "Yesandno") {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/eldest-child-details")
+      response.redirect("./eldest-child-details")
     } else {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/other-benefits")
+      response.redirect("./other-benefits")
     }
   }
 )
@@ -78,9 +78,9 @@ endToEndRouter.post(
       claiming == "claiming-child-benefit-and-not-getting-payments" ||
       claiming == "waiting-to-hear-if-they-are-eligible-for-child-benefit"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/partner-eldest-child-details")
+      response.redirect("./partner-eldest-child-details")
     } else {
-      response.redirect("/child-benefit/end-to-end/relationship/partner-national-insurance")
+      response.redirect("../relationship/partner-national-insurance")
     }
   }
 )
@@ -90,9 +90,9 @@ endToEndRouter.post(
   "/one-thing-per-page/other-country", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['confirm-country'] == "yes") {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/other-country")
+      response.redirect("./other-country")
     } else {
-      response.redirect("/child-benefit/end-to-end/claiming-child-benefit")
+      response.redirect("../claiming-child-benefit")
     }
   }
 )
@@ -102,9 +102,9 @@ endToEndRouter.post(
   "/one-thing-per-page/deed-poll", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['changed-name'] == "yes") {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/deed-poll") 
+      response.redirect("./deed-poll") 
     } else {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/further-child-details")
+      response.redirect("./further-child-details")
     }
   }
 )
@@ -116,13 +116,13 @@ endToEndRouter.post(
     const registered = request.session.data['child-benefit']['end-to-end']['child-birth-registered'];
 
     if (registered == "england" || registered == "wales" ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/system-number") 
+      response.redirect("./system-number") 
     } else if (registered == "scotland") {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/district-number")
+      response.redirect("./district-number")
     } else if (registered == "northern-ireland") {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/registration-number")
+      response.redirect("./registration-number")
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/adopt")
+      response.redirect("../multiple-children/adopt")
     }
   }
 )
@@ -134,9 +134,9 @@ endToEndRouter.post(
     if (
       request.session.data['child-benefit']['end-to-end']['birth-certificate-have-system-number'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/system-number-input") 
+      response.redirect("./system-number-input") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/adopt")
+      response.redirect("../multiple-children/adopt")
     }
   }
 )
@@ -147,9 +147,9 @@ endToEndRouter.post("/one-thing-per-page/district-number-input",
     if (
       request.session.data['child-benefit']['end-to-end']['birth-certificate-have-district-number'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/district-number-input") 
+      response.redirect("./district-number-input") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/adopt")
+      response.redirect("../multiple-children/adopt")
     }
   }
 )
@@ -160,9 +160,9 @@ endToEndRouter.post("/one-thing-per-page/registration-number-input",
     if (
       request.session.data['child-benefit']['end-to-end']['birth-certificate-have-registration-number'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/registration-number-input") 
+      response.redirect("./registration-number-input") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/adopt")
+      response.redirect("../multiple-children/adopt")
     }
   }
 )
@@ -174,9 +174,9 @@ endToEndRouter.post(
     if (
       request.session.data['child-benefit']['end-to-end']['have-you-claimed-for-this-child'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/do-you-know-who-claimed") 
+      response.redirect("./do-you-know-who-claimed") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/child-address")
+      response.redirect("../multiple-children/child-address")
     }
   }
 )
@@ -188,9 +188,9 @@ endToEndRouter.post(
     if (
       request.session.data['child-benefit']['end-to-end']['know-who-claimed-for-this-child'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/name-of-person-who-claimed") 
+      response.redirect("./name-of-person-who-claimed") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/child-address")
+      response.redirect("../multiple-children/child-address")
     }
   }
 )
@@ -202,9 +202,9 @@ endToEndRouter.post(
     if (
       request.session.data['child-benefit']['end-to-end']['do-you-know-the-address-of-the-previous-claimant'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/one-thing-per-page/find-address-of-previous-claimant") 
+      response.redirect("./find-address-of-previous-claimant") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/child-address")
+      response.redirect("../multiple-children/child-address")
     }
   }
 )
@@ -214,9 +214,9 @@ endToEndRouter.post(
   "/multiple-children/child-different-address", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['child-live-with-you'] == "yes") {
-      response.redirect("/child-benefit/end-to-end/multiple-children/child-different-address") 
+      response.redirect("./child-different-address") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/child-lives-with")
+      response.redirect("./child-lives-with")
     }
   }
 )
@@ -226,9 +226,9 @@ endToEndRouter.post(
   "/multiple-children/person-child-lives-with", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['know-who-the-child-lives-with'] == "yes") {
-      response.redirect("/child-benefit/end-to-end/multiple-children/person-child-lives-with") 
+      response.redirect("./person-child-lives-with") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/check-answers")
+      response.redirect("./check-answers")
     }
   }
 )
@@ -240,9 +240,9 @@ endToEndRouter.post(
     if (
       request.session.data['child-benefit']['end-to-end']['know-address-of-person-child-lives-with'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/multiple-children/find-address-of-person") 
+      response.redirect("./find-address-of-person") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/check-answers")
+      response.redirect("./check-answers")
     }
   }
 )
@@ -252,9 +252,9 @@ endToEndRouter.post(
   "/multiple-children/lived-with-another", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['child-different-address'] == "yes") {
-      response.redirect("/child-benefit/end-to-end/multiple-children/lived-with-another") 
+      response.redirect("./lived-with-another") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/check-answers")
+      response.redirect("./check-answers")
     }
   }
 )
@@ -264,9 +264,9 @@ endToEndRouter.post(
   "/multiple-children/person-child-lived-with", 
   function(request, response) {
     if (request.session.data['child-benefit']['end-to-end']['child-lived-with'] == "yes") {
-      response.redirect("/child-benefit/end-to-end/multiple-children/person-child-lived-with") 
+      response.redirect("./person-child-lived-with") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/check-answers")
+      response.redirect("./check-answers")
     }
   }
 )
@@ -278,9 +278,9 @@ endToEndRouter.post(
     if (
       request.session.data['child-benefit']['end-to-end']['know-address-of-person-child-lived-with'] == "yes"
     ) {
-      response.redirect("/child-benefit/end-to-end/multiple-children/find-address-of-person-lived-with") 
+      response.redirect("./find-address-of-person-lived-with") 
     } else {
-      response.redirect("/child-benefit/end-to-end/multiple-children/person-lived-with-telephone-number")
+      response.redirect("./person-lived-with-telephone-number")
     }
   }
 )

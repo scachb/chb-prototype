@@ -7,12 +7,13 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 const childBenefitRouter = require('./views/child-benefit/routes');
 const payeRouter = require('./views/paye/routes');
 const selfAssessmentRouter = require('./views/self-assessment/routes');
+const smsRouter = require('./views/child-benefit/sms/routes');
 
 const scaRouter = govukPrototypeKit.requests.setupRouter()
 
 // Register your SCA services here
 
-// Registers all Child Benefit journeys to /self-assessment
+// Registers all Child Benefit journeys to /child-benefit
 scaRouter.use("/child-benefit", childBenefitRouter);
 
 // Registers all PAYE journeys to /paye
@@ -20,3 +21,6 @@ scaRouter.use("/paye", payeRouter);
 
 // Registers all Self Assessment journeys to /self-assessment
 scaRouter.use("/self-assessment", selfAssessmentRouter);
+
+// Registers all Self Assessment journeys to /self-assessment
+scaRouter.use("/child-benefit/sms", smsRouter);

@@ -14,7 +14,7 @@ Telephone contact details – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/your-telephone-number" method="post">
+      <form class="form" action="confirm-text-answer" method="post">
 
         <h1 class="govuk-heading-l">Telephone contact details</h1>
 
@@ -38,7 +38,7 @@ Telephone contact details – {{ serviceName }} – GOV.UK Prototype Kit
         
 {{ govukRadios({
   classes: "govuk-radios--inline",
-  name: "child-benefit[sms][receiveSMS]",
+  name: "receive-text",
   fieldset: {
     legend: {
       text: "Do you want to receive a text message (SMS)?",
@@ -51,11 +51,11 @@ Telephone contact details – {{ serviceName }} – GOV.UK Prototype Kit
   },
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes"
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
   ]

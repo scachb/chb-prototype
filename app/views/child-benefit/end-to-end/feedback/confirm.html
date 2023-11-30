@@ -1,0 +1,37 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Thank you for your feedback – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <h1 class="govuk-heading-xl">Thank you for your feedback</h1>
+
+      <p class="govuk-body">We will use your feedback to make our services better.</p>
+
+      <h3 class="govuk-heading-m">View your claim</h3>
+
+      <p>
+        <!--You can check the status of your claim by using the link that will take you back to the homepage of the claim portal application.-->
+        You can view the details of your claim by using the link that will take you back to the homepage of the claim portal application
+      </p>
+
+      <p>
+      <a href="#" class="govuk-link">Return to your claim homepage</a>
+      </p>
+
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

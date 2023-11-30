@@ -1,0 +1,40 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Thank you for your feedback – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        For your security, we signed you out
+      </h1>
+  
+      <p class="govuk-body">
+        We have saved your progress and will store your information for 28 days. 
+      </p>
+
+      {% from "common/macros/ask-for-feedback.html" import askForFeedback %}
+
+      {{ askForFeedback("./") }}
+  
+      <div class="govuk-form-group">
+        <button id="timeout-keep-signin-btn3" class="govuk-button govuk-!-margin-bottom-0">
+          Sign in
+        </button>
+      </div>
+      
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

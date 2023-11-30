@@ -1,0 +1,88 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+{% endblock %}
+
+
+{% block content %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        <!--Application complete-->
+        Application for Child Benefit Received
+      </h1>
+      <div class="govuk-panel__body govuk-!-font-size-27">
+        Post your supporting documents
+      </div>
+    </div>
+
+
+    <h2 class="govuk-heading-m">
+      What you need to do now
+    </h2>
+
+    <p>
+      The information you have provided have been used to create your Child Benefit claim form.
+    </p>
+
+    <p>
+      You need to post:
+      <ul class="govuk-list govuk-list--bullet">
+        <li><code>child’s name</code> birth certificate</li>
+        <li><code>child’s name</code> passport or travel document used to enter the UK</li>
+        <li><code>child’s name</code> adoption certificate</li>
+      </ul>
+    </p>
+
+    <p>
+      HMRC might call you if they need more information.
+    </p>
+
+    <p>
+      After you have <a href="#">printed this form and signed and dated the Declaration (opens in new tab)</a>, return the form with any documents we need to:
+    </p>  
+    
+
+    <p class="govuk-!-font-weight-bold">Child Benefit Office (GB)<br>
+      Washington<br>
+      NEWCASTLE UPON TYNE<br>
+      NE88 1ZD
+      </p>
+
+    <p>We’ll normally return any documents you have sent us within 4 weeks.
+        </p>
+    <h3 class="govuk-heading-m">View your claim</h3>
+
+    <p>
+      <!--You can check the status of your claim by using the link that will take you back to the homepage of the claim portal application.-->
+      You can view the details of your claim by using the link that will take you back to the homepage of the claim portal application
+    </p>
+
+    <p>
+    <a href="#" class="govuk-link">Return to your claim homepage</a>
+    </p>
+
+    {% from "common/macros/ask-for-feedback.html" import askForFeedback %}
+
+    {{ askForFeedback("./") }}
+
+  </div>
+</div>
+
+{{ layoutServiceLinks() }}
+
+
+{% endblock %}

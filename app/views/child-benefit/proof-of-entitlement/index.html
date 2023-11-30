@@ -4,6 +4,8 @@
   {{ layoutBackLink() }}
 {% endblock %}
 
+{% from "common/macros/document-design.html" import documentDesign %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -12,18 +14,22 @@
     <h1 class="govuk-heading-xl">Proof of entitlement</h1>
     <p class="govuk-body">Proof of entitlement to Child Benefit, viewed through the claimant portal.</p>
 
-    <h3 class="govuk-heading-l">Proof of entitlement and payment history</h3>
-    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
-    <p>To allow claimants to view their proof of entitlement and view payment history</p>
-    <p>
-      {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-      }) }}
-      <a href="portal">Portal with link to view proof of entitlement</a>
-    </p>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+    {{ documentDesign({
+      name: "Proof of entitlement and payment history",
+      includeWhyIsThisNeeded: true,
+      summary: "To allow claimants to view their proof of entitlement and view payment history",
+      date: "24 November 2023",
+      revisions: [
+        {
+          summary: "Portal with link to view proof of entitlement", 
+          href: "portal",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        }
+      ]
+    }) }}
 
   </div>
 

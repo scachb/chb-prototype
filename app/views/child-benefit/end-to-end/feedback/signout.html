@@ -17,21 +17,21 @@ Thank you for your feedback – {{ serviceName }} – GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         For your security, we signed you out
       </h1>
-  
+
       <p class="govuk-body">
         We have saved your progress and will store your information for 28 days. 
       </p>
 
-      {% from "common/macros/ask-for-feedback.html" import askForFeedback %}
-
-      {{ askForFeedback("./") }}
-  
       <div class="govuk-form-group">
         <button id="timeout-keep-signin-btn3" class="govuk-button govuk-!-margin-bottom-0">
           Sign in
         </button>
       </div>
-      
+
+      {% from "common/macros/ask-for-feedback.html" import askForFeedback %}
+
+      {{ askForFeedback("./") }}
+
     </div>
   </div>
 

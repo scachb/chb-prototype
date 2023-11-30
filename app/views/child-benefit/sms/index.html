@@ -1,6 +1,5 @@
 {% extends "common/layouts/child-benefit.html" %}
 
-
 {% block pageTitle %}
 SMS  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -8,6 +7,8 @@ SMS  – {{ serviceName }} – GOV.UK Prototype Kit
 {% block beforeContent %}
   {{ layoutBackLink() }}
 {% endblock %}
+
+{% from "common/macros/document-design.html" import documentDesign %}
 
 {% block content %}
 
@@ -17,33 +18,37 @@ SMS  – {{ serviceName }} – GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">SMS</h1>
     <p class="govuk-body">Send a text message to claimants using Child Benefit.</p>
 
-    <h3 class="govuk-heading-l">SMS confirm a phone number</h3>
-    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
-    <p>To allow claimants to recieve a SMS. SMS is a great way to communicate with people.</p>
-    <p>
-      {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-      }) }}
-      <a href="confirm-a-phone-number.html">SMS confirm a phone number</a>
-    </p>
-    <p>
-      {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-      }) }}
-      <a href="your-telephone-number-question.html">Telephone question page</a>
-    </p>
-
-    <p>
-      {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-      }) }}
-      <a href="your-telephone-number.html">Enhance your telephone question page</a>
-    </p>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+    {{ documentDesign({
+      name: "MS confirm a phone number",
+      includeWhyIsThisNeeded: true,
+      summary: "To allow claimants to recieve a SMS. SMS is a great way to communicate with people.",
+      revisions: [
+        {
+          summary: "SMS confirm a phone number", 
+          href: "confirm-a-phone-number.html",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        },
+        {
+          summary: "Telephone question page", 
+          href: "your-telephone-number-question.html",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        },
+        {
+          summary: "Enhance your telephone question page", 
+          href: "your-telephone-number.html",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        }
+      ]
+    }) }}
 
   </div>
 

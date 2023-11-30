@@ -1,5 +1,7 @@
 {% extends "common/templates/blank-layout.html" %}
 
+{% from "common/macros/document-design.html" import documentDesign %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -8,36 +10,38 @@
     <h1 class="govuk-heading-xl">Name of journey</h1>
     <p class="govuk-body">Description of journey.</p>
 
-    <h3 class="govuk-heading-l">Name of design</h3>
-    <p>Description of the design.</p>
-
-    <p>
-      {{ govukTag({
-        text: "Final",
-        classes: "govuk-tag--green"
-      }) }}
-      <a href="#">Description of revision</a>
-    </p>
-
-    <p>
-      {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
-      }) }}
-      <a href="#">Description of revision</a>
-    </p>
-
-    <p>
-      {{ govukTag({
-        text: "Old",
-        classes: "govuk-tag--grey"
-      }) }}
-      <a href="#">Description of revision</a>
-    </p>
-
-    <time class="govuk-body" datetime="">24 November 2023</time>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+    {{ documentDesign({
+      name: "Name of design",
+      summary: "Description of the design.",
+      date: "24 November 2023",
+      includeSeparator: true,
+      revisions: [
+        {
+          summary: "Description of revision", 
+          href: "#",
+          tag: { 
+            text: "Final", 
+            classes: "govuk-tag--green" 
+          }
+        },
+        {
+          summary: "Description of revision", 
+          href: "#",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        },
+        {
+          summary: "Description of revision", 
+          href: "#",
+          tag: { 
+            text: "Old", 
+            classes: "govuk-tag--grey" 
+          }
+        }
+      ]
+    }) }}
 
   </div>
 

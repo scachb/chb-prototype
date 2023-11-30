@@ -1,7 +1,11 @@
 //
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
-//
+
+
+var NotifyClient = require('notifications-node-client').NotifyClient,
+    notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 const childBenefitRouter = require('./views/child-benefit/routes');
@@ -20,3 +24,5 @@ scaRouter.use("/paye", payeRouter);
 
 // Registers all Self Assessment journeys to /self-assessment
 scaRouter.use("/self-assessment", selfAssessmentRouter);
+
+

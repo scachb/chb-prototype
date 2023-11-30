@@ -1,0 +1,24 @@
+{% macro documentDesign(options) %}
+
+  <h3 class="govuk-heading-l">{{ options.name }}</h3>
+  <p>{{ options.summary }}</p>
+
+  {% for revision in options.revisions %}
+    <p>
+      {{ govukTag({
+        text: revision.tag.text,
+        classes: revision.tag.classes
+      }) }}
+      <a href="#">{{ revision.summary }}</a>
+    </p>
+  {% endfor %}
+
+  {% if date %}
+    <time class="govuk-body" datetime="">{{ date }}</time>
+  {% endif %}
+
+  {% if includeSeparator %}
+   <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+  {% endif %}
+  
+{% endmacro %}

@@ -1,15 +1,21 @@
 {% macro documentDesign(options) %}
 
   <h3 class="govuk-heading-l">{{ options.name }}</h3>
+
+  {% if options.includeWhyIsThisNeeded %}
+    <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
+  {% endif %}
+
   <p>{{ options.summary }}</p>
 
   {% for revision in options.revisions %}
+    {%- from "govuk/components/tag/macro.njk" import govukTag -%}
     <p>
       {{ govukTag({
         text: revision.tag.text,
         classes: revision.tag.classes
       }) }}
-      <a href="#">{{ revision.summary }}</a>
+      <a href="{{ revision.href }}">{{ revision.summary }}</a>
     </p>
   {% endfor %}
 

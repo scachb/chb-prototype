@@ -3,8 +3,8 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 
 
-var NotifyClient = require('notifications-node-client').NotifyClient,
-    notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+// var NotifyClient = require('notifications-node-client').NotifyClient,
+//     notify = new NotifyClient(process.env.NOTIFYAPIKEY);
 
 
 const govukPrototypeKit = require('govuk-prototype-kit');

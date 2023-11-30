@@ -4,6 +4,8 @@
   {{ layoutBackLink() }}
 {% endblock %}
 
+{% from "common/macros/document-design.html" import documentDesign %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -12,13 +14,37 @@
     <h1 class="govuk-heading-xl">Claim Child Benefit: unauthenticated</h1>
     <p class="govuk-body">End-to-end to claim Child Benefit without Government Gateway/One GOV login.</p>
 
-    <h3 class="govuk-heading-l">Name of design goes here</h3>
-
-    <p>Description of the design goes here</p>
-
-    <time class="govuk-body" datetime="">24 November 2023</time>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+    {{ documentDesign({
+      name: "Name of design",
+      summary: "Description of the design.",
+      date: "24 November 2023",
+      revisions: [
+        {
+          summary: "Description of revision", 
+          href: "#",
+          tag: { 
+            text: "Final", 
+            classes: "govuk-tag--green" 
+          }
+        },
+        {
+          summary: "Description of revision", 
+          href: "#",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        },
+        {
+          summary: "Description of revision", 
+          href: "#",
+          tag: { 
+            text: "Old", 
+            classes: "govuk-tag--grey" 
+          }
+        }
+      ]
+    }) }}
 
   </div>
 

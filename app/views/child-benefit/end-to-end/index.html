@@ -1,8 +1,6 @@
 {% extends "common/layouts/child-benefit.html" %}
 
-{% block beforeContent %}
-  {{ layoutBackLink() }}
-{% endblock %}
+{% from "common/macros/document-design.html" import documentDesign %}
 
 {% block content %}
 
@@ -22,7 +20,7 @@
           text: "New",
           classes: "govuk-tag--blue"
         }) }}
-        <a class="govuk-link govuk-body" href="././start">Journey</a>
+        <a class="govuk-link govuk-body" href="./end-to-end/start">Journey</a>
       </li>
     
       <li>
@@ -48,6 +46,31 @@
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
+    {{ documentDesign({
+      name: "Infofrmation confirmation pattern",
+      includeWhyIsThisNeeded: true,
+      date: "30 November 2023",
+      summary: "To adhere to an ongoing information confirmation GOV.UK pattern and group all information from NPS together to make CYA screens navigation easier.",
+      revisions: [
+        {
+          summary: "NPS details",
+          href: "./end-to-end/information-confirmation/nps-details",
+          tag: {
+            text: "New",
+            classes: "govuk-tag--blue"
+          }
+        },
+        {
+          summary: "NPS details",
+          href: "./end-to-end/information-confirmation/alternative-nps-details",
+          tag: {
+            text: "Alternative",
+            classes: "govuk-tag--yellow"
+          }
+        }
+      ]
+    }) }}
+
     <h3 class="govuk-heading-l">Give feedback</h3>
     <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
     <p>
@@ -71,22 +94,22 @@
 
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a href="./feedback">
+        <a href="./end-to-end/feedback">
           Feedback survey page
         </a>
       </li>
       <li>
-        <a href="./feedback/confirm">
+        <a href="./end-to-end/feedback/confirm">
           Confirmation of feedback submitted
         </a>
       </li>
       <li>
-        <a href="./feedback/confirmation">
+        <a href="./end-to-end/feedback/confirmation">
           Confirmation page with feedback link
         </a>
       </li>
       <li>
-        <a href="./feedback/signout">
+        <a href="./end-to-end/feedback/signout">
           Sign out page with feedback link
         </a>
       </li>
@@ -108,8 +131,8 @@
       <h4 class="govuk-heading-m">Task list examples</h4>
      
       <ul class="govuk-list govuk-list--bullet">
-        <li> <a href="./task-list/task-list-page">Task list using HMRC status tags (Completed, In progress and Not started)</a></li>
-        <li> <a href="./task-list/task-list-page-complete">Task list for claim completed</a></a></li>
+        <li> <a href="./end-to-end/task-list/task-list-page">Task list using HMRC status tags (Completed, In progress and Not started)</a></li>
+        <li> <a href="./end-to-end/task-list/task-list-page-complete">Task list for claim completed</a></a></li>
       </ul>
     </p>
     
@@ -122,33 +145,33 @@
       <span class="govuk-caption-l">US-10885</span>
       <h4 class="govuk-heading-m">Remove the reveal further questions on the page</h4>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./one-thing-per-page/tell-us-the-other-name">Tell us the other name</a></li>
-        <li><a href="./one-thing-per-page/tell-us-your-last-address">Tell us your last address</a></li>
-        <li><a href="././nationality/add-nationality">Other nationality (reuse the add to list design pattern. See the 'Children added' design)</a></li>
-        <li><a href="././claiming-child-benefit">Are you claiming child benefit right now new step with the eldest child's details</a></li>
+        <li><a href="./end-to-end/end-to-end/one-thing-per-page/tell-us-the-other-name">Tell us the other name</a></li>
+        <li><a href="./end-to-end/end-to-end/one-thing-per-page/tell-us-your-last-address">Tell us your last address</a></li>
+        <li><a href="./end-to-end/nationality/add-nationality">Other nationality (reuse the add to list design pattern. See the 'Children added' design)</a></li>
+        <li><a href="./end-to-end/claiming-child-benefit">Are you claiming child benefit right now new step with the eldest child's details</a></li>
       </ul>
 
       <span class="govuk-caption-l">US-11186</span>
       <h4 class="govuk-heading-m">Remove Child reveal questions</h4>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./multiple-children">What are the details of the child you want to claim for?</a></li>
-        <li><a href="./multiple-children/previous-claimant">Previous claimant details (Postcode/address look up)</a></li>
-        <li><a href="./multiple-children/claimed-child-benefit">Other claimant details (Postcode/address look up)</a></li>
-        <li><a href="./multiple-children/child-address">Tell us about who the child lives with (Postcode/address look up)</a></li>
+        <li><a href="./end-to-end/multiple-children">What are the details of the child you want to claim for?</a></li>
+        <li><a href="./end-to-end/multiple-children/previous-claimant">Previous claimant details (Postcode/address look up)</a></li>
+        <li><a href="./end-to-end/multiple-children/claimed-child-benefit">Other claimant details (Postcode/address look up)</a></li>
+        <li><a href="./end-to-end/multiple-children/child-address">Tell us about who the child lives with (Postcode/address look up)</a></li>
       </ul>
 
       <span class="govuk-caption-l">US-11185</span>
       <h4 class="govuk-heading-m">Remove Partner reveal questions</h4>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./one-thing-per-page/partner-claiming-child-benefit">Is your partner claiming child benefit right now includes new step with eldest child details (REUSE  US-10885)</a></li>
-        <li><a href="./nationality/partner-nationality">Partner nationality details - Adding in a new capture step to the nationality page if claimant select 'yes' to another nationality (REUSE US-10885)</a></li>  
+        <li><a href="./end-to-end/one-thing-per-page/partner-claiming-child-benefit">Is your partner claiming child benefit right now includes new step with eldest child details (REUSE  US-10885)</a></li>
+        <li><a href="./end-to-end/nationality/partner-nationality">Partner nationality details - Adding in a new capture step to the nationality page if claimant select 'yes' to another nationality (REUSE US-10885)</a></li>  
       </ul>
 
       <span class="govuk-caption-l">US-10233</span>
       <h4 class="govuk-heading-m">Split up employment status questions</h4>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./one-thing-per-page/other-benefits">What other benefits do you claim?</a></li>
-        <li><a href="./one-thing-per-page/are-you-a-member">Are you a member of HM Forces or a civil servant working abroad?</a></li>
+        <li><a href="./end-to-end/one-thing-per-page/other-benefits">What other benefits do you claim?</a></li>
+        <li><a href="./end-to-end/one-thing-per-page/are-you-a-member">Are you a member of HM Forces or a civil servant working abroad?</a></li>
       </ul>
 
 
@@ -162,7 +185,7 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./brms">BRMS notification banner and warning</a>
+      <a href="./end-to-end/brms">BRMS notification banner and warning</a>
     </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
@@ -175,14 +198,14 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./service-unavailable-page/api-error.html">Service down</a>
+      <a href="./end-to-end/service-unavailable-page/api-error.html">Service down</a>
     </p>
     <p>
       {{govukTag({
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./service-unavailable-page/nps-service-unavailable">Service unavailable</a>
+      <a href="./end-to-end/service-unavailable-page/nps-service-unavailable">Service unavailable</a>
     </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
@@ -204,14 +227,14 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./post-print/claim-child-benefit-by-post">View claim form</a>
+      <a href="./end-to-end/post-print/claim-child-benefit-by-post">View claim form</a>
     </p>
     <p>
       {{govukTag({
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./post-print/return-slip">View return slip</a>
+      <a href="./end-to-end/post-print/return-slip">View return slip</a>
     </p>
 
     <p>
@@ -219,7 +242,7 @@
       text: "Test",
       classes: "govuk-tag--purple"
       })}}
-      <a href="./post-print/declaration-print">View declaration (print preview test)</a>
+      <a href="./end-to-end/post-print/declaration-print">View declaration (print preview test)</a>
     </p>
 
     <p>
@@ -241,7 +264,7 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./multiple-children/children-list-one-child">
+      <a href="./end-to-end/multiple-children/children-list-one-child">
         Summary card - There must be at least one child on the claim (body copy)</a>
 
     </p>
@@ -251,7 +274,7 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./multiple-children/children-list-important">Summary card - important notification banner example</a>
+      <a href="./end-to-end/multiple-children/children-list-important">Summary card - important notification banner example</a>
 
     </p>
 
@@ -260,11 +283,11 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./multiple-children/add-to-a-list">HMRC design pattern Add to a list example</a>
+      <a href="./end-to-end/multiple-children/add-to-a-list">HMRC design pattern Add to a list example</a>
 
     </p>
 
-    <p><a href="./multiple-children/index">Journey</a></p>
+    <p><a href="./end-to-end/multiple-children/index">Journey</a></p>
 
     <p><a href="public/pdf/SCA-multiple-children.pdf">Tube map</a></p>
 
@@ -293,20 +316,20 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./declaration/born-abroad/make-a-declaration-agree">Declaration DWP pattern</a>
+      <a href="./end-to-end/declaration/born-abroad/make-a-declaration-agree">Declaration DWP pattern</a>
     </p>
-    <p><a href="./declaration/confirmation-live">Confirmation (live service)</a></p>
-    <p><a href="./declaration/born-abroad/make-a-declaration">Born aboard declaration</a></p>
-    <p><a href="./declaration/born-abroad/error-make-a-declaration">Error born aboard declaration</a></p>
+    <p><a href="./end-to-end/declaration/confirmation-live">Confirmation (live service)</a></p>
+    <p><a href="./end-to-end/declaration/born-abroad/make-a-declaration">Born aboard declaration</a></p>
+    <p><a href="./end-to-end/declaration/born-abroad/error-make-a-declaration">Error born aboard declaration</a></p>
 
-    <p><a href="./declaration/born-abroad/">Error declaration</a></p>
+    <p><a href="./end-to-end/declaration/born-abroad/">Error declaration</a></p>
 
-    <p><a href="./declaration/confirmation.html">Confirmation</a></p>
+    <p><a href="./end-to-end/declaration/confirmation.html">Confirmation</a></p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
     <h3 class="govuk-heading-l">Service unavailable</h3>
-    <p><a href="./service-unavailable-page/index.html">Child Benefit service unavailable page</a></p>
+    <p><a href="./end-to-end/service-unavailable-page/index.html">Child Benefit service unavailable page</a></p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
@@ -323,18 +346,18 @@
     <p>{{govukTag({
       text: "New",
       classes: "govuk-tag--blue"
-      })}} <a href="./waiting-to-hear.html">Waiting to hear if you are eligible </a>
+      })}} <a href="./end-to-end/waiting-to-hear.html">Waiting to hear if you are eligible </a>
     </p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
     <h3 class="govuk-heading-l">Tell us your nationality options</h3>
 
-    <p><a href="./nationalities.html">Tell us your nationality example with conditonal radio's </a></p>
+    <p><a href="./end-to-end/nationalities.html">Tell us your nationality example with conditonal radio's </a></p>
 
-    <p><a href="./nationality.html">Tell us your nationality example with a select</a></p>
+    <p><a href="./end-to-end/nationality.html">Tell us your nationality example with a select</a></p>
 
-    <p><a href="./nationality-autocomplete.html">Tell us your nationality example with accessibile autocomplete</a></p>
+    <p><a href="./end-to-end/nationality-autocomplete.html">Tell us your nationality example with accessibile autocomplete</a></p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
@@ -348,19 +371,19 @@
     }) }}
 
 
-    <p><a href="./your-net-income.html">Your net income</a></p>
-    <p><a href="./partner-net-income.html">Partner's net income</a></p>
+    <p><a href="./end-to-end/your-net-income.html">Your net income</a></p>
+    <p><a href="./end-to-end/partner-net-income.html">Partner's net income</a></p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
     <h4 class="govuk-heading-m">High income design history iterations</h3>
 
 
-      <p><a href="./hic.html">Tell us if you're a high income earner - showing body copy, and both questions</a></p>
+      <p><a href="./end-to-end/hic.html">Tell us if you're a high income earner - showing body copy, and both questions</a></p>
 
-      <p><a href="./hic-one.html">Tell us if you're a high income earner - one-thing-per-page</a></p>
+      <p><a href="./end-to-end/hic-one.html">Tell us if you're a high income earner - one-thing-per-page</a></p>
 
-      <p><a href="./hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are you a high
+      <p><a href="./end-to-end/hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are you a high
           income earner?)</a>
       </p>
 
@@ -368,7 +391,7 @@
 
       <h3 class="govuk-heading-l">Find an address</h3>
 
-      <p><a href="./postcode.html">Enter your postcode</a></p>
+      <p><a href="./end-to-end/postcode.html">Enter your postcode</a></p>
       <p>
         {{govukTag({
         text: "Xd",
@@ -383,25 +406,25 @@
 
       <h3 class="govuk-heading-l">Bank, building society or universal credit options</h3>
 
-      <p><a href="./bank-payment-details.html">What are your payment details?</a></p>
+      <p><a href="./end-to-end/bank-payment-details.html">What are your payment details?</a></p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./no-bank-details.html">No - UK bank account or building society</a></li>
-        <li><a href="./bank-account-holders.html">Who are the account holders</a></li>
-        <li><a href="./bank-details.html">Bank details</a></li>
-        <li><a href="./building-society-details.html">Building society details</a></li>
+        <li><a href="./end-to-end/no-bank-details.html">No - UK bank account or building society</a></li>
+        <li><a href="./end-to-end/bank-account-holders.html">Who are the account holders</a></li>
+        <li><a href="./end-to-end/bank-details.html">Bank details</a></li>
+        <li><a href="./end-to-end/building-society-details.html">Building society details</a></li>
       </ul>
 
-      <p><a href="./error-bank-details.html">Error summary for the payment details</a></p>
+      <p><a href="./end-to-end/error-bank-details.html">Error summary for the payment details</a></p>
 
-      <p><a href="./paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed, separated or
+      <p><a href="./end-to-end/paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed, separated or
           divorced</a></p>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
       <h3 class="govuk-heading-l">Service timeout</h3>
 
-      <p><a href="./service-timeout.html">When the user is signed in</a></p>
+      <p><a href="./end-to-end/service-timeout.html">When the user is signed in</a></p>
 
       <!-- {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %} -->
 
@@ -547,7 +570,7 @@
               text: "EXAMPLE",
               classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
               })}}
-              <a class="govuk-link govuk-link" href="./govuk-country-and-territory-autocomplete/example">
+              <a class="govuk-link govuk-link" href="./end-to-end/govuk-country-and-territory-autocomplete/example">
 
                 GOV.UK country and territory autocomplete</a>
             </li>
@@ -556,7 +579,7 @@
               text: "NEW",
               classes: "govuk-tag--blue govuk-list govuk-!-font-size-14"
               })}}
-              <a class="govuk-link govuk-link" href="././accessibility/accessibility-statement-oct">
+              <a class="govuk-link govuk-link" href="./end-to-end/accessibility/accessibility-statement-oct">
 
                 Accessibility statement WCAG 2.2 template</a>
             </li>
@@ -574,7 +597,7 @@
               text: "DRAFT",
               classes: "govuk-tag--grey govuk-list govuk-!-font-size-14"
               })}}
-              <a class="govuk-link govuk-link" href="./accessibility/acceptance-checklist">
+              <a class="govuk-link govuk-link" href="./end-to-end/accessibility/acceptance-checklist">
 
                 Accessibility acceptance checklist</a>
             </li>

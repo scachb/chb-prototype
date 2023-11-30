@@ -1,0 +1,59 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Confirm your details</h1>
+
+      <form class="form" action="#" method="post">
+
+        {% set html %}
+          <h2 class="govuk-heading-m">National Insurance number</h2>
+          <p class="govuk-body">WE 89 64 05 D</p>
+
+          <h2 class="govuk-heading-m">Name</h2>
+          <p class="govuk-body">Mr April Rain Storm</p>
+
+          <h2 class="govuk-heading-m">Date of birth</h2>
+          <p class="govuk-body">27 January 1986</p>
+
+          <h2 class="govuk-heading-m">Address</h2>
+          <p class="govuk-body">10 Downing St London SW1A 2AB</p>
+        {% endset %}
+
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+        {{ govukInsetText({
+          html: html
+        }) }}
+        
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Cancel
+          </button>
+        </div>
+
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>      
+
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

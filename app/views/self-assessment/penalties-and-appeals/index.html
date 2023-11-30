@@ -4,6 +4,8 @@
   {{ layoutBackLink() }}
 {% endblock %}
 
+{% from "common/macros/document-design.html" import documentDesign %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -12,13 +14,15 @@
     <h1 class="govuk-heading-xl">Self Assessment: Penalties and Appeals</h1>
     <p class="govuk-body">A service for claimants to submit appeals to penalities through Self Assessment.</p>
 
-    <h3 class="govuk-heading-l">Name of design goes here</h3>
-
-    <p>Description of the design goes here</p>
-
-    <time class="govuk-body" datetime="">24 November 2023</time>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+    {{ documentDesign({
+      name: "Name of design goes here",
+      summary: "Description of design goes here.",
+      date: "24 November 2023",
+      revisions: [
+      {
+        tag: { text: "awd", classes: "govuk-tag--grey" }, summary: "awd", href: "./"
+      }]
+    }) }}
 
   </div>
 

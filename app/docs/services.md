@@ -21,7 +21,7 @@ Let's say we're going to create a new service for Benefits & Credits. We'll say 
 - `index.html` is the main file that'll get displayed in the browser when the service is accessed at `/service`
 - `routes.js` is the main routes configuration file for that service and will pass it's routes up to the main `routes.js` file in the parent folder
 
-Once those two files are created, copy the html from within `common/templates/blank-service.html` under `app/views` and paste into the `index.html` you just created for the service. Now copy the content from `common/blank-routes.js` file under `app/views` and paste into the `routes.js` file you created for the service.
+Once those two files are created, copy the html from within `common/templates/blank-service.html` under `app/views` and paste into the `index.html` you just created for the service. Now copy the content from `common/templates/blank-routes.js` file under `app/views` and paste into the `routes.js` file you created for the service.
 
 ### 3. Register the routes and links from homepage
 

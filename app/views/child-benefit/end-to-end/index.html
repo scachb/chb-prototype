@@ -10,45 +10,42 @@
     <h1 class="govuk-heading-xl">Child Benefit service</h1>
     <p class="govuk-body">A service for claimants to submit a claim for Child Benefit.</p>
 
-    <h3 class="govuk-heading-l">End to end</h3>
-
-    <p>Updated with declaration for adoption and born outside the UK</p>
-
-    <ul class="govuk-list">
-      <li>
-        {{ govukTag({
-          text: "New",
-          classes: "govuk-tag--blue"
-        }) }}
-        <a class="govuk-link govuk-body" href="./end-to-end/start">Journey</a>
-      </li>
-    
-      <li>
-        {{ govukTag({
-          text: "outdated",
-          classes: "govuk-tag--grey govuk-list"
-        }) }}
-        <a class="govuk-link govuk-body" href="public/pdf/SCA-Child-Benefit-Journey.pdf">
-          Tube map for claimant journey
-        </a>
-      </li>
-
-      <li>
-        {{ govukTag({
-          text: "outdated",
-          classes: "govuk-tag--grey govuk-list"
-        }) }}
-        <a class="govuk-link govuk-body" href="public/svg/SCA-Journey-02.svg">
-          Tube map SVG
-        </a>
-      </li>
-    </ul>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+    {{ documentDesign({
+      name: "End to end",
+      includeSeparator: true,
+      summary: "Updated with declaration for adoption and born outside the UK.",
+      revisions: [
+        {
+          summary: "Journey",
+          href: "./end-to-end/start",
+          tag: {
+            text: "New",
+            classes: "govuk-tag--blue"
+          }
+        },
+        {
+          summary: "Tube map for claimant journey",
+          href: "public/pdf/SCA-Child-Benefit-Journey.pdf",
+          tag: {
+            text: "Outdated",
+            classes: "govuk-tag--grey"
+          }
+        },
+        {
+          summary: "Tube map SVG",
+          href: "public/svg/SCA-Journey-02.svg",
+          tag: {
+            text: "Outdated",
+            classes: "govuk-tag--grey"
+          }
+        }
+      ]
+    }) }}
 
     {{ documentDesign({
-      name: "Infofrmation confirmation pattern",
+      name: "Information confirmation pattern",
       includeWhyIsThisNeeded: true,
+      includeSeparator: true,
       date: "30 November 2023",
       summary: "To adhere to an ongoing information confirmation GOV.UK pattern and group all information from NPS together to make CYA screens navigation easier.",
       revisions: [
@@ -61,12 +58,8 @@
           }
         },
         {
-          summary: "NPS details",
-          href: "./end-to-end/information-confirmation/alternative-nps-details",
-          tag: {
-            text: "Alternative",
-            classes: "govuk-tag--yellow"
-          }
+          summary: "Alternative NPS details",
+          href: "./end-to-end/information-confirmation/alternative-nps-details"
         }
       ]
     }) }}

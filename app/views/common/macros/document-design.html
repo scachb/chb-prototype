@@ -11,19 +11,21 @@
   {% for revision in options.revisions %}
     {%- from "govuk/components/tag/macro.njk" import govukTag -%}
     <p>
-      {{ govukTag({
-        text: revision.tag.text,
-        classes: revision.tag.classes
-      }) }}
+      {% if revision.tag %}
+        {{ govukTag({
+          text: revision.tag.text,
+          classes: revision.tag.classes
+        }) }}
+      {% endif %}
       <a href="{{ revision.href }}">{{ revision.summary }}</a>
     </p>
   {% endfor %}
 
-  {% if date %}
-    <time class="govuk-body" datetime="">{{ date }}</time>
+  {% if options.date %}
+    <time class="govuk-body" datetime="">{{ options.date }}</time>
   {% endif %}
 
-  {% if includeSeparator %}
+  {% if options.includeSeparator %}
    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
   {% endif %}
   

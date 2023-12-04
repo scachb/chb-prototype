@@ -37,4 +37,4 @@ The repo is set up as follows:
 
 ```
 
-Next read [How to create and maintain services and journeys](app/docs/services.md)
+Next read [How to create and maintain services and journeys](./services.md)

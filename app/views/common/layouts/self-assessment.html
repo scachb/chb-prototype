@@ -4,6 +4,7 @@
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% import "common/urls.html" as urls %}
 
 {% block pageTitle %}
   Self Assessment - GOV.UK
@@ -75,56 +76,5 @@
     }
   }) }}
 {% endblock %}
-
-{% macro layoutBackLink() %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endmacro %}
-
-{% macro layoutLanguageSelect() %}
-  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
-
-  {{ hmrcLanguageSelect({
-    language: 'en',
-    en: {
-      href: '?en'
-    },
-    cy: {
-      href: '?cy'
-    }
-  }) }}
-{% endmacro %}
-
-{% macro layoutPhaseBanner(options) %} 
-  {% if options.text %}
-    {% set tagText = options.text %}
-  {% else %}
-    {% set tagText = "beta" %}
-  {% endif %}
-
-  {{ govukPhaseBanner({
-    tag: {
-      text: tagText
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-{% endmacro %}
-
-{% macro layoutServiceLinks() %}
-  <p>
-    <a href="#">
-      Is this page not working properly? (opens in new tab)
-    </a>    
-  </p>
-{% endmacro %}
-
-{% macro layoutSatisfiedWithServiceLink() %}
-  <a href="#">
-      What did you think of this service?
-    </a> (takes 30 seconds)
-  </p>
-{% endmacro %}
     
     

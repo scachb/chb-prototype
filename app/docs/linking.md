@@ -1,8 +1,11 @@
-# TODO
+# How to link to pages within services
 
-Docs on navigating between services. Preferably relative links as easier to type.
+## How to link in service/journey pages
 
-use "/name-of-service/name-of-journey/journey-page"
-or use "journey-page" 
-or "name-of-service/journey-page" if on index.html 
-or "../folder/journey-page" if putting journey pages in folders
+> TODO
+
+## How to link in routes.js
+
+> TODO
+
+Next read - [How to use common components](./common.md)

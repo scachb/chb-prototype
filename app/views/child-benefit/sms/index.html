@@ -1,5 +1,7 @@
 {% extends "common/layouts/child-benefit.html" %}
 
+{% import "common/urls.html" as urls %}
+
 {% block pageTitle %}
 SMS  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -18,14 +20,16 @@ SMS  – {{ serviceName }} – GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">SMS</h1>
     <p class="govuk-body">Send a text message to claimants using Child Benefit.</p>
 
+    <a href="{{ urls.child_benefit_sms }}/sorry-unable-to-verify-phone.html">Example link</a>
+
     {{ documentDesign({
-      name: "MS confirm a phone number",
+      name: "SMS confirm a phone number",
       includeWhyIsThisNeeded: true,
       summary: "To allow claimants to recieve a SMS. SMS is a great way to communicate with people.",
       revisions: [
         {
           summary: "SMS confirm a phone number", 
-          href: "confirm-a-phone-number.html",
+          href: "./sms/confirm-a-phone-number.html",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 
@@ -33,7 +37,15 @@ SMS  – {{ serviceName }} – GOV.UK Prototype Kit
         },
         {
           summary: "Telephone question page", 
-          href: "your-telephone-number-question.html",
+          href: "./sms/your-telephone-number-question.html",
+          tag: { 
+            text: "New", 
+            classes: "govuk-tag--blue" 
+          }
+        },
+        {
+          summary: "Unable to verify your telephone number", 
+          href: "./sms/sorry-unable-to-verify-phone.html",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 
@@ -41,7 +53,7 @@ SMS  – {{ serviceName }} – GOV.UK Prototype Kit
         },
         {
           summary: "Enhance your telephone question page", 
-          href: "your-telephone-number.html",
+          href: "./sms/your-telephone-number.html",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 

@@ -36,6 +36,14 @@ To use the variables from `urls.html` just import it into any .html file using t
 <!-- And use it in a form or a tag -->
 <a href="{{ child_benefit_unauth }}/page">Example link</a>
 <form action="{{ child_benefit_unauth }}/page">Example form</form>
+
+{# or if using it in a macro #}
+
+{% from "common/urls.html" import child_benefit_unauth %}
+
+{{ example({
+  href: urls.child_benefit_sms + "/confirm-a-phone-number"
+}) }}
 ``` 
 
 ## How to link in routes.js

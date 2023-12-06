@@ -59,12 +59,36 @@
         }, 
         summary: "Reason your appeal is late", 
         href: "#"
+      },
+      {
+        tag: { 
+          text: "new", 
+          classes: "govuk-tag--blue" 
+        }, 
+        summary: "Reason for late filing", 
+        href: urls.self_assessment_p&a + "/reason-for-late-filing"
       }]
     }) }}
 
     {{ documentDesign({
       name: "Tax return",
       summary: "",
+      date: "6 December 2023",
+      includeSeparator: "Yes",
+      revisions: [
+      {
+        tag: { 
+          text: "new", 
+          classes: "govuk-tag--blue" 
+        }, 
+        summary: "Asking if the PT has sent their tax return", 
+        href: "#"
+      }]
+    }) }}
+
+    {{ documentDesign({
+      name: "Check answers",
+      summary: "Let users check their answers before submitting information to a service.",
       date: "6 December 2023",
       includeSeparator: "Yes",
       revisions: [

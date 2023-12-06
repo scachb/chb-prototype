@@ -4,7 +4,7 @@
 {% import "common/macros/layout.html" as layout %}
 
 {% block pageTitle %}
-Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
+Review your details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@ Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Confirm your details</h1>
+      <h1 class="govuk-heading-xl">Review your details</h1>
 
       <form class="form" action="#" method="post">
 
@@ -33,7 +33,7 @@ Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
           <p class="govuk-body">27 January 1986</p>
 
           <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Address</h2>
-          <p class="govuk-body">10 Downing St London SW1A 2AB</p>
+          <p class="govuk-body">10 Downing Streets<br>London<br>SW1A 2AB</p>
         {% endset %}
 
         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}

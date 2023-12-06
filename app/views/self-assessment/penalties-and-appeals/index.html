@@ -23,14 +23,23 @@
       date: "6 December 2023",
       includeSeparator: "Yes",
       revisions: [
-      {
-        tag: { 
-          text: "new", 
-          classes: "govuk-tag--blue" 
-        }, 
-        summary: "Confirm your details using the information confirmation pattern", 
-        href: urls.self_assessment_p&a + "/confirm-your-details"
-      }]
+        {
+          tag: { 
+            text: "new", 
+            classes: "govuk-tag--blue" 
+          }, 
+          summary: "Review your details with a Summary List", 
+          href: urls.self_assessment_p&a + "/review-your-details"
+        },
+        {
+          tag: { 
+            text: "old", 
+            classes: "govuk-tag--blue" 
+          }, 
+          summary: "Review your details using the information confirmation pattern", 
+          href: urls.self_assessment_p&a + "/review-your-details-old"
+        }
+      ]
     }) }}
 
     {{ documentDesign({

@@ -7,6 +7,9 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const smsRouter = govukPrototypeKit.requests.setupRouter();
 
+// const NotifyClient = require('notifications-node-client').NotifyClient
+// const notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+
 // Add your routes here
 // Conditional routing for receiving a text message
   smsRouter.post('/confirm-text-answer', function(request, response) {
@@ -27,7 +30,7 @@ const smsRouter = govukPrototypeKit.requests.setupRouter();
 //       // this long string is the template ID, copy it from the template
 //       // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
 //       // in your code.
-//       'eb4dabb6-5685-4526-9a4d-c856ae108762',
+//       '7d5d24bc-10b8-415c-85f5-82623dd4a192',
 //       // `emailAddress` here needs to match the name of the form field in
 //       // your HTML page
 //       req.body.emailAddress

@@ -15,16 +15,65 @@
     <p class="govuk-body">A service for claimants to submit appeals to penalities through Self Assessment.</p>
 
     {{ documentDesign({
-      name: "Name of design goes here",
-      summary: "Description of design goes here.",
-      date: "24 November 2023",
+      name: "Your details",
+      summary: "The personal details for the SA appeal £100 penalty for filling your Self Assessment tax return late.",
+      date: "6 December 2023",
+      includeSeparator: "Yes",
       revisions: [
       {
         tag: { 
-          text: "awd", 
-          classes: "govuk-tag--grey" 
+          text: "new", 
+          classes: "govuk-tag--blue" 
         }, 
-        summary: "awd", 
+        summary: "Confirm your details using the information confirmation pattern", 
+        href: "#"
+      }]
+    }) }}
+
+    {{ documentDesign({
+      name: "Penalty details",
+      summary: "",
+      date: "6 December 2023",
+      includeSeparator: "Yes",
+      revisions: [
+      {
+        tag: { 
+          text: "new", 
+          classes: "govuk-tag--blue" 
+        }, 
+        summary: "Penalty details and the tax year the penalty relates to", 
+        href: "#"
+      }]
+    }) }}
+
+    {{ documentDesign({
+      name: "Reason details",
+      summary: "",
+      date: "6 December 2023",
+      includeSeparator: "Yes",
+      revisions: [
+      {
+        tag: { 
+          text: "new", 
+          classes: "govuk-tag--blue" 
+        }, 
+        summary: "Reason your appeal is late", 
+        href: "#"
+      }]
+    }) }}
+
+    {{ documentDesign({
+      name: "Tax return",
+      summary: "",
+      date: "6 December 2023",
+      includeSeparator: "Yes",
+      revisions: [
+      {
+        tag: { 
+          text: "new", 
+          classes: "govuk-tag--blue" 
+        }, 
+        summary: "Asking if the PT has sent their tax return", 
         href: "#"
       }]
     }) }}

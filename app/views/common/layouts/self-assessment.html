@@ -77,4 +77,23 @@
   }) }}
 {% endblock %}
     
-    
+{% macro layoutBackLink() %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endmacro %}
+
+{% macro layoutLanguageSelect() %}
+  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+
+  {{ hmrcLanguageSelect({
+    language: 'en',
+    en: {
+      href: '?en'
+    },
+    cy: {
+      href: '?cy'
+    }
+  }) }}
+{% endmacro %}    

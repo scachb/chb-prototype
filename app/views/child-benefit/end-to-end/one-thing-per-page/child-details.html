@@ -1,0 +1,110 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% block pageTitle %}
+What are the details of the child you want to claim for? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+      <form class="form" action="other-benefits" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What are the details of the child you want to claim for?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ govukWarningText({
+            text: "Do not enter details of a child you've already claimed for. You can claim Child Benefit 48 hours after you've registered the birth of your child or once a child comes to live with you.",
+            iconFallbackText: "Warning"
+          }) }}
+           
+        <p class="govuk-body">If you are adding a child to an existing claim, only enter details for that child.</p>
+
+          
+
+          <p class="govuk-body">
+            You can check who you've already claiming for by viewing your proof of entitlement to Child Benefit. You'll need to log into your Government Gateway account to do this. You can create an account if you do not have one. </p>
+
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            id: "eldest-child-first-name",
+            name: "child-benefit[end-to-end][eldest-child-first-name]",
+            autocomplete: "eldest-child-first-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Middle name"
+            },
+            id: "eldest-child-middle-name",
+            name: "child-benefit[end-to-end][eldest-child-middle-name]",
+            autocomplete: "eldest-child-middle-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            id: "eldest-child-last-name",
+            name: "child-benefit[end-to-end][eldest-child-last-name]",
+            autocomplete: "eldest-child-last-name"
+          }) }}
+
+        {% endcall %}
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "eldest-child-date-of-birth",
+          namePrefix: "eldest-child-date-of-birth",
+          name: "child-benefit[end-to-end][eldest-child-date-of-birth]",
+          fieldset: {
+            legend: {
+              text: "What is the date of birth of the eldest child you are claiming for?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+                
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          {{ govukButton({
+            text: "Cancel",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+        <p><a class="govuk-link" href="#">Save and come back later</a></p>   
+      
+      </form>
+    </div>
+  </div>
+
+  {{ layoutServiceLinks() }}
+
+{% endblock %}

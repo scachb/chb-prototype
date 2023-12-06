@@ -16,13 +16,11 @@ Sorry we have been unable to verify your phone  – {{ serviceName }} – GOV.UK
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="confirm-a-phone-number" method="post">
+      <form class="form" action="{{ urls.child_benefit_sms }}/confirm-a-phone-number" method="post">
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/details/macro.njk" import govukDetails %}
-        
-        
         
         <h1 class="govuk-heading-l">Sorry we have been unable to verify your phone</h1>
         

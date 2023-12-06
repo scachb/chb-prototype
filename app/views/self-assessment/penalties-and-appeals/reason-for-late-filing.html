@@ -1,16 +1,18 @@
 {% extends "common/layouts/self-assessment.html" %}
 
 {% import "common/urls.html" as urls %}
+{% import "common/macros/layout.html" as layout %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layoutBackLink() }}
+  {{ layout.phaseBanner() }}
+  {{ layout.languageSelect() }}
+  {{ layout.backLink() }}
 {% endblock %}
 
-{% from "common/macros/document-design.html" import documentDesign %}
 
 {% block content %}
 
@@ -29,13 +31,13 @@
           for examples]
         </p>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        {{ layout.saveAndContinuePattern() }}   
 
       </form>
 
     </div>
   </div>
+
+  {{ layout.pageNotWorkingLink() }}
 
 {% endblock %}

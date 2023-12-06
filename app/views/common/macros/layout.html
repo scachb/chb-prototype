@@ -42,14 +42,18 @@
   }) }}
 {% endmacro %}
 
-{% macro saveAndContinuePattern() %}
+{% macro saveAndContinuePattern(options) %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
   {{ govukButton({
     text: "Save and continue"
   }) }}
 
-  <a class="govuk-link" href="#">Save and come back later</a>
+  <p>
+    <a class="govuk-link" href="{% if options.href %}{{ options.href }}{{ else }}#{% endif %}">
+      Save and come back later
+    </a>
+  </p>
 
 {% endmacro %}
 

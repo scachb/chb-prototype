@@ -1,4 +1,5 @@
 {% extends "common/layouts/self-assessment.html" %}
+{% import "common/urls.html" as urls %}
 
 {% block beforeContent %}
   {{ layoutBackLink() }}
@@ -26,7 +27,7 @@
           classes: "govuk-tag--blue" 
         }, 
         summary: "Confirm your details using the information confirmation pattern", 
-        href: "#"
+        href: urls.self_assessment_p&a + "/confirm-your-details"
       }]
     }) }}
 

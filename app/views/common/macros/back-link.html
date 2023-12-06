@@ -1,8 +1,0 @@
-{% macro backLink() %}
-  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endmacro %}

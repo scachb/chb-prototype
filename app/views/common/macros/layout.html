@@ -1,0 +1,58 @@
+{#
+  Macros to use in the beforeContent block in layout  
+#}
+
+{% macro backLink() %}
+  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endmacro %}
+
+{% macro languageSelect() %}
+  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+
+  {{ hmrcLanguageSelect({
+    language: 'en',
+    en: {
+      href: '?en'
+    },
+    cy: {
+      href: '?cy'
+    }
+  }) }}
+{% endmacro %}
+
+{% macro phaseBanner(options) %} 
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  
+  {% if options.text %}
+    {% set tagText = options.text %}
+  {% else %}
+    {% set tagText = "beta" %}
+  {% endif %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: tagText
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endmacro %}
+
+{% macro pageNotWorkingLink() %}
+  <p>
+    <a href="#">
+      Is this page not working properly? (opens in new tab)
+    </a>    
+  </p>
+{% endmacro %}
+
+{% macro satisfiedWithServiceLink() %}
+  <a href="#">
+      What did you think of this service?
+    </a> (takes 30 seconds)
+  </p>
+{% endmacro %}

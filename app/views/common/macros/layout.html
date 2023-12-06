@@ -45,24 +45,12 @@
 {% macro saveAndContinuePattern() %}
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
-  <div class="govuk-button-group">
-    {{ govukButton({
-      text: "Save and continue"
-    }) }}
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
 
-    {{ govukButton({
-      text: "Save and come back later",
-      classes: "govuk-button--secondary"
-    }) }}
-  </div>
+  <a class="govuk-link" href="#">Save and come back later</a>
 
-  <div class="govuk-button-group">
-    {{ govukButton({
-      text: "Save and continue"
-    }) }}
-
-    <a class="govuk-link" href="#">Cancel</a>
-  </div>
 {% endmacro %}
 
 {% macro pageNotWorkingLink() %}

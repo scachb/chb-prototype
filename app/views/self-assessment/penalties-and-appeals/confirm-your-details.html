@@ -41,16 +41,7 @@ Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
           html: html
         }) }}
         
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Cancel
-          </button>
-        </div>
-
-        <p><a class="govuk-link" href="#">Save and come back later</a></p>      
+        {{ layout.saveAndContinuePattern() }}      
 
       </form>
     </div>

@@ -23,16 +23,16 @@ Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
       <form class="form" action="#" method="post">
 
         {% set html %}
-          <h2 class="govuk-heading-m">National Insurance number</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">National Insurance number</h2>
           <p class="govuk-body">WE 89 64 05 D</p>
 
-          <h2 class="govuk-heading-m">Name</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Name</h2>
           <p class="govuk-body">Mr April Rain Storm</p>
 
-          <h2 class="govuk-heading-m">Date of birth</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date of birth</h2>
           <p class="govuk-body">27 January 1986</p>
 
-          <h2 class="govuk-heading-m">Address</h2>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Address</h2>
           <p class="govuk-body">10 Downing St London SW1A 2AB</p>
         {% endset %}
 
@@ -42,7 +42,9 @@ Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
           html: html
         }) }}
         
-        {{ layout.saveAndContinuePattern() }}      
+        {{ layout.saveAndContinuePattern({
+          href: urls.self_assessment_p&a
+        }) }}      
 
       </form>
     </div>

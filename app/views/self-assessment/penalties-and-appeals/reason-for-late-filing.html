@@ -19,17 +19,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Heading or question goes here
-      </h1>
+      <form class="form" action="/form-handler" method="post" novalidate>
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <span class="govuk-caption-l">Reason for late filing</span>
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
+{{ govukRadios({
+  name: "reasonLateFiling",
+  fieldset: {
+    legend: {
+      text: " Why did you send your tax return late?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "England"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "northern-ireland",
+      text: "Northern Ireland"
+    }
+  ]
+}) }}
 
         {{ layout.saveAndContinuePattern({
           href: urls.self_assessment_p&a

@@ -23,7 +23,9 @@ module.exports = {
     }
   },
   'self-assessment': {
-    // All Self Assessment journey sessions
+    'penalties-and-appeals': {
+      'utr-number': '2785627381'
+    }
   },
   'paye': {
     // All PAYE journey sessions

@@ -6,6 +6,10 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% import "common/urls.html" as urls %}
 
+{% set serviceName %}
+Name of service
+{% endset %}
+
 {% block header %}
 {# Set serviceName in config.js. #}
   {{ govukHeader({

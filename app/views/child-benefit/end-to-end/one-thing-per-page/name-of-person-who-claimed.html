@@ -1,7 +1,7 @@
 {% extends "common/layouts/child-benefit.html" %}
 
 {% block pageTitle %}
-Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
+What is the name of the person who claimed Child Benefit for this child? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,9 +15,7 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Other claimant details</h1>
-
-      <form class="form" action="find-address-of-previous-claimant" method="post">
+      <form class="form" action="know-address-of-person-who-claimed" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -25,7 +23,8 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
         {% call govukFieldset({
           legend: {
             text: "What is the name of the person who claimed Child Benefit for this child?",
-            classes: "govuk-fieldset__legend--m"
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
           }
         }) %}
 
@@ -58,29 +57,6 @@ Other claimant details – {{ serviceName }} – GOV.UK Prototype Kit
 
         {% endcall %}
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "child-benefit[end-to-end][do-you-know-the-address-of-the-previous-claimant]",
-          fieldset: {
-            legend: {
-              text: "Do you know the address of the other claimant?",
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-                
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Continue"

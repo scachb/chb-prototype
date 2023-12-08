@@ -1,7 +1,9 @@
 {% extends "common/layouts/child-benefit.html" %}
 
+{% import "common/urls" as urls %}
+
 {% block pageTitle %}
-What are the details of the child you want to claim for? – {{ serviceName }} – GOV.UK Prototype Kit
+What is the name of the child you want to claim for? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,10 +18,10 @@ What are the details of the child you want to claim for? – {{ serviceName }} �
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        What are the details of the child you want to claim for?
+        What is the name of the child you want to claim for?
       </h1>
 
-      <form class="form" action="../one-thing-per-page/deed-poll" method="post">
+      <form class="form" action="{{ urls.child_benefit_e2e }}/multiple-children/known-by-any-other-name" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -51,30 +53,6 @@ What are the details of the child you want to claim for? – {{ serviceName }} �
           name: "child-benefit[end-to-end][last-name]",
           autocomplete: "name",
           spellcheck: false
-        }) }}
-
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-          classes: "govuk-radios--inline",
-          name: "child-benefit[end-to-end][changed-name]",
-          fieldset: {
-            legend: {
-              text: "Has this child been known by any other names?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
         }) }}
 
         <div class="govuk-button-group">

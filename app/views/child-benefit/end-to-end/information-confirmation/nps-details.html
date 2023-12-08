@@ -1,7 +1,7 @@
 {% extends "common/layouts/child-benefit.html" %}
 
 {% block pageTitle %}
-Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
+Review your details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,29 +15,47 @@ Confirm your details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Confirm your details</h1>
+      <h1 class="govuk-heading-xl">Review your details</h1>
 
       <form class="form" action="#" method="post">
 
-        {% set html %}
-          <h2 class="govuk-heading-m">National Insurance number</h2>
-          <p class="govuk-body">WE 89 64 05 D</p>
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-          <h2 class="govuk-heading-m">Name</h2>
-          <p class="govuk-body">Mr April Rain Storm</p>
-
-          <h2 class="govuk-heading-m">Date of birth</h2>
-          <p class="govuk-body">27 January 1986</p>
-
-          <h2 class="govuk-heading-m">Address</h2>
-          <p class="govuk-body">10 Downing St London SW1A 2AB</p>
-        {% endset %}
-
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-        {{ govukInsetText({
-          html: html
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "National Insurance number"
+              },
+              value: {
+                text: "WE 89 64 05 D"
+              }
+            },
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Mr April Rain Storm"
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "27 January 1986"
+              }
+            }
+          ]
         }) }}
+
+        <p class="govuk-body">
+          To change these details, go to 
+          <a href="https://www.gov.uk/tell-hmrc-change-of-details" target="_blank" rel="noreferrer noopener">
+            Tell HMRC about a change to your personal details (opens in new tab)
+          </a>
+        </p>
         
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">

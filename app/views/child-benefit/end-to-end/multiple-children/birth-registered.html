@@ -1,7 +1,9 @@
 {% extends "common/layouts/child-benefit.html" %}
 
+{% import "common/urls" as urls %}
+
 {% block pageTitle %}
-Child details – {{ serviceName }} – GOV.UK Prototype Kit
+Where was the child's birth registered? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,62 +17,17 @@ Child details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Child details</h1>
-
-      <form class="form" action="system-number" method="post">
-
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      <form class="form" action="../one-thing-per-page/system-number" method="post">
+       
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-        {{ govukDateInput({
-          id: "child-date-of-birth",
-          namePrefix: "date-of-birth",
-          name: "child-benefit[end-to-end][child-date-of-birth]"
-          fieldset: {
-            legend: {
-              text: "Child date of birth",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}   
-
-        {{ govukRadios({
-          classes: "govuk-radios",
-          name: "child-benefit[end-to-end][child-sex]",
-          fieldset: {
-            legend: {
-              text: "What is the child's sex as recorded on the birth certificate?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "male",
-              text: "Male"
-            },
-            {
-              value: "female",
-              text: "Female"
-            },
-            {
-              value: "other",
-              text: "Unspecified"
-            }
-          ]
-        }) }}
 
         {{ govukRadios({
           name: "child-benefit[end-to-end][child-birth-registered]",
           fieldset: {
             legend: {
               text: "Where was the child's birth registered?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [

@@ -5,12 +5,18 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 
-const endToEndRouter = govukPrototypeKit.requests.setupRouter()
+const endToEndRouter = govukPrototypeKit.requests.setupRouter();
+
+function endToEndSession(request) {
+  return session;
+}
 
 // Add your routes here
 
 endToEndRouter.post('/change-child-answer', function(request, response) {
-  if (request.session.data['child-benefit']['end-to-end']['change-child-details'] == "index"){
+  const session = endToEndSession(request);
+
+  if (session['change-child-details'] == "index"){
     response.redirect("./children-list")
   } else {
     response.redirect("./children-list")
@@ -21,7 +27,9 @@ endToEndRouter.post('/change-child-answer', function(request, response) {
 endToEndRouter.post(
   '/one-thing-per-page/tell-us-the-other-name', 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['known-name'] == "Yes"){
+    const session = endToEndSession(request);
+    
+    if (session['known-name'] == "Yes"){
       response.redirect("./tell-us-the-other-name")
     } else {
       response.redirect("../your-date-of-birth")
@@ -33,7 +41,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/nationality/add-other-nationality", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['nationality-another'] == "Yes") {
+    const session = endToEndSession(request);
+
+    if (session['nationality-another'] == "Yes") {
       response.redirect("./add-other-nationality")
     } else {
       response.redirect("../where-have-you-lived")
@@ -45,7 +55,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/tell-us-your-last-address", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['address-over-year'] == "No") {
+    const session = endToEndSession(request);
+
+    if (session['address-over-year'] == "No") {
       response.redirect("./tell-us-your-last-address")
     } else {
       response.redirect("../your-telephone-number")
@@ -57,7 +69,8 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/eldest-child-details", 
   function(request, response) {
-    const claiming = request.session.data['child-benefit']['end-to-end']['claiming-child-benefit-right-now'];
+    const session = endToEndSession(request);
+    const claiming = session['claiming-child-benefit-right-now'];
 
     if (claiming == "Yes" || claiming == "Yesandno") {
       response.redirect("./eldest-child-details")
@@ -71,7 +84,8 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/partner-eldest-child-details", 
   function(request, response) {
-    const claiming = request.session.data['child-benefit']['end-to-end']['partner-claiming-child-benefit'];
+    const session = endToEndSession(request);
+    const claiming = session['partner-claiming-child-benefit'];
 
     if (
       claiming == "claiming-child-benefit-and-getting-payments" || 
@@ -89,7 +103,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/other-country", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['confirm-country'] == "yes") {
+    const session = endToEndSession(request);
+
+    if (session['confirm-country'] == "yes") {
       response.redirect("./other-country")
     } else {
       response.redirect("../claiming-child-benefit")
@@ -101,7 +117,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/deed-poll", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['changed-name'] == "yes") {
+    const session = endToEndSession(request);
+
+    if (session['changed-name'] == "yes") {
       response.redirect("./deed-poll") 
     } else {
       response.redirect("./further-child-details")
@@ -113,7 +131,8 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/system-number", 
   function(request, response) {
-    const registered = request.session.data['child-benefit']['end-to-end']['child-birth-registered'];
+    const session = endToEndSession(request);
+    const registered = session['child-birth-registered'];
 
     if (registered == "england" || registered == "wales" ) {
       response.redirect("./system-number") 
@@ -131,9 +150,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/system-number-input", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['birth-certificate-have-system-number'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['birth-certificate-have-system-number'] == "yes") {
       response.redirect("./system-number-input") 
     } else {
       response.redirect("../multiple-children/adopt")
@@ -144,9 +163,9 @@ endToEndRouter.post(
 // Conditional routing for district number input
 endToEndRouter.post("/one-thing-per-page/district-number-input", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['birth-certificate-have-district-number'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['birth-certificate-have-district-number'] == "yes") {
       response.redirect("./district-number-input") 
     } else {
       response.redirect("../multiple-children/adopt")
@@ -157,9 +176,9 @@ endToEndRouter.post("/one-thing-per-page/district-number-input",
 // Conditional routing for registration number input
 endToEndRouter.post("/one-thing-per-page/registration-number-input", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['birth-certificate-have-registration-number'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['birth-certificate-have-registration-number'] == "yes") {
       response.redirect("./registration-number-input") 
     } else {
       response.redirect("../multiple-children/adopt")
@@ -171,9 +190,9 @@ endToEndRouter.post("/one-thing-per-page/registration-number-input",
 endToEndRouter.post(
   "/one-thing-per-page/do-you-know-who-claimed", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['have-you-claimed-for-this-child'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['have-you-claimed-for-this-child'] == 'yes') {
       response.redirect("./do-you-know-who-claimed") 
     } else {
       response.redirect("../multiple-children/child-address")
@@ -185,9 +204,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/name-of-person-who-claimed", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['know-who-claimed-for-this-child'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['know-who-claimed-for-this-child'] == "yes") {
       response.redirect("./name-of-person-who-claimed") 
     } else {
       response.redirect("../multiple-children/child-address")
@@ -199,9 +218,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/one-thing-per-page/find-address-of-previous-claimant", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['do-you-know-the-address-of-the-previous-claimant'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['do-you-know-the-address-of-the-previous-claimant'] == "yes") {
       response.redirect("./find-address-of-previous-claimant") 
     } else {
       response.redirect("../multiple-children/child-address")
@@ -213,7 +232,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/multiple-children/child-different-address", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['child-live-with-you'] == "yes") {
+    const session = endToEndSession(request);
+
+    if (session['child-live-with-you'] == "yes") {
       response.redirect("./child-different-address") 
     } else {
       response.redirect("./child-lives-with")
@@ -225,7 +246,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/multiple-children/person-child-lives-with", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['know-who-the-child-lives-with'] == "yes") {
+    const session = endToEndSession(request);
+
+    if (session['know-who-the-child-lives-with'] == "yes") {
       response.redirect("./person-child-lives-with") 
     } else {
       response.redirect("./check-answers")
@@ -237,9 +260,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/multiple-children/find-address-of-person", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['know-address-of-person-child-lives-with'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+
+    if (session['know-address-of-person-child-lives-with'] == "yes") {
       response.redirect("./find-address-of-person") 
     } else {
       response.redirect("./check-answers")
@@ -251,7 +274,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/multiple-children/lived-with-another", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['child-different-address'] == "yes") {
+    const session = endToEndSession(request);
+
+    if (session['child-different-address'] == "yes") {
       response.redirect("./lived-with-another") 
     } else {
       response.redirect("./check-answers")
@@ -263,7 +288,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/multiple-children/person-child-lived-with", 
   function(request, response) {
-    if (request.session.data['child-benefit']['end-to-end']['child-lived-with'] == "yes") {
+    const session = endToEndSession(request);
+
+    if (session['child-lived-with'] == "yes") {
       response.redirect("./person-child-lived-with") 
     } else {
       response.redirect("./check-answers")
@@ -275,9 +302,9 @@ endToEndRouter.post(
 endToEndRouter.post(
   "/multiple-children/find-address-of-person-lived-with", 
   function(request, response) {
-    if (
-      request.session.data['child-benefit']['end-to-end']['know-address-of-person-child-lived-with'] == "yes"
-    ) {
+    const session = endToEndSession(request);
+    
+    if (session['know-address-of-person-child-lived-with'] == "yes") {
       response.redirect("./find-address-of-person-lived-with") 
     } else {
       response.redirect("./person-lived-with-telephone-number")

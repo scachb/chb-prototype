@@ -3,7 +3,7 @@
 {% import "common/urls.html" as urls %}
 {% set serviceName = "Claim Child Benefit" %}
 {% block pageTitle %}
-Successfully verified your phone  – {{ serviceName }} – GOV.UK Prototype Kit
+We have successfully verified your phone  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,14 +15,14 @@ Successfully verified your phone  – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
       <form class="form" action="{{ urls.child_benefit_sms }}/question-page" method="post">
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/details/macro.njk" import govukDetails %}
         
-        <h1 class="govuk-heading-xl">Successfully verified your phone</h1>
+        <h1 class="govuk-heading-xl">We have successfully verified your phone</h1>
         
         <!-- <p class="govuk-body">Continue to use the service.</p> -->
         

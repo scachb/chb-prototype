@@ -48,6 +48,26 @@ In routes.js
 
 ```javascript
   const value = request.session.data['name-of-service']['name-of-journey']['name-of-field']
+
+  // If this is too long to type every time you can create a reusable function within the file
+  // Example
+  function exampleSession(request) {
+    const session = request.session.data['name-of-service']['name-of-journey']
+  }
+
+  // Example usage
+  endToEndRouter.post(
+  '/one-thing-per-page/tell-us-the-other-name', 
+  function(request, response) {
+    const session = endToEndSession(request);
+    
+    if (session['known-name'] == "Yes"){
+      response.redirect("./tell-us-the-other-name")
+    } else {
+      response.redirect("../your-date-of-birth")
+    }
+  }
+)
 ```
 
 > This is the end of the documentation, happy prototyping.

@@ -3,7 +3,7 @@
 {% import "common/urls.html" as urls %}
 {% set serviceName = "Claim Child Benefit" %}
 {% block pageTitle %}
-Verified your phone  – {{ serviceName }} – GOV.UK Prototype Kit
+Successfully verified your phone  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,19 +22,18 @@ Verified your phone  – {{ serviceName }} – GOV.UK Prototype Kit
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/details/macro.njk" import govukDetails %}
         
-        <h1 class="govuk-heading-l">Successfully verified your phone</h1>
+        <h1 class="govuk-heading-xl">Successfully verified your phone</h1>
         
-        <!-- <p class="govuk-body">Continue to make your claim.</p>-->
+        <!-- <p class="govuk-body">Continue to use the service.</p> -->
         
-        <p class="govuk-body">Continue to use the service.</p>
-        
-        <p class="govuk-body">If your mobile number changes, you'll need to:</p>
+        <!-- 
+            <p class="govuk-body">If your mobile number changes, you'll need to:</p>
             <ul class="govuk-list govuk-list--bullet">
                 <li>Update your telephone number</li>
                 <li>Check your phone using the security code</li>
                 
             </ul>
-          
+        -->  
             {{ govukButton({
                 text: "Continue"
               }) }}

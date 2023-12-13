@@ -1,0 +1,69 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% import "common/urls.html" as urls %}
+
+{% block pageTitle %}
+  Details about where you have lived – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Details about where you have lived
+      </h1>
+
+      <p class="govuk-body">The UK....</p>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "whereDoYouLive",
+          fieldset: {
+            legend: {
+              text: "Where have you lived?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+            
+          },
+
+          hint: {
+            text: "A little bit of hint and spice"
+          },
+          items: [
+            {
+              value: "england",
+              text: "Always lived in the UK"
+            },
+            {
+              value: "scotland",
+              text: "Lived in the UK or abroad"
+            },
+            {
+              value: "wales",
+              text: "Never lived in the UK"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

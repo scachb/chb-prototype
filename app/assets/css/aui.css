@@ -43,7 +43,6 @@ img {
 .aui-header__left-new {
   display: flex;
   align-items: center;
-  gap: 3px;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;

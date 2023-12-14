@@ -1,0 +1,5525 @@
+﻿@font-face {
+    font-family: "UIKitIcons";
+    src: url("fonts/pega-icons.woff2?") format("woff2"), url("fonts/pega-icons.woff?") format("woff");
+}
+
+.pi,
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a,
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one,
+div[class*="layout-outline"] > .Expanded > .header-bar > * > .icon-openclose,
+div[class*="layout-outline"] > .Collapsed > .header-bar > * > .icon-openclose,
+.Temporary_top_tabs > .scrlCntr > ol.tsb-menu > li:first-child > a#TABANCHOR,
+.menu-horizontal > .menu-item > .menu-item-anchor.menu-item-expand:after,
+.content-layout-group > .layout-group-nav > h2 > .icon-openclose::before,
+.container-close:before,
+.yui-panel .container-close,
+.container-close,
+.badge-pi > span:before,
+[class*="pih-badge-icon-"]:after,
+[class*="pih-badge-icon-"]:before,
+[class*="nbam-"]:before,
+[class*="pcs-"]:before,
+[class*="pcti-"]:before,
+[class*="psa-"]:before,
+[class*="pcrm-"]:before,
+.nbam,
+.pcs,
+.pcti,
+.psa,
+.pcrm,
+.nbam-pi,
+.nbam-pi:before {
+    font-family: "UIKitIcons" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    text-align: center;
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+.iconSave,
+.iconContents,
+.iconExplore,
+.iconAttachment,
+.iconImage,
+.iconDelete,
+.iconLookup,
+.iconInsert,
+.iconAppend,
+.iconInsertRow,
+.iconAppendRow,
+.iconAppendColumn,
+.iconExpandAll,
+.iconCollapseAll,
+.iconUpdate,
+.iconNewItem,
+.iconReopen,
+.iconLocation,
+.iconHistory,
+.iconClose,
+.iconCloseSmall,
+.iconSpellChecker,
+.iconSpellChecking,
+.iconDefault,
+.iconBlank,
+.iconCopy,
+.iconPrint,
+.iconTransfer,
+.iconOpenRule,
+.iconPDN,
+.iconUndelete,
+.iconRefresh,
+.iconNoShow,
+.iconRelationship,
+.iconCalendar,
+.iconAppendInside,
+.iconInsertRow,
+.iconAppendRow,
+.iconUpdate,
+.iconHelp {
+    font-family: "UIKitIcons" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    text-align: center;
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+.iconSave_on,
+.iconContents_on,
+.iconExplore_on,
+.iconAttachment_on,
+.iconImage_on,
+.iconDelete_on,
+.iconLookup_on,
+.iconCalendar_on,
+.iconInsert_on,
+.iconAppend_on,
+.iconInsertRow_on,
+.iconAppendRow_on,
+.iconAppendColumn_on,
+.iconExpandAll_on,
+.iconCollapseAll_on,
+.iconUpdate_on,
+.iconReopen_on,
+.iconLocation_on,
+.iconHistory_on,
+.iconClose_on,
+.iconCloseSmall_on,
+.iconSpellChecker_on,
+.iconSpellChecking_on,
+.iconDefault_on,
+.iconBlank_on,
+.iconCopy_on,
+.iconPrint_on,
+.iconTransfer_on,
+.iconOpenRule_on,
+.iconPDN_on,
+.iconUndelete_on,
+.iconRefresh_on,
+.iconNoShow_on,
+.iconRelationship_on,
+.iconAppendInside_on,
+.iconNewItem_on,
+.iconHelp_on {
+    font-family: "UIKitIcons" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    text-align: center;
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+.iconUpdate_disabled,
+.iconOpenRule_disabled,
+.iconDelete_disabled,
+.iconSave_disabled,
+.iconContents_disabled,
+.iconExplore_disabled,
+.iconAttachment_disabled,
+.iconImage_disabled,
+.iconLookup_disabled,
+.iconInsert_disabled,
+.iconAppend_disabled,
+.iconInsertRow_disabled,
+.iconAppendRow_disabled,
+.iconAppendColumn_disabled,
+.iconExpandAll_disabled,
+.iconCollapseAll_disabled,
+.iconReopen_disabled,
+.iconLocation_disabled,
+.iconHistory_disabled,
+.iconClose_disabled,
+.iconCloseSmall_disabled,
+.iconCopy_disabled,
+.iconDefault_disabled,
+.iconBlank_disabled,
+.iconSpellChecker_disabled,
+.iconSpellChecking_disabled,
+.iconPrint_disabled,
+.iconTransfer_disabled,
+.iconTools_disabled,
+.iconPDN_disabled,
+.iconUndelete_disabled,
+.iconNoShow_disabled,
+.iconRelationship_disabled,
+.iconRefresh_disabled,
+.iconNewItem_disabled,
+.iconCalendar_disabled,
+.iconAppendInside_disabled,
+.iconHelp_disabled {
+    font-family: "UIKitIcons" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    text-align: center;
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+
+/* ========== ICON CLASSES & HELPERS BELOW THIS POINT ========= */
+
+
+/* IMPORTANT NOTE - Since we still support Android 4.4.4, we must keep -webkit prefixes */
+
+
+/* Initializing keyframes */
+
+@-webkit-keyframes anim-rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes anim-rotate-reverse {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes anim-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.33;
+    }
+}
+
+@keyframes anim-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anim-rotate-reverse {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes anim-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.33;
+    }
+}
+
+
+/* Generic layout items */
+
+.pi,
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a,
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one,
+div[class*="layout-outline"] > .Expanded > .header-bar > * > .icon-openclose,
+div[class*="layout-outline"] > .Collapsed > .header-bar > * > .icon-openclose,
+.Temporary_top_tabs > .scrlCntr > ol.tsb-menu > li:first-child > a#TABANCHOR,
+.menu-horizontal > .menu-item > .menu-item-anchor.menu-item-expand:after,
+.content-layout-group > .layout-group-nav > h2 > .icon-openclose::before,
+.container-close:before,[class*="nbam-"],
+[class*="pcs-"],
+[class*="pcti-"],
+[class*="psa-"],
+[class*="pcrm-"],
+.nbam,
+.pcs,
+.pcti,
+.psa,
+.pcrm,
+.nbam-pi{
+    line-height: 1;
+    margin-right: 0.25em;
+}
+
+.pi:before,
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a:before,
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one:before,
+div[class*="layout-outline"] > .Expanded > .header-bar > * > .icon-openclose::before,
+div[class*="layout-outline"] > .Collapsed > .header-bar > * > .icon-openclose::before,
+.Temporary_top_tabs > .scrlCntr > ol.tsb-menu > li:first-child > a#TABANCHOR:before,
+.menu-horizontal > .menu-item > .menu-item-anchor.menu-item-expand:after,
+.content-layout-group > .layout-group-nav > h2 > .icon-openclose::before,[class*="nbam-"]:before,
+[class*="pcs-"]:before,
+[class*="pcti-"]:before,
+[class*="psa-"]:before,
+[class*="pcrm-"]:before,
+.nbam-pi:before{
+    display: inline-block;
+    vertical-align: -0.2em;
+    line-height: 1;
+    font-size: 1.1764705882em;
+    /* // -> 20px */
+    padding: 0.5px;
+    /* Fixes anti-alias clipping */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+aside .pi {
+    margin: 0;
+}
+
+i[data-click],
+i[data-click]:before {
+    cursor: pointer;
+}
+
+.Header_nav .pi:before {
+    font-size: 18px;
+}
+
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a:before {
+    margin-right: 0;
+}
+
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one,
+.content-layout-group > .layout-group-nav > h2 > .icon-openclose {
+    background-image: none;
+    padding-right: 10px;
+}
+
+.content-layout-group > .layout-group-nav > h2 > .icon-openclose {
+    font-size: 21px;
+    margin-top: 7px;
+}
+
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one:before {
+    line-height: 35px;
+    margin: 0;
+}
+
+.open-rule:before {
+    font-size: 10px;
+}
+
+
+/* Icons for Explorer bar */
+
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a:before,
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one:before {
+    color: #fff;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+
+/* ========  Introducing new PI helper class prefix .pih ========= */
+
+
+/* Animation helper classes */
+
+.anim-rotateCW:before,
+.pih-anim-rotateCW:before,
+.pih-badge-anim-rotateCW:after {
+    -webkit-animation: anim-rotate 1.33s linear infinite;
+    animation: anim-rotate 1.33s linear infinite;
+    will-change: transform;
+}
+
+.anim-rotateCCW:before,
+.pih-anim-rotateCCW:before,
+.pih-badge-anim-rotateCCW:after {
+    -webkit-animation: anim-rotate-reverse 1.33s linear infinite;
+    animation: anim-rotate-reverse 1.33s linear infinite;
+    will-change: transform;
+}
+
+.pih-anim-blink:before,
+.pih-badge-anim-blink:after {
+    -webkit-animation: anim-blink 1.33s linear infinite;
+    animation: anim-blink 1.33s linear infinite;
+    will-change: opacity;
+}
+
+
+/* Color helpers */
+
+.pi-dark,
+.pih-color-dark,
+.layout-noheader-workarea_header .pi.pi-dark,
+.pih-solid-dark:before {
+    color: #10132e;
+}
+
+.pi-light,
+.pih-color-light,
+.layout-noheader-workarea_header .pi.pi-light,
+.pih-solid:before,
+[class*="pih-badge"]:after,
+[data-badge-count]:after {
+    color: #fff;
+}
+
+.pi-grey,
+.pih-color-grey,
+.pih-color-gray,
+.pi-gray,
+.pi-empty-state,
+.pih-empty-state {
+    color: rgba(16, 19, 46, 0.66);
+}
+
+.pi-link,
+.pih-color-link {
+    color: #295ed9;
+}
+
+.pih-color-rule:before,
+.private-rule:before,
+.open-rule:before {
+    color: #a9d400;
+}
+
+.pi-ok,
+.pih-color-ok {
+    color: #20aa50;
+}
+
+.pi-error,
+.pih-color-error {
+    color: #d91c29;
+}
+
+.pi-warning,
+.pih-color-warning {
+    color: #fd6000;
+}
+
+.pi-empty-state,
+.pih-empty-state {
+    margin-right: 0 !important;
+    font-size: 48px;
+}
+
+.pi-empty-state:before {
+    font-size: 1em !important;
+}
+
+.pi-muted,
+.pih-muted {
+    /*.pi-muted:hover {opacity: 1} -- SHOULDN'T HAVE HOVER EFFECTS ON NON-INTERACTIVE ITEMS*/
+    opacity: 0.33;
+}
+
+
+/* Size helpers */
+
+.pi-small,
+.pih-small {
+    font-size: 12px;
+}
+
+.pi-1_5x,
+.pih-1_5x {
+    font-size: 1.5em;
+}
+
+.pi-2x,
+.pih-2x {
+    font-size: 2em;
+}
+
+.pi-3x,
+.pih-3x {
+    font-size: 3em;
+}
+
+.pi-4x,
+.pih-4x {
+    font-size: 4em;
+}
+
+.pi-5x,
+.pih-5x {
+    font-size: 5em;
+}
+
+
+/* ==== Style helpers - BETA ==== */
+
+
+/* Icon outline (pih-outline), and icon fill (pih-solid) classes */
+
+[class*="pih-solid"],
+.pih-outline {
+    border-radius: 1em !important;
+    padding: 0 !important;
+    width: 1em !important;
+    height: 1em !important;
+    border: 1px solid currentColor;
+}
+
+[class*="pih-solid"]:before,
+.pih-outline:before {
+    vertical-align: 0.2em;
+    line-height: 1;
+    font-size: 55%;
+    padding: 0.5px;
+}
+
+[class*="pih-solid"] {
+    background: currentColor;
+}
+
+
+/* Icon badge system */
+
+[data-badge-count] {
+    position: relative;
+}
+
+[class*="pih-badge"],
+[data-badge-count],
+.pi-filter-on {
+    position: relative;
+}
+
+[class*="pih-badge"]:after,
+[data-badge-count]:after,
+.pi-filter-on:after {
+    background: #d91c29;
+    border-radius: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    min-height: 7px;
+    min-width: 7px;
+    padding: 0.1em 0.2em 0 0.3em;
+    top: -0.6em;
+    right: -0.6em;
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+}
+
+.pi-filter-on:after {
+    background: currentColor;
+}
+
+[class*="pih-badge-icon-"]:after {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.4em;
+    padding: 0;
+}
+
+
+/* Icon badge position modifiers */
+
+.pih-badge-pos-tl:after {
+    right: auto !important;
+    left: -0.6em;
+}
+
+.pih-badge-pos-bl:after {
+    right: auto !important;
+    top: auto !important;
+    bottom: -0.6em;
+    left: -0.6em;
+}
+
+.pih-badge-pos-br:after {
+    top: auto !important;
+    bottom: -0.6em;
+}
+
+
+/* Icon badge colors */
+
+.pih-badge-color-ok:after {
+    background: #20aa50 !important;
+}
+
+.pih-badge-color-link:after {
+    background: #295ed9 !important;
+}
+
+.pih-badge-color-warn:after {
+    background: #fd6000 !important;
+}
+
+
+/* Icon badge alt content */
+
+
+/* Icons only are .pih-badge-icon-pause, ...-wait, ...-call, ...-lock, ...-unlock, ...-users, ...-eye, ...-mic, ...-mic-off, ...-warn, ...-check */
+
+.pih-badge:after,
+.pi-filter-on:after {
+    content: "";
+}
+
+[data-badge-count]:after {
+    content: attr(data-badge-count) !important;
+    font-weight: 700;
+    min-width: 3em;
+}
+
+
+/* Icon badge alt content */
+/* Icons only are .pih-badge-icon-pause, ...-wait, ...-call, ...-lock, ...-unlock, ...-users, ...-eye, ...-mic, ...-mic-off, ...-warn, ...-check */
+.pih-badge:after{
+    content: "";
+}
+[data-badge-count]:after {
+    content: attr(data-badge-count) !important;
+    font-weight: 700;
+    min-width: 3em;
+}
+/* Icon badge animation is part of animation helpers above*/
+
+/* ==== Icon Definitions ==== */
+
+.pi-1-1-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-1-1:before,
+.nbam-pi-nba-filled:before {
+    content: "b";
+}
+
+.pi-1-1:before,
+.nbam-pi-nba:before {
+    content: "a";
+}
+
+.pi-a11y:before {
+    content: "\e078";
+}
+
+.pi-align-center:before {
+    content: "\e1a8";
+}
+
+.pi-align-item-center-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-align-item-center {
+    content: "\e159";
+}
+
+.pi-align-item-vert-center-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-align-item-vert-center {
+    content: "\e15c";
+}
+
+.pi-align-item-center:before {
+    content: "\e088";
+}
+
+.pi-align-item-vert-center:before {
+    content: "\e141";
+}
+
+.pi-align-item-down-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-align-item-down:before {
+    content: "\e15b";
+}
+
+.pi-align-item-down:before {
+    content: "\e142";
+}
+
+.pi-align-item-left-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-align-item-left:before {
+    content: "\e158";
+}
+
+.pi-align-item-left:before {
+    content: "\e087";
+}
+
+.pi-align-item-right-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-align-item-right:before {
+    content: "\e15a";
+}
+
+.pi-align-item-right:before {
+    content: "\e140";
+}
+
+.pi-align-item-up:before {
+    content: "\e143";
+}
+
+.pi-align-item-up-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-align-item-up:before {
+    content: "\e15d";
+}
+
+.pi-align-right:before {
+    content: "\e1aa";
+}
+
+.pi-align-left:before,
+.pi-tree:before {
+    content: "\e1a9";
+}
+
+.pi-amazon:before {
+    content: "\e287";
+}
+
+.pi-ambulance-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-ambulance:before {
+    content: "\e27b";
+}
+
+.pi-ambulance:before,
+.pcs-hospital:before {
+    content: "\e075";
+}
+
+.pi-analytics-good-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-analytics-good:before {
+    content: "\e299";
+}
+
+.pi-analytics-bad-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-analytics-bad:before {
+    content: "\e0ba";
+}
+
+.pi-analytics-bad:before,
+.psa-analytics-bad:before {
+    content: "\e1d1";
+}
+
+.pi-analytics-good:before,
+.psa-analytics-good:before {
+    content: "c";
+}
+
+.pi-analytics-neutral-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-analytics-neutral:before {
+    content: "\e298";
+}
+
+.pi-analytics-neutral:before,
+.psa-analytics-neutral:before {
+    content: "d";
+}
+
+.pi-antenna:before,
+.pi-antenna-solid:before {
+    content: "\e272";
+}
+
+.pi-app-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-app:before,
+.menu-item-active > a.menu-item-anchor [tabtitle="App"]:before {
+    content: "\e255";
+}
+
+.pi-app:before,
+[tabtitle="App"]:before {
+    content: "\e08f";
+}
+
+.pi-archery:before,
+.psa-goal:before {
+    content: "\e0c7";
+}
+
+.pi-arrow-above-or:before {
+    content: "|";
+}
+
+.pi-arrow-below-or:before {
+    content: "\e1dc";
+}
+
+.pi-arrow-below-row:before,
+.pi-arrow-below-row-right:before {
+    content: "\e1e2";
+}
+
+.pi-arrow-above-row:before,
+.pi-arrow-above-row-right:before {
+    content: "\e1ee";
+}
+
+.pi-arrow-below-row-left:before {
+    content: "\e00a";
+}
+
+.pi-arrow-above-row-left:before {
+    content: "\E1EF";
+}
+
+.pi-arrow-box-repeat:before,
+.pi-retweet:before,
+.pi-repeat:before,
+.pcs-retweet:before {
+    content: "\e009";
+}
+
+.pi-arrow-box-up-down:before,
+.pi-caret-menu-up-down:before,
+.pi-arrow-micro-up-down:before,
+.pi-arrow-micro-up-down-solid:before {
+    content: "\e29d";
+}
+
+.pi-arrow-box-down:before,
+.pi-caret-menu-down:before,
+.pi-arrow-micro-down:before,
+.pi-arrow-micro-down-solid:before {
+    content: "\e168";
+}
+
+.pi-arrow-box-right:before,
+.pi-caret-menu-right:before,
+.pi-arrow-micro-right:before,
+.pi-arrow-micro-right-solid:before {
+    content: "\e166";
+}
+
+.pi-arrow-box-left:before,
+.pi-caret-menu-left:before,
+.pi-arrow-micro-left:before,
+.pi-arrow-micro-left-solid:before {
+    content: "\e169";
+}
+
+.pi-caret-menu-up:before,
+.pi-arrow-micro-up:before,
+.pi-arrow-box-up:before,
+.pi-arrow-micro-up-solid:before {
+    content: "\e167";
+}
+
+.pi-arrow-down-between-columns:before,
+.pi-arrow-between-column-down:before {
+    content: "\e00c";
+}
+
+.pi-arrow-right-between-rows:before {
+    content: "\e1e6";
+}
+
+.pi-arrow-down-between-right-column:before,
+.pi-arrow-between-right-column-down:before {
+    content: "\e2a4";
+}
+
+.pi-arrow-down-between-left-column:before,
+.pi-arrow-between-left-column-down:before,
+.iconAppendColumn:before,
+.iconAppendColumn_on:before,
+.iconAppendColumn_disabled:before,
+.iconAppendInside:before,
+.iconAppendInside_on:before,
+.iconAppendInside_disabled:before {
+    content: "_";
+}
+
+.pi-arrow-in:before,
+.pi-sign-in:before,
+.nbam-pi-driven-by:before {
+    content: "\e04d";
+}
+
+.pi-arrow-out:before,
+.pi-sign-out:before {
+    content: "\e04e";
+}
+
+.pi-arrow-right-thru-column:before,
+.pi-arrow-right-column:before {
+    content: "\e1dd";
+}
+
+.pi-arrow-left-column:before {
+    content: "{";
+}
+
+.pi-arrow-up-row:before {
+    content: "\e1d7";
+}
+
+.pi-arrow-down-thru-row:before,
+.pi-arrow-down-row:before {
+    content: "\e1d6";
+}
+
+.pi-arrow-left:before,
+.pi-arrow-o-left:before {
+    content: "\e13b";
+}
+
+.pi-arrow-sw:before {
+    content: "\e13c";
+}
+
+.pi-arrow-o-ne:before {
+    content: "\e13d";
+}
+
+.pi-arrow-right:before,
+.pi-arrow-o-right:before,
+.pcti-right-arrow:before,
+.nbam-pi-child-arrow:before,
+.iconGetNextWork:before,
+.iconGetNextWork_on:before,
+.iconGetNextWork_disabled:before,
+.iconTransfer:before,
+.iconTransfer_on:before,
+.iconTransfer_disabled:before,
+.pcti-right-arrow-circle:before {
+    content: "\e0e1";
+}
+
+.pi-arrow-down:before,
+.pi-arrow-o-down:before,
+.pi-arrow-down-text:before {
+    content: "\e13f";
+}
+
+.pi-arrow-up:before,
+.pi-arrow-o-up:before,
+.pi-arrow-up-text:before {
+    content: "\e13e";
+}
+
+.pi-arrows-ne-sw-separate:before {
+    content: "";
+}
+
+.pi-atom:before {
+    content: "\e08c";
+}
+
+.pi-backspace-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-backspace:before {
+    content: "\e1fe";
+}
+
+.pi-backspace:before {
+    content: "\e1fd";
+}
+
+.pi-badge-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-badge:before {
+    content: "\e1a0";
+}
+
+.pi-badge:before,
+.psa-contacts:before {
+    content: "\e11d";
+}
+
+.pi-bank-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bank:before {
+    content: "\e242";
+}
+
+.pi-bank:before {
+    content: "\e10c";
+}
+
+.pi-bars:before,
+.pi-hamburger:before,
+.screen-layout-header_footer_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one:before,
+.screen-layout-header_left > .screen-layout-region > .screen-layout-region-content .nav-toggle-one:before {
+    content: "\e049";
+}
+
+.pi-battery-charge-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-battery-charge:before {
+    content: "\e251";
+}
+
+.pi-battery-charge:before {
+    content: "\e098";
+}
+
+.pi-battery-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-battery:before {
+    content: "o";
+}
+
+.pi-battery:before {
+    content: "p";
+}
+
+.pi-bell-off-solid:before {
+    content: "6";
+}
+
+.pi-bell-off:before {
+    content: "5";
+}
+
+.pi-bell-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bell:before,
+.pi-notification-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-notification:before {
+    content: "\e17c";
+}
+
+.pi-bell:before,
+.pcrm-notification:before,
+.pi-notification:before,
+.nbam-pi-ch-push:before {
+    content: "\e0f4";
+}
+
+.pi-blocks-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-blocks:before {
+    content: "x";
+}
+
+.pi-blocks:before,
+.nbam-pi-blocks:before {
+    content: "w";
+}
+
+.pi-bluetooth:before {
+    content: "\e093";
+}
+
+.pi-bolt-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bolt:before {
+    content: "v";
+}
+
+.pi-bolt:before,
+.nbam-pi-st-running:before,
+.nbam-pi-st-running-filled:before {
+    content: "M";
+}
+
+.pi-book-open-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-book-open:before {
+    content: "\e163";
+}
+
+.pi-book-open:before,
+.psa-enablement:before {
+    content: "\e104";
+}
+
+.pi-book-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-book:before {
+    content: "\e15f";
+}
+
+.pi-book:before {
+    content: "\e0fb";
+}
+
+.pi-bookmark-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bookmark:before {
+    content: "\e173";
+}
+
+.pi-bookmark:before {
+    content: "\e03a";
+}
+
+.pi-bounding-box-solid:before,
+.pi-box-bounding-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bounding-box:before {
+    content: "\e20a";
+}
+
+.pi-bounding-box:before {
+    content: "E";
+}
+
+.pi-box-3-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-box-3:before {
+    content: "\e209";
+}
+
+.pi-box-3:before,
+.nbam-pi-summary:before {
+    content: "t";
+}
+
+.pi-box-4-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-box-4:before {
+    content: "\e155";
+}
+
+.pi-box-4:before {
+    content: "\e037";
+}
+
+.pi-box-crosshair:before {
+    content: "F";
+}
+
+.pi-box-dashed-labeled-solid:before,
+.pi-box-dashed-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-box-dashed-labeled:before {
+    content: "\e20b";
+}
+
+.pi-box-dashed-labeled:before {
+    content: "G";
+}
+
+.pi-box-dashed:before,
+.pi-expand-box:before {
+    content: "\e048";
+}
+
+.pi-box-grid:before {
+    content: "H";
+}
+
+.pi-box-lines-2:before,
+.pcs-ssaicon4:before {
+    content: "s";
+}
+
+.pi-box-lines-2-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-box-lines-2:before {
+    content: "\e20c";
+}
+
+.pi-box:before {
+    content: "\e2ab";
+}
+
+.pi-browser-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-browser:before {
+    content: "\e1ae";
+}
+
+.pi-browser:before,
+.nbam-pi-microsite:before {
+    content: "\e09a";
+}
+
+.pi-bug-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bug:before {
+    content: "\e256";
+}
+
+.pi-bug:before {
+    content: "\e095";
+}
+
+.pi-building-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-building-1:before,
+.menu-item-active > a.menu-item-anchor .pi-building:before {
+    content: "\e278";
+}
+
+.pi-building-1:before,
+.pi-building:before,
+.psa-organization:before,
+.pcti-organization:before,
+.pcs-org:before {
+    content: "\e113";
+}
+
+.pi-building-2-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-building-2:before {
+    content: "\e273";
+}
+
+.pi-building-2:before {
+    content: "\e115";
+}
+
+.pi-building-3-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-building-3:before {
+    content: "\e274";
+}
+
+.pi-building-3:before,
+.pcs-hostel:before {
+    content: "\e117";
+}
+
+.pi-bulb-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-bulb:before,
+.nbam-pi-lightbulb-filled:before {
+    content: "\e1cd";
+}
+
+.pi-bulb:before,
+.nbam-pi-lightbulb:before,
+.psa-nba:before {
+    content: "\e0c6";
+}
+
+.pi-calculator-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-calculator:before {
+    content: "\e18f";
+}
+
+.pi-calculator:before {
+    content: "\e0c3";
+}
+
+.pi-calendar-empty-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-calendar-empty:before {
+    content: "\e1b2";
+}
+
+.pi-calendar-empty:before {
+    content: "\e0f6";
+}
+
+.pi-calendar-plus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-calendar-plus:before {
+    content: "\e1b1";
+}
+
+.pi-calendar-plus:before,
+.psa-sync-appointment:before {
+    content: "\e0f5";
+}
+
+.pi-calendar-range-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-calendar-range:before {
+    content: "\e1b3";
+}
+
+.pi-calendar-range:before {
+    content: "\e0f7";
+}
+
+.pi-calendar-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-calendar:before,
+.menu-item-active > a.menu-item-anchor .iconCalendar:before,
+.menu-item-active > a.menu-item-anchor .iconCalendar_on:before,
+.menu-item-active > a.menu-item-anchor .iconCalendar_disabled:before {
+    content: "\e1ff";
+}
+
+.pi-calendar:before,
+.iconCalendar:before,
+.iconCalendar_on:before,
+.iconCalendar_disabled:before,
+.nbam-pi-calendar:before,
+.pcrm-calendar:before,
+.pcrm-appointment:before,
+.psa-appointment:before {
+    content: "V";
+}
+
+.pi-camera-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-camera:before,
+.menu-item-active > a.menu-item-anchor .iconImage:before,
+.menu-item-active > a.menu-item-anchor .iconImage_on:before,
+.menu-item-active > a.menu-item-anchor .iconImage_disabled:before {
+    content: "\E165";
+}
+
+.pi-camera:before,
+.iconImage:before,
+.iconImage_on:before,
+.iconImage_disabled:before {
+    content: "\E07E";
+}
+
+.pi-cancel:before,
+.iconNoShow:before,
+.iconNoShow_on:before,
+.iconNoShow_disabled:before {
+    content: "\E039";
+}
+
+.pi-car-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-car:before {
+    content: "\E22B";
+}
+
+.pi-car:before {
+    content: "\E131";
+}
+
+.pi-card-stack-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-card-stack:before {
+    content: "\E174";
+}
+
+.pi-card-stack:before,
+.nbam-pi-st-wrapup:before,
+.nbam-pi-st-wrapup-filled:before {
+    content: "\E044";
+}
+
+.pi-caret-double-right:before,
+.pi-caret-2-right:before {
+    content: "W";
+}
+
+.pi-caret-double-left:before,
+.pi-caret-2-left:before {
+    content: "\e0aa";
+}
+
+.pi-caret-down:before,
+.pi-caret-solid-down:before,
+.pi-caret-menu-select:before,
+div[class*="layout-outline"] > .Expanded > .header-bar > * > .icon-openclose::before {
+    content: "\E138";
+    text-decoration: none;
+}
+
+.pi-caret-left:before,
+.pi-caret-solid-left:before {
+    content: "\E139";
+    text-decoration: none;
+}
+
+.pi-caret-right:before,
+.pi-caret-solid-right:before,
+div[class*="layout-outline"] > .Collapsed > .header-bar > * > .icon-openclose::before,
+.Temporary_top_tabs > .scrlCntr > ol.tsb-menu > li:first-child > a#TABANCHOR:before {
+    content: "\E0E4";
+    text-decoration: none;
+}
+
+.pi-caret-up:before,
+.pi-caret-solid-up:before {
+    content: "\E137";
+    text-decoration: none;
+}
+
+.pi-cart-close-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-cart-close:before {
+    content: "\E195";
+}
+
+.pi-cart-close:before,
+.pcs-cart-remove:before {
+    content: "\E0D0";
+}
+
+.pi-cart-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-cart:before {
+    content: "\E196";
+}
+
+.pi-cart:before,
+.pcs-cart:before,
+.pcrm-cart:before {
+    content: "\E0D1";
+}
+
+.pi-case-medical-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-case-medical:before {
+    content: "\E27D";
+}
+
+.pi-case-medical:before {
+    content: "\E07A";
+}
+
+.pi-case-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-case:before,
+.menu-item-active > a.menu-item-anchor [tabtitle="Cases"]:before {
+    content: "\E18D";
+}
+
+.pi-case:before,
+[tabtitle="Cases"]:before,
+.pcrm-case:before {
+    content: "\E0BF";
+}
+
+.pi-chain-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chain-up:before {
+    content: "\E1AB";
+}
+
+.pi-chain:before {
+    content: "\E06C";
+}
+
+.pi-chain-up:before,
+.pcs-push-url:before,
+.pcs-push-url-1:before {
+    content: "X";
+}
+
+.pi-chart-bar-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chart-bar:before,
+.menu-item-active > a.menu-item-anchor .pi-line-chart:before {
+    content: "\E194";
+}
+
+.pi-chart-bar:before,
+.pi-line-chart:before,
+.nbam-pi-graphs:before,
+.nbam-pi-objective:before,
+.nbam-pi-setup-goal:before,
+.psa-report:before,
+.pcs-ssaicon6:before {
+    content: "\E10A";
+}
+
+.pi-chart-donut-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chart-donut:before {
+    content: "\E243";
+}
+
+.pi-chart-donut:before {
+    content: "\E106";
+}
+
+.pi-chart-forecast:before {
+    content: "\E10B";
+}
+
+.pi-chart-line:before,
+.nbam-pi-chart:before {
+    content: "\E109";
+}
+
+.pi-chart-pie-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chart-pie:before,
+.menu-item-active > a.menu-item-anchor .pi-pie-chart:before {
+    content: "\E20D";
+}
+
+.pi-chart-pie:before,
+.pi-pie-chart:before,
+.nbam-pi-model:before,
+.psa-graph:before {
+    content: ",";
+}
+
+.pi-chart-radar-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chart-radar:before {
+    content: "\E1AF";
+}
+
+.pi-chart-radar:before {
+    content: "\E09D";
+}
+
+.pi-chat-help-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chat-help:before {
+    content: "\E1C3";
+}
+
+.pi-chat-help:before {
+    content: "\E0A8";
+}
+
+.pi-chat-sentiment-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chat-sentiment:before {
+    content: "\E26D";
+}
+
+.pi-chat-sentiment:before {
+    content: "\E0B0";
+}
+
+.pi-chat-typing-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chat-typing:before {
+    content: "Y";
+}
+
+.pi-chat-typing:before,
+.nbam-pi-insight:before,
+.nbam-pi-ch-sms:before,
+.pcs-chatting:before,
+.pcrm-sms:before {
+    content: "\E0BC";
+}
+
+.pi-chat-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chat:before,
+.pcs-chat:before,
+.pcrm-chat:before {
+    content: "\E1C5";
+}
+
+.pi-chat:before,
+.psa-pulse:before {
+    content: "\E0A9";
+}
+
+.pi-chats-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chats:before {
+    content: "\E1C7";
+}
+
+.pi-chats:before,
+.nbam-pi-social-filled:before,
+.nbam-pi-social:before {
+    content: "\E0AB";
+}
+
+.pi-check:before,
+.iconSave:before,
+.iconSave_on:before,
+.iconSave_disabled:before,
+[tabtitle="Private"]:before,
+.nbam-pi-activate:before,
+.nbam-pi-validate-pass:before,
+.pih-badge-icon-check:after,
+.badge-pi-check-circle > span:before,
+.pi-box-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-box-check:before,
+.menu-item-active > a.menu-item-anchor .pi-check-box:before,
+.menu-item-active > a.menu-item-anchor .iconSave:before,
+.menu-item-active > a.menu-item-anchor .iconSave_on:before,
+.menu-item-active > a.menu-item-anchor .iconSave_disabled:before,
+.pi-box-check:before,
+.pi-check-box:before,
+.iconSave:before,
+.iconSave_on:before,
+.iconSave_disabled:before,
+.pi-circle-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-circle-check:before,
+.menu-item-active > a.menu-item-anchor .pi-check-circle:before,
+.menu-item-active > a.menu-item-anchor .iconSave:before,
+.menu-item-active > a.menu-item-anchor .iconSave_on:before,
+.menu-item-active > a.menu-item-anchor .iconSave_disabled:before,
+.pi-circle-check:before,
+.pi-check-circle:before,
+.pcti-check:before {
+    content: "\E043";
+}
+
+.pi-checkbook:before,
+.pcs-check:before {
+    content: '\"';
+}
+
+.pi-chevron-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-chevron:before {
+    content: "!";
+}
+
+.pi-chevron:before {
+    content: "N";
+}
+
+.pi-church-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-church:before {
+    content: "\E277";
+}
+
+.pi-church:before {
+    content: "\E112";
+}
+
+.pi-circle-solid:before,
+.pi-circle-filled:before,
+.menu-item-active > a.menu-item-anchor .pi-circle:before {
+    content: "h";
+}
+
+.pi-circle-half-right:before,
+.pi-circle-mixed-right:before {
+    content: "\e05e";
+}
+
+.pi-circle-half-left:before,
+.pi-circle-half-left-icon:before,
+.pi-circle-mixed-left:before {
+    content: "\e030";
+}
+
+.pi-circle-half-down:before,
+.pi-circle-mixed-down:before {
+    content: "\e0F0";
+}
+
+.pi-circle-half-up:before,
+.pi-circle-mixed-up:before {
+    content: "\e2a3";
+}
+
+.pi-circle-stacked-mixed:before {
+    content: "j";
+}
+
+.pi-circle-stacked-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-circle-stacked:before {
+    content: "i";
+}
+
+.pi-circle-stacked:before {
+    content: "k";
+}
+
+.pi-circle:before,
+.badge-pi-circle > span:before {
+    content: "9";
+}
+
+.pi-city-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-city:before {
+    content: "\E276";
+}
+
+.pi-city:before {
+    content: "\E111";
+}
+
+.pi-clipboard-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-clipboard-check:before {
+    content: "\E268";
+}
+
+.pi-clipboard-check:before,
+.nbam-pi-report:before,
+.nbam-pi-test:before,
+.psa-activity:before,
+.pcrm-CustomerActivity:before,
+.pcrm-activity:before {
+    content: "\E090";
+}
+
+.pi-clipboard-data:before,
+.pi-clipboard-content-icon:before {
+    content: "\e20e";
+}
+
+.pi-clipboard-data-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-clipboard-data:before,
+.menu-item-active > a.menu-item-anchor .pi-clipboard-content-icon:before {
+    content: "\E20F";
+}
+
+.pi-clipboard-medical-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-clipboard-medical:before {
+    content: "\E27C";
+}
+
+.pi-clipboard-medical:before {
+    content: "\E076";
+}
+
+.pi-clipboard-plus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-clipboard-plus:before {
+    content: "\E3F4";
+}
+
+.pi-clipboard-plus:before {
+    content: "\E286";
+}
+
+.pi-clipboard-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-clipboard:before {
+    content: "\E1C1";
+}
+
+.pi-clipboard:before {
+    content: "\E091";
+}
+
+.pi-clock-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-clock:before,
+.menu-item-active > a.menu-item-anchor [tabtitle="Recent"]:before {
+    content: "\E25F";
+}
+
+.pi-clock:before,
+[tabtitle="Recent"]:before,
+.nbam-pi-st-scheduled:before,
+.nbam-pi-st-scheduled-filled:before,
+.nbam-pi-st-approval:before {
+    content: "\E0F9";
+}
+
+.pi-times:before,
+.pi-close:before,
+.pcti-close:before,
+.pi-close-box:before,
+.pi-close-circle:before,
+.pi-circle-close:before,
+.menu-item-active > a.menu-item-anchor .pi-close-circle:before,
+.iconClose:before,
+.iconClose_on:before,
+.iconClose_disabled:before,
+.iconCloseSmall:before,
+.yui-panel .container-close:before,
+.container-close:before,
+.iconNoShow:before,
+.iconNoShow_on:before,
+.iconNoShow_disabled:before,
+.appview-menu-shown .menu-item-icon-imageclass.menu-item-title.pi:before,
+.pih-badge-icon-close:after,
+.pcrm-icon-timeline-close:before {
+    content: "\E1F4";
+}
+
+.pi-cloud-down:before {
+    content: "\E042";
+}
+
+.pi-cloud-issue-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-cloud-issue:before,
+.pi-cloud-issue:before {
+    content: "\E260";
+}
+
+.pi-cloud-up:before {
+    content: "\E041";
+}
+
+.pi-cloud-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-cloud:before {
+    content: "\E1B4";
+}
+
+.pi-cloud:before {
+    content: "\E02B";
+}
+
+.pi-cloudy-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-cloudy:before,
+.psa-forecast-override:before {
+    content: "\E1B5";
+}
+
+.pi-cloudy:before,
+.psa-forecast:before {
+    content: "\E02C";
+}
+
+.pi-code:before,
+.pi-code-bracket:before {
+    content: "I";
+}
+
+.pi-column-no-right-edge:before,
+.pi-column-no-right:before {
+    content: "\E1DF";
+}
+
+.pi-column-no-left:before {
+    content: "J";
+}
+
+.pi-columns-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-columns:before {
+    content: "\E24C";
+}
+
+.pi-columns:before,
+.nbam-pi-grid:before {
+    content: "\E071";
+}
+
+.pi-command:before {
+    content: "\E040";
+}
+
+.pi-compass-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-compass:before {
+    content: "\E1E7";
+}
+
+.pi-compass:before,
+.nbam-pi-plan:before {
+    content: "\E127";
+}
+
+.pi-controller-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-controller:before {
+    content: "\E25C";
+}
+
+.pi-controller:before {
+    content: "\E0A0";
+}
+
+.pi-copy-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-copy:before {
+    content: "\E22E";
+}
+
+.pi-copy:before {
+    content: "\E082";
+}
+
+.pi-credit-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-credit:before {
+    content: "\E197";
+}
+
+.pi-credit:before,
+.pcs-card:before {
+    content: "\E0D2";
+}
+
+.pi-crop:before {
+    content: "\E07D";
+}
+
+.pi-cuppa-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-cuppa:before {
+    content: "\E22D";
+}
+
+.pi-cuppa:before {
+    content: "\E0CE";
+}
+
+.pi-data-solid:before,
+.pi-dot-9-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-data:before,
+.menu-item-active > a.menu-item-anchor .pi-dot-9:before,
+.menu-item-active > a.menu-item-anchor [tabtitle="Data"]:before,
+.pcs-keypad:before,
+.pcti-keypad:before,
+.layout-group-explorer_nav > .layout[data-lg-child-id="3"].active > .header .icon:before {
+    content: "\E1C8" !important;
+}
+
+.pi-data:before,
+.pi-dot-9:before,
+[tabtitle="Data"]:before,
+.layout-group-explorer_nav > .layout[data-lg-child-id="3"] > .header .icon:before {
+    content: "\E0B7" !important;
+}
+
+.pi-desktop-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-desktop:before {
+    content: "\E254";
+}
+
+.pi-desktop:before,
+.pcti-desktop:before,
+.pcs-monitor:before,
+.pcrm-web:before {
+    content: "\E094";
+}
+
+.pi-disc-stack-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-disc-stack:before {
+    content: "\E210";
+}
+
+.pi-disc-stack:before,
+.nbam-pi-ch-db:before {
+    content: "\e211";
+}
+
+.pi-distribute-item-vert-center-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-distribute-item-vert-center:before {
+    content: "\E15E";
+}
+
+.pi-distribute-item-center-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-distribute-item-center:before {
+    content: "\E295";
+}
+
+.pi-distribute-item-center:before {
+    content: "\E086";
+}
+
+.pi-distribute-item-vert-center:before {
+    content: "\E144";
+}
+
+.pi-dna:before {
+    content: "\E077";
+}
+
+.pi-document-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-check:before {
+    content: "\E233";
+}
+
+.pi-document-check:before,
+.nbam-pi-eligibilities:before,
+.nbam-pi-eligibility-filled:before,
+.nbam-pi-st-completed:before,
+.nbam-pi-st-completed-filled:before,
+.pi-article-check:before,
+.pcs-articleread:before {
+    content: "\E0FF";
+}
+
+.pi-document-compress-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-compress:before {
+    content: "\E234";
+}
+
+.pi-document-compress:before {
+    content: "\E105";
+}
+
+.pi-document-data-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-data:before {
+    content: "\E161";
+}
+
+.pi-document-doc:before,
+.pi-document-data:before,
+.nbam-pi-plan-details:before,
+.psa-policy:before,
+.pcs-ssaicon48:before {
+    content: "\E100";
+}
+
+.pi-document-download-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-download:before {
+    content: "\E1FA";
+}
+
+.pi-document-download:before {
+    content: "\E1F7";
+}
+
+.pi-document-minus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-minus:before {
+    content: "\e231";
+}
+
+.pi-document-minus:before {
+    content: "\E0FC";
+}
+
+.pi-document-plus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-plus:before,
+.menu-item-active > a.menu-item-anchor .iconCopy:before,
+.menu-item-active > a.menu-item-anchor .iconCopy_on:before,
+.menu-item-active > a.menu-item-anchor .iconCopy_disabled:before {
+    content: "\e232";
+}
+
+.pi-document-plus:before,
+.iconCopy:before,
+.iconCopy_on:before,
+.iconCopy_disabled:before {
+    content: "\E0FD";
+}
+
+.pi-document-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document:before {
+    content: "\E160";
+}
+
+.pi-document:before {
+    content: "\E0FE";
+}
+
+.pi-document-pdf:before{
+    content: "r";
+}
+
+.pi-document-xls:before {
+    content: "\e2ad";
+}
+
+.pi-document-upload-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-document-upload:before {
+    content: "\E1F9";
+}
+
+.pi-document-upload:before {
+    content: "\e1f8";
+}
+
+.pi-documents-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-documents-check:before,
+.nbam-pi-revision-filled:before {
+    content: "\E162";
+}
+
+.pi-documents-check:before,
+.nbam-pi-revision:before {
+    content: "\E101";
+}
+
+.pi-documents-data-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-documents-data:before {
+    content: "\E9B9";
+}
+
+.pi-documents-data:before,
+.nbam-pi-program:before,
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a[tabtitle="Programs"]:before {
+    content: "7";
+}
+
+.pi-documents-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-documents:before {
+    content: "\E1B8";
+}
+
+.pi-documents:before {
+    content: "K";
+}
+
+.pi-docusign:before {
+    content: "\e2ac";
+}
+
+.pi-dollar-sign-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-dollar-sign:before {
+    content: "\E192";
+}
+
+.pi-dollar-sign:before,
+.pcs-ssaicon1:before,
+.pcs-ssaicon15:before {
+    content: "\E107";
+}
+
+.pi-six-square-grid:before,
+.pi-dot-6:before,
+.pi-drag:before {
+    content: "q";
+}
+
+.pi-drink-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-drink:before {
+    content: "\E22C";
+}
+
+.pi-drink:before {
+    content: "\E0CD";
+}
+
+.pi-earth-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-earth:before {
+    content: "\E24B";
+}
+
+.pi-earth:before {
+    content: "\E08B";
+}
+
+.pi-edit-shape-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-edit-shape:before {
+    content: "\E294";
+}
+
+.pi-edit-shape:before {
+    content: "\E08A";
+}
+
+.pi-erase-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-erase:before {
+    content: "\E230";
+}
+
+.pi-erase:before {
+    content: "\E085";
+}
+
+.pi-eye-off-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-eye-off:before {
+    content: "\E177";
+}
+
+.pi-eye-off:before {
+    content: "\E03C";
+}
+
+.pi-eye-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-eye:before,
+.menu-item-active > a.menu-item-anchor .iconContents:before,
+.menu-item-active > a.menu-item-anchor .iconContents_on:before,
+.menu-item-active > a.menu-item-anchor .iconContents_disabled:before,
+.pih-badge-icon-eye:after {
+    content: "\E187";
+}
+
+.pi-eye:before,
+.iconContents:before,
+.iconContents_on:before,
+.iconContents_disabled:before {
+    content: "\E068";
+}
+
+.pi-face-blank-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-face-blank:before {
+    content: "4";
+}
+
+.pi-face-blank:before,
+.nbam-pi-sentiment-neutral:before,
+.pcs-neutral-face:before {
+    content: "z";
+}
+
+.pi-face-happy-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-face-happy:before {
+    content: "3";
+}
+
+.pi-face-happy:before,
+.nbam-pi-sentiment-positive:before,
+.pcs-happy-face:before {
+    content: "m";
+}
+
+.pi-face-sad-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-face-sad:before {
+    content: "2";
+}
+
+.pi-face-sad:before,
+.nbam-pi-sentiment-negative:before,
+.pcs-sad-face:before {
+    content: "y";
+}
+
+.pi-facebook:before,
+.pcs-facebook:before,
+.pcrm-facebook:before {
+    content: "\E289";
+}
+
+.pi-farm-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-farm:before {
+    content: "\E279";
+}
+
+.pi-farm:before {
+    content: "\E114";
+}
+
+.pi-fast-forward-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-fast-forward:before {
+    content: "\E1B9";
+}
+
+.pi-rewind-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-rewind:before {
+    content: "\E1ba";
+}
+
+.pi-fast-forward:before {
+    content: "\E0E9";
+}
+
+.pi-rewind:before {
+    content: "\E1d0";
+}
+
+.pi-filter:before,
+.pi-filter-filled:before {
+    content: "\e047";
+}
+
+.pi-filter-on:before {
+    content: "\e212";
+}
+
+.pi-fire-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-fire:before {
+    content: "\E19C";
+}
+
+.pi-fire:before {
+    content: "\E280";
+}
+
+.pi-flag-finish:before,
+.pcs-wrap-up:before {
+    content: "\E0CA";
+}
+
+.pi-flag-wave-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-flag-wave:before {
+    content: "\E182";
+}
+
+.pi-flag-wave:before {
+    content: "\e065";
+}
+
+.pi-flag-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-flag:before {
+    content: "\E183";
+}
+
+.pi-flag:before {
+    content: "\E066";
+}
+
+.pi-flashlight-solid:before,
+.pi-flashlight-ne-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-flashlight:before,
+.menu-item-active > a.menu-item-anchor .pi-flashlight-ne:before {
+    content: "\E257";
+}
+
+.pi-flashlight:before,
+.pi-flashlight-ne:before,
+.psa-lead:before,
+.psa-actionable-leads:before,
+.psa-leads-dashboard:before,
+.psa-qualified-leads:before,
+.pcrm-lead:before,
+.pcrm-LeadConvertedToOpp:before {
+    content: "\e09b";
+}
+
+.pi-folder-close-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folder-close:before {
+    content: "\E239";
+}
+
+.pi-folder-close:before,
+.nbam-pi-category-remove:before {
+    content: "\E0DC";
+}
+
+.pi-folder-closed-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folder-closed:before {
+    content: "\E16E";
+}
+
+.pi-folder-closed:before,
+.psa-account:before {
+    content: "\E0DB";
+}
+
+.pi-folder-dollar-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folder-dollar:before {
+    content: "\E213";
+}
+
+.pi-folder-dollar:before,
+.pcs-ssaicon9:before {
+    content: "1";
+}
+
+.pi-folder-nested-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folder-nested:before {
+    content: "\E16D";
+}
+
+.pi-folder-nested:before {
+    content: "\E0DA";
+}
+
+.pi-folder-plus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folder-plus:before {
+    content: "\E23A";
+}
+
+.pi-folder-plus:before {
+    content: "\E0DE";
+}
+
+.pi-folder-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folder:before {
+    content: "\e16f";
+}
+
+.pi-folder:before {
+    content: "\E0DD";
+}
+
+.pi-folders-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-folders:before,
+.nbam-pi-content-filled:before {
+    content: "\E170";
+}
+
+.pi-folders:before,
+.nbam-pi-content:before {
+    content: "\E0DF";
+}
+
+
+/**/
+
+.pi-folder-hierarchy:before {
+    content: "\e033";
+}
+
+.pi-folder-hierarchy-solid:before {
+    content: "\e038";
+}
+
+.pi-peekpanel-arrow-right:before {
+    content: "\e2a5";
+}
+
+.pi-peekpanel-arrow-right-solid:before {
+    content: "\e2a6";
+}
+
+.pi-peekpanel-arrow-left:before {
+    content: "\e2ae";
+}
+
+.pi-peekpanel-arrow-left-solid:before {
+    content: "\e2af";
+}
+
+
+/**/
+
+.pi-function:before {
+    content: "0";
+}
+
+.pi-gauge-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-gauge:before,
+.nbam-pi-dashboard-filled:before {
+    content: "\E181";
+}
+
+.pi-gauge:before,
+.nbam-pi-threshold:before,
+.nbam-pi-dashboard:before {
+    content: "\E064";
+}
+
+.pi-gear-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-gear:before,
+.menu-item-active > a.menu-item-anchor .iconExplore:before,
+.menu-item-active > a.menu-item-anchor .iconExplore_on:before,
+.menu-item-active > a.menu-item-anchor .iconExplore_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconUpdate:before,
+.menu-item-active > a.menu-item-anchor .iconUpdate_on:before,
+.menu-item-active > a.menu-item-anchor .iconUpdate_disabled:before {
+    content: "\E175";
+}
+
+.pi-gear:before,
+.iconExplore:before,
+.iconExplore_on:before,
+.iconExplore_disabled:before,
+.iconUpdate:before,
+.iconUpdate_on:before,
+.iconUpdate_disabled:before {
+    content: "\e03f";
+}
+
+.pi-gender-female:before {
+    content: "\E11B";
+}
+
+.pi-gender-male:before {
+    content: "\E11C";
+}
+
+.pi-glasses-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-glasses:before,
+.menu-item-active > a.menu-item-anchor .pi-reading-glasses:before,
+.menu-item-active > a.menu-item-anchor .iconReview:before,
+.menu-item-active > a.menu-item-anchor .iconReview_on:before,
+.menu-item-active > a.menu-item-anchor .iconReview_disabled:before {
+    content: "\E24F";
+}
+
+.pi-glasses:before,
+.pi-reading-glasses:before,
+.iconReview:before,
+.iconReview_on:before,
+.iconReview_disabled:before,
+.pcs-financial-advisor:before,
+.pcrm-financial-advisor:before {
+    content: "\E074";
+}
+
+.pi-globe-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-globe:before,
+.menu-item-active > a.menu-item-anchor .pi-globe-2:before {
+    content: "\E25D";
+}
+
+.pi-globe:before,
+.pi-globe-2:before,
+.nbam-pi-ch-web:before,
+.psa-web:before {
+    content: "\E0A3";
+}
+
+.pi-google:before,
+.pi-google-plus:before {
+    content: "f";
+}
+
+.pi-government-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-government-1:before,
+.menu-item-active > a.menu-item-anchor .pi-government:before {
+    content: "\E275";
+}
+
+.pi-government-1:before,
+.pi-government:before,
+.pcs-ssaicon50:before {
+    content: "\E116";
+}
+
+.pi-grad-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-grad:before {
+    content: "\E291";
+}
+
+.pi-grad:before {
+    content: "\E214";
+}
+
+.pi-grid-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-grid-hollow:before,
+.menu-item-active > a.menu-item-anchor .pi-grid:before {
+    content: "\E1AC";
+}
+
+.pi-grid-hollow:before,
+.pi-grid:before,
+.nbam-pi-view-card:before {
+    content: "\E06B";
+}
+
+.pi-hand-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-hand:before {
+    content: "\E216";
+}
+
+.pi-hand:before {
+    content: "<";
+}
+
+.pi-handshake-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-handshake:before {
+    content: "\E18E";
+}
+
+.pi-handshake:before {
+    content: "\E0C5";
+}
+
+.pi-hanger:before,
+.pcs-hanger:before,
+.pcrm-retail:before {
+    content: "Z";
+}
+
+.pi-header:before {
+    content: "\E134";
+}
+
+.pi-headline-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-headline:before {
+    content: "\E164";
+}
+
+.pi-headline:before,
+.nbam-pi-treatment:before {
+    content: "\E102";
+}
+
+.pi-headphone-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-headphone:before {
+    content: "\E265";
+}
+
+.pi-headphone:before {
+    content: "\E0EA";
+}
+
+.pi-headset:before,
+.pcti-headset:before,
+.nbam-pi-ch-agent:before {
+    content: "%";
+}
+
+.pi-heart-mixed:before {
+    content: "\E217";
+}
+
+.pi-heart-pulse-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-heart-pulse:before {
+    content: "\E1CF";
+}
+
+.pi-heart-pulse:before {
+    content: "\E079";
+}
+
+.pi-heart-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-heart:before,
+.pcs-twitter-like-full:before {
+    content: "\E176";
+}
+
+.pi-heart:before,
+.pcs-twitter-like-line:before {
+    content: "\E03D";
+}
+
+.pi-help:before,
+.iconHelp:before,
+.iconHelp_on:before,
+.iconHelp_disabled:before,
+.pcs-question:before {
+    content: "#";
+}
+
+.pi-help-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-help:before,
+.menu-item-active > a.menu-item-anchor .iconHelp:before,
+.menu-item-active > a.menu-item-anchor .iconHelp_on:before,
+.menu-item-active > a.menu-item-anchor .iconHelp_disabled:before {
+    content: "\E293";
+}
+
+.pi-history-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-history:before,
+.menu-item-active > a.menu-item-anchor .iconHistory:before,
+.menu-item-active > a.menu-item-anchor .iconHistory_on:before,
+.menu-item-active > a.menu-item-anchor .iconHistory_disabled:before {
+    content: "\e06a";
+}
+
+.pi-history:before,
+.iconHistory:before,
+.iconHistory_on:before,
+.iconHistory_disabled:before {
+    content: "\E057";
+}
+
+.pi-home-2:before,
+.psa-household:before,
+.pi-home-alt:before {
+    content: "\E118";
+}
+
+.pi-home-alt-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-home-2:before,
+.menu-item-active > a.menu-item-anchor .pi-home-alt:before {
+    content: "\E1CE";
+}
+
+.pi-home-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-home:before,
+.nbam-pi-home-filled:before {
+    content: "\E17A";
+}
+
+.pi-home:before,
+.nbam-pi-home:before,
+.psa-home:before {
+    content: "\E03B";
+}
+
+.pi-pegasus:before {
+    content: "\E218";
+}
+
+.pi-inbox-data-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-inbox-data:before {
+    content: ")";
+}
+
+.pi-inbox-data:before {
+    content: "'";
+}
+
+.pi-inbox-solid:before,
+.pi-inbox-empty-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-inbox-empty:before,
+.menu-item-active > a.menu-item-anchor .pi-inbox:before {
+    content: "-";
+}
+
+.pi-inbox-empty:before,
+.pi-inbox:before {
+    content: "+";
+}
+
+.pi-information-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-information:before {
+    content: "\e292";
+}
+
+.pi-information:before {
+    content: "/";
+}
+
+.pi-infinity:before {
+    content: "\E219";
+}
+
+.pi-ink-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-ink:before {
+    content: "\e22f";
+}
+
+.pi-ink:before {
+    content: "\e084";
+}
+
+.pi-inspect:before,
+.pi-inspect-1:before {
+    content: ";";
+}
+
+.pi-interact:before {
+    content: "=";
+}
+
+.pi-ios-face-id:before {
+    content: "\e202";
+}
+
+.pi-ios-finger-id:before {
+    content: "\E203";
+}
+
+.pi-key:before {
+    content: "?";
+}
+
+.pi-keyboard-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-keyboard:before {
+    content: "\E24D";
+}
+
+.pi-keyboard:before {
+    content: "\E069";
+}
+
+.pi-knight-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-knight:before {
+    content: "\E18A";
+}
+
+.pi-knight:before {
+    content: "\E0C0";
+}
+
+.pi-knobs-solid:before,
+.nbam-pi-definitions-filled:before,
+.menu-item-active > a.menu-item-anchor .pi-knobs:before {
+    content: "\E264";
+}
+
+.pi-knobs-alt-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-knobs-alt:before {
+    content: "\e201";
+}
+
+.pi-knobs:before,
+.nbam-pi-definitions:before,
+.nbam-pi-configuration:before{
+    content: "\E0E8";
+}
+
+.pi-knobs-alt:before {
+    content: "\e205";
+}
+
+.pi-laptop-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-laptop:before {
+    content: "\E25B";
+}
+
+.pi-laptop:before {
+    content: "\E09F";
+}
+
+.pi-layers-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-layers:before,
+.menu-item-active > a.menu-item-anchor .rotate-tabs-header[tabtitle="Records"]:before {
+    content: "\E21A";
+}
+
+.pi-layers:before,
+.rotate-tabs-header[tabtitle="Records"]:before {
+    content: "g";
+}
+
+.pi-layout-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-layout:before {
+    content: "\E154";
+}
+
+.pi-layout:before,
+.nbam-pi-container:before {
+    content: "\E032";
+}
+
+.pi-leaf-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-leaf:before {
+    content: "\E156";
+}
+
+.pi-leaf:before {
+    content: "\E0CF";
+}
+
+.pi-legal:before,
+.nbam-pi-arbitration:before,
+.nbam-pi-arbitration-solid:before {
+    content: "^";
+}
+
+.pi-letter-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-letter:before {
+    content: "\E269";
+}
+
+.pi-letter:before,
+.psa-direct-mail:before {
+    content: "\E0AC";
+}
+
+.pi-life-ring-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-life-ring-2:before,
+.menu-item-active > a.menu-item-anchor .pi-life-ring:before {
+    content: "\E23B";
+}
+
+.pi-life-ring-2:before,
+.pi-life-ring:before {
+    content: "\E04A";
+}
+
+.pi-linkedin:before {
+    content: "\E28A";
+}
+
+.pi-list:before,
+.psa-list:before,
+.pcs-tree:before {
+    content: "P";
+}
+
+.pi-location-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-location-check:before {
+    content: "\E14D";
+}
+
+.pi-location-check:before {
+    content: "\E283";
+}
+
+.pi-location-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-location:before,
+.menu-item-active > a.menu-item-anchor .iconLocation:before,
+.menu-item-active > a.menu-item-anchor .iconLocation_on:before,
+.menu-item-active > a.menu-item-anchor .iconLocation_disabled:before {
+    content: "\E14C";
+}
+
+.pi-location:before,
+.iconLocation:before,
+.iconLocation_on:before,
+.iconLocation_disabled:before {
+    content: "\E284";
+}
+
+.pi-locations-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-locations:before {
+    content: "\E225";
+}
+
+.pi-locations:before {
+    content: "\E12B";
+}
+
+.pi-lock-closed-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-lock-closed:before,
+.pih-badge-icon-lock:after {
+    content: "\E23C";
+}
+
+.pi-lock-closed:before {
+    content: "\E04C";
+}
+
+.pi-lock-open-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-lock-open:before,
+.pih-badge-icon-unlock:after {
+    content: "\E241";
+}
+
+.pi-lock-open:before {
+    content: "\e063";
+}
+
+.pi-magnet-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-magnet:before {
+    content: "\E25A";
+}
+
+.pi-magnet:before,
+.psa-affinity:before {
+    content: "\E09E";
+}
+
+.pi-mail-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mail-check:before {
+    content: "\E26B";
+}
+
+.pi-mail-check:before,
+.nbam-pi-seed:before {
+    content: "\E0AE";
+}
+
+.pi-mail-plus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mail-plus:before {
+    content: "\E26A";
+}
+
+.pi-mail-plus:before,
+.psa-sync-email:before {
+    content: "\E0AD";
+}
+
+.pi-mail-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mail:before {
+    content: "\E26C";
+}
+
+.pi-mail:before,
+.nbam-pi-ch-email:before,
+.pcrm-email:before,
+.pcrm-EmailReceived:before {
+    content: "\E0AF";
+}
+
+.pi-mailbox-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mailbox:before {
+    content: "\E270";
+}
+
+.pi-mailbox:before {
+    content: "\E0B8";
+}
+
+.pi-map-sigma-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-map-sigma:before {
+    content: "\E21B";
+}
+
+.pi-map-sigma:before,
+.psa-engagement-summary:before {
+    content: "`";
+}
+
+.pi-map-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-map:before {
+    content: "\E14A";
+}
+
+.pi-map:before,
+.psa-engagement-map:before,
+.psa-ae-activity-map:before,
+.pcs-map:before {
+    content: "\E12A";
+}
+
+.pi-material-finger:before {
+    content: "\E204";
+}
+
+.pi-medal:before,
+.pcs-prize:before {
+    content: "$";
+}
+
+.pi-megaphone-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-megaphone:before {
+    content: "\E1C2";
+}
+
+.pi-megaphone:before,
+.nbam-pi-campaigns-filled:before,
+.psa-campaign:before,
+.nbam-pi-campaigns:before {
+    content: "\E0A6";
+}
+
+.pi-mic-off-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mic-off:before,
+.pih-badge-icon-mic-off:after {
+    content: "\E23D";
+}
+
+.pi-mic-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mic:before,
+.pih-badge-icon-mic:after {
+    content: "\E23E";
+}
+
+.pi-mic-off:before,
+.pcti-mic-off:before {
+    content: "\E04F";
+}
+
+.pi-mic:before,
+.pcti-mic-on-1:before {
+    content: "\E050";
+}
+
+.pi-minus:before,
+.pi-minus-box:before,
+.iconCollapseAll:before,
+.iconCollapseAll_on:before,
+.iconCollapseAll_disabled:before,
+.pi-circle-minus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-circle-minus:before,
+.menu-item-active > a.menu-item-anchor .pi-minus-circle:before,
+.pi-circle-minus:before,
+.pi-minus-circle:before,
+.pcti-minus:before {
+    content: "\E052";
+}
+
+.pi-mobile-phone-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-mobile-phone:before {
+    content: "\E259";
+}
+
+.pi-mobile-phone:before,
+.psa-mobile:before,
+.pcs-mobile:before,
+.pcti-mobile:before,
+.pcrm-mobile:before {
+    content: "\E092";
+}
+
+.pi-money-send-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-money-send:before {
+    content: "\E245";
+}
+
+.pi-money-send:before {
+    content: "\E110";
+}
+
+.pi-money-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-money:before {
+    content: "\E191";
+}
+
+.pi-money:before,
+.nbam-pi-paid:before {
+    content: "\E108";
+}
+
+.pi-monkey-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-monkey:before {
+    content: "\E285";
+}
+
+.pi-monkey:before {
+    content: "\E207";
+}
+
+.pi-moon-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-moon:before {
+    content: "\E1B6";
+}
+
+.pi-moon:before {
+    content: "\E02F";
+}
+
+.pi-more:before,
+.pi-more-solid:before,
+.pcti-more:before,
+.pi-dot-3:before,
+.pi-dot-3-solid:before,
+.pi-dot-3-horz:before,
+.nbam-pi-more:before {
+    content: "[";
+}
+
+.pi-more-hollow:before,
+.pi-dot-3-hollow:before {
+    content: "\E1E4";
+}
+
+.ios .pi-more:before,
+.pi-more-alt:before,
+.pi-dot-3-alt:before,
+.pi-dot-3-alt-solid:before,
+.pcti-dots-vertical:before {
+    content: "\E1E5";
+}
+
+.pi-more-alt-hollow:before,
+.pi-dot-3-alt-hollow:before {
+    content: "l";
+}
+
+.pi-move-up:before,
+.pi-move-up-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-move-up:before {
+    content: "\E036";
+}
+
+.pi-arrow-right-level:before,
+.pi-move-right:before,
+.pi-move-right-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-move-right:before {
+    content: "\e035";
+}
+
+.pi-arrow-left-level:before,
+.pi-move-left:before,
+.pi-move-left-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-move-left:before {
+    content: "\e034";
+}
+
+.pi-arrow-down-level:before,
+.pi-download:before,
+.pi-move-down:before,
+.pi-move-down-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-move-down:before {
+    content: "8";
+}
+
+.pi-moving:before,
+.pcs-ssaicon25:before {
+    content: "&";
+}
+
+.pi-multi-device-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-multi-device:before {
+    content: "\E253";
+}
+
+.pi-multi-device:before {
+    content: "\E096";
+}
+
+.pi-music-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-music:before {
+    content: "\E266";
+}
+
+.pi-music:before {
+    content: "\E0EE";
+}
+
+.pi-navigation-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-navigation:before {
+    content: "\E149";
+}
+
+.pi-navigation:before {
+    content: "\E12C";
+}
+
+.pi-node-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-node:before {
+    content: "\E157";
+}
+
+.pi-node:before {
+    content: "\E089";
+}
+
+.pi-nodes-down-solid:before,
+.nbam-pi-hierarchy-filled:before,
+.nbam-pi-strategy-filled:before,
+.menu-item-active > a.menu-item-anchor .pi-nodes-down:before {
+    content: "\E18C";
+}
+
+.pi-nodes-down:before,
+.nbam-pi-hierarchy:before,
+.nbam-pi-strategy:before{
+    content: "\E0C2";
+}
+
+.pi-nodes-up-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-nodes-up:before {
+    content: "\E1D5";
+}
+
+.pi-nodes-up:before {
+    content: "\E1D4";
+}
+
+.pi-nodes-right-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-nodes-right:before {
+    content: "\E1D3";
+}
+
+.pi-nodes-right:before {
+    content: "\E1D2";
+}
+
+.pi-nodes-left-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-nodes-left:before {
+    content: "\E1D9";
+}
+
+.pi-nodes-left:before {
+    content: "\E1D8";
+}
+
+.pi-notepad-empty-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-notepad-empty:before {
+    content: "\E16A";
+}
+
+.pi-notepad-empty:before {
+    content: "\E0A5";
+}
+
+.pi-notepad-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-notepad:before {
+    content: "\E238";
+}
+
+.pi-notepad:before {
+    content: "\E0A4";
+}
+
+.pi-notes-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-notes:before {
+    content: "\e16b";
+}
+
+.pi-notes:before,
+.psa-close-plan-update:before {
+    content: "\E103";
+}
+
+.pi-open:before {
+    content: "\E053";
+}
+
+.pi-opportunity-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-opportunity:before {
+    content: ".";
+}
+
+.pi-opportunity:before,
+.nbam-pi-funnel:before,
+.psa-opportunity:before,
+.pcrm-opportunity:before,
+.pcrm-OpportunityWon:before,
+.pcrm-OpportunityLost:before {
+    content: ":";
+}
+
+.pi-or-delete:before {
+    content: "Q";
+}
+
+.pi-os-android:before {
+    content: "\E28C";
+}
+
+.pi-os-apple:before {
+    content: "\E28D";
+}
+
+.pi-os-windows:before {
+    content: "\E28F";
+}
+
+.pi-package-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-package:before,
+.pi-archive-solid:before,
+.nbam-pi-st-archived-filled:before {
+    content: "\E199";
+}
+
+.pi-package:before,
+.pi-archive:before,
+.menu-item-active > a.menu-item-anchor .pi-archive:before,
+.nbam-pi-st-archived:before {
+    content: "\E0D5";
+}
+
+.pi-paper-clip:before,
+.iconAttachment:before,
+.iconAttachment_on:before,
+.iconAttachment_disabled:before {
+    content: "\E0FA";
+}
+
+.pi-passbook-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-passbook:before {
+    content: "\E21C";
+}
+
+.pi-passbook:before,
+.nbam-pi-ch-passbook:before {
+    content: ">";
+}
+
+.pi-pause-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-pause:before,
+.pih-badge-icon-pause:after,
+.pcs-pause:before,
+.pcti-pause:before {
+    content: "\E1BB";
+}
+
+.pi-pause:before {
+    content: "\E0EB";
+}
+
+.pi-paypal:before,
+.pcs-paypal:before {
+    content: "\E290";
+}
+
+.pi-pega:before,
+.pi-pega-express:before,
+.psa-pega-express:before {
+    content: "@";
+}
+
+.pi-pen-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-pen:before {
+    content: "\e21d";
+}
+
+.pi-pen:before,
+.pcs-pen:before {
+    content: "]";
+}
+
+.pi-pencil-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-pencil:before,
+.menu-item-active > a.menu-item-anchor .pi-pencil-edit:before,
+.menu-item-active > a.menu-item-anchor .pi-pencil-with-line:before {
+    content: "\e1ad";
+}
+
+.pi-pencil:before,
+.pi-pencil-edit:before,
+.pi-pencil-with-line:before,
+.nbam-pi-creative:before,
+.nbam-pi-creative-filled:before,
+.nbam-pi-st-indesign:before,
+.nbam-pi-st-indesign-filled:before,
+.psa-forms:before {
+    content: "\e073";
+}
+
+.pi-person-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-person:before {
+    content: "\e19d";
+}
+
+.pi-person:before,
+.nbam-pi-nps-people:before {
+    content: "\e120";
+}
+
+.pi-phone-call-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-call:before,
+.pcs-call-inprogress:before,
+.pcti-call-inprogress:before {
+    content: "\E1CA";
+}
+
+.pi-phone-call:before {
+    content: "\E0B4";
+}
+
+.pi-phone-disabled-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-disabled:before {
+    content: "\E26F";
+}
+
+.pi-phone-disabled:before {
+    content: "\E0B5";
+}
+
+.pi-phone-in-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-in:before,
+.pcs-phone-in:before,
+.pcrm-phone-in:before {
+    content: "\E26E";
+}
+
+.pi-phone-in:before {
+    content: "\E0B1";
+}
+
+.pi-phone-list-solid:before {
+    content: "\E135";
+}
+
+.pi-phone-list:before,
+.pcti-phone-list:before,
+.pcti-phone-queue-list:before {
+    content: "\E136";
+}
+
+.pi-phone-out-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-out:before,
+.pcs-phone-out:before,
+.pcrm-phone-out:before {
+    content: "\E1C9";
+}
+
+.pi-phone-out:before {
+    content: "\E0B6";
+}
+
+.pi-phone-pause-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-pause:before {
+    content: "\E271";
+}
+
+.pi-phone-pause:before {
+    content: "\E0B2";
+}
+
+.pi-phone-split-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-split:before {
+    content: "\E1CB";
+}
+
+.pi-phone-split:before {
+    content: "\E0B3";
+}
+
+.pi-phone-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-phone:before,
+.pcs-phone:before,
+.pih-badge-icon-call:after,
+.pcrm-phone:before {
+    content: "\E1C4";
+}
+
+.pi-phone-hangup-solid:before,
+.pcti-phone-hang-up:before,
+.menu-item-active > a.menu-item-anchor .pi-phone-hangup:before,
+.pcs-hangup:before {
+    content: "\e1e9";
+}
+
+.pi-phone:before,
+.pcti-phone:before {
+    content: "\E0A7";
+}
+
+.pi-phone-hangup:before,
+.pcti-hangup:before {
+    content: "\E1E8";
+}
+
+.pi-picture-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-picture:before,
+.menu-item-active > a.menu-item-anchor .pi-image:before,
+.menu-item-active > a.menu-item-anchor .iconBlank:before,
+.menu-item-active > a.menu-item-anchor .iconBlank_on:before,
+.menu-item-active > a.menu-item-anchor .iconBlank_disabled:before {
+    content: "\E236";
+}
+
+.pi-picture:before,
+.pi-image:before,
+.iconBlank:before,
+.iconBlank_on:before,
+.iconBlank_disabled:before,
+.nbam-pi-image:before,
+.pcs-picture:before {
+    content: "\E07F";
+}
+
+.pi-piggybank-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-piggybank:before {
+    content: "\E244";
+}
+
+.pi-piggybank:before {
+    content: "\E10F";
+}
+
+.pi-pin-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-pin:before {
+    content: "\E21E";
+}
+
+.pi-pin:before,
+.psa-task:before,
+.pcrm-task:before,
+.pcrm-TaskCreation:before {
+    content: "\E00E";
+}
+
+.pi-pipeline-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-pipeline:before {
+    content: "\E012";
+}
+
+.pi-pipeline:before,
+.psa-pipeline:before {
+    content: "\E010";
+}
+
+.pi-plane-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-plane:before {
+    content: "\E146";
+}
+
+.pi-plane:before {
+    content: "\E126";
+}
+
+.pi-plant-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-plant:before {
+    content: "\E189";
+}
+
+.pi-plant:before {
+    content: "\E0BD";
+}
+
+.pi-play-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-play:before,
+.pcs-play:before,
+.pcti-play:before {
+    content: "\E1BC";
+}
+
+.pi-triangle-solid:before {
+    content: "B";
+}
+
+.pi-play:before {
+    content: "\E0EC";
+}
+
+.menu-item-active > a.menu-item-anchor .pi-triangle:before,
+.pi-triangle:before {
+    content: "\E081";
+}
+
+.pi-triangle-mixed-left:before {
+    content: "\E0E5";
+}
+
+.pi-triangle-mixed-right:before {
+    content: "\E16C";
+}
+
+.pi-playbook-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-playbook:before {
+    content: "\E18B";
+}
+
+.pi-playbook:before {
+    content: "\E0C1";
+}
+
+.pi-plug-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-plug:before,
+.menu-item-active > a.menu-item-anchor .pi-plug-connected:before,
+.menu-item-active > a.menu-item-anchor .pi-plug-disconnected:before,
+.menu-item-active > a.menu-item-anchor .pi-connector:before,
+.menu-item-active > a.menu-item-anchor .pi-plug-connect-icon-top-fill:before,
+.menu-item-active > a.menu-item-anchor .pi-plug-connect-icon-bottom-fill:before {
+    content: "\E14E";
+}
+
+.pi-plug:before,
+.pi-plug-connected:before,
+.pi-plug-disconnected:before,
+.pi-connector:before,
+.pi-plug-connect-icon-top-fill:before,
+.pi-plug-connect-icon-bottom-fill:before {
+    content: "\E12E";
+}
+
+.pi-plus-between-left-column:before {
+    content: "\E014";
+}
+
+.pi-plus-between-right-column:before {
+    content: "\E1E3";
+}
+
+.pi-plus-line-above-below:before,
+.iconInsertRow:before,
+.iconInsertRow_on:before,
+.iconInsertRow_disabled:before {
+    content: "\E000";
+}
+
+.pi-plus-line-above:before {
+    content: "~";
+}
+
+.pi-plus-line-below:before {
+    content: "\E1E0";
+}
+
+.pi-plus-line-left:before {
+    content: "\E1E1";
+}
+
+.pi-plus-line-right:before {
+    content: "\E002";
+}
+
+.pi-plus:before,
+.pi-plus-box:before,
+.iconAppendRow:before,
+.iconAppendRow_on:before,
+.iconAppendRow_disabled:before,
+.iconExpandAll:before,
+.iconExpandAll_on:before,
+.iconExpandAll_disabled:before,
+.pi-circle-plus-solid:before,
+.pi-circle-close-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-circle-plus:before,
+.menu-item-active > a.menu-item-anchor .pi-plus-circle:before,
+.menu-item-active > a.menu-item-anchor .pi-circle-close:before,
+.menu-item-active > a.menu-item-anchor .iconInsert:before,
+.menu-item-active > a.menu-item-anchor .iconInsert_on:before,
+.menu-item-active > a.menu-item-anchor .iconInsert_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconAppend:before,
+.menu-item-active > a.menu-item-anchor .iconAppend_on:before,
+.menu-item-active > a.menu-item-anchor .iconAppend_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconNewItem:before,
+.menu-item-active > a.menu-item-anchor .iconNewItem_on:before,
+.menu-item-active > a.menu-item-anchor .iconNewItem_disabled:before,
+.pi-circle-plus:before,
+.pi-plus-circle:before,
+.iconInsert:before,
+.iconInsert_on:before,
+.iconInsert_disabled:before,
+.iconAppend:before,
+.iconAppend_on:before,
+.iconAppend_disabled:before,
+.iconNewItem:before,
+.iconNewItem_on:before,
+.iconNewItem_disabled:before {
+    content: "\e055";
+}
+
+.pi-podium-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-podium:before {
+    content: "\E190";
+}
+
+.pi-podium:before {
+    content: "\E0C4";
+}
+
+.pi-polaris-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-polaris:before,
+.pcs-polaris:before {
+    content: "\\";
+}
+
+.pi-polaris:before {
+    content: "}";
+}
+
+.pi-pong-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-pong:before {
+    content: "\E1B7";
+}
+
+.pi-pong:before {
+    content: "\E0C9";
+}
+
+.pi-potion-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-potion:before {
+    content: "\E27F";
+}
+
+.pi-potion:before {
+    content: "\E07B";
+}
+
+.pi-power:before {
+    content: "\E056";
+}
+
+.pi-print-solid:before,
+.pi-printer-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-print:before,
+.menu-item-active > a.menu-item-anchor .pi-printer:before,
+.menu-item-active > a.menu-item-anchor .iconPrint:before,
+.menu-item-active > a.menu-item-anchor .iconPrint_on:before,
+.menu-item-active > a.menu-item-anchor .iconPrint_disabled:before {
+    content: "\E240";
+}
+
+.pi-print:before,
+.pi-printer:before,
+.iconPrint:before,
+.iconPrint_on:before,
+.iconPrint_disabled:before {
+    content: "\E05C";
+}
+
+.pi-processor-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-processor:before,
+.nbam-pi-ai-filled:before {
+    content: "\E003";
+}
+
+.pi-processor:before,
+.nbam-pi-ai:before {
+    content: "\E001";
+}
+
+.pi-progress:before {
+    content: "\e993";
+}
+
+.pi-progress-solid:before {
+    content: "\e29e";
+}
+
+.pi-puzzle-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-puzzle:before,
+.nbam-pi-build-filled:before {
+    content: "\e007";
+}
+
+.pi-puzzle:before,
+.nbam-pi-build:before {
+    content: "\e005";
+}
+
+.pi-qr:before {
+    content: "R";
+}
+
+.pi-quill:before {
+    content: "S";
+}
+
+.pi-rabbit:before {
+    content: "\E132";
+}
+
+.pi-radio-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-radio:before {
+    content: "\E263";
+}
+
+.pi-radio:before {
+    content: "\E0E7";
+}
+
+.pi-rain-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-rain:before {
+    content: "\e215";
+}
+
+.pi-rain:before {
+    content: "\e02e";
+}
+
+.pi-receipt-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-receipt:before,
+.menu-item-active > a.menu-item-anchor .pi-reciept:before {
+    content: "\E229";
+}
+
+.pi-receipt:before,
+.pi-reciept:before,
+.pcs-ssaicon38:before {
+    content: "\E10D";
+}
+
+.pi-forward-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-forward:before,
+.menu-item-active > a.menu-item-anchor .iconReopen:before,
+.menu-item-active > a.menu-item-anchor .iconReopen_on:before,
+.menu-item-active > a.menu-item-anchor .iconReopen_disabled:before {
+    content: "\E17F";
+}
+
+.pi-reply-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-reply:before {
+    content: "\E1EC";
+}
+
+.pi-forward:before,
+.iconReopen:before,
+.iconReopen_on:before,
+.iconReopen_disabled:before {
+    content: "\E059";
+}
+
+.pi-reply:before {
+    content: "\E1EA";
+}
+
+.pi-forward-all-solid:before {
+    content: "\E17E";
+}
+
+.pi-forward-all:before {
+    content: "\E05A";
+}
+
+.pi-reply-all-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-reply-all:before {
+    content: "\E1ED";
+}
+
+.pi-reply-all:before {
+    content: "\E1EB";
+}
+
+.pi-required:before,
+.pi-spinner:before,
+.pih-badge-icon-wait:after {
+    content: "\E06F";
+}
+
+.pi-reset:before,
+.pi-revert:before,
+.pi-refresh:before,
+.iconRefresh:before,
+.iconRefresh_on:before,
+.iconRefresh_disabled:before {
+    content: "\e05b";
+}
+
+.pi-redo:before,
+.pi-arrow-bend-right:before,
+.nbam-pi-event:before,
+.nbam-pi-ch-realtime:before {
+    content: "\e13a";
+}
+
+.pi-undo:before,
+.iconUndelete:before,
+.iconUndelete_on:before,
+.iconUndelete_disabled:before,
+.pi-arrow-bend-left:before {
+    content: "\e0e2";
+}
+
+.pi-return:before,
+.nbam-pi-enter:before {
+    content: "L";
+}
+
+.pi-robot-happy:before {
+    content: "\e08e";
+}
+
+.pi-robot-happy-solid:before {
+    content: "\e1a7";
+}
+
+.pi-robot:before {
+    content: "\e29f";
+}
+
+.pi-robot-sad:before {
+    content: "\e227";
+}
+
+.pi-robot-sad-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-robot-sad:before {
+    content: "\e228";
+}
+
+.pi-robot-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-robot:before {
+    content: "\e2a0";
+}
+
+.pi-rocket-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-rocket:before,
+.menu-item-active > a.menu-item-anchor .iconDefault:before,
+.menu-item-active > a.menu-item-anchor .iconDefault_on:before,
+.menu-item-active > a.menu-item-anchor .iconDefault_disabled:before {
+    content: "\E1A6";
+}
+
+.pi-rocket:before,
+.iconDefault:before,
+.iconDefault_on:before,
+.iconDefault_disabled:before {
+    content: "\E08D";
+}
+
+.pi-roller-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-roller:before {
+    content: "\E224";
+}
+
+.pi-roller:before {
+    content: "\E00B";
+}
+
+.pi-route-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-route:before {
+    content: "\E14F";
+}
+
+.pi-route:before,
+.nbam-pi-no-run:before {
+    content: "\E12F";
+}
+
+.pi-column-delete:before,
+.pi-arrows-ne-sw-join:before {
+    content: "\E0E6";
+}
+
+.pi-row-delete:before {
+    content: "\E03E";
+}
+
+.pi-row-insert:before {
+    content: "\E046";
+}
+
+.pi-column-insert:before,
+.pi-arrows-ne-sw-separate:before {
+    content: "\E200";
+}
+
+.pi-column-top-fill:before {
+    content:"u";
+}
+
+.pi-row-right-fill:before {
+    content: "\E004";
+}
+
+.pi-row-left-fill:before {
+    content: "\E1f6";
+}
+
+.pi-row-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-row:before,
+.menu-item-active > a.menu-item-anchor .pi-row-hollow:before {
+    content: "\E00F";
+}
+
+.pi-row:before,
+.pi-row-hollow:before,
+.nbam-pi-view-list:before {
+    content: "\E00D";
+}
+
+.pi-scale-down:before,
+.pi-arrow-shrink:before,
+.nbam-pi-fullset-build-4-nbam-inbound:before {
+    content: "\e045";
+}
+
+.pi-scale-up-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-scale-up:before {
+    content: "\E178";
+}
+
+.pi-scale-up:before {
+    content: "\E048";
+}
+
+.pi-school-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-school:before {
+    content: "\E27A";
+}
+
+.pi-school:before {
+    content: "\E119";
+}
+
+.pi-scissors:before {
+    content: "D";
+}
+
+.pi-script-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-script:before {
+    content: "\E24E";
+}
+
+.pi-script:before {
+    content: "\E072";
+}
+
+.pi-search-2:before,
+.pi-search:before,
+.nbam-pi-search:before {
+    content: "\e061";
+}
+
+.pi-search-analytics-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-search-analytics:before,
+.nbam-pi-sim-test-filled:before {
+    content: "\E013";
+}
+
+.nbam-pi-sim-test:before,
+.pi-search-analytics:before {
+    content: "\E011";
+}
+
+.pi-search-case:before,
+.pcs-research-case:before {
+    content: "\E015";
+}
+
+.pi-search-fill:before,
+.pi-search-solid:before {
+    content: "\E017";
+}
+
+.pi-search-org:before,
+.pcs-research-org:before {
+    content: "\E016";
+}
+
+.pi-search-table:before {
+    content: "\E019";
+}
+
+.pi-send-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-send:before {
+    content: "\E1CC";
+}
+
+.pi-send:before {
+    content: "\E0B9";
+}
+
+.pi-server-cloud-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-server-cloud:before {
+    content: "\E252";
+}
+
+.pi-server-cloud:before {
+    content: "\E097";
+}
+
+.pi-server-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-server:before {
+    content: "\E258";
+}
+
+.pi-server:before {
+    content: "\E09C";
+}
+
+.pi-sextant:before {
+    content: "\E083";
+}
+
+.pi-share-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-share-this:before,
+.menu-item-active > a.menu-item-anchor .pi-share:before,
+.menu-item-active > a.menu-item-anchor .iconRelationship:before,
+.menu-item-active > a.menu-item-anchor .iconRelationship_on:before,
+.menu-item-active > a.menu-item-anchor .iconRelationship_disabled:before {
+    content: "\E288";
+}
+
+.pi-share-point-up-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-share-point-up:before {
+    content: "\e206";
+}
+
+.pi-share-this:before,
+.pi-share:before,
+.iconRelationship:before,
+.iconRelationship_on:before,
+.iconRelationship_disabled:before {
+    content: "\E01B";
+}
+
+.pi-share-point-up:before {
+    content: "\e2a2";
+}
+
+.pi-shield-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-shield:before {
+    content: "\E25E";
+}
+
+.pi-shield:before {
+    content: "\E0A1";
+}
+
+.pi-shoe-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-shoe:before {
+    content: "\E297";
+}
+
+.pi-shoe:before {
+    content: "\E0CC";
+}
+
+.pi-shuffle:before {
+    content: "\E0ED";
+}
+
+.pi-sigma:before {
+    content: "\E01D";
+}
+
+.pi-signpost-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-signpost:before {
+    content: "\E1FB";
+}
+
+.pi-signpost:before {
+    content: "\E129";
+}
+
+.pi-slideshow-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-slideshow:before,
+.nbam-pi-graph-solid:before {
+    content: "\E193";
+}
+
+.pi-slideshow:before,
+.nbam-pi-issues:before,
+.nbam-pi-vbd:before,
+.pi-document-ppt:before {
+    content: "\E10E";
+}
+
+.pi-snail:before {
+    content: "\E133";
+}
+
+.pi-snow:before {
+    content: "\E02A";
+}
+
+.pi-social-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-social:before {
+    content: "\E2CC";
+}
+
+.pi-social:before,
+.pcs-social2:before,
+.pcs-social:before,
+.pcrm-social:before {
+    content: "\E023";
+}
+
+.pi-sort:before,
+.pi-arrow-up-down:before {
+    content: "\E1FC";
+}
+
+.pi-arrow-left-right:before,
+.nbam-pi-distribution:before,
+.pcs-ssaicon45:before,
+.pi-transfer:before {
+    content: "\E0E0";
+}
+
+.pi-speaker:before {
+    content: "\e0ef";
+}
+
+.pi-speaker-off:before,
+.pcti-speaker-off:before,
+.pi-speaker-mute:before {
+    content: "\e281";
+}
+
+.pi-speaker-on:before,
+.pcti-speaker-on:before {
+    content: "\E0f2";
+}
+
+.pi-speaker-mute-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-speaker-mute:before,
+.pi-speaker-off-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-speaker-off:before {
+    content: "\e1bd";
+}
+
+.pi-speaker-on-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-speaker-on:before {
+    content: "\E1bf";
+}
+
+.pi-speaker-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-speaker:before {
+    content: "\e1c0";
+}
+
+.pi-spellcheck:before,
+.iconSpellChecker:before,
+.iconSpellChecker_on:before,
+.iconSpellChecker_disabled:before,
+.iconSpellChecking:before,
+.iconSpellChecking_on:before,
+.iconSpellChecking_disabled:before {
+    content: "C";
+}
+
+.pi-square-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-square:before,
+.menu-item-active > a.menu-item-anchor .pi-square-rot45:before {
+    content: "\e1be";
+}
+
+.pi-square:before,
+.pi-square-rot45:before,
+.nbam-pi-no-test:before,
+.nbam-pi-decisions:before,
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a[tabtitle="Decisions"]:before {
+    content: "\e0f1";
+}
+
+.pi-star-mixed:before {
+    content: "\E21F";
+}
+
+.pi-star-filled:before,
+.pi-star-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-star:before,
+.menu-item-active > a.menu-item-anchor .pi-star-1:before,
+.menu-item-active > a.menu-item-anchor .pi-star-2:before,
+.menu-item-active > a.menu-item-anchor [tabtitle="Favorite"]:before,
+.psa-followed:before,
+.pcs-star-filled:before {
+    content: "\E180";
+}
+
+.pi-star:before,
+.pi-star-1:before,
+.pi-star-2:before,
+[tabtitle="Favorite"]:before,
+.pcs-star:before {
+    content: "\E062";
+}
+
+.pi-steps-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-steps:before {
+    content: "\E147";
+}
+
+.pi-steps:before {
+    content: "\E128";
+}
+
+.pi-stethoscope-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-stethoscope:before {
+    content: "\E27E";
+}
+
+.pi-stethoscope:before,
+.pcs-physician:before,
+.pcrm-physician:before {
+    content: "\E07C";
+}
+
+.pi-stoplight-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-stoplight:before {
+    content: "\E226";
+}
+
+.pi-stoplight:before {
+    content: "\E130";
+}
+
+.pi-stopwatch-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-stopwatch:before {
+    content: "\E296";
+}
+
+.pi-stopwatch:before {
+    content: "\E0F8";
+}
+
+.pi-store-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-store-1:before,
+.menu-item-active > a.menu-item-anchor .pi-store:before {
+    content: "\E198";
+}
+
+.pi-store-1:before,
+.pi-store:before,
+.pcti-store:before {
+    content: "\E0D3";
+}
+
+.pi-sun-solid:before,
+.pi-black-hole-sun:before,
+.menu-item-active > a.menu-item-anchor .pi-sun:before {
+    content: "\E235";
+}
+
+.pi-sun:before {
+    content: "\E02D";
+}
+
+.pi-swipe-right-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-swipe-right:before {
+    content: "\E22A";
+}
+
+.pi-swipe-left-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-swipe-left:before {
+    content: "\E024";
+}
+
+.pi-swipe-right:before {
+    content: "\E1DB";
+}
+
+.pi-swipe-left:before {
+    content: "O";
+}
+
+.pi-tablet-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tablet:before {
+    content: "\E220";
+}
+
+.pi-tablet:before {
+    content: "A";
+}
+
+.pi-tag-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tag-check:before,
+.menu-item-active > a.menu-item-anchor .pi-tag-success:before {
+    content: "\e248";
+}
+
+.pi-tag-check:before,
+.pi-tag-success:before {
+    content: "\e0d7";
+}
+
+.pi-tag-close-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tag-close:before,
+.menu-item-active > a.menu-item-anchor .pi-tag-delete:before {
+    content: "\e247";
+}
+
+.pi-tag-close:before,
+.pi-tag-delete:before {
+    content: "\e0d6";
+}
+
+.pi-tag-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tag:before,
+.nbam-pi-offer-solid:before {
+    content: "\E19A";
+}
+
+.pi-tag:before,
+.nbam-pi-offer-filled:before,
+.nbam-pi-offer:before,
+.psa-offers:before,
+.pcrm-offer:before,
+#sidebar-region-one #PEGA_TABBED0 .tab-ul li > a[tabtitle="Offers"]:before {
+    content: "\E0D8";
+}
+
+.pi-target-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-target:before,
+.menu-item-active > a.menu-item-anchor .iconLookup:before,
+.menu-item-active > a.menu-item-anchor .iconLookup_on:before,
+.menu-item-active > a.menu-item-anchor .iconLookup_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconOpenRule:before,
+.menu-item-active > a.menu-item-anchor .iconOpenRule_on:before,
+.menu-item-active > a.menu-item-anchor .iconOpenRule_disabled:before,
+.menu-item-active > a.menu-item-anchor th.cellCont .iconOpenRule:before,
+.menu-item-active > a.menu-item-anchor th.cellCont .iconOpenRule_on:before,
+.menu-item-active > a.menu-item-anchor th.cellCont .iconOpenRule_disabled:before,
+.menu-item-active > a.menu-item-anchor tr.cellCont td.gridCell .iconOpenRule:before,
+.menu-item-active > a.menu-item-anchor tr.cellCont td.gridCell .iconOpenRule_on:before,
+.menu-item-active > a.menu-item-anchor tr.cellCont td.gridCell .iconOpenRule_disabled:before {
+    content: "\E14B";
+}
+
+.pi-target:before,
+.iconLookup:before,
+.iconLookup_on:before,
+.iconLookup_disabled:before,
+.iconOpenRule:before,
+.iconOpenRule_on:before,
+.iconOpenRule_disabled:before,
+th.cellCont .iconOpenRule:before,
+th.cellCont .iconOpenRule_on:before,
+th.cellCont .iconOpenRule_disabled:before,
+tr.cellCont td.gridCell .iconOpenRule:before,
+tr.cellCont td.gridCell .iconOpenRule_on:before,
+tr.cellCont td.gridCell .iconOpenRule_disabled:before {
+    content: "\E1F5";
+}
+
+.pi-temp-solid:before,
+.pi-temperature-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-temp:before,
+.menu-item-active > a.menu-item-anchor .pi-temperature:before {
+    content: "\E261";
+}
+
+.pi-temp:before,
+.pi-temperature:before {
+    content: "\E031";
+}
+
+.pi-thumbs-down-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-thumbs-down:before,
+.pcs-dislike-full:before {
+    content: "\E17B";
+}
+
+.pi-thumbs-up-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-thumbs-up:before,
+.menu-item-active > a.menu-item-anchor .iconShowHarness:before,
+.menu-item-active > a.menu-item-anchor .iconShowHarness_on:before,
+.menu-item-active > a.menu-item-anchor .iconShowHarness_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconLocalAction:before,
+.menu-item-active > a.menu-item-anchor .iconLocalAction_on:before,
+.menu-item-active > a.menu-item-anchor .iconLocalAction_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconFinishAssignment:before,
+.menu-item-active > a.menu-item-anchor .iconFinishAssignment_on:before,
+.menu-item-active > a.menu-item-anchor .iconFinishAssignment_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconEnableActionSection:before,
+.menu-item-active > a.menu-item-anchor .iconEnableActionSection_on:before,
+.menu-item-active > a.menu-item-anchor .iconEnableActionSection_disabled:before,
+.menu-item-active > a.menu-item-anchor .iconAddNewWork:before,
+.menu-item-active > a.menu-item-anchor .iconAddNewWork_on:before,
+.menu-item-active > a.menu-item-anchor .iconAddNewWork_disabled:before,
+.pcs-fb-like-full:before {
+    content: "\E179";
+}
+
+.pi-thumbs-up:before,
+.iconShowHarness:before,
+.iconShowHarness_on:before,
+.iconShowHarness_disabled:before,
+.iconLocalAction:before,
+.iconLocalAction_on:before,
+.iconLocalAction_disabled:before,
+.iconFinishAssignment:before,
+.iconFinishAssignment_on:before,
+.iconFinishAssignment_disabled:before,
+.iconEnableActionSection:before,
+.iconEnableActionSection_on:before,
+.iconEnableActionSection_disabled:before,
+.iconAddNewWork:before,
+.iconAddNewWork_on:before,
+.iconAddNewWork_disabled:before,
+.pcs-fb-like-line:before {
+    content: "\E04B";
+}
+
+.pi-thumbs-down:before,
+.pcs-dislike-line:before {
+    content: "\E186";
+}
+
+.pi-todo-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-todo:before {
+    content: "\E188";
+}
+
+.pi-todo:before,
+.psa-my-work:before {
+    content: "\E0BE";
+}
+
+.pi-tracer-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tracer:before,
+.menu-item-active > a.menu-item-anchor .pi-tracer-icon:before {
+    content: "\E221";
+}
+
+.pi-tracer:before,
+.pi-tracer-icon:before {
+    content: "T";
+}
+
+.pi-trash-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-trash:before,
+.menu-item-active > a.menu-item-anchor .iconDelete:before,
+.menu-item-active > a.menu-item-anchor .iconDelete_on:before,
+.menu-item-active > a.menu-item-anchor .iconDelete_disabled:before {
+    content: "\E184";
+}
+
+.pi-trash:before,
+.iconDelete:before,
+.iconDelete_on:before,
+.iconDelete_disabled:before,
+.nbam-pi-st-withdrawn:before,
+.nbam-pi-st-withdrawn-filled:before {
+    content: "\E067";
+}
+
+.pi-tribox-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tribox:before {
+    content: "\E026";
+}
+
+.pi-tribox:before,
+.pi-trigon:before,
+.nbam-pi-split:before {
+    content: "\E025";
+}
+
+.pi-trophy-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-trophy:before {
+    content: "\E222";
+}
+
+.pi-trophy:before {
+    content: "\E0CB";
+}
+
+.pi-truck-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-truck:before {
+    content: "\E246";
+}
+
+.pi-truck:before,
+.pcs-track:before {
+    content: "\E0D4";
+}
+
+.pi-tv-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-tv:before {
+    content: "\E262";
+}
+
+.pi-tv:before {
+    content: "\E0C8";
+}
+
+.pi-twitter:before,
+.pcs-twitter:before,
+.pcrm-twitter:before {
+    content: "\E28B";
+}
+
+.pi-umbrella-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-umbrella:before {
+    content: "\E018";
+}
+
+.pi-umbrella:before,
+.pcs-umbrella:before,
+.pcrm-coverage:before,
+.psa-strategic-org:before {
+    content: "\E028";
+}
+
+.pi-indent:before {
+    content: "\E06E";
+}
+
+.pi-unindent:before {
+    content: "\E06D";
+}
+
+.pi-caret-solid-up-level:before,
+.pi-arrow-up-level:before,
+.pi-upload:before,
+.nbam-pi-import:before,
+.nbam-pi-import-filled:before {
+    content: "\e027";
+}
+
+.pi-user-check-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user-check:before {
+    content: "\e1a3";
+}
+
+.pi-user-check:before,
+.nbam-pi-actions:before,
+.nbam-pi-actions-filled:before,
+.nbam-pi-audience-match:before {
+    content: "\e124";
+}
+
+.pi-user-close-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user-close:before {
+    content: "\e19f";
+}
+
+.pi-user-close:before,
+.nbam-pi-audience-remove:before {
+    content: "\e122";
+}
+
+.pi-user-female-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user-female:before {
+    content: "\E249";
+}
+
+.pi-user-female:before {
+    content: "\e11a";
+}
+
+.menu-item-active > a.menu-item-anchor .pi-user-list-solid:before,
+.nbam-pi-list-segment-filled:before,
+.pi-user-list-solid:before {
+    content: "\e1a1";
+}
+
+.pi-user-list:before,
+.nbam-pi-list-segment:before,
+.psa-contact:before,
+.pcrm-contact:before,
+.pcrm-ContactCreation:before {
+    content: "\e11e";
+}
+
+.pi-user-plus-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user-plus:before {
+    content: "\e1a2";
+}
+
+.pi-user-plus:before {
+    content: "\e282";
+}
+
+.pi-user-search-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user-search:before {
+    content: "\e24a";
+}
+
+.pi-user-search:before,
+.pcs-research-contact:before {
+    content: "\e123";
+}
+
+.pi-user-star-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user-star:before {
+    content: "\e1a5";
+}
+
+.pi-user-star:before,
+.psa-partner-contact:before {
+    content: "\e11f";
+}
+
+.pi-user-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-user:before,
+.menu-item-active > a.menu-item-anchor .pi-user-2:before,
+.menu-item-active > a.menu-item-anchor .pi-user-circle:before {
+    content: "\e1a4";
+}
+
+.pi-user:before,
+.pi-user-2:before,
+.pi-user-circle:before,
+.psa-individual-prospect:before,
+.pcs-contact:before,
+.pcti-contact:before {
+    content: "\e125";
+}
+
+.pi-users-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-users:before,
+.nbam-pi-segment-filled:before,
+.pih-badge-icon-users:after {
+    content: "\E19E";
+}
+
+.pi-users:before,
+.nbam-pi-segment:before,
+.nbam-pi-audience:before,
+.psa-team:before,
+.psa-partner:before {
+    content: "\E121";
+}
+
+.pi-video-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-video:before {
+    content: "\E237";
+}
+
+.pi-video:before {
+    content: "\E080";
+}
+
+.pi-voicemail:before {
+    content: "\E0BB";
+}
+
+.pi-vr-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-vr:before {
+    content: "\E250";
+}
+
+.pi-vr:before {
+    content: "\E099";
+}
+
+.pi-wallet-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-wallet:before {
+    content: "\E19B";
+}
+
+.pi-wallet:before,
+.pcs-walet:before {
+    content: "\E0D9";
+}
+
+.pi-warn-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-warn:before,
+.menu-item-active > a.menu-item-anchor .pi-triangle-exclaim:before,
+.pi-error-filled:before,
+.pih-badge-icon-warn:after,
+.pcs-alert:before,
+.pcti-alert:before {
+    content: "\E01C";
+}
+
+.pi-warn:before,
+.pi-triangle-exclaim:before,
+.nbam-pi-warning:before,
+.nbam-pi-st-failed-filled:before,
+.nbam-pi-st-failed:before {
+    content: "\E01A";
+}
+
+.pi-wand:before {
+    content: "U";
+}
+
+.pi-watch-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-watch:before {
+    content: "\E171";
+}
+
+.pi-watch:before {
+    content: "\E0F3";
+}
+
+.pi-waypoint-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-waypoint:before {
+    content: "\E148";
+}
+
+.pi-waypoint:before,
+.psa-territory:before {
+    content: "\E12D";
+}
+
+.pi-webcam-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-webcam:before {
+    content: "\E1B0";
+}
+
+.pi-webcam:before,
+.nbam-pi-constraint:before,
+.nbam-pi-target:before {
+    content: "\E0A2";
+}
+
+.pi-whatsapp:before{
+    content: "\E2BE";
+}
+
+.pi-wifi-disable:before,
+.pi-wifi-off:before {
+    content: "\E01E";
+}
+
+.pi-wifi-no-signal:before,
+.pi-wifi-none:before {
+    content: "\E020";
+}
+
+.pi-wifi-signal:before,
+.pi-wifi:before {
+    content: "\E1C6";
+}
+
+.pi-wizard:before {
+    content: "\E369";
+}
+
+.pi-wizard-solid:before {
+    content: "\E29C";
+}
+
+.pi-wrench-solid:before,
+.menu-item-active > a.menu-item-anchor .pi-wrench:before {
+    content: "\E223";
+}
+
+.pi-wrench:before,
+.psa-tool:before {
+    content: "\E022";
+}
+
+.pi-youtube:before,
+.pcrm-youtube:before {
+    content: "\E28E";
+}
+
+.pi-zoom-check:before,
+.pi-search-check:before {
+    content: "\E060";
+}
+
+.pi-zoom-close:before,
+.pi-search-close:before {
+    content: "\E058";
+}
+
+.pi-zoom-in:before,
+.pi-search-plus:before {
+    content: "\E05F";
+}
+
+.pi-zoom-out:before,
+.pi-search-minus:before {
+    content: "\E05D";
+}
+
+
+/* 8.3.1 icons */
+
+.pi-tow-truck-solid:before {
+    content: "\e2a8";
+}
+
+.pi-tow-truck:before {
+    content: "\e2a7";
+}
+
+.pi-transform:before {
+    content: "\e008";
+}
+
+.pi-walkie-solid:before {
+    content: "\e2aa";
+}
+
+.pi-walkie:before {
+    content: "\e2a9";
+}
+
+/* 8.5 icons */
+.pi-dataviz-area:before {content: "\E2B0"}
+.pi-dataviz-bar:before {content: "\E2B1"}
+.pi-dataviz-bubble:before {content: "\E2B2"}
+.pi-dataviz-clustered-bar:before {content: "\E2B3"}
+.pi-dataviz-clustered-column:before {content: "\E2B4"}
+.pi-dataviz-combo:before {content: "\E2B5"}
+.pi-dataviz-cross-tab:before {content: "\E2B6"}
+.pi-dataviz-flip-counter:before {content: "\E2B7"}
+.pi-dataviz-geo-choropleth:before {content: "\E2B8"}
+.pi-dataviz-multiple-line:before {content: "\E2B9"}
+.pi-dataviz-pareto:before {content: "\E2BA"}
+.pi-dataviz-pivot-table:before {content: "\E2BB"}
+.pi-dataviz-scatter:before {content: "\E2BC"}
+.pi-dataviz-simple-value:before {content: "\E2BD"}
+.pi-dataviz-spark:before {content: "\E172"}
+.pi-dataviz-stacked-area:before {content: "\E153"}
+.pi-dataviz-stacked-bar:before {content: "\E152"}
+.pi-dataviz-stacked-column:before {content: "\E151"}
+.pi-dataviz-table-with-bars:before {content: "\E150"}
+.pi-dataviz-waterfall:before {content: "\E145"}
+
+/* 8.6 icons */
+.pi-dataviz-funnel:before {content: "\E2C1"}
+.pi-dataviz-funnel-solid:before {content: "\E2C2"}
+.pi-filetype-doc:before {content: "\E2C0"}
+.pi-table:before{content: "\E2BF"}
+.pi-list-number:before{content: "\E2C3"}
+
+
+/* Expand icons */
+
+.layout-outline-default > .Collapsed > .header-bar > .header-left,
+.layout-outline-default > .Expanded > .header-bar > .header-left {
+    background: transparent;
+}
+
+div[class*="layout-outline"] > .Expanded > .header-bar > * > .icon-openclose,
+div[class*="layout-outline"] > .Collapsed > .header-bar > * > .icon-openclose {
+    background: transparent;
+    background-image: none;
+    width: 28px;
+    color: RGBA(16, 19, 46, 0.66);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+div.layout-outline.layout-outline-default > .Expanded > .header-bar > * > .icon-openclose,
+div.layout-outline.layout-outline-default > .Collapsed > .header-bar > * > .icon-openclose {
+    margin: 0 0 0 7px;
+}
+
+
+/* .ICON - Icons previously via sprite. HTML needs to change obviously */
+
+.iconSave,
+.iconContents,
+.iconExplore,
+.iconAttachment,
+.iconImage,
+.iconDelete,
+.iconLookup,
+.iconInsert,
+.iconAppend,
+.iconInsertRow,
+.iconAppendRow,
+.iconAppendColumn,
+.iconExpandAll,
+.iconCollapseAll,
+.iconUpdate,
+.iconNewItem,
+.iconReopen,
+.iconLocation,
+.iconHistory,
+.iconClose,
+.iconCloseSmall,
+.iconSpellChecker,
+.iconSpellChecking,
+.iconDefault,
+.iconBlank,
+.iconCopy,
+.iconPrint,
+.iconTransfer,
+.iconOpenRule,
+.iconPDN,
+.iconUndelete,
+.iconRefresh,
+.iconNoShow,
+.iconRelationship,
+.iconCalendar,
+.iconAppendInside,
+.iconUpdate,
+.iconUpdate_disabled,
+.iconOpenRule_disabled,
+.iconDelete_disabled,
+.iconSave_on,
+.iconContents_on,
+.iconExplore_on,
+.iconAttachment_on,
+.iconImage_on,
+.iconDelete_on,
+.iconLookup_on,
+.iconCalendar_on,
+.iconInsert_on,
+.iconAppend_on,
+.iconInsertRow_on,
+.iconAppendRow_on,
+.iconAppendColumn_on,
+.iconExpandAll_on,
+.iconCollapseAll_on,
+.iconUpdate_on,
+.iconReopen_on,
+.iconLocation_on,
+.iconHistory_on,
+.iconClose_on,
+.iconCloseSmall_on,
+.iconSpellChecker_on,
+.iconSpellChecking_on,
+.iconDefault_on,
+.iconBlank_on,
+.iconCopy_on,
+.iconPrint_on,
+.iconTransfer_on,
+.iconOpenRule_on,
+.iconPDN_on,
+.iconUndelete_on,
+.iconRefresh_on,
+.iconNoShow_on,
+.iconRelationship_on,
+.iconAppendInside_on,
+.iconNewItem_on,
+.iconSave_disabled,
+.iconContents_disabled,
+.iconExplore_disabled,
+.iconAttachment_disabled,
+.iconImage_disabled,
+.iconLookup_disabled,
+.iconInsert_disabled,
+.iconAppend_disabled,
+.iconInsertRow_disabled,
+.iconAppendRow_disabled,
+.iconAppendColumn_disabled,
+.iconExpandAll_disabled,
+.iconCollapseAll_disabled,
+.iconReopen_disabled,
+.iconLocation_disabled,
+.iconHistory_disabled,
+.iconClose_disabled,
+.iconCloseSmall_disabled,
+.iconCopy_disabled,
+.iconDefault_disabled,
+.iconBlank_disabled,
+.iconSpellChecker_disabled,
+.iconSpellChecking_disabled,
+.iconPrint_disabled,
+.iconTransfer_disabled,
+.iconTools_disabled,
+.iconPDN_disabled,
+.iconUndelete_disabled,
+.iconNoShow_disabled,
+.iconRelationship_disabled,
+.iconRefresh_disabled,
+.iconNewItem_disabled,
+.iconCalendar_disabled,
+.iconAppendInside_disabled,
+.iconHelp,
+.iconHelp_on,
+.iconHelp_disabled,
+.yui-panel .container-close,
+.container-close,
+.iconReview,
+.iconReview_on,
+.iconReview_disabled,
+a.iconSave,
+a.iconInsert,
+a.iconDefault,
+a.iconBlank,
+a.iconAttachment,
+a.iconClose,
+a.iconContents,
+a.iconDelete,
+a.iconExpandAll,
+a.iconExplore,
+a.iconHistory,
+a.iconPrint,
+a.iconReopen,
+a.iconSpellChecker,
+a.iconUpdate,
+a.iconLocation {
+    background: transparent;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.iconSave:before,
+.iconContents:before,
+.iconExplore:before,
+.iconAttachment:before,
+.iconImage:before,
+.iconDelete:before,
+.iconLookup:before,
+.iconInsert:before,
+.iconAppend:before,
+.iconInsertRow:before,
+.iconAppendRow:before,
+.iconAppendColumn:before,
+.iconExpandAll:before,
+.iconCollapseAll:before,
+.iconUpdate:before,
+.iconNewItem:before,
+.iconReopen:before,
+.iconLocation:before,
+.iconHistory:before,
+.iconClose:before,
+.iconCloseSmall:before,
+.iconSpellChecker:before,
+.iconSpellChecking:before,
+.iconDefault:before,
+.iconBlank:before,
+.iconCopy:before,
+.iconPrint:before,
+.iconTransfer:before,
+.iconOpenRule:before,
+.iconPDN:before,
+.iconUndelete:before,
+.iconRefresh:before,
+.iconNoShow:before,
+.iconRelationship:before,
+.iconCalendar:before,
+.iconAppendInside:before,
+.iconUpdate:before,
+.iconUpdate_disabled:before,
+.iconOpenRule_disabled:before,
+.iconDelete_disabled:before,
+.iconSave_on:before,
+.iconContents_on:before,
+.iconExplore_on:before,
+.iconAttachment_on:before,
+.iconImage_on:before,
+.iconDelete_on:before,
+.iconLookup_on:before,
+.iconCalendar_on:before,
+.iconInsert_on:before,
+.iconAppend_on:before,
+.iconInsertRow_on:before,
+.iconAppendRow_on:before,
+.iconAppendColumn_on:before,
+.iconExpandAll_on:before,
+.iconCollapseAll_on:before,
+.iconUpdate_on:before,
+.iconReopen_on:before,
+.iconLocation_on:before,
+.iconHistory_on:before,
+.iconClose_on:before,
+.iconCloseSmall_on:before,
+.iconSpellChecker_on:before,
+.iconSpellChecking_on:before,
+.iconDefault_on:before,
+.iconBlank_on:before,
+.iconCopy_on:before,
+.iconPrint_on:before,
+.iconTransfer_on:before,
+.iconOpenRule_on:before,
+.iconPDN_on:before,
+.iconUndelete_on:before,
+.iconRefresh_on:before,
+.iconNoShow_on:before,
+.iconRelationship_on:before,
+.iconAppendInside_on:before,
+.iconNewItem_on:before,
+.iconSave_disabled:before,
+.iconContents_disabled:before,
+.iconExplore_disabled:before,
+.iconAttachment_disabled:before,
+.iconImage_disabled:before,
+.iconLookup_disabled:before,
+.iconInsert_disabled:before,
+.iconAppend_disabled:before,
+.iconInsertRow_disabled:before,
+.iconAppendRow_disabled:before,
+.iconAppendColumn_disabled:before,
+.iconExpandAll_disabled:before,
+.iconCollapseAll_disabled:before,
+.iconReopen_disabled:before,
+.iconLocation_disabled:before,
+.iconHistory_disabled:before,
+.iconClose_disabled:before,
+.iconCloseSmall_disabled:before,
+.iconCopy_disabled:before,
+.iconDefault_disabled:before,
+.iconBlank_disabled:before,
+.iconSpellChecker_disabled:before,
+.iconSpellChecking_disabled:before,
+.iconPrint_disabled:before,
+.iconTransfer_disabled:before,
+.iconTools_disabled:before,
+.iconPDN_disabled:before,
+.iconUndelete_disabled:before,
+.iconNoShow_disabled:before,
+.iconRelationship_disabled:before,
+.iconRefresh_disabled:before,
+.iconNewItem_disabled:before,
+.iconCalendar_disabled:before,
+.iconAppendInside_disabled:before,
+.iconHelp:before,
+.iconHelp_on:before,
+.iconHelp_disabled:before,
+.yui-panel .container-close:before,
+.container-close:before,
+.iconReview:before,
+.iconReview_on:before,
+.iconReview_disabled:before,
+.iconShowHarness:before,
+.iconShowHarness_on:before,
+.iconShowHarness_disabled:before,
+.iconLocalAction:before,
+.iconLocalAction_on:before,
+.iconLocalAction_disabled:before,
+.iconGetNextWork:before,
+.iconGetNextWork_on:before,
+.iconGetNextWork_disabled:before,
+.iconFinishAssignment:before,
+.iconFinishAssignment_on:before,
+.iconFinishAssignment_disabled:before,
+.iconEnableActionSection:before,
+.iconEnableActionSection_on:before,
+.iconEnableActionSection_disabled:before,
+.iconAddNewWork:before,
+.iconAddNewWork_on:before,
+.iconAddNewWork_disabled:before {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Close icons */
+
+.iconClose_on,
+.iconClose_disabled,
+.iconCloseSmall {
+    opacity: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 3px;
+    line-height: 14px;
+    text-align: center;
+    padding: 0;
+    vertical-align: top;
+    transition: opacity 0.2s;
+    margin: 2px 6px 0 6px !important;
+}
+
+.iconCloseSmall {
+    padding: 2px 2px 2px 1px;
+    background: #10132e;
+}
+
+
+/*BUG-373660*/
+
+.ff .iconCloseSmall:before {
+    -webkit-transform: translateY(-1px) translateX(1px) !important;
+    transform: translateY(-1.5px) translateX(1px) !important;
+}
+
+.iconCloseSmall:hover {
+    background: #000;
+}
+
+.iconClose:before,
+.iconClose_on:before,
+.iconClose_disabled:before,
+.iconCloseSmall:before {
+    font-size: 16px;
+}
+
+.iconCloseSmall:before {
+    vertical-align: top;
+    font-size: 13px;
+}
+
+.tab-li:hover .iconCloseSmall,
+.iconCloseSmall:hover:before {
+    opacity: 1;
+}
+
+
+/*CONTROLEND:HARNESSVIEW*/
+
+.iconOpenRule,
+.iconOpenRule_on,
+.iconOpenRule_disabled,
+th.cellCont .iconOpenRule,
+th.cellCont .iconOpenRule_on,
+th.cellCont .iconOpenRule_disabled,
+tr.cellCont td.gridCell .iconOpenRule,
+tr.cellCont td.gridCell .iconOpenRule_on,
+tr.cellCont td.gridCell .iconOpenRule_disabled {
+    padding-left: 2px;
+}
+
+.iconPDN:before,
+.iconPDN_on:before,
+.iconPDN_disabled:before {
+    background-position: -270px 0;
+}
+
+
+/* Work form icons: mouseover (_on) state */
+
+.iconSave_on,
+.iconContents_on,
+.iconExplore_on,
+.iconAttachment_on,
+.iconImage_on,
+.iconDelete_on,
+.iconLookup_on,
+.iconCalendar_on,
+.iconHelp_on,
+.iconInsert_on,
+.iconAppend_on,
+.iconInsertRow_on,
+.iconAppendRow_on,
+.iconAppendColumn_on,
+.iconExpandAll_on,
+.iconCollapseAll_on,
+.iconUpdate_on,
+.iconReopen_on,
+.iconLocation_on,
+.iconHistory_on,
+.iconClose_on,
+.iconSpellChecker_on,
+.iconSpellChecking_on,
+.iconDefault_on,
+.iconBlank_on,
+.iconCopy_on,
+.iconPrint_on,
+.iconTransfer_on,
+.iconOpenRule_on,
+.iconPDN_on,
+.iconUndelete_on,
+.iconRefresh_on,
+.iconNoShow_on,
+.iconRelationship_on,
+.iconAppendInside_on,
+.iconNewItem_on,
+.iconCloseSmall_on,
+a.iconSave:hover,
+a.iconInsert:hover,
+a.iconDefault:hover,
+a.iconBlank:hover,
+a.iconAttachment:hover,
+a.iconClose:hover,
+a.iconContents:hover,
+a.iconDelete:hover,
+a.iconExpandAll:hover,
+a.iconExplore:hover,
+a.iconHistory:hover,
+a.iconPrint:hover,
+a.iconReopen:hover,
+a.iconSpellChecker:hover,
+a.iconUpdate:hover,
+a.iconLocation:hover {
+    opacity: 1;
+}
+
+
+/* Disabled state */
+
+.iconSave_disabled,
+.iconContents_disabled,
+.iconExplore_disabled,
+.iconAttachment_disabled,
+.iconImage_disabled,
+.iconDelete_disabled,
+.iconLookup_disabled,
+.iconHelp_disabled,
+.iconInsert_disabled,
+.iconAppend_disabled,
+.iconInsertRow_disabled,
+.iconAppendRow_disabled,
+.iconAppendColumn_disabled,
+.iconExpandAll_disabled,
+.iconCollapseAll_disabled,
+.iconUpdate_disabled,
+.iconReopen_disabled,
+.iconLocation_disabled,
+.iconHistory_disabled,
+.iconClose_disabled,
+.iconCloseSmall_disabled,
+.iconCopy_disabled,
+.iconDefault_disabled,
+.iconBlank_disabled,
+.iconSpellChecker_disabled,
+.iconSpellChecking_disabled,
+.iconPrint_disabled,
+.iconTransfer_disabled,
+.iconOpenRule_disabled,
+.iconPDN_disabled,
+.iconPDN_disabled,
+.iconUndelete_disabled,
+.iconNoShow_disabled,
+.iconRelationship_disabled,
+.iconRefresh_disabled,
+.iconNewItem_disabled,
+.iconCalendar_disabled,
+.iconAppendInside_disabled {
+    opacity: 0.3;
+}
+
+.yui-panel .container-close:before,
+.container-close:before {
+    font-size: 25px;
+    color: #10132e;
+    position: relative;
+    top: 4px;
+    right: 7px;
+    z-index: 6;
+}
+
+
+/* Modal Close icons need to be in aligned right*/
+
+.yui-panel .container-close,
+.container-close {
+    position: absolute;
+
+}
+
+/* Changes Start for BUG-429103. Phone CallConfirm wrapup title and close X icon are not aligned */
+.modal-overlay .yui-panel .container-close, .modal-overlay .container-close {
+    position: static;
+    float: right;
+}
+.modal-overlay .yui-panel .container-close:before, .modal-overlay .container-close:before {
+    position: static;
+    font-size: 18px;
+}
+/* Changes End for BUG-429103 */
+
+button.container-close:before {
+    top: inherit;
+    right: inherit;
+    line-height: initial;
+}
+
+.iconSearch,
+.iconSearchResponsive {
+    background-image: none !important;
+    margin-right: 0.25em;
+}
+
+.iconSearch:before,
+.iconSearchResponsive:before {
+    color: RGBA(16, 19, 46, 0.66);
+    height: 26px;
+    line-height: 26px;
+    font-size: 1.2em;
+}
+
+.attachments-upload:before {
+    color: #cacdd6;
+    font-size: 50px;
+    margin-right: 0;
+}
+
+.pi-completed-process:before {
+    background: #20aa50;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    height: 19px;
+    width: 19px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.menu-horizontal > .menu-item > .menu-item-anchor.menu-item-expand:after {
+    background: transparent;
+    margin-right: 0;
+    width: auto;
+    right: 7px;
+    top: 25%;
+    color: #10132e;
+}
+
+.iconOpenRule {
+    vertical-align: middle;
+}
+
+
+/* For open rule controls, maginifier icon hides when it is in clicked state */
+
+button:active .iconOpenRule,
+button:active .iconOpenRule_on {
+    color: #2b38a1;
+}
+
+.gridCellSelected button:active .iconOpenRule,
+.gridCellSelected button:active .iconOpenRule_on {
+    color: inherit;
+}
+
+
+/* BUG-205995:Below is a specific fix for IE case, where an icon is placed in a tag */
+
+.ie a.nav-toggle-one:hover,
+.ie a.iconSave:hover,
+.ie a.iconInsert:hover,
+.ie a.iconDefault:hover,
+.ie a.iconBlank:hover,
+.ie a.iconAttachment:hover,
+.ie a.iconClose:hover,
+.ie a.iconContents:hover,
+.ie a.iconDelete:hover,
+.ie a.iconExpandAll:hover,
+.ie a.iconExplore:hover,
+.ie a.iconHistory:hover,
+.ie a.iconPrint:hover,
+.ie a.iconReopen:hover,
+.ie a.iconSpellChecker:hover,
+.ie a.iconUpdate:hover,
+.ie a.iconLocation:hover,
+.ie a:hover .pi:before {
+    text-decoration: none !important;
+}
+
+
+/* Modal Close icons need to be in aligned right*/
+
+.yui-panel .container-close,
+.container-close {
+    position: absolute;
+}
+
+
+/* Icon directionality - GENERAL, RTL, LANG SPECIFIC (AR) */
+
+
+/* RTL support */
+[dir="rtl"] .pi-list-number:before,
+[dir="rtl"] .pi-filetype-doc:before,
+[dir="rtl"] .pi-peekpanel-arrow-right:before,
+[dir="rtl"] .pi-peekpanel-arrow-right-solid:before,
+[dir="rtl"] .pi-arrow-right-level:before,
+[dir="rtl"] .pi-arrow-box-left:before,
+[dir="rtl"] .pi-arrow-left:before,
+[dir="rtl"] .pi-caret-left:before,
+[dir="rtl"] .pi-arrow-o-left:before,
+[dir="rtl"] .iconUndelete:before,
+[dir="rtl"] .iconUndelete_on:before,
+[dir="rtl"] .iconUndelete_disabled:before,
+[dir="rtl"] .pi-caret-double-left:before,
+[dir="rtl"] .pi-caret-solid-left:before,
+[dir="rtl"] .pi-arrow-left-column:before,
+[dir="rtl"] .pi-plus-between-right-column:before,
+[dir="rtl"] .pi-plus-line-left:before,
+[dir="rtl"] .pi-arrow-down-between-right-column:before,
+[dir="rtl"] .iconAppendColumn:before,
+[dir="rtl"] .iconAppendColumn_on:before,
+[dir="rtl"] .iconAppendColumn_disabled:before,
+[dir="rtl"] .iconAppendInside:before,
+[dir="rtl"] .iconAppendInside_on:before,
+[dir="rtl"] .pi-arrow-micro-left:before,
+[dir="rtl"] .pi-arrow-micro-left-solid:before,
+[dir="rtl"] .pi-caret-2-left:before,
+[dir="rtl"] .pi-circle-half-right:before,
+[dir="rtl"] .pi-circle-mixed-right:before,
+[dir="rtl"] .pi-arrow-below-row-right:before,
+[dir="rtl"] .iconAppendInside_disabled:before,
+[dir="rtl"] .pi-column-no-right-edge:before,
+[dir="rtl"] .pi-column-no-right:before,
+[dir="rtl"] .pi-arrow-right-column:before,
+[dir="rtl"] .pi-row-left-fill:before,
+[dir="rtl"] .pi-transform:before,
+[dir="rtl"] .pi-arrow-bend-right:before,
+[dir="rtl"] .pi-reset:before,
+[dir="rtl"] .pi-revert:before,
+[dir="rtl"] .pi-peekpanel-arrow-left:before,
+[dir="rtl"] .pi-peekpanel-arrow-left-solid:before,
+[dir="rtl"] .pi-arrow-left-level:before,
+[dir="rtl"] .pi-arrow-bend-left:before,
+[dir="rtl"] .pi-column-no-left:before,
+[dir="rtl"] .pi-arrow-box-right:before,
+[dir="rtl"] .pi-circle-half-left:before,
+[dir="rtl"] .pi-circle-mixed-left:before,
+[dir="rtl"] .pi-caret-right:before,
+[dir="rtl"] .pi-arrow-o-right:before,
+[dir="rtl"] .pi-caret-double-right:before,
+[dir="rtl"] .pi-caret-solid-right:before,
+[dir="rtl"] .pi-arrow-right-thru-column:before,
+[dir="rtl"] .pi-column-no-right-edge:before,
+[dir="rtl"] .pi-arrow-above-row:before,
+[dir="rtl"] .pi-caret-2-right:before,
+[dir="rtl"] .pi-list:before,
+[dir="rtl"] .pi-arrow-down-between-left-column:before,
+[dir="rtl"] .pi-plus-line-right:before,
+[dir="rtl"] .pi-or-delete:before,
+[dir="rtl"] .pi-arrow-above-or:before,
+[dir="rtl"] .pi-plus-between-left-column:before,
+[dir="rtl"] .pi-row-right-fill:before,
+[dir="rtl"] .pi-circle-half-right:before,
+[dir="rtl"] .pi-arrow-micro-right:before,
+[dir="rtl"] .pi-arrow-micro-right-solid:before,
+[dir="rtl"] .pi-arrow-below-row-left:before,
+[dir="rtl"] .pi-undo:before,
+[dir="rtl"] .pi-return:before,
+[dir="rtl"] .pi-chevron:before,
+[dir="rtl"] .pi-refresh:before,
+[dir="rtl"] div[class*="layout-outline"] > .Collapsed > .header-bar > * > .icon-openclose:before,
+[dir="rtl"] .iconReopen:before,
+[dir="rtl"] .iconReopen_on:before,
+[dir="rtl"] .iconReopen_disabled:before,
+[dir="rtl"] .iconGetNextWork:before,
+[dir="rtl"] .iconGetNextWork_on:before,
+[dir="rtl"] .iconGetNextWork_disabled:before,
+[dir="rtl"] .iconTransfer:before,
+[dir="rtl"] .iconTransfer_on:before,
+[dir="rtl"] .iconTransfer_disabled:before,
+[dir="rtl"] .nbam-pi-enter:before,
+[dir="rtl"] .pcti-right-arrow:before,
+[dir="rtl"] .pcti-right-arrow-circle:before,
+[dir="rtl"] .pi-arrow-right:before,
+[dir="rtl"] .pi-redo:before,
+[dir="rtl"] .pi-arrow-above-row-right:before,
+[dir="rtl"] .pi-arrow-above-row-left:before,
+[dir="rtl"] .pi-arrow-below-row-right:before,
+[dir="rtl"] .pi-arrow-below-row-left:before {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+/* LANGUAGE specific */
+
+
+/* Arabic */
+
+[lang|="ar"] .pi-chat-help:before,
+[lang|="ar"] .pi-chat:before,
+[lang|="ar"] .psa-pulse:before,
+[lang|="ar"] .pi-chat-typing:before,
+[lang|="ar"] .nbam-pi-insight:before,
+[lang|="ar"] .nbam-pi-ch-sms:before,
+[lang|="ar"] .pcs-chatting:before,
+[lang|="ar"] .pi-chat-sentiment:before,
+[lang|="ar"] .pi-chat-help-solid:before,
+[lang|="ar"] .pi-chat-solid:before,
+[lang|="ar"] .pcrm-chat:before,
+[lang|="ar"] .pcs-chat:before,
+[lang|="ar"] .pi-chat-typing-solid:before,
+[lang|="ar"] .pi-chat-sentiment-solid:before,
+[lang|="ar"] .pi-help:before,
+[lang|="ar"] .pcs-question:before,
+[lang|="ar"] .pcs-question:before,
+[lang|="ar"] .pi-help-solid:before,
+[lang|="ar"] .iconHelp:before,
+[lang|="ar"] .iconHelp_on:before,
+[lang|="ar"] .iconHelp_disabled:before,
+[lang|="ar"] .pcrm-sms:before {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}

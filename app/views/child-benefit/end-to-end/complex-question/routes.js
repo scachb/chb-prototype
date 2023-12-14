@@ -31,7 +31,7 @@ complexQuestionRouter.post('/confirm-lived-ukaborad-answer', function(request, r
 
   var livedUKAbroadNormally = request.session.data['child-benefit']['end-to-end']['complex-question']['details-lived-uk-data']
   
-  if (livedUKAbroadNormally == "yes"){
+  if (livedUKAbroadNormally == "UKYes"){
       response.redirect("./is-your-current-address-in-uk")
   } else {
     response.redirect("./question-page")

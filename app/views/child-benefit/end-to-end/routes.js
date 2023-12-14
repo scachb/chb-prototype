@@ -4,7 +4,6 @@
 //
 
 const govukPrototypeKit = require('govuk-prototype-kit')
-
 const endToEndRouter = govukPrototypeKit.requests.setupRouter();
 
 function endToEndSession(request) {
@@ -12,7 +11,6 @@ function endToEndSession(request) {
 }
 
 // Add your routes here
-
 endToEndRouter.post('/change-child-answer', function(request, response) {
   const session = endToEndSession(request);
 

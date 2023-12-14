@@ -1,6 +1,7 @@
 {% extends "common/layouts/child-benefit.html" %}
 
 {% import "common/urls.html" as urls %}
+{% import "common/macros/layout.html" as layout %}
 
 {% block pageTitle %}
   Details about where you have lived – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,14 +22,17 @@
         Details about where you have lived
       </h1>
 
-      <p class="govuk-body">The UK....</p>
+      <p class="govuk-body">The UK includes England, Wales, Scotland and Northern Ireland. The UK does not include the Isle of Man, Channel Islands or <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">British overseas territories (opens in new tab)</a>.</p>
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <p class="govuk-body">You have lived abroad if you were outside of the UK for 8 weeks in a row. Do not include when you stayed in other countries for holidays or work. </p>
+
+      <form class="form" action="{{ urls.child_benefit_e2e_complex_question }}/confirm-lived-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          name: "whereDoYouLive",
+          name: "child-benefit[end-to-end][complex-question][details-lived-address-data]",
+          value: data['child-benefit']['end-to-end']['complex-question']['details-lived-address-data'],
           fieldset: {
             legend: {
               text: "Where have you lived?",
@@ -39,31 +43,33 @@
           },
 
           hint: {
-            text: "A little bit of hint and spice"
+            text: ""
           },
           items: [
             {
-              value: "england",
+              value: "LivedUK",
               text: "Always lived in the UK"
             },
             {
-              value: "scotland",
+              value: "livedUKAbroad",
               text: "Lived in the UK or abroad"
             },
             {
-              value: "wales",
+              value: "NeverLivedUK",
               text: "Never lived in the UK"
             }
           ]
         }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        {{ layout.saveAndContinuePattern({
+          href: urls.child_benfit_end_to_end_complex_question
+        }) }}  
 
       </form>
 
     </div>
   </div>
+
+  {{ layout.pageNotWorkingLink() }}
 
 {% endblock %}

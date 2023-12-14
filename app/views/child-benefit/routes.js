@@ -4,6 +4,7 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit');
 const endToEndRouter = require('./end-to-end/routes');
+const complexQuestionRouter = require('./end-to-end/complex-question/routes');
 const portalRouter = require('./portal/routes');
 const proofOfEntitlementRouter = require('./proof-of-entitlement/routes');
 const unauthRouter = require('./unauth/routes');
@@ -23,6 +24,9 @@ childBenefitRouter.use('/proof-of-entitlement', proofOfEntitlementRouter);
 
 // Registers all routes to /child-benefit/unauth
 childBenefitRouter.use('/unauth', unauthRouter);
+
+// Registers all routes to /child-benefit/unauth
+childBenefitRouter.use('/end-to-end/complex-question', complexQuestionRouter);
 
 // Export the journey router to be used by the service
 module.exports = childBenefitRouter;

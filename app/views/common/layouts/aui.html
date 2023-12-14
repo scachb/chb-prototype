@@ -1,7 +1,8 @@
 {% extends "govuk-prototype-kit/layouts/unbranded.html" %}
 
 {% block stylesheets %}
-  <link href="/public/css/aui.css" media="all" rel="stylesheet" type="text/css" />
+  {{ super() }}
+  <link href="/public/css/py-icons.css" media="all" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% set serviceName %}
@@ -17,20 +18,28 @@ Adviser UI
   <div class="aui-header__left">
     <img class="aui-header__logo" src="/public/svg/hmrc-logo-white.svg" alt="HM Revenue and Customs - Home">
     <div class="aui-header__left-service-name">{{ serviceName | upper }}</div>
-    <a class="aui-header__left-new" href="" title="New" aria-haspopup="true">
-      <div aria-hidden="true">+</div>
+    <a class="aui-header__left-new" href="" title="New">
+      <i class="pi pi-plus" aria-hidden="true"></i>
       New
     </a>
   </div>
 
   <div class="aui-header__right">
-    <button class="aui-header__right-button">Iawd</button>
-    <button class="aui-header__right-button">I</button>
-    <button class="aui-header__right-button">I</button>
+    <button class="aui-header__right-button" title="Start your day">
+      <i class="pi pi-phone-solid" aria-hidden="true"></i>
+    </button>
   </div>
 </header>
 {% endblock %}
 
+{% set containerClasses = "aui-container" %}
+{% set mainClasses = "aui-container" %}
+
 {% block content %}
-  <p>content</p>
+  <div class="govuk-grid-row">
+    <aside class="govuk-grid-column-one-quarter aui-sidebar">helo</aside>
+    <div class="aui-page-heading">
+      <h1 style="margin: 0;">Hello there</h1>
+    </div>
+  </div>
 {% endblock %}

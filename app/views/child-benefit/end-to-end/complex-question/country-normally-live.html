@@ -1,0 +1,48 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% import "common/urls.html" as urls %}
+{% import "common/macros/layout.html" as layout %}
+
+{% block pageTitle %}
+  Which country do you normally live in? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ layoutPhaseBanner() }}
+  {{ layoutLanguageSelect() }}
+  {{ layoutBackLink() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="{{ urls.child_benefit_end_to_end_complex_question }}/confirm-lived-answer" method="post">
+
+
+{{ govukInput({
+    id: "country",
+    name: "country",
+   
+        label: {
+          text: "Which country do you normally live in?",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+           }
+    
+  }) }}
+
+
+        {{ layout.saveAndContinuePattern({
+          href: urls.child_benfit_e2e_complex_question
+        }) }}  
+
+      </form>
+
+    </div>
+  </div>
+
+  {{ layout.pageNotWorkingLink() }}
+
+{% endblock %}

@@ -4,7 +4,7 @@
 {% import "common/macros/layout.html" as layout %}
 
 {% block pageTitle %}
-  Details about where you have lived – {{ serviceName }} – GOV.UK Prototype Kit
+  Details about living in the UK – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Do you normally live in the UK?
+        Details about living in the UK
       </h1>
 
       <p class="govuk-body">The UK includes England, Wales, Scotland and Northern Ireland. The UK does not include the Isle of Man, Channel Islands or <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">British overseas territories (opens in new tab)</a>.</p>
@@ -58,7 +58,7 @@
         }) }}
 
         {{ layout.saveAndContinuePattern({
-          href: urls.self_assessment_p&a
+          href: urls.child_benfit_e2e_complex_question
         }) }}  
 
       </form>

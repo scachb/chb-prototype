@@ -1,0 +1,36 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block stylesheets %}
+  <link href="/public/css/aui.css" media="all" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% set serviceName %}
+Adviser UI
+{% endset %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+<header class="aui-header" role="banner" aria-label="Top panel">
+  <div class="aui-header__left">
+    <img class="aui-header__logo" src="/public/svg/hmrc-logo-white.svg" alt="HM Revenue and Customs - Home">
+    <div class="aui-header__left-service-name">{{ serviceName | upper }}</div>
+    <a class="aui-header__left-new" href="" title="New" aria-haspopup="true">
+      <div aria-hidden="true">+</div>
+      New
+    </a>
+  </div>
+
+  <div class="aui-header__right">
+    <button class="aui-header__right-button">Iawd</button>
+    <button class="aui-header__right-button">I</button>
+    <button class="aui-header__right-button">I</button>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+  <p>content</p>
+{% endblock %}

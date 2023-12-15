@@ -40,6 +40,26 @@ Adviser UI
     <aside class="govuk-grid-column-one-quarter aui-sidebar">helo</aside>
     <div class="aui-page-heading">
       <h1 style="margin: 0;">Hello there</h1>
+      <div id="app"></div>
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/react.min.js"></script>
+  <script src="/public/javascripts/react-dom.min.js"></script>
+  <script src="/public/javascripts/htm.min.js"></script>
+
+  <script type="module">
+    const html = htm.bind(React.createElement);
+    const root = ReactDOM.createRoot(document.querySelector('#app'));
+
+    console.log(Pega);
+
+    function App() {
+      return html`<button>hello there</button>`
+    }
+
+    root.render(html`<${App} />`);
+  </script>
 {% endblock %}

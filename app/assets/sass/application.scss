@@ -159,9 +159,10 @@ body {
   --aui-green: #0F7D7B;
 }
 
-.aui-container {
+.aui-wrapper {
   margin: 0;
   padding: 0;
+  max-width: none;
 }
 
 .aui-header {
@@ -215,6 +216,11 @@ body {
   border-radius: 50%;
 }
 
+.aui-container {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+}
+
 .aui-sidebar {
   height: calc(100vh - 50px);
   background-color: lightgray;
@@ -223,6 +229,23 @@ body {
 
 .aui-page-heading {
   background-color: lightgray;
-  padding: 10px 20px;
   margin: 0;
+  padding: 8px 12px;
+}
+
+.aui-page {
+  padding: 15px;
+  overflow: hidden;
+}
+
+.aui-list-item {
+  padding: 15px;
+}
+
+.aui-list-item__link {
+  text-decoration: none;
+  color: black;
+}
+.aui-list-item__link:visited {
+  color: black;
 }

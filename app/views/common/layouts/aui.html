@@ -32,34 +32,102 @@ Adviser UI
 </header>
 {% endblock %}
 
-{% set containerClasses = "aui-container" %}
-{% set mainClasses = "aui-container" %}
+{% set containerClasses = "aui-wrapper" %}
+{% set mainClasses = "aui-wrapper" %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <aside class="govuk-grid-column-one-quarter aui-sidebar">helo</aside>
-    <div class="aui-page-heading">
-      <h1 style="margin: 0;">Hello there</h1>
-      <div id="app"></div>
-    </div>
+  <div class="aui-container">
+    <aside class="aui-sidebar">
+      <ul class="govuk-list">
+        <li class="aui-list-item">
+          <a href="" class="aui-list-item__link">
+            <i class="pi pi-case-solid" aria-hidden="true"></i> My work
+          </a>
+        </li>
+        <li class="aui-list-item">
+          <a href="" class="aui-list-item__link">
+            <i class="pi pi-gauge" aria-hidden="true"></i> Dashboard
+          </a>
+        </li>
+        <li class="aui-list-item">
+          <details>
+            <summary>
+              <i class="pi pi-case-solid" aria-hidden="true"></i> Manager's tools
+            </summary>
+            
+            <li class="aui-list-item">
+              <a href="" class="aui-list-item__link">
+                <i class="pi pi-case-solid" aria-hidden="true"></i> Shuttering
+              </a>
+            </li>
+          </details>
+        </li>
+        <li class="aui-list-item">
+          <a href="" class="aui-list-item__link">
+            <i class="pi pi-case-solid" aria-hidden="true"></i> Presence
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <section aria-label="AUI page">
+      <h1 class="govuk-heading-l aui-page-heading">Hello there</h1>
+
+      <div class="aui-page">
+        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+        {% set html %}
+          <p class="govuk-notification-banner__heading">
+            You have 7 days left to send your application.
+            <a class="govuk-notification-banner__link" href="#">View application</a>.
+          </p>
+        {% endset %}
+        
+        {{ govukNotificationBanner({
+          html: html
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          classes: "govuk-radios--small",
+          name: "changedName",
+          fieldset: {
+            legend: {
+              text: "Filter",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "month",
+              text: "Monthly"
+            },
+            {
+              value: "year",
+              text: "Yearly"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+          {{ govukButton({
+            text: "Save as draft",
+            classes: "govuk-button--secondary"
+          }) }}
+
+          {{ govukButton({
+            text: "Delete account",
+            classes: "govuk-button--warning"
+          }) }}
+        </div>
+      </div>
+    </section>
   </div>
-{% endblock %}
-
-{% block pageScripts %}
-  <script src="/public/javascripts/react.min.js"></script>
-  <script src="/public/javascripts/react-dom.min.js"></script>
-  <script src="/public/javascripts/htm.min.js"></script>
-
-  <script type="module">
-    const html = htm.bind(React.createElement);
-    const root = ReactDOM.createRoot(document.querySelector('#app'));
-
-    console.log(Pega);
-
-    function App() {
-      return html`<button>hello there</button>`
-    }
-
-    root.render(html`<${App} />`);
-  </script>
 {% endblock %}

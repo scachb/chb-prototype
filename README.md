@@ -1,4 +1,6 @@
 # SCA programme design
+
+> IMPORTANT: Currently experimenting with AUI prototyping in React and best way to go about it
  
 Repo of design mockups and artefacts for all services and journeys under the Single Customer Account programme.
 

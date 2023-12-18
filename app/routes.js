@@ -6,7 +6,6 @@ const govukPrototypeKit = require('govuk-prototype-kit');
 const childBenefitRouter = require('./views/child-benefit/routes');
 const payeRouter = require('./views/paye/routes');
 const selfAssessmentRouter = require('./views/self-assessment/routes');
-const auiRouter = require('./views/aui/routes');
 
 const scaRouter = govukPrototypeKit.requests.setupRouter()
 
@@ -20,8 +19,5 @@ scaRouter.use("/paye", payeRouter);
 
 // Registers all Self Assessment journeys to /self-assessment
 scaRouter.use("/self-assessment", selfAssessmentRouter);
-
-// Registers all Self Assessment journeys to /self-assessment
-scaRouter.use("/aui", auiRouter);
 
 

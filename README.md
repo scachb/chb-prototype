@@ -1,6 +1,14 @@
 # SCA programme design
 
 > IMPORTANT: Currently experimenting with AUI prototyping in React and best way to go about it
+
+## TEMP documentation
+
+To load the `experimental` AUI prototype load a new terminal session and run
+
+```
+npm run aui
+```
  
 Repo of design mockups and artefacts for all services and journeys under the Single Customer Account programme.
 

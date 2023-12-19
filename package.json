@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "aui": "vite dev",
+    "host": "vite build",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },

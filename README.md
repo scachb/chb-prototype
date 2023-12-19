@@ -1,6 +1,6 @@
 # SCA programme design
 
-> IMPORTANT: Currently experimenting with AUI prototyping in React and best way to go about it
+> IMPORTANT: Currently experimenting with AUI prototyping in React
 
 ## TEMP documentation
 

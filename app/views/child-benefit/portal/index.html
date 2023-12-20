@@ -1,4 +1,5 @@
 {% extends "common/layouts/child-benefit.html" %}
+{% import "common/urls.html" as urls %}
 
 {% block beforeContent %}
   {{ layoutBackLink() }}
@@ -14,6 +15,7 @@
     <h1 class="govuk-heading-xl">Claimant portal</h1>
     <p class="govuk-body">The portal claimants see when submitting claims.</p>
 
+    
     {{ documentDesign({
       name: "My claims portal",
       includeWhyIsThisNeeded: true,
@@ -22,7 +24,7 @@
       revisions: [
         {
           summary: "Multiple claims in progress", 
-          href: "multiple-claims-portal",
+          href: urls.child_benefit_portal + "/multiple-claims-portal",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 
@@ -30,7 +32,7 @@
         },
         {
           summary: "Claims portal - 28 days inset", 
-          href: "my-claims-portal-28-days-inset",
+          href: urls.child_benefit_portal + "/my-claims-portal-28-days-inset",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 
@@ -38,7 +40,7 @@
         },
         {
           summary: "Claims portal - 28 days important warning", 
-          href: "my-claims-portal-28-days-warning",
+          href: urls.child_benefit_portal + "/my-claims-portal-28-days-warning",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 
@@ -46,7 +48,7 @@
         },
         {
           summary: "Claims portal - 28 days important notification-banner", 
-          href: "my-claims-portal-28-days-important",
+          href: urls.child_benefit_portal +  "/my-claims-portal-28-days-important",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 
@@ -54,7 +56,7 @@
         },
         {
           summary: "Claims portal", 
-          href: "my-claims-portal.html",
+          href: urls.child_benefit_portal + "/my-claims-portal.html",
           tag: { 
             text: "New", 
             classes: "govuk-tag--blue" 

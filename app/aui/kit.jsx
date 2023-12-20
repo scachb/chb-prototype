@@ -1,13 +1,18 @@
 // THIS FILE IS NOT TO BE TOUCHED UNLESS, SEE ROUTES.JSX FOR SETTING UP PROTOTYPES
 
 import {
-  AppShell,
   Avatar,
+  Button,
   Configuration,
   FieldValueList,
   Flex,
+  Grid,
+  Icon,
   MenuButton,
+  NarrowWidePage,
+  SearchInput,
   Status,
+  TabPanel,
   Tabs,
   Text,
 } from "@pega/cosmos-react-core";
@@ -156,20 +161,107 @@ const theme = {
   },
 };
 
+function AuiHeader() {
+  return (
+    <Flex
+      as="header"
+      style={{ backgroundColor: "#007C7B" }}
+      container={{ justify: "between", alignItems: "center", pad: 1 }}
+    >
+      <Flex
+        style={{ color: "white" }}
+        container={{ gap: 2, alignItems: "center" }}
+      >
+        <a href="/" title="HM Revenue and Customs - Home">
+          <img
+            width={100}
+            src={logo}
+            aria-hidden="true"
+            alt="HM Revenue and Customs - Home"
+          />
+        </a>
+        <Text>
+          <strong>ADVISER UI</strong>
+        </Text>
+        <MenuButton
+          style={{ color: "white" }}
+          variant="text"
+          icon="plus"
+          text="New"
+          menu={{
+            items: [
+              { id: "phone-call", primary: "Phone call", href: "" },
+              { id: "messgae", primary: "Message", href: "" },
+              {
+                id: "outbound-phone-call",
+                primary: "Outbound phone call",
+                href: "",
+              },
+              { id: "web-chat", primary: "Web chat", href: "" },
+            ],
+          }}
+        />
+      </Flex>
+      <Flex>
+        <form role="search">
+          <SearchInput searchInputAriaLabel="global" />
+        </form>
+      </Flex>
+      <Flex style={{ color: "black" }} container={{ alignItems: "center" }}>
+        <Button
+          style={{ backgroundColor: "white" }}
+          icon
+          title="Click or enter key to open phone control, your status is Logged off"
+          aria-haspopup="true"
+        >
+          <i
+            style={{ fontSize: 16, marginLeft: 2 }}
+            className="pi pi-phone-solid"
+          ></i>
+        </Button>
+        <Button
+          style={{ backgroundColor: "white" }}
+          icon
+          title="Start my day"
+          aria-haspopup="true"
+        >
+          <i
+            style={{ fontSize: 16, marginLeft: 2 }}
+            className="pi pi-robot"
+          ></i>
+        </Button>
+        <Button
+          style={{
+            backgroundColor: "white",
+          }}
+          icon
+          title="Profile"
+          aria-haspop="true"
+        >
+          <i
+            style={{ fontSize: 16, marginLeft: 2 }}
+            className="pi pi-user-solid"
+          ></i>
+        </Button>
+      </Flex>
+    </Flex>
+  );
+}
+
 /**
  * @typedef AuiLayout
  * @property {import('react').ReactNode} children
- * @property {boolean} sidebarExpanded
+ * @property {boolean} tabs
  */
 
 /**
  * Adviser UI layout which comes with the header and expandable sidebar
  * @param {AuiLayout} param0
  */
-export function AuiLayout({ children, sidebarExpanded }) {
+export function AuiLayout({ children, tabs }) {
   return (
     <Configuration theme={theme}>
-      <AppShell
+      {/* <AppShell
         appHeader
         defaultExpanded={sidebarExpanded ?? false}
         appInfo={{
@@ -211,7 +303,43 @@ export function AuiLayout({ children, sidebarExpanded }) {
           actions: [],
           avatar: <Avatar backgroundColor="white" icon="phone-solid" />,
         }}
+      /> */}
+      <AuiHeader />
+      <style>{`
+        .custom-tab button span {
+          color: white !important
+        }
+        .custom-tab button::after {
+          background: white !important
+        }
+      `}</style>
+      <Tabs
+        className="custom-tab"
+        style={{ backgroundColor: "#3E5160" }}
+        currentTabId="home"
+        tabs={[
+          {
+            id: "home",
+            name: "Home",
+            href: "",
+          },
+          {
+            id: "child-benefit-claim",
+            name: "Child Benefit claim",
+            href: "",
+          },
+        ]}
       />
+      <TabPanel currentTabId="home">
+        <Grid container={{ cols: "0.2fr 1fr" }}>
+          <Grid
+            style={{ height: "calc(100vh - 81px)", backgroundColor: "white" }}
+          >
+            awd
+          </Grid>
+          <main style={{ backgroundColor: "lightgrey" }}>{children}</main>
+        </Grid>
+      </TabPanel>
     </Configuration>
   );
 }

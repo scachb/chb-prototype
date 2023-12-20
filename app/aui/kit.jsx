@@ -4,11 +4,8 @@ import {
   AppShell,
   Avatar,
   Configuration,
-  FieldValueItem,
   FieldValueList,
   Flex,
-  Grid,
-  Icon,
   MenuButton,
   Status,
   Tabs,
@@ -37,24 +34,6 @@ export function setupPrototypeRoutes(routes) {
   root.render(<RouterProvider router={router} />);
 }
 
-const theme = {
-  base: {
-    palette: {
-      interactive: "#007C7B",
-    },
-  },
-  components: {
-    "app-shell": {
-      header: {
-        "background-color": "#007C7B",
-      },
-      nav: {
-        "background-color": "#E8EAED",
-      },
-    },
-  },
-};
-
 /**
  * @typedef Journey
  * @property {string} title
@@ -68,6 +47,7 @@ const theme = {
  */
 
 /**
+ * GOV.UK page to log all of your design journeys and services
  * @param {HomePage} param0
  */
 export function HomePage({ journeys }) {
@@ -158,12 +138,40 @@ export function HomePage({ journeys }) {
   );
 }
 
-export function AppLayout({ children }) {
+const theme = {
+  base: {
+    palette: {
+      interactive: "#007C7B",
+    },
+  },
+  components: {
+    "app-shell": {
+      header: {
+        "background-color": "#007C7B",
+      },
+      nav: {
+        "background-color": "#E8EAED",
+      },
+    },
+  },
+};
+
+/**
+ * @typedef AuiLayout
+ * @property {import('react').ReactNode} children
+ * @property {boolean} sidebarExpanded
+ */
+
+/**
+ * Adviser UI layout which comes with the header and expandable sidebar
+ * @param {AuiLayout} param0
+ */
+export function AuiLayout({ children, sidebarExpanded }) {
   return (
     <Configuration theme={theme}>
       <AppShell
         appHeader
-        defaultExpanded
+        defaultExpanded={sidebarExpanded ?? false}
         appInfo={{
           imageSrc: logo,
           appName: "ADVISER UI",
@@ -208,145 +216,116 @@ export function AppLayout({ children }) {
   );
 }
 
-export function CaseLayout({ children }) {
+/**
+ * @typedef SummaryPanel
+ * @property {import('@pega/cosmos-react-core').TabsProps} tabs
+ * @property {}
+ */
+
+/**
+ * Summary panel component for a Constellation case type
+ * @param {SummaryPanel} param0
+ */
+export function SummaryPanel({ tabs }) {
   return (
-    <Grid style={{ overflowY: "auto" }} container={{ cols: "0.35fr 1fr" }}>
+    <Flex
+      style={{
+        backgroundColor: "white",
+        minHeight: "calc(100vh - 48px)",
+      }}
+      container={{
+        direction: "column",
+      }}
+    >
       <Flex
-        style={{
-          backgroundColor: "white",
-          minHeight: "calc(100vh - 48px)",
-        }}
-        container={{
-          direction: "column",
-        }}
+        style={{ backgroundColor: "#007C7B", color: "white" }}
+        container={{ pad: 2, wrap: true }}
       >
-        <Flex
-          style={{ backgroundColor: "#007C7B", color: "white" }}
-          container={{ pad: 2, wrap: true }}
-        >
-          <Flex style={{ flex: 1 }} container={{ gap: 2, wrap: true }}>
-            <Avatar
-              shape="squircle"
-              icon="case-solid"
-              backgroundColor="#1F7971"
-              aria-hidden="true"
-            />
-            <Flex container={{ direction: "column" }}>
-              <Text variant="primary">
-                <strong>Claim</strong>
-              </Text>
-              <Text>C-10856</Text>
-            </Flex>
+        <Flex style={{ flex: 1 }} container={{ gap: 2, wrap: true }}>
+          <Avatar
+            shape="squircle"
+            icon="case-solid"
+            backgroundColor="#1F7971"
+            aria-hidden="true"
+          />
+          <Flex container={{ direction: "column" }}>
+            <Text variant="primary">
+              <strong>Claim</strong>
+            </Text>
+            <Text>C-10856</Text>
           </Flex>
-
-          <MenuButton
-            iconOnly
-            icon="more"
-            variant="simple"
-            menu={{
-              mode: "action",
-              items: [
-                {
-                  primary: "Edit",
-                },
-                {
-                  primary: "Another action",
-                },
-              ],
-            }}
-          />
         </Flex>
 
-        <Flex container={{ pad: 2, gap: 2 }}>
-          <FieldValueList
-            variant="inline"
-            fields={[
+        <MenuButton
+          iconOnly
+          icon="more"
+          variant="simple"
+          menu={{
+            mode: "action",
+            items: [
               {
-                variant: "stacked",
-                name: "Claim started",
-                value: (
-                  <Text>
-                    <strong>19 Dec 2023</strong>
-                  </Text>
-                ),
+                primary: "Edit",
               },
               {
-                variant: "stacked",
-                name: "Claim received",
-                value: (
-                  <Text>
-                    <strong>19 Dec 2023</strong>
-                  </Text>
-                ),
+                primary: "Another action",
               },
-            ]}
-          />
-        </Flex>
+            ],
+          }}
+        />
+      </Flex>
 
-        <Flex container={{ pad: 2, direction: "column" }}>
-          <FieldValueList
-            fields={[
-              {
-                name: "Updated",
-                value: (
-                  <Text>
-                    <a href="">Robin Upton</a> 1 hour ago
-                  </Text>
-                ),
-              },
-              {
-                name: "Urgency",
-                value: <Text>10</Text>,
-              },
-              {
-                name: "Status",
-                value: (
-                  <Status variant="pending">Pending-ManualInvestigation</Status>
-                ),
-              },
-            ]}
-          />
-        </Flex>
-
-        <Tabs
-          type="vertical"
-          currentTabId="claimant-details"
-          tabs={[
+      <Flex container={{ pad: 2, gap: 2 }}>
+        <FieldValueList
+          variant="inline"
+          fields={[
             {
-              id: "claimant-details",
-              name: "Claimant details",
-              href: "/",
+              variant: "stacked",
+              name: "Claim started",
+              value: (
+                <Text>
+                  <strong>19 Dec 2023</strong>
+                </Text>
+              ),
             },
             {
-              id: "relationship-details",
-              name: "Relationship details",
-              href: "/",
-            },
-            {
-              id: "child-details",
-              name: "Child details",
-              href: "/",
-            },
-            {
-              id: "income-details",
-              name: "Income details",
-              href: "/",
-            },
-            {
-              id: "full-details",
-              name: "Full details",
-              href: "/",
-            },
-            {
-              id: "pulse",
-              name: "Pulse",
-              href: "/",
+              variant: "stacked",
+              name: "Claim received",
+              value: (
+                <Text>
+                  <strong>19 Dec 2023</strong>
+                </Text>
+              ),
             },
           ]}
         />
       </Flex>
 
-      <Flex container={{ gap: 2, pad: 2 }}>{children}</Flex>
-    </Grid>
+      <Flex container={{ pad: 2, direction: "column" }}>
+        <FieldValueList
+          fields={[
+            {
+              name: "Updated",
+              value: (
+                <Text>
+                  <a href="">Robin Upton</a> 1 hour ago
+                </Text>
+              ),
+            },
+            {
+              name: "Urgency",
+              value: <Text>10</Text>,
+            },
+            {
+              name: "Status",
+              value: (
+                <Status variant="pending">Pending-ManualInvestigation</Status>
+              ),
+            },
+          ]}
+        />
+      </Flex>
+
+      <Tabs {...tabs} />
+    </Flex>
   );
 }

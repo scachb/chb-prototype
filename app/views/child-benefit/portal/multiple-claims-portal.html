@@ -1,28 +1,14 @@
 {% extends "common/layouts/child-benefit.html" %}
 
+
 {% block pageTitle %}
 My claims applications – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-
 
 {% block beforeContent %}
 
 {{ layoutPhaseBanner() }}
 {{ layoutLanguageSelect() }}
-
-{{ govukBreadcrumbs({
-items: [
-{
-text: "Personal tax account home",
-href: "#"
-},
-{
-text: "Your portal",
-href: "#"
-}
-]
-}) }}
 
 {% endblock %}
 
@@ -34,18 +20,6 @@ href: "#"
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-<!-- REMOVED FROM TOP OF THE PAGE US-11235
-{% set html %}
-  <p class="govuk-notification-banner__heading">
-    We saved your progress. We'll store your information for 28 days.
-  </p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html
-}) }}
--->
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -53,42 +27,39 @@ href: "#"
       Your claim applications
     </h1>
 
-
   </div>
 
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-prototype-kit-common-templates-mainstream-guide-body">
-
-
-
     <p>
-        This page shows two groups of claims:
+      This page shows two groups of claims:
     </p>
 
-     <ul class="govuk-list govuk-list--bullet">
-        <li>claims that are in progress</li>
-        <li>claims that have already been submitted</li>
-     </ul>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>claims that are in progress</li>
+      <li>claims that have already been submitted</li>
+    </ul>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-    
-<div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">
-      Child Benefit claims in progress
-    </h2>
 
-    {{ govukWarningText({
-        text: "We have saved your progress and will store your information for 28 days. Please ensure you submit this claim within 14 days.",
-        iconFallbackText: "Warning"
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">
+        Child Benefit claims in progress
+      </h2>
+
+      {{ govukWarningText({
+      text: "We have saved your progress and will store your information for 28 days. Please ensure you submit this
+      claim within 14 days.",
+      iconFallbackText: "Warning"
       }) }}
 
       <h3 class="govuk-heading-s">
         Children addded
       </h3>
-     
+
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
           <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
@@ -98,162 +69,123 @@ href: "#"
             Jon Doe
           </dd>
           <dd class="govuk-summary-list__actions govuk-!-width-one-half govuk-!-padding-bottom-0">
-           
-                <strong class='govuk-tag govuk-tag--blue'>
-                    In progress  <span class="govuk-visually-hidden">claim</span>
-                  </strong>
-           
+
+            <strong class='govuk-tag govuk-tag--blue'>
+              In progress <span class="govuk-visually-hidden">claim</span>
+            </strong>
+
           </dd>
         </div>
         <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-            <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
-                01/01/2023
-            </dd>
-          </div>
-          </dl>
-
-          
-
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-              <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
-                Child name
-              </dt>
-              <dd class="govuk-summary-list__value govuk-!-width-one-half govuk-!-padding-bottom-0">
-                Lonnie Doe
-              </dd>
-
-              <dd class="govuk-summary-list__actions govuk-!-width-one-half govuk-!-padding-bottom-0">
-           
-                <span class="govuk-visually-hidden"> No action</span>
+          <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+            01/01/2023
           </dd>
-            </div>
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-                <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
-                    01/01/2023
-                </dd>
-              </div>
-              </dl>
+        </div>
+      </dl>
 
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-                  <dt class="govuk-summary-list__key">
-                    Created date
-                  </dt>
-                  <dd class="govuk-summary-list__value govuk-!-width-one-half">
-                      19/12/2023
-                  </dd>
-                  <dd class="govuk-summary-list__actions govuk-!-width-one-half">
-           
-                    <span class="govuk-visually-hidden"> No action</span>
-              </dd>
-                </div>
-          
-              </dl>
-              <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
-                Continue claim
-               </button>
-      
-    <!--{{ govukSummaryList({
-      rows: [
-      {
-          key: {
-          html: "<h4 class='govuk-heading-s govuk-!-margin-bottom-0'>Jon Doe</h4>
-          <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
-          "
-          },
-          actions: {
-            classes: "govuk-!-width-one-half",
-          items: [
-            {
-              href: "#",
-              html: " <strong class='govuk-tag govuk-tag--blue'>
-                In progress
-              </strong>",
-              visuallyHiddenText: "In progress"
-            }
-          ]
-          }
-        }
-      ]
-      
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
+            Child name
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half govuk-!-padding-bottom-0">
+            Lonnie Doe
+          </dd>
+
+          <dd class="govuk-summary-list__actions govuk-!-width-one-half govuk-!-padding-bottom-0">
+
+            <span class="govuk-visually-hidden"> No action</span>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key govuk-!-padding-bottom-0">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-padding-bottom-0">
+            01/01/2023
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            Created date
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half">
+            19/12/2023
+          </dd>
+          <dd class="govuk-summary-list__actions govuk-!-width-one-half">
+
+            <span class="govuk-visually-hidden"> No action</span>
+          </dd>
+        </div>
+
+      </dl>
+      <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
+        Continue claim
+      </button>
+
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+      {{ govukWarningText({
+      text: "We have saved your progress and will store your information for 28 days. Please ensure you submit this
+      claim within 14 days.",
+      iconFallbackText: "Warning"
       }) }}
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-            html: "<h4 class='govuk-heading-s govuk-!-margin-bottom-0'>Lonnie Doe</h4>
-            <p class='govuk-!-font-weight-regular'>Date of birth  01/01/2023</p>
-            <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
-             Continue claim
-            </button>"
-            }
-            
-          }
-        ]
-        
-        }) }}
-    -->
+      <h3 class="govuk-heading-s">
+        Children addded
+      </h3>
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            Child name
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-half">
+            Bob Doe
+          </dd>
+          <dd class="govuk-summary-list__actions govuk-!-width-one-half">
 
-        {{ govukWarningText({
-            text: "We have saved your progress and will store your information for 28 days. Please ensure you submit this claim within 14 days.",
-            iconFallbackText: "Warning"
-          }) }}
+            <strong class='govuk-tag govuk-tag--blue'>
+              In progress
+            </strong>
 
-          <h3 class="govuk-heading-s">
-            Children addded
-          </h3>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            21/10/2023
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">
+            Created date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            19/12/2023
+          </dd>
+        </div>
+      </dl>
 
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-              <dt class="govuk-summary-list__key">
-                Child name
-              </dt>
-              <dd class="govuk-summary-list__value govuk-!-width-one-half">
-                Bob Doe
-              </dd>
-              <dd class="govuk-summary-list__actions govuk-!-width-one-half">
-               
-                    <strong class='govuk-tag govuk-tag--blue'>
-                        In progress
-                      </strong>
-               
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    21/10/2023
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
-                <dt class="govuk-summary-list__key">
-                  Created date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    19/12/2023
-                </dd>
-              </div>
-              </dl>
+      <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
+        Continue claim
+      </button>
 
-              <button class='govuk-button govuk-button--secondary' data-module='govuk-button'>
-                Continue claim
-               </button>
-      
-               <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-          
-        <!--{{ govukSummaryList({
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
+
+      <!--{{ govukSummaryList({
           rows: [
             {
               key: {
@@ -282,115 +214,55 @@ href: "#"
           }) }}
         -->
 
-   
-    
-         
-  
-   
 
-    
-    <h2 class="govuk-heading-m">
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">
         Child Benefit submitted claims
-    </h2>
-
-    <p>No submitted claims</p>
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
-    
-<h3 class="govuk-heading-m">
-    Make a new claim
-</h3>
-<p>Use this service to make a new claim for Child Benefit.</p>
-
-
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-
-  {{ govukButton({
-  text: "Begin new claim",
-  href: "/child-benefit/end-to-end/start",
-  isStartButton: true
-  }) }}
-
-  <h3 class="govuk-heading-m" id="subsection-title">
-    Online
-  </h3>
-  <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a>
-  </p>
-  <p>
-    Ask HMRC’s digital assistant to find information about:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>claiming Child Benefit</li>
-    <li>the High Income Child Benefit Tax Charge</li>
-    <li>any change of circumstances for you or your child which may affect your claim</li>
-  </ul>
-    </div>
-    
-</div>
-
-
-<!--
-  <div class="govuk-grid-column-one-third">
-
-    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">
-        Related information
       </h2>
 
+      <p>No submitted claims</p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
-      <nav role="navigation" aria-labelledby="subsection-title">
+      <h3 class="govuk-heading-m">
+        Make a new claim
+      </h3>
+      <p>Use this service to make a new claim for Child Benefit.</p>
 
-        <h4 class="govuk-heading-s" id="subsection-title">
-          Manage claims
-        </h4>
-        <p>Call the Child Benefit helpline if
-          you need to speak with us or use
-          the chat</p>
-        <p>You’ll need:</p>
 
-        <ul class="govuk-list govuk-list--bullet">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-          <li>
-            National Insurance number
-          </li>
+      {{ govukButton({
+      text: "Begin new claim",
+      href: "/child-benefit/end-to-end/start",
+      isStartButton: true
+      }) }}
 
-        </ul>
-
-        {{ govukInsetText({
-        html: "Child Benefit helpline<br>
-        Telephone: 0300 200 3100<br>
-        Welsh language: 0300 200 1900<br>
-        Textphone: 0300 200 3103<br>
-        Outside UK: +44 161 210 3086<br>
-        Monday to Friday, 8am to 6pm<br>
-        Find out about call charges"
-        }) }}
-
-        <h3 class="govuk-heading-m" id="subsection-title">
-          Online
-        </h3>
-        <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a>
-        </p>
-
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {{ govukButton({
-        text: "Begin new claim",
-        href: "/start",
-        isStartButton: true
-        }) }}
-      </nav>
-    </aside>
+      <h3 class="govuk-heading-m" id="subsection-title">
+        Online
+      </h3>
+      <p><a href="https://www.tax.service.gov.uk/ask-hmrc/chat/child-benefit">Ask HMRC online (opens in new tab)</a>
+      </p>
+      <p>
+        Ask HMRC’s digital assistant to find information about:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>claiming Child Benefit</li>
+        <li>the High Income Child Benefit Tax Charge</li>
+        <li>any change of circumstances for you or your child which may affect your claim</li>
+      </ul>
+    </div>
 
   </div>
--->
 
-    {{ layoutServiceLinks() }}
+
+  {{ layoutServiceLinks() }}
   </main>
 </div>
-
-
-
-
 
 </div>
 </div>

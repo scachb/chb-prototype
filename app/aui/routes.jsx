@@ -1,5 +1,7 @@
 import ExamplePage from "./views/example";
-import { setupPrototypeRoutes, AppLayout, HomePage, CaseLayout } from "./kit";
+import { setupPrototypeRoutes, AuiLayout, HomePage, SummaryPanel } from "./kit";
+import { NarrowWidePage, TabbedPage } from "@pega/cosmos-react-core";
+import ClaimPage from "./views/claim";
 
 setupPrototypeRoutes([
   {
@@ -24,17 +26,13 @@ setupPrototypeRoutes([
   {
     path: "/example",
     element: (
-      <AppLayout>
+      <AuiLayout>
         <ExamplePage />
-      </AppLayout>
+      </AuiLayout>
     ),
   },
   {
     path: "/claim",
-    element: (
-      <AppLayout>
-        <CaseLayout>Content</CaseLayout>
-      </AppLayout>
-    ),
+    element: <ClaimPage />,
   },
 ]);

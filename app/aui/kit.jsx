@@ -333,14 +333,42 @@ export function AuiLayout({ children, tabs }) {
       <TabPanel currentTabId="home">
         <Grid container={{ cols: "0.2fr 1fr" }}>
           <Grid
-            style={{ height: "calc(100vh - 81px)", backgroundColor: "white" }}
+            style={{
+              height: "calc(100vh - 81px)",
+              backgroundColor: "rgb(242, 243, 244)",
+              borderRight: "1px solid black",
+            }}
           >
             awd
           </Grid>
-          <main style={{ backgroundColor: "lightgrey" }}>{children}</main>
+          <main style={{ backgroundColor: "rgb(242, 244, 245)" }}>
+            {children}
+          </main>
         </Grid>
       </TabPanel>
     </Configuration>
+  );
+}
+
+/**
+ * @typedef AuiPageHeader
+ * @property {import('react').ReactNode} children
+ * @property {string} heading
+ */
+
+/**
+ * Page header component for a page in Adviser UI
+ * @param {AuiPageHeader} param0
+ * @returns
+ */
+export function AuiPageHeader({ children, heading }) {
+  return (
+    <Flex style={{ padding: "10px 20px" }}>
+      <Text style={{ fontSize: "36px", fontWeight: "bold" }} variant="h1">
+        {heading}
+      </Text>
+      {children}
+    </Flex>
   );
 }
 

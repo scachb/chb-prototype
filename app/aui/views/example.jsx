@@ -1,13 +1,10 @@
 import { Flex, Tabs, Text } from "@pega/cosmos-react-core";
+import { AuiPageHeader } from "../kit";
 
 export default function ExamplePage() {
   return (
     <>
-      <Flex style={{ padding: "10px 20px" }}>
-        <Text style={{ fontSize: "36px", fontWeight: "bold" }} variant="h1">
-          Welcome Alex James
-        </Text>
-      </Flex>
+      <AuiPageHeader heading="Welcome Alex James" />
 
       <div style={{ backgroundColor: "white", padding: "30px" }}>
         <button

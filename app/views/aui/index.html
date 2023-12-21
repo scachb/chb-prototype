@@ -1,0 +1,35 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.njk" %}
+{% import "common/urls.html" as urls %}
+
+{% block stylesheets %}
+<link href="/public/css/aui.css" media="all" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+HMRC Adviser UI
+{% endblock %}
+
+{% set mainClasses = "aui-container" %}
+{% set containerClasses = "aui-container" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/",
+serviceUrl: "#",
+serviceName: "Claim Child Benefit",
+containerClasses: "govuk-width-container ",
+navigationClasses: "govuk-header__sign-out-nav",
+navigation: [
+{
+href: "index",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div>
+  <h1>hi</h1>
+</div>
+{% endblock %}

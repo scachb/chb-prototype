@@ -4,6 +4,137 @@
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+}
+
+body {
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+.pi {
+  margin-right: 0 !important;
+}
+
 .aui-container {
   margin: 0;
+}
+
+.aui-button {
+  cursor: pointer;
+}
+
+.aui-button:focus {
+  border-color: #ffdd00;
+  outline: 3px solid transparent;
+  box-shadow: inset 0 0 0 1px #ffdd00;
+}
+
+.aui-button:focus:not(:active):not(:hover) {
+  border-color: #ffdd00;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 2px 0 #0b0c0c;
+}
+
+.aui-header {
+  /* #E8EAED */
+  background-color: #007C7B;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aui-header__logo {
+  width: 100px;
+}
+
+.aui-header__service {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.aui-header__service-name {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.aui-header__service-button {
+  margin: 0;
+  font-size: 14px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: white;
+}
+
+.aui-header__service-button:hover {
+  background: none;
+}
+
+.aui-header__action-button {
+  margin: 0;
+  padding: 4px;
+  font-size: 16px;
+  background: white;
+  border: 0;
+  border-radius: 50%;
+  color: black;
+}
+
+.aui-header__action-button:hover {
+  background: white;
+  color: black;
+}
+
+.aui-navigation {
+  background-color: #3E5160;
+}
+
+.aui-tabs {
+  display: flex;
+  align-items: center;
+}
+
+.aui-tab {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.aui-tab:hover {
+  background-color: white;
+  color: black;
+}
+
+.aui-tab--active {
+  background: white;
+  color: black;
+  border-left: 0;
+  border-right: 0;
+}
+
+.aui-tab__button {
+  border: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: white;
+}
+
+.aui-tab__button:hover {
+  color: black;
+  background: none;
 }

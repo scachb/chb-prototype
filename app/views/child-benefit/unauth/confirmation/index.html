@@ -1,0 +1,42 @@
+{% extends "common/layouts/child-benefit.html" %}
+
+{% import "common/macros/layout.html" as layout %}
+{% import "common/urls.html" as urls %}
+
+{% block pageTitle %}
+Confirmation – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{% endblock %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukPanel({
+    titleText: "Application complete",
+    html: "Your reference number<br><strong>HDJ2123F</strong>"
+    }) }}
+
+
+    <h2 class="govuk-heading-m">
+      What happens next
+    </h2>
+
+    <p>
+      The content here is placeholder intended for the mockup and will change based on the customer.
+      If the customer is liable for HICBC then this content will be different or another example
+      will be if their child was born abroad.
+    </p>
+
+    {% from "common/macros/ask-for-feedback.html" import askForFeedback %}
+
+    {{ askForFeedback("") }}
+
+  </div>
+</div>
+{% endblock %}

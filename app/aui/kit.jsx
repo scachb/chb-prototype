@@ -146,7 +146,7 @@ export function HomePage({ journeys }) {
 const theme = {
   base: {
     palette: {
-      interactive: "#007C7B",
+      interactive: "C",
     },
   },
   components: {

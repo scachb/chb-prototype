@@ -4,21 +4,21 @@
 {% import "common/urls.html" as urls %}
 
 {% block pageTitle %}
-  Unauth question page – {{ serviceName }} – GOV.UK Prototype Kit
+Unauth question page – {{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% block content %}
-  {%- from  "hmrc/components/timeout-dialog/macro.njk" import hmrcTimeoutDialog -%}
+{%- from "hmrc/components/timeout-dialog/macro.njk" import hmrcTimeoutDialog -%}
 
-  {{ hmrcTimeoutDialog({
-    timeout: 70,
-    countdown: 68,
-    keepAliveUrl: "?continue=true",
-    signOutUrl: urls.child_benefit_unauth + "/timeout/user-deleted-answers",
-    title: "For your security",
-    message: "We will delete your answers in",
-    keepAliveButtonText: "Continue claim",
-    signOutButtonText: "Delete your answers",
-    language: "en"
-  }) }}
+{{ hmrcTimeoutDialog({
+timeout: 70,
+countdown: 68,
+keepAliveUrl: "?continue=true",
+signOutUrl: urls.child_benefit_unauth + "/timeout/user-deleted-answers",
+title: "For your security",
+message: "We will delete your answers in",
+keepAliveButtonText: "Continue claim",
+signOutButtonText: "Delete your answers",
+language: "en"
+}) }}
 {% endblock %}

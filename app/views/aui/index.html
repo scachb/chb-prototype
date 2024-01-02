@@ -1,80 +1,39 @@
-{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% extends "common/layouts/aui.html" %}
 {% import "common/urls.html" as urls %}
 
-{% block stylesheets %}
-{{ super() }}
-<link href="/public/css/aui.css" rel="stylesheet" type="text/css" />
-<link href="/public/css/py-icons.css" rel="stylesheet" type="text/css" />
+{# {% set auiBeforePage = true %}
+
+{% block beforePage %}
+{% from "common/macros/aui.html" import auiSidebarNavigation %}
+{{ auiSidebarNavigation({
+items: [
+{
+href: "#",
+text: "My work",
+icon: "case",
+active: true
+},
+{
+href: "#",
+text: "Dashboard",
+icon: "case"
+}
+]
+}) }}
+{% endblock %} #}
+
+{% block beforePage %}
+{% from "common/macros/aui.html" import auiCustomerInformationBanner %}
+{{ auiCustomerInformationBanner() }}
 {% endblock %}
 
-{% block pageTitle %}
-HMRC Adviser UI
-{% endblock %}
+{# {% block pageTop %}
+{% from "common/macros/aui.html" import auiPageHeading %}
+{{ auiPageHeading({
+text: "Unbranded page heading"
+}) }}
+{% endblock %} #}
 
-{% set serviceName %}
-HMRC Adviser UI
-{% endset %}
-
-{% set mainClasses = "aui-container" %}
-{% set containerClasses = "aui-container" %}
-
-{% block header %}
-
-<header class="aui-header">
-  <div class="aui-header__service">
-    <a class="aui-header__logo" href="/aui" title="HM Revenue and Customs - Home">
-      <img src="/public/svg/hmrc-logo.svg" aria-hidden="true" alt="HM Revenue and Customs - Home">
-    </a>
-    <p class="aui-header__service-name">ADVISER UI</p>
-    <button class="aui-header__service-button aui-button" title="New" aria-haspopup="true">
-      <i class="pi pi-plus" aria-hidden="true"></i>
-      New
-    </button>
-  </div>
-  <div class="aui-header__actions">
-    <button class="aui-header__action-button aui-button" title="Start a call, your status is Logged Off"
-      aria-haspopup="true">
-      <i class="pi pi-phone-solid" aria-hidden="true"></i>
-    </button>
-    <button class="aui-header__action-button aui-button" title="Start my day" aria-haspopup="true">
-      <i class="pi pi-robot" aria-hidden="true"></i>
-    </button>
-    <button class="aui-header__action-button aui-button" title="Profile" aria-haspopup="true">
-      <i class="pi pi-user-solid" aria-hidden="true"></i>
-    </button>
-  </div>
-</header>
-
-<nav class="aui-navigation" aria-label="Adviser UI tabs">
-  <ul class="aui-tabs">
-    <li class="aui-tab aui-tab--active">
-      <i class="pi pi-home" aria-hidden="true"></i>
-      Home
-    </li>
-    <li class="aui-tab">
-      Child Benefit claim
-      <button class="aui-tab__button aui-button" title="Close tab">
-        <i class="pi pi-close" aria-hidden="true"></i>
-      </button>
-    </li>
-  </ul>
-</nav>
-
-{% endblock %}
-
-{% block content %}
-
-<div class="aui-grid">
-  <aside class="aui-sidebar">Sidebar</aside>
-
-  <section role="region">
-    <h1 class="govuk-heading-xl">
-      Unbranded page template
-    </h1>
-    <p class="govuk-body-l">
-      This page doesn't use New Transport or display the GOV.UK header and footer.
-    </p>
-  </section>
-</div>
-
+{% block page %}
+hello page content
 {% endblock %}

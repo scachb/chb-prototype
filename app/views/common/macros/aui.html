@@ -1,0 +1,50 @@
+{% macro auiSidebarNavigation(options) %}
+<ul role="navigation" class="aui-sidebar" aria-label="Adviser UI sidebar navigation">
+  {% for item in options.items %}
+  <a href="{{ item.href }}" class="aui-no-underline">
+    <li class="aui-sidebar__item {% if item.active %}aui-sidebar__item--active{% endif %}">
+      <i class="pi {% if item.active %}pi-{{ item.icon }}-solid{% else %}pi-{{ item.icon }}{% endif %}"></i>
+      {{ item.text }}
+    </li>
+  </a>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro auiPageHeading(options) %}
+<h1 class="govuk-heading-l aui-page-heading">
+  {{ options.text }}
+</h1>
+{% endmacro %}
+
+{% macro auiCustomerInformationBanner(options) %}
+<section class="aui-customer-information-panel" aria-label="Top panel">
+  <div class="aui-customer-information-panel__item">
+    <div class="aui-customer-information-panel__row">
+      <i class="pi pi-user aui-customer-information-panel__customer"></i>
+      <p class="aui-customer-information-panel__customer">Unknown<br />customer</p>
+    </div>
+  </div>
+  <div class="aui-customer-information-panel__item">
+    <p class="aui-customer-information-panel__heading">Customer information</p>
+  </div>
+  <div class="aui-customer-information-panel__item">
+    <p class="aui-customer-information-panel__heading">Customer summary</p>
+    <p>Active accounts</p>
+  </div>
+  <div class="aui-customer-information-panel__item">
+    <p class="aui-customer-information-panel__heading">Relationship</p>
+    <p>Lifetime value</p>
+    <p>-----</p>
+  </div>
+  <div class="aui-customer-information-panel__item">
+    <p class="aui-customer-information-panel__heading">Forms</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "View claim replay"
+    }) }}
+  </div>
+</section>
+{% endmacro %}

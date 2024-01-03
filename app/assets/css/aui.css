@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  color: var(--govuk-black);
+}
+
+.pi {
+  margin-right: 0 !important;
+}
+
+:root {
+  --hmrc-green: #007C7B;
+  --hmrc-green-offset: #3E5160;
+  --govuk-blue: #1d70b8;
+  --govuk-black: #0b0c0c;
+  --govuk-white: #ffffff;
+  --govuk-focus: #ffdd00;
+}
+
+.aui-container {
+  margin: 0;
+  padding: 0;
+  height: calc(100vh - 76.75px);
+  max-width: 100%;
+}
+
+.aui-button {
+  cursor: pointer;
+}
+
+.aui-button:focus {
+  border-color: var(--govuk-focus);
+  outline: 3px solid transparent;
+  box-shadow: inset 0 0 0 1px var(--govuk-focus);
+}
+
+.aui-button:focus:not(:active):not(:hover) {
+  border-color: var(--govuk-focus);
+  color: var(--govuk-black);
+  background-color: var(--govuk-focus);
+  box-shadow: 0 2px 0 var(--govuk-black);
+}
+
+.aui-header {
+  background-color: var(--hmrc-green);
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aui-header__logo {
+  width: 100px;
+}
+
+.aui-header__service {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.aui-header__service-name {
+  color: var(--govuk-white);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.aui-header__service-button {
+  margin: 0;
+  font-size: 14px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--govuk-white);
+}
+
+.aui-header__service-button:hover {
+  background: none;
+}
+
+.aui-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aui-header__action-button {
+  margin: 0;
+  padding: 4px;
+  font-size: 16px;
+  background: var(--govuk-white);
+  border: 0;
+  border-radius: 50%;
+  color: var(--govuk-black);
+}
+
+.aui-header__action-button:hover {
+  background: var(--govuk-white);
+  color: var(--govuk-black);
+}
+
+.aui-navigation {
+  background-color: var(--hmrc-green-offset);
+}
+
+.aui-tabs {
+  display: flex;
+  align-items: center;
+}
+
+.aui-tab {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--govuk-white);
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.aui-tab:hover {
+  background-color: var(--govuk-white);
+  color: var(--govuk-black);
+}
+
+.aui-tab--active {
+  background: var(--govuk-white);
+  color: var(--govuk-black);
+  border-left: 0;
+  border-right: 0;
+}
+
+.aui-tab__button {
+  border: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--govuk-white);
+}
+
+.aui-tab__button:hover {
+  color: var(--govuk-black);
+  background: none;
+}
+
+.aui-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+}
+
+.aui-sidebar {
+  background: lightgrey;
+  border-right: 1px solid var(--govuk-black);
+}
+
+.aui-page {
+  width: 100%;
+}
+
+.aui-page-content {
+  padding: 10px;
+}
+
+.aui-page-heading {
+  width: 100%;
+  background: lightgray;
+  padding: 10px;
+  margin: 0;
+}
+
+.aui-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--govuk-black);
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.aui-sidebar__item--active {
+  color: var(--govuk-blue);
+}
+
+.aui-sidebar__item:hover {
+  background: var(--govuk-white);
+}
+
+.aui-sidebar__item:focus {
+  background: var(--govuk-focus);
+}
+
+.aui-customer-information-panel {
+  background: var(--govuk-white);
+  box-shadow: 0px 2px 10px lightgrey;
+  display: grid;
+  grid-template-columns: repeat(5, 0.25fr);
+}
+
+.aui-customer-information-panel__item {
+  padding: 16px 32px;
+  border-right: 1px dashed lightgrey;
+}
+
+.aui-customer-information-panel__row {
+  display: flex;
+  align-items: start;
+  gap: 6px;
+}
+
+.aui-customer-information-panel__customer {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.aui-customer-information-panel__heading {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* utils */
+
+.aui-no-underline {
+  text-decoration: none;
+}

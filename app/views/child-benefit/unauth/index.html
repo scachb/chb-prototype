@@ -4,7 +4,7 @@
 {% import "common/urls.html" as urls %}
 
 {% block beforeContent %}
-  {{ layout.backLink() }}
+{{ layout.backLink() }}
 {% endblock %}
 
 {% from "common/macros/document-design.html" import documentDesign %}
@@ -18,35 +18,52 @@
     <p class="govuk-body">End-to-end to claim Child Benefit without Government Gateway/One GOV login.</p>
 
     {{ documentDesign({
-      name: "Timeout pages",
-      summary: "To provide the accurate patterns for the service timing out in the journey.",
-      date: "15 December 2023",
-      revisions: [
-        {
-          summary: "Session timeout", 
-          href: urls.child_benefit_unauth + "/timeout/modal",
-          tag: { 
-            text: "New", 
-            classes: "govuk-tag--blue" 
-          }
-        },
-        {
-          summary: "For your security, we deleted your answers page", 
-          href: urls.child_benefit_unauth + "/timeout/session-deleted-answers",
-          tag: { 
-            text: "New", 
-            classes: "govuk-tag--blue" 
-          }
-        },
-        {
-          summary: "You deleted your answers page", 
-          href: urls.child_benefit_unauth + "/timeout/user-deleted-answers",
-          tag: { 
-            text: "New", 
-            classes: "govuk-tag--blue" 
-          }
-        }
-      ]
+    name: "Confirmation pages",
+    summary: "To provide a new confirmation page for unauth journey to support US-12118.",
+    date: "22 December 2023",
+    includeSeparator: true,
+    revisions: [
+    {
+    summary: "Confirmation with Case Id reference number",
+    href: urls.child_benefit_unauth + "/confirmation",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    }
+    ]
+    }) }}
+
+    {{ documentDesign({
+    name: "Timeout pages",
+    summary: "To provide the accurate patterns for the service timing out in the journey.",
+    date: "15 December 2023",
+    revisions: [
+    {
+    summary: "Session timeout",
+    href: urls.child_benefit_unauth + "/timeout/modal",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    },
+    {
+    summary: "For your security, we deleted your answers page",
+    href: urls.child_benefit_unauth + "/timeout/session-deleted-answers",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    },
+    {
+    summary: "You deleted your answers page",
+    href: urls.child_benefit_unauth + "/timeout/user-deleted-answers",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    }
+    ]
     }) }}
 
   </div>

@@ -1,7 +1,7 @@
 {% extends "common/layouts/aui.html" %}
 {% import "common/urls.html" as urls %}
 
-{# {% set auiBeforePage = true %}
+{% set auiBeforePage = true %}
 
 {% block beforePage %}
 {% from "common/macros/aui.html" import auiSidebarNavigation %}
@@ -12,26 +12,15 @@ href: "#",
 text: "My work",
 icon: "case",
 active: true
-},
-{
-href: "#",
-text: "Dashboard",
-icon: "case"
 }
 ]
 }) }}
-{% endblock %} #}
-
-{% block beforePage %}
-{% from "common/macros/aui.html" import auiCustomerInformationBanner %}
-{{ auiCustomerInformationBanner() }}
 {% endblock %}
 
-{# {% block pageTop %}
-{% from "common/macros/aui.html" import auiPageHeading %}
-{{ auiPageHeading({
-text: "Unbranded page heading"
-}) }}
+
+{# {% block beforePage %}
+{% from "common/macros/aui.html" import auiCustomerInformationBanner %}
+{{ auiCustomerInformationBanner() }}
 {% endblock %} #}
 
 {% block page %}

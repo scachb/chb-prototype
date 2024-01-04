@@ -24,6 +24,7 @@ body {
   --govuk-black: #0b0c0c;
   --govuk-white: #ffffff;
   --govuk-focus: #ffdd00;
+  --govuk-light-grey: #f3f2f1;
 }
 
 .aui-container {
@@ -56,6 +57,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .aui-header__logo {
@@ -118,6 +120,9 @@ body {
 .aui-tabs {
   display: flex;
   align-items: center;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  text-wrap: nowrap;
 }
 
 .aui-tab {
@@ -134,6 +139,12 @@ body {
 .aui-tab:hover {
   background-color: var(--govuk-white);
   color: var(--govuk-black);
+}
+
+.aui-tab--reset {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .aui-tab--active {
@@ -164,7 +175,7 @@ body {
 }
 
 .aui-sidebar {
-  background: lightgrey;
+  background: var(--govuk-light-grey);
   border-right: 1px solid var(--govuk-black);
 }
 
@@ -210,6 +221,17 @@ body {
   box-shadow: 0px 2px 10px lightgrey;
   display: grid;
   grid-template-columns: repeat(5, 0.25fr);
+}
+
+@media (max-width: 1024px) {
+  .aui-customer-information-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .aui-customer-information-panel__item:not(:first-of-type) {
+    border-top: 1px dashed lightgrey;
+    border-right: 0;
+  }
 }
 
 .aui-customer-information-panel__item {

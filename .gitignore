@@ -10,3 +10,6 @@ usage-data-config.json
 # General ignores
 .DS_Store
 .idea
+.vscode/settings.json
+app/assets/css/Ch2
+app/views/post-print/ch2.html

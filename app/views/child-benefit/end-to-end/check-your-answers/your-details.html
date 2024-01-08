@@ -132,6 +132,41 @@
           },
           {
             key: {
+              text: "Address"
+            },
+            value: {
+              text: data['child-benefit']['end-to-end']['address-line-1']
+            
+            },
+            actions: {
+              items: [
+                {
+                  href: "../address?address-line-1=Yes",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Town"
+            },
+            value: {
+              text: data['child-benefit']['end-to-end']['address-town']
+            },
+            actions: {
+              items: [
+                {
+                  href: "../address?address-town=Yes",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
               text: "Have you lived at this address for more than 12 months?"
             },
             value: {

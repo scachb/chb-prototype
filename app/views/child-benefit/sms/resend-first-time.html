@@ -1,60 +1,62 @@
 {% extends "common/layouts/child-benefit.html" %}
+{% import "common/macros/layout.html" as layout %}
+
 {% set serviceName = "Claim Child Benefit" %}
 {% block pageTitle %}
-Request a new  – {{ serviceName }} – GOV.UK Prototype Kit
+Request a new – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layoutPhaseBanner() }}
-  {{ layoutLanguageSelect() }}
-  {{ layoutBackLink() }}
+{{ layoutPhaseBanner() }}
+{{ layoutLanguageSelect() }}
+{{ layoutBackLink() }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="confirm-a-phone-number" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="confirm-a-phone-number" method="post">
 
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/details/macro.njk" import govukDetails %}
-        
-        
-        
-        <h1 class="govuk-heading-l">Request a new security code</h1>
-        
-        <p class="govuk-body">Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can request a new one.</p>
-        
-        {% set mobileNumberHtml %}
-          {{ govukInput({
-            label: {
-              text: "Mobile number"
-            },
-            value: "07700 900000",
-            id: "mobile-number",
-            name: "mobileNumber",
-            type: "tel",
-            autocomplete: "tel",
-            classes: "govuk-input--width-20"
-          }) }}
-        {% endset %}
-        
-        {{ govukDetails({
-          summaryText: "Change where the text message is sent",
-          html: mobileNumberHtml
-        }) }}
-        
-        {{ govukButton({
-          text: "Request a new code"
-        }) }}
-        
-         
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-      </form>
-    </div>
+
+
+      <h1 class="govuk-heading-l">Request a new security code</h1>
+
+      <p class="govuk-body">Text messages sometimes take a few minutes to arrive. If you do not receive the text
+        message, you can request a new one.</p>
+
+      {% set mobileNumberHtml %}
+      {{ govukInput({
+      label: {
+      text: "Mobile number"
+      },
+      value: "07700 900000",
+      id: "mobile-number",
+      name: "mobileNumber",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-input--width-20"
+      }) }}
+      {% endset %}
+
+      {{ govukDetails({
+      summaryText: "Change where the text message is sent",
+      html: mobileNumberHtml
+      }) }}
+
+      {{ govukButton({
+      text: "Request a new code"
+      }) }}
+
+
+    </form>
   </div>
+</div>
 
-  {{ layoutServiceLinks() }}
+{{ layoutServiceLinks() }}
 
 {% endblock %}

@@ -1,50 +1,50 @@
 {% extends "common/layouts/child-benefit.html" %}
 {# This brings in all service/journey urls under `urls` #}
 {% import "common/urls.html" as urls %}
+{% import "common/macros/layout.html" as layout %}
+
 {% set serviceName = "Claim Child Benefit" %}
 {% block pageTitle %}
-Sorry we have been unable to verify your phone  – {{ serviceName }} – GOV.UK Prototype Kit
+Sorry we have been unable to verify your phone – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layoutPhaseBanner() }}
-  {{ layoutLanguageSelect() }}
-  {{ layoutBackLink() }}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="{{ urls.child_benefit_sms }}/confirm-a-phone-number" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="{{ urls.child_benefit_sms }}/confirm-a-phone-number" method="post">
 
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/details/macro.njk" import govukDetails %}
-        
-        <h1 class="govuk-heading-l">Sorry we have been unable to verify your phone</h1>
-        
-        <!-- <p class="govuk-body">Continue to make your claim.</p>-->
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-<p class="govuk-body">Try again later.</p>
-        
-        <!-- <p class="govuk-body">If your mobile number has changed</p>
+      <h1 class="govuk-heading-l">Sorry we have been unable to verify your phone</h1>
+
+      <!-- <p class="govuk-body">Continue to make your claim.</p>-->
+
+      <p class="govuk-body">Try again later.</p>
+
+      <!-- <p class="govuk-body">If your mobile number has changed</p>
         <p>You'll need to:</p>
             <ul class="govuk-list govuk-list--bullet">
                 <li>Update your telephone number</li>
                 <li>Check your phone using the security code</li>
                 
             </ul>
-          --> 
-          
-            {{ govukButton({
-                text: "Continue"
-              }) }}
+          -->
 
-              <p><a class="govuk-link" href="#">Save and come back later</a></p>  
-    </div>
+      {{ layout.saveAndContinue() }}
+
+      <p><a class="govuk-link" href="#">Save and come back later</a></p>
   </div>
+</div>
 
-  {{ layoutServiceLinks() }}
+{{ layout.pageNotWorkingLink() }}
 
 {% endblock %}

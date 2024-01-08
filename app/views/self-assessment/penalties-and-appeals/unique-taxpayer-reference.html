@@ -8,56 +8,52 @@ What is your Self Assessment Unique Taxpayer Reference (UTR)? – {{ serviceName
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layout.phaseBanner() }}
-  {{ layout.languageSelect() }}
-  {{ layout.backLink() }}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-      {% from "govuk/components/button/macro.njk" import govukButton %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <h1 class="govuk-heading-l">What is your Self Assessment Unique Taxpayer Reference (UTR)?</h1>
+    <h1 class="govuk-heading-l">What is your Self Assessment Unique Taxpayer Reference (UTR)?</h1>
 
-      <p class="govuk-body">Your UTR can be 10 or 13 digits long. You can find it in your Personal Tax Account, the HMRC app or on tax returns and other documents from HMRC. It might be called ‘reference’, ‘UTR’ or ‘official use’.</p>
+    <p class="govuk-body">Your UTR can be 10 or 13 digits long. You can find it in your Personal Tax Account, the HMRC
+      app or on tax returns and other documents from HMRC. It might be called ‘reference’, ‘UTR’ or ‘official use’.</p>
 
-      <p class="govuk-body">
-        <a 
-          class="govuk-link" 
-          rel="noreferrer noopener" 
-          target="_blank" 
-          href="https://www.gov.uk/find-utr-number"
-        >
-          How to find your UTR (opens in new tab)
-        </a>
-      </p>
+    <p class="govuk-body">
+      <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://www.gov.uk/find-utr-number">
+        How to find your UTR (opens in new tab)
+      </a>
+    </p>
 
-      <form class="form" action="#" method="post">
+    <form class="form" action="#" method="post">
 
-        {{ govukInput({
-          label: {
-            text: "What is your Self Assessment Unique Taxpayer Reference?",
-            isPageHeading: false,
-            classes: "govuk-visually-hidden"
-          },
-          id: "utr",
-          value: data['self-assessment']['penalties-and-appeals']['utr'],
-          name: "self-assessment[penalties-and-appeals][utr]",
-          classes: "govuk-input--width-10"
-        }) }}
-        
-        {{ layout.saveAndContinuePattern({
-          href: urls.self_assessment_p&a
-        }) }}      
+      {{ govukInput({
+      label: {
+      text: "What is your Self Assessment Unique Taxpayer Reference?",
+      isPageHeading: false,
+      classes: "govuk-visually-hidden"
+      },
+      id: "utr",
+      value: data['self-assessment']['penalties-and-appeals']['utr'],
+      name: "self-assessment[penalties-and-appeals][utr]",
+      classes: "govuk-input--width-10"
+      }) }}
 
-      </form>
-    </div>
+      {{ layout.saveAndContinue({
+      href: urls.self_assessment_p&a
+      }) }}
+
+    </form>
   </div>
+</div>
 
-  {{ layout.pageNotWorkingLink() }}
+{{ layout.pageNotWorkingLink() }}
 
 {% endblock %}

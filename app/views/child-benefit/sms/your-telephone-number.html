@@ -1,82 +1,76 @@
 {% extends "common/layouts/child-benefit.html" %}
+{% import "common/macros/layout.html" as layout %}
 
 {% block pageTitle %}
 Telephone contact details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layoutPhaseBanner() }}
-  {{ layoutLanguageSelect() }}
-  {{ layoutBackLink() }}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="confirm-text-answer" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="confirm-text-answer" method="post">
 
-        <h1 class="govuk-heading-l">Telephone contact details</h1>
+      <h1 class="govuk-heading-l">Telephone contact details</h1>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
-        {{ govukInput({
-          label: {
-            text: "What is your telephone number?",
-            classes: "govuk-label--m",
-            isPageHeading: false
-          },
-          classes: "govuk-input--width-20",
-          hint: {
-            text: "We may use this to contact you about your claim. Our number may not show up if we call you. For numbers outside of the UK, include the country code. For example, 01632 960 001, 07700 900 982 or +44 808 157 0192."
-          },
-          id: "tel-number",
-          name: "child-benefit[sms][tel-number]",
-          value: data['child-benefit']['sms']['tel-number']
-        }) }}
+      {{ govukInput({
+      label: {
+      text: "What is your telephone number?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+      },
+      classes: "govuk-input--width-20",
+      hint: {
+      text: "We may use this to contact you about your claim. Our number may not show up if we call you. For numbers
+      outside of the UK, include the country code. For example, 01632 960 001, 07700 900 982 or +44 808 157 0192."
+      },
+      id: "tel-number",
+      name: "child-benefit[sms][tel-number]",
+      value: data['child-benefit']['sms']['tel-number']
+      }) }}
 
-        
-{{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "child-benefit[sms][receive-text]",
-  fieldset: {
-    legend: {
+
+      {{ govukRadios({
+      classes: "govuk-radios--inline",
+      name: "child-benefit[sms][receive-text]",
+      fieldset: {
+      legend: {
       text: "Do you want to receive a text message (SMS)?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "If you choose to receive a text message, you will be required to enter a security code that will be sent to your phone."
-  },
-  items: [
-    {
+      }
+      },
+      hint: {
+      text: "If you choose to receive a text message, you will be required to enter a security code that will be sent to
+      your phone."
+      },
+      items: [
+      {
       value: "Yes",
       text: "Yes"
-    },
-    {
+      },
+      {
       value: "No",
       text: "No"
-    }
-  ]
-}) }}
+      }
+      ]
+      }) }}
 
-        
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Cancel
-          </button>
-        </div>
 
-        <p><a class="govuk-link" href="#">Save and come back later</a></p>        
+      {{ layout.saveAndContinue() }}
 
-      </form>
-    </div>
+    </form>
   </div>
+</div>
 
-  {{ layoutServiceLinks() }}
+{{ layout.serviceLinks() }}
 
 {% endblock %}

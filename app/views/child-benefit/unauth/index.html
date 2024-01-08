@@ -18,6 +18,23 @@
     <p class="govuk-body">End-to-end to claim Child Benefit without Government Gateway/One GOV login.</p>
 
     {{ documentDesign({
+    name: "Do you know your National Insurance number?",
+    summary: "To provide a the new do you know you NINO screen.",
+    date: "08 January 2024",
+    includeSeparator: true,
+    revisions: [
+    {
+    summary: "Question page",
+    href: urls.child_benefit_unauth + "/do-you-know-your-nino",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    }
+    ]
+    }) }}
+
+    {{ documentDesign({
     name: "Confirmation pages",
     summary: "To provide a new confirmation page for unauth journey to support US-12118.",
     date: "22 December 2023",

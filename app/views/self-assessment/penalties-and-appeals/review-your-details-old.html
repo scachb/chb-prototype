@@ -8,48 +8,48 @@ Review your details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layout.phaseBanner() }}
-  {{ layout.languageSelect() }}
-  {{ layout.backLink() }}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Review your details</h1>
+    <h1 class="govuk-heading-xl">Review your details</h1>
 
-      <form class="form" action="#" method="post">
+    <form class="form" action="#" method="post">
 
-        {% set html %}
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">National Insurance number</h2>
-          <p class="govuk-body">WE 89 64 05 D</p>
+      {% set html %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">National Insurance number</h2>
+      <p class="govuk-body">WE 89 64 05 D</p>
 
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Name</h2>
-          <p class="govuk-body">Mr April Rain Storm</p>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Name</h2>
+      <p class="govuk-body">Mr April Rain Storm</p>
 
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date of birth</h2>
-          <p class="govuk-body">27 January 1986</p>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date of birth</h2>
+      <p class="govuk-body">27 January 1986</p>
 
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Address</h2>
-          <p class="govuk-body">10 Downing Streets<br>London<br>SW1A 2AB</p>
-        {% endset %}
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Address</h2>
+      <p class="govuk-body">10 Downing Streets<br>London<br>SW1A 2AB</p>
+      {% endset %}
 
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-        {{ govukInsetText({
-          html: html
-        }) }}
-        
-        {{ layout.saveAndContinuePattern({
-          href: urls.self_assessment_p&a
-        }) }}      
+      {{ govukInsetText({
+      html: html
+      }) }}
 
-      </form>
-    </div>
+      {{ layout.saveAndContinue({
+      href: urls.self_assessment_p&a
+      }) }}
+
+    </form>
   </div>
+</div>
 
-  {{ layout.pageNotWorkingLink() }}
+{{ layout.pageNotWorkingLink() }}
 
 {% endblock %}

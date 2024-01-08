@@ -1,73 +1,73 @@
 {#
-  Macros to use in the beforeContent block in layout  
+Macros to use in the beforeContent block in layout
 #}
 
 {% macro backLink() %}
-  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
 {% endmacro %}
 
 {% macro languageSelect() %}
-  {%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
+{%- from "hmrc/components/language-select/macro.njk" import hmrcLanguageSelect -%}
 
-  {{ hmrcLanguageSelect({
-    language: 'en',
-    en: {
-      href: '?en'
-    },
-    cy: {
-      href: '?cy'
-    }
-  }) }}
+{{ hmrcLanguageSelect({
+language: 'en',
+en: {
+href: '?en'
+},
+cy: {
+href: '?cy'
+}
+}) }}
 {% endmacro %}
 
-{% macro phaseBanner(options) %} 
-  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-  
-  {% if options.text %}
-    {% set tagText = options.text %}
-  {% else %}
-    {% set tagText = "beta" %}
-  {% endif %}
+{% macro phaseBanner(options) %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
-  {{ govukPhaseBanner({
-    tag: {
-      text: tagText
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+{% if options.text %}
+{% set tagText = options.text %}
+{% else %}
+{% set tagText = "beta" %}
+{% endif %}
+
+{{ govukPhaseBanner({
+tag: {
+text: tagText
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
 {% endmacro %}
 
-{% macro saveAndContinuePattern(options) %}
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+{% macro saveAndContinue(options) %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
-  {{ govukButton({
-    text: "Save and continue"
-  }) }}
+{{ govukButton({
+text: "Save and continue"
+}) }}
 
-  <p>
-    <a class="govuk-link" href="{% if options.href %}{{ options.href }}{{ else }}#{% endif %}">
-      Save and come back later
-    </a>
-  </p>
+<p>
+  <a class="govuk-link" href="{% if options.href %}{{ options.href }}{{ else }}#{% endif %}">
+    Save and come back later
+  </a>
+</p>
 
 {% endmacro %}
 
 {% macro pageNotWorkingLink() %}
-  <p>
-    <a href="#">
-      Is this page not working properly? (opens in new tab)
-    </a>    
-  </p>
+<p>
+  <a href="#">
+    Is this page not working properly? (opens in new tab)
+  </a>
+</p>
 {% endmacro %}
 
 {% macro satisfiedWithServiceLink() %}
-  <a href="#">
-      What did you think of this service?
-    </a> (takes 30 seconds)
-  </p>
+<a href="#">
+  What did you think of this service?
+</a> (takes 30 seconds)
+</p>
 {% endmacro %}

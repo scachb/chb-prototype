@@ -4,48 +4,48 @@
 {% import "common/macros/layout.html" as layout %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ layout.phaseBanner() }}
-  {{ layout.languageSelect() }}
-  {{ layout.backLink() }}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
 {% endblock %}
 
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/form-handler" method="post" novalidate>
+    <form class="form" action="/form-handler" method="post" novalidate>
 
       <span class="govuk-caption-l">Reason for late filing</span>
 
-    {{ govukTextarea({
-        name: "reasonLateFiling",
-        id: "reason-filing",
-        label: {
-          text: "What is the other reason that you sent your tax return late?",
-          classes: "govuk-label--l",
-          isPageHeading: true
-        },
-        hint: {
-          text: "Give details and provide any relevant dates. You can include up to 100 characters."
-        }
+      {{ govukTextarea({
+      name: "reasonLateFiling",
+      id: "reason-filing",
+      label: {
+      text: "What is the other reason that you sent your tax return late?",
+      classes: "govuk-label--l",
+      isPageHeading: true
+      },
+      hint: {
+      text: "Give details and provide any relevant dates. You can include up to 100 characters."
+      }
       }) }}
 
 
-        {{ layout.saveAndContinuePattern({
-          href: urls.self_assessment_p&a
-        }) }}     
+      {{ layout.saveAndContinue({
+      href: urls.self_assessment_p&a
+      }) }}
 
-      </form>
+    </form>
 
-    </div>
   </div>
+</div>
 
-  {{ layout.pageNotWorkingLink() }}
+{{ layout.pageNotWorkingLink() }}
 
 {% endblock %}

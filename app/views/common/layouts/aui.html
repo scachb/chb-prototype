@@ -4,7 +4,7 @@
 {% block stylesheets %}
 {{ super() }}
 <link href="/public/css/aui.css" rel="stylesheet" type="text/css" />
-<link href="/public/css/py-icons.css" rel="stylesheet" type="text/css" />
+<link href="/public/css/pega-icons.css" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block pageTitle %}
@@ -44,20 +44,12 @@ HMRC Adviser UI
   </div>
 </header>
 
-<nav class="aui-navigation" aria-label="Adviser UI tabs">
-  <ul class="aui-tabs">
-    <li class="aui-tab aui-tab--active">
-      <i class="pi pi-home" aria-hidden="true"></i>
-      Home
-    </li>
-    <li class="aui-tab">
-      Child Benefit claim
-      <button class="aui-tab__button aui-button" title="Close tab">
-        <i class="pi pi-close" aria-hidden="true"></i>
-      </button>
-    </li>
-  </ul>
-</nav>
+{% block headerTabs %}
+{% from "common/macros/aui.html" import auiHeaderTabs %}
+{{ auiHeaderTabs({
+homeTabActive: true
+}) }}
+{% endblock %}
 {% endblock %}
 
 {% block content %}

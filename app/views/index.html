@@ -1,110 +1,110 @@
 {#
-  For guidance on how to use layouts see:
-  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% import "common/urls.html" as urls %}
 
 {% block pageTitle %}
-  SCA programme
+SCA programme
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceUrl: "#",
-    serviceName: "SCA programme",
-    containerClasses: "govuk-width-container ",
-    navigationClasses: "govuk-header__sign-out-nav",
-    navigation: [
-      {
-        href: "index",
-        text: "Sign out"
-      }
-    ]
-  }) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+homepageUrl: "/",
+serviceUrl: "#",
+serviceName: "SCA programme",
+containerClasses: "govuk-width-container ",
+navigationClasses: "govuk-header__sign-out-nav",
+navigation: [
+{
+href: "index",
+text: "Sign out"
+}
+]
+}) }}
 {% endblock %}
 
 {% block content %}
-  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl govuk-!-margin-top-6">
-        <span class="govuk-caption-l">Single customer account</span>
-        SCA programme 
-      </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-top-6">
+      <span class="govuk-caption-l">Single customer account</span>
+      SCA programme
+    </h1>
 
-      <p class="govuk-body-l">A history of the designs for the various journeys and services of the SCA programme.</p>
+    <p class="govuk-body-l">A history of the designs for the various journeys and services of the SCA programme.</p>
 
-      <h3 class="govuk-heading-m">Services</h3>
-    </div>
+    <h3 class="govuk-heading-m">Services</h3>
+  </div>
 
     <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
       <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.aui }}">Adviser UI</a>
+        <a class="govuk-link" href="{{ urls.aui }}">Adivser UI</a>
       </h3>
       <p class="govuk-body">All journeys for the Adviser UI side of things. Must run `npm run aui`</p>
     </section>
 
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.child_benefit }}">Child Benefit</a>
-      </h3>
-      <p class="govuk-body">All journeys for the Child Benefit service.</p>
-    </section>
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.child_benefit }}">Child Benefit</a>
+    </h3>
+    <p class="govuk-body">All journeys for the Child Benefit service.</p>
+  </section>
 
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.paye }}">PAYE</a>
-      </h3>
-      <p class="govuk-body">All journeys for the PAYE service.</p>
-    </section>
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.paye }}">PAYE</a>
+    </h3>
+    <p class="govuk-body">All journeys for the PAYE service.</p>
+  </section>
 
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.self_assessment }}">Self Assessment</a>
-      </h3>
-      <p class="govuk-body">All journeys for the Self Assessment service.</p>
-    </section>
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.self_assessment }}">Self Assessment</a>
+    </h3>
+    <p class="govuk-body">All journeys for the Self Assessment service.</p>
+  </section>
 
-    <div class="govuk-grid-column-two-thirds">
-      <h3 class="govuk-heading-m">Templates</h3>
-    </div>
-
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.common_templates }}/blank-service">Blank service</a>
-      </h3>
-      <p class="govuk-body">A homepage to use for a new SCA service.</p>
-    </section>
-
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.common_templates }}/blank-journey">Blank journey</a>
-      </h3>
-      <p class="govuk-body">A homepage to use for a new journey within an SCA service.</p>
-    </section>
-
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.common_templates }}/blank-feature">Blank feature</a>
-      </h3>
-      <p class="govuk-body">
-        A homepage to use for a new feature within an SCA service.
-      </p>
-    </section>
-
-    <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
-        <a class="govuk-link" href="{{ urls.common_templates }}/blank-layout">Blank layout</a>
-      </h3>
-      <p class="govuk-body">
-        A layout to use for new journeys/services.
-      </p>
-    </section>
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m">Templates</h3>
   </div>
+
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.common_templates }}/blank-service">Blank service</a>
+    </h3>
+    <p class="govuk-body">A homepage to use for a new SCA service.</p>
+  </section>
+
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.common_templates }}/blank-journey">Blank journey</a>
+    </h3>
+    <p class="govuk-body">A homepage to use for a new journey within an SCA service.</p>
+  </section>
+
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.common_templates }}/blank-feature">Blank feature</a>
+    </h3>
+    <p class="govuk-body">
+      A homepage to use for a new feature within an SCA service.
+    </p>
+  </section>
+
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a class="govuk-link" href="{{ urls.common_templates }}/blank-layout">Blank layout</a>
+    </h3>
+    <p class="govuk-body">
+      A layout to use for new journeys/services.
+    </p>
+  </section>
+</div>
 
 {% endblock %}

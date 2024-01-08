@@ -1,0 +1,65 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% import "common/urls.html" as urls %}
+
+{% block pageTitle %}
+Claim Child Benefit - GOV.UK
+{% endblock %}
+
+{% set serviceName %}
+Claim Child Benefit
+{% endset %}
+
+{% block bodyStart %}
+<a id="top"></a>
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+classes: "app-footer",
+meta: {
+items: [
+{
+href: "#",
+text: "Cookies (opens in new tab)"
+},
+{
+href: "#",
+text: "Accessibility statement (opens in new tab)"
+},
+{
+href: "#",
+text: "Privacy policy (opens in new tab)"
+},
+{
+href: "#",
+text: "Terms and conditions (opens in new tab)"
+},
+{
+href: "#",
+text: "Help using GOV.UK (opens in new tab)"
+},
+{
+href: "#",
+text: "Contact (opens in new tab)"
+},
+{ href: "#",
+text: "Rhestr o Wasanaethau Cymraeg (opens in new tab)"
+},
+{
+href: "/manage-prototype",
+text: "Manage your prototype"
+},
+{
+href: "/manage-prototype/clear-data",
+text: "Clear data"
+}
+],
+visuallyHiddenTitle: "Support links"
+}
+}) }}
+{% endblock %}

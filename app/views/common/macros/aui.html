@@ -1,3 +1,28 @@
+{% macro auiHeaderTabs(options) %}
+<nav class="aui-navigation" aria-label="Adviser UI tabs">
+  <ul class="aui-tabs">
+    <a href="/aui" class="aui-tab--reset">
+      <li class="aui-tab {% if options.homeTabActive %}aui-tab--active{% endif %}">
+        <i class="pi pi-home" aria-hidden="true"></i>
+        Home
+      </li>
+    </a>
+    {% for tab in options.tabs %}
+    <a href="{{ tab.href }}" class="aui-tab--reset">
+      <li class="aui-tab {% if tab.active %}aui-tab--active{% endif %}">
+        {{ tab.text }}
+        {% if not tab.closeButton %}
+        <button class="aui-tab__button aui-button" title="Close tab">
+          <i class="pi pi-close" aria-hidden="true"></i>
+        </button>
+        {% endif %}
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}
+
 {% macro auiSidebarNavigation(options) %}
 <ul role="navigation" class="aui-sidebar" aria-label="Adviser UI sidebar navigation">
   {% for item in options.items %}

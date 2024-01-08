@@ -1,15 +1,15 @@
 # SCA programme design
 
-> IMPORTANT: Currently experimenting with AUI prototyping in React
+## AUI mockups
 
-## TEMP documentation
+You can create Adviser UI mockups but there's still some things to be worked on.
 
-To load the `experimental` AUI prototype load a new terminal session and run
+- [ ] Popovers 
+- [ ] Modals 
+- [ ] Toggles
+- [ ] Collapse/show
+- [ ] Constellation components
 
-```
-npm run aui
-```
- 
 Repo of design mockups and artefacts for all services and journeys under the Single Customer Account programme.
 
 Please read all of the documentation before you commit code to this repo.

@@ -13,91 +13,93 @@
     <p class="govuk-body">A service for claimants to submit a claim for Child Benefit.</p>
 
     {{ documentDesign({
-      name: "End to end",
-      includeSeparator: true,
-      summary: "Updated with declaration for adoption and born outside the UK.",
-      revisions: [
-        {
-          summary: "Journey",
-          href: "./end-to-end/start",
-          tag: {
-            text: "New",
-            classes: "govuk-tag--blue"
-          }
-        },
-        {
-          summary: "Tube map for claimant journey",
-          href: "public/pdf/SCA-Child-Benefit-Journey.pdf",
-          tag: {
-            text: "Outdated",
-            classes: "govuk-tag--grey"
-          }
-        },
-        {
-          summary: "Tube map SVG",
-          href: "public/svg/SCA-Journey-02.svg",
-          tag: {
-            text: "Outdated",
-            classes: "govuk-tag--grey"
-          }
-        }
-      ]
+    name: "End to end",
+    includeSeparator: true,
+    summary: "Updated with declaration for adoption and born outside the UK.",
+    revisions: [
+    {
+    summary: "Journey",
+    href: "./end-to-end/start",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    },
+    {
+    summary: "Tube map for claimant journey",
+    href: "public/pdf/SCA-Child-Benefit-Journey.pdf",
+    tag: {
+    text: "Outdated",
+    classes: "govuk-tag--grey"
+    }
+    },
+    {
+    summary: "Tube map SVG",
+    href: "public/svg/SCA-Journey-02.svg",
+    tag: {
+    text: "Outdated",
+    classes: "govuk-tag--grey"
+    }
+    }
+    ]
     }) }}
 
     {{ documentDesign({
-      name: "Complex question pattern",
-      includeWhyIsThisNeeded: true,
-      includeSeparator: true,
-      date: "13 December 2023",
-      summary: "To understand the pattern to use for where you have lived. Complex questions use statement headings, have explanation text that could also contain links. Hint text does not allow links.",
-      revisions: [
-        {
-          summary: "Provide details about where you have lived",
-          href: "./end-to-end/complex-question/details-about-where-you-have-lived",
-          tag: {
-            text: "New",
-            classes: "govuk-tag--blue"
-          }
-        }
-      ]
+    name: "Complex question pattern",
+    includeWhyIsThisNeeded: true,
+    includeSeparator: true,
+    date: "13 December 2023",
+    summary: "To understand the pattern to use for where you have lived. Complex questions use statement headings, have
+    explanation text that could also contain links. Hint text does not allow links.",
+    revisions: [
+    {
+    summary: "Provide details about where you have lived",
+    href: "./end-to-end/complex-question/details-about-where-you-have-lived",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    }
+    ]
     }) }}
 
     {{ documentDesign({
-      name: "Information confirmation pattern",
-      includeWhyIsThisNeeded: true,
-      includeSeparator: true,
-      date: "30 November 2023",
-      summary: "To adhere to an ongoing information confirmation GOV.UK pattern and group all information from NPS together to make CYA screens navigation easier.",
-      revisions: [
-        {
-          summary: "NPS details",
-          href: "./end-to-end/information-confirmation/nps-details",
-          tag: {
-            text: "New",
-            classes: "govuk-tag--blue"
-          }
-        }
-      ]
+    name: "Information confirmation pattern",
+    includeWhyIsThisNeeded: true,
+    includeSeparator: true,
+    date: "30 November 2023",
+    summary: "To adhere to an ongoing information confirmation GOV.UK pattern and group all information from NPS
+    together to make CYA screens navigation easier.",
+    revisions: [
+    {
+    summary: "NPS details",
+    href: "./end-to-end/information-confirmation/nps-details",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    }
+    ]
     }) }}
 
     <h3 class="govuk-heading-l">Give feedback</h3>
     <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
     <p>
-      To align with HMRC design standards and to adhere to an 
-      issue raised by GDS audit on including a feedback option. 
+      To align with HMRC design standards and to adhere to an
+      issue raised by GDS audit on including a feedback option.
       Tom identified it could be a common component eventually
     </p>
 
     <p>
-      Standard used 
+      Standard used
       <a href='https://design.tax.service.gov.uk/hmrc-design-patterns/feedback/'>HMRC feedback pattern</a>
       the content of the Give feedback page may not reflect what the business needs, but acts as an example.
     </p>
 
     <p>
       {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
+      text: "New",
+      classes: "govuk-tag--blue"
       }) }}
     </p>
 
@@ -125,7 +127,7 @@
     </ul>
 
     <p><time>29 November 2023</time></p>
-    
+
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
     <h3 class="govuk-heading-l">Task list</h3>
@@ -133,62 +135,74 @@
     <p>To help the claimant know where they are in the journey</p>
     <p>
       {{ govukTag({
-        text: "New",
-        classes: "govuk-tag--blue"
+      text: "New",
+      classes: "govuk-tag--blue"
       }) }}
-     
-      <h4 class="govuk-heading-m">Task list examples</h4>
-     
-      <ul class="govuk-list govuk-list--bullet">
-        <li> <a href="./end-to-end/task-list/task-list-page">Task list using HMRC status tags (Completed, In progress and Not started)</a></li>
-        <li> <a href="./end-to-end/task-list/task-list-page-complete">Task list for claim completed</a></a></li>
-      </ul>
+
+    <h4 class="govuk-heading-m">Task list examples</h4>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li> <a href="./end-to-end/task-list/task-list-page">Task list using HMRC status tags (Completed, In progress and
+          Not started)</a></li>
+      <li> <a href="./end-to-end/task-list/task-list-page-complete">Task list for claim completed</a></a></li>
+    </ul>
     </p>
-    
+
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
     <h3 class="govuk-heading-l">Enhancements to the journey</h3>
     <p class="govuk-body govuk-!-font-weight-bold">Why is this needed?</p>
     <p>To adhere to GDS design patterns, certain pages require questions to be on separate pages.</p>
 
-      <span class="govuk-caption-l">US-10885</span>
-      <h4 class="govuk-heading-m">Remove the reveal further questions on the page</h4>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./end-to-end/one-thing-per-page/tell-us-the-other-name">Tell us the other name</a></li>
-        <li><a href="./end-to-end/one-thing-per-page/tell-us-your-last-address">Tell us your last address</a></li>
-        <li><a href="./end-to-end/nationality/add-nationality">Other nationality (reuse the add to list design pattern. See the 'Children added' design)</a></li>
-        <li><a href="./end-to-end/claiming-child-benefit">Are you claiming child benefit right now new step with the eldest child's details</a></li>
-      </ul>
+    <span class="govuk-caption-l">US-10885</span>
+    <h4 class="govuk-heading-m">Remove the reveal further questions on the page</h4>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="./end-to-end/one-thing-per-page/tell-us-the-other-name">Tell us the other name</a></li>
+      <li><a href="./end-to-end/one-thing-per-page/tell-us-your-last-address">Tell us your last address</a></li>
+      <li><a href="./end-to-end/nationality/add-nationality">Other nationality (reuse the add to list design pattern.
+          See the 'Children added' design)</a></li>
+      <li><a href="./end-to-end/claiming-child-benefit">Are you claiming child benefit right now new step with the
+          eldest child's details</a></li>
+    </ul>
 
-      <span class="govuk-caption-l">US-11186</span>
-      <h4 class="govuk-heading-m">Remove Child reveal questions</h4>
-      <p><strong>Updated 8 December 2023</strong></p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./end-to-end/multiple-children">What is the name of the child you want to claim for?</a></li>
-        <li><a href="./end-to-end/multiple-children/known-by-any-other-name">Has this child been known by any other names?</a></li>
-        <li><a href="./end-to-end/one-thing-per-page/deed-poll">Has this child's name been changed by a deed poll?</a></li>
-        <li><a href="./end-to-endone-thing-per-page/childs-other-name">Tell us the child's other name?</a></li>
-        <li><a href="./end-to-end/multiple-children/date-of-birth">What is the child's date of birth?</a></li>
-        <li><a href="./end-to-end/multiple-children/childs-sex">What is the child's sex as recorded on the birth certificate?</a></li>
-        <li><a href="./end-to-end/multiple-children/birth-registered">Where was the child's birth registered</a></li>
-        <li><a href="./end-to-end/multiple-children/previous-claimant">Previous claimant (Postcode/address look up)</a></li>
-        <li><a href="./end-to-end/one-thing-per-page/name-of-person-who-claimed">Other claimant (Postcode/address look up)</a></li>
-        <li><a href="./end-to-end/multiple-children/child-address">Tell us about who the child lives with (Postcode/address look up)</a></li>
-      </ul>
+    <span class="govuk-caption-l">US-11186</span>
+    <h4 class="govuk-heading-m">Remove Child reveal questions</h4>
+    <p><strong>Updated 8 December 2023</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="./end-to-end/multiple-children">What is the name of the child you want to claim for?</a></li>
+      <li><a href="./end-to-end/multiple-children/known-by-any-other-name">Has this child been known by any other
+          names?</a></li>
+      <li><a href="./end-to-end/one-thing-per-page/deed-poll">Has this child's name been changed by a deed poll?</a>
+      </li>
+      <li><a href="./end-to-endone-thing-per-page/childs-other-name">Tell us the child's other name?</a></li>
+      <li><a href="./end-to-end/multiple-children/date-of-birth">What is the child's date of birth?</a></li>
+      <li><a href="./end-to-end/multiple-children/childs-sex">What is the child's sex as recorded on the birth
+          certificate?</a></li>
+      <li><a href="./end-to-end/multiple-children/birth-registered">Where was the child's birth registered</a></li>
+      <li><a href="./end-to-end/multiple-children/previous-claimant">Previous claimant (Postcode/address look up)</a>
+      </li>
+      <li><a href="./end-to-end/one-thing-per-page/name-of-person-who-claimed">Other claimant (Postcode/address look
+          up)</a></li>
+      <li><a href="./end-to-end/multiple-children/child-address">Tell us about who the child lives with
+          (Postcode/address look up)</a></li>
+    </ul>
 
-      <span class="govuk-caption-l">US-11185</span>
-      <h4 class="govuk-heading-m">Remove Partner reveal questions</h4>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./end-to-end/one-thing-per-page/partner-claiming-child-benefit">Is your partner claiming child benefit right now includes new step with eldest child details (REUSE  US-10885)</a></li>
-        <li><a href="./end-to-end/nationality/partner-nationality">Partner nationality details - Adding in a new capture step to the nationality page if claimant select 'yes' to another nationality (REUSE US-10885)</a></li>  
-      </ul>
+    <span class="govuk-caption-l">US-11185</span>
+    <h4 class="govuk-heading-m">Remove Partner reveal questions</h4>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="./end-to-end/one-thing-per-page/partner-claiming-child-benefit">Is your partner claiming child
+          benefit right now includes new step with eldest child details (REUSE US-10885)</a></li>
+      <li><a href="./end-to-end/nationality/partner-nationality">Partner nationality details - Adding in a new capture
+          step to the nationality page if claimant select 'yes' to another nationality (REUSE US-10885)</a></li>
+    </ul>
 
-      <span class="govuk-caption-l">US-10233</span>
-      <h4 class="govuk-heading-m">Split up employment status questions</h4>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="./end-to-end/one-thing-per-page/other-benefits">What other benefits do you claim?</a></li>
-        <li><a href="./end-to-end/one-thing-per-page/are-you-a-member">Are you a member of HM Forces or a civil servant working abroad?</a></li>
-      </ul>
+    <span class="govuk-caption-l">US-10233</span>
+    <h4 class="govuk-heading-m">Split up employment status questions</h4>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="./end-to-end/one-thing-per-page/other-benefits">What other benefits do you claim?</a></li>
+      <li><a href="./end-to-end/one-thing-per-page/are-you-a-member">Are you a member of HM Forces or a civil servant
+          working abroad?</a></li>
+    </ul>
 
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
@@ -290,7 +304,8 @@
       text: "New",
       classes: "govuk-tag--blue"
       })}}
-      <a href="./end-to-end/multiple-children/children-list-important">Summary card - important notification banner example</a>
+      <a href="./end-to-end/multiple-children/children-list-important">Summary card - important notification banner
+        example</a>
 
     </p>
 
@@ -373,7 +388,8 @@
 
     <p><a href="./end-to-end/nationality.html">Tell us your nationality example with a select</a></p>
 
-    <p><a href="./end-to-end/nationality-autocomplete.html">Tell us your nationality example with accessibile autocomplete</a></p>
+    <p><a href="./end-to-end/nationality-autocomplete.html">Tell us your nationality example with accessibile
+        autocomplete</a></p>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
 
@@ -395,11 +411,13 @@
     <h4 class="govuk-heading-m">High income design history iterations</h3>
 
 
-      <p><a href="./end-to-end/hic.html">Tell us if you're a high income earner - showing body copy, and both questions</a></p>
+      <p><a href="./end-to-end/hic.html">Tell us if you're a high income earner - showing body copy, and both
+          questions</a></p>
 
       <p><a href="./end-to-end/hic-one.html">Tell us if you're a high income earner - one-thing-per-page</a></p>
 
-      <p><a href="./end-to-end/hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are you a high
+      <p><a href="./end-to-end/hic-three.html">Tell us if you're a high income earner - one-thing-per-page (removed are
+          you a high
           income earner?)</a>
       </p>
 
@@ -433,7 +451,8 @@
 
       <p><a href="./end-to-end/error-bank-details.html">Error summary for the payment details</a></p>
 
-      <p><a href="./end-to-end/paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed, separated or
+      <p><a href="./end-to-end/paid-child-benefit.html">If claimant is on benefits OR martial status single, widowed,
+          separated or
           divorced</a></p>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" aria-hidden="true">
@@ -462,6 +481,20 @@
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
+              Sprint 15
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><span class="govuk-visually-hidden">USn</span>SMS stories</li>
+              <li>Task list</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
               Sprint 14
             </span>
           </summary>
@@ -476,11 +509,12 @@
             </ul>
             <p class="govuk-!-font-weight-bold">Why it changed</p>
             <ul>
-              <li>Recent accessibility audit found some WCAG non-compliances and GDS usability deviations. The enhancement stories will not adddress some of these issues.</li>
+              <li>Recent accessibility audit found some WCAG non-compliances and GDS usability deviations. The
+                enhancement stories will not adddress some of these issues.</li>
             </ul>
           </div>
         </details>
-    
+
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -494,17 +528,18 @@
             <ul>
               <li><span class="govuk-visually-hidden">USn</span>Shuttering for claims in progress</li>
               <li><span class="govuk-visually-hidden">USn</span>End to end Live Service</li>
-              <li><span class="govuk-visually-hidden">USn</span>Get Next  and Work Management stories completed</li>
+              <li><span class="govuk-visually-hidden">USn</span>Get Next and Work Management stories completed</li>
               <li><span class="govuk-visually-hidden">USn</span>Automatic retry for workbaskets</li>
               <li><span class="govuk-visually-hidden">USn</span>Resolution of business critical bugs</li>
             </ul>
             <p class="govuk-!-font-weight-bold">Why it changed</p>
             <ul>
-              <li>Businesses can now easily suspend the service and improve work management and functionality to request the oldest work items (Get next work).</li>
+              <li>Businesses can now easily suspend the service and improve work management and functionality to request
+                the oldest work items (Get next work).</li>
             </ul>
           </div>
         </details>
-    
+
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -539,7 +574,7 @@
             </ul>
           </div>
         </details>
-    
+
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">

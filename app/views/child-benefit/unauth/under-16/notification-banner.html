@@ -1,0 +1,54 @@
+{% extends "common/layouts/child-benefit-unauth.html" %}
+
+{% import "common/macros/layout.html" as layout %}
+{% import "common/urls.html" as urls %}
+
+{% block beforeContent %}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
+{% endblock %}
+
+{% block pageTitle %}
+What is your date of birth? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {{ govukNotificationBanner({
+      text: "To claim Child Benefit we need your National Insurance number. We will normally send you a National
+      Insurance number just before your 16th birthday if you reside in UK, if you don’t have a National Insurance
+      number, the person who is responsible for you should claim Child Benefit"
+      }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+      id: "dateOfBirth",
+      namePrefix: "childBenefit[unauth][dateOfBirth]",
+      fieldset: {
+      legend: {
+      text: "What is your date of birth?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "For example, 27 3 2007"
+      }
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+      {{ layout.pageNotWorkingLink() }}
+    </form>
+  </div>
+</div>
+{% endblock %}

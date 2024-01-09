@@ -1,0 +1,46 @@
+{% extends "common/layouts/child-benefit-unauth.html" %}
+
+{% import "common/macros/layout.html" as layout %}
+{% import "common/urls.html" as urls %}
+
+{% block beforeContent %}
+{{ layout.phaseBanner() }}
+{{ layout.languageSelect() }}
+{{ layout.backLink() }}
+{% endblock %}
+
+{% block pageTitle %}
+What is your date of birth? – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{ urls.child_benefit_unauth }}/under-16/error-message">
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+      id: "dateOfBirth",
+      namePrefix: "childBenefit[unauth][dateOfBirth]",
+      fieldset: {
+      legend: {
+      text: "What is your date of birth?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "For example, 27 3 2007"
+      }
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+      {{ layout.pageNotWorkingLink() }}
+    </form>
+  </div>
+</div>
+{% endblock %}

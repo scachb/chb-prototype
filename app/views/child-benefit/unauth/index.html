@@ -18,6 +18,40 @@
     <p class="govuk-body">End-to-end to claim Child Benefit without Government Gateway/One GOV login.</p>
 
     {{ documentDesign({
+    name: "Date of birth under 16",
+    summary: "Error message for unauth when a claimant under 16 tries to apply and we need to ensure they have a NINO or
+    the person responsible for them applies.",
+    date: "09 January 2024",
+    includeSeparator: true,
+    revisions: [
+    {
+    summary: "Date of birth",
+    href: urls.child_benefit_unauth + "/under-16/date-input",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    },
+    {
+    summary: "Date of birth error message",
+    href: urls.child_benefit_unauth + "/under-16/error-message",
+    tag: {
+    text: "New",
+    classes: "govuk-tag--blue"
+    }
+    },
+    {
+    summary: "Date of birth notification banner",
+    href: urls.child_benefit_unauth + "/under-16/notification-banner",
+    tag: {
+    text: "Old",
+    classes: "govuk-tag--grey"
+    }
+    }
+    ]
+    }) }}
+
+    {{ documentDesign({
     name: "Do you know your National Insurance number?",
     summary: "To provide a the new do you know you NINO screen.",
     date: "08 January 2024",
@@ -96,6 +130,21 @@
         </h2>
 
         <h3 class="govuk-heading-s">Sprints</h3>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Sprint 15
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="gouk-list govuk-list--bullets">
+              <li>User stories elaborated</li>
+              <li>Booking accessibility audits</li>
+              <li>Development of your details begun</li>
+            </ul>
+          </div>
+        </details>
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
